@@ -1,0 +1,30 @@
+Table C10: Blastdbcmd application options. This  application reads a BLAST database and produces reports.
+option type default value description and notes
+db string nr BLAST database name.
+dbtype string guess Molecule type stored in BLAST database, one of nucl, prot, or guess.
+entry string none Comma-delimited search string(s) of sequence identifiers:  e.g.: 555, AC147927, 'gnl|
+dbname|tag', or 'all' to select all sequences in the database
+entry_batch string none Input file for batch processing. The format requires one entry per line; each line should 
+begin with the sequence ID followed by any of the following optional specifiers  (in any 
+order): range (format: ‘from-to’ , inclusive in 1-offsets),  strand (‘plus’ or ‘minus’), or 
+masking algorithm ID (integer value representing the available masking algorithm). 
+Omitting the ending range (e.g.: ‘10-‘) is supported, but there should not be any spaces 
+around the ‘-‘.
+pig integer none PIG (protein identity group) to retrieve.
+info flag N/A Print BLAST database information.
+range string none Range of sequence to extract (Format: start-stop).
+strand string plus Strand of nucleotide sequence to extract. Choice of plus or minus.
+mask_sequence_with string none Produce lower-case masked FASTA using the algorithm IDs specified.
+out string stdout Output file name.
+outfmt string %f Output format, where the available format specifiers  are:
+%f means sequence in FASTA format
+%s means sequence data (without defline)
+%a means accession
+%g means gi
+%o means ordinal id (OID)
+%t means sequence title
+%l means sequence length
+%T means taxid
+%L means common taxonomic name
+%S means scientific  name
+%P means PIGAppendices 91

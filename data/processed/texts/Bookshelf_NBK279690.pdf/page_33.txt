@@ -1,0 +1,15 @@
+Table continued from previous page.
+BLAST_USAGE_REPORT Specifies  whether or not usage information should be returned to the NCBI. Set this variable 
+to false to disable this feature.
+Controlling concatenation of queries
+As described above, BLAST+ works more efficiently  if it scans the database once for multiple queries. This 
+feature is knows as concatenation. Unfortunately, for some searches the concatenation values are not optimal, 
+too many queries are searched at once, and the process can consume too much memory. For applications besides 
+BLASTN (which uses an adaptive approach), it is possible to control these values by setting the BATCH_SIZE 
+environment variable. Setting the value too low will degrade performance dramatically, so this environment 
+variable should be used with caution.
+Memory usage
+The BLAST search programs can exhaust all memory on a machine if the input is too large or if there are too 
+many hits to the BLAST database. If this is the case, please see your operating system documentation to limit the 
+memory used by a program (e.g.: ulimit on Unix-like platforms). Setting the BATCH_SIZE environment 
+variable as described above may help.Configuring  BLAST 25

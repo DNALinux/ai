@@ -1,0 +1,22 @@
+Table C5 continued from previous page.
+option task type default value description and notes
+gapopen All integer 11 Cost to open a gap.
+gapextend All integer 1 Cost to extend a gap.
+matrix All string BLOSUM62 Scoring matrix name.
+threshold tblastn integer 13 Minimum score to add a word to the BLAST lookup table.
+threshold tblastn-fast Integer 21 Minimum score to add a word to the BLAST lookup table.
+seg All string 12 2.2 2.5 Filter query sequence with SEG (Format: 'yes', 'window locut hicut', or 'no' 
+to disable).
+soft_masking All boolean false Apply filtering  locations as soft masks (i.e., only for finding  initial matches).
+lcase_masking All flag N/A Use lower case filtering  in query and subject sequence(s).
+db_soft_mask All integer none Filtering algorithm ID to apply to the BLAST database as soft mask (i.e., 
+only for finding  initial matches).
+db_hard_mask All integer none Filtering algorithm ID to apply to the BLAST database as hard mask (i.e., 
+sequence is masked for all phases of search).
+xdrop_gap_final All real 25 Heuristic value (in bits) for final  gapped alignment.
+window_size All integer 40 Multiple hits window size, use 0 to specify 1-hit algorithm.
+db_gen_code All integer 1 Genetic code to translate subject sequences, see ftp://ftp.ncbi.nih.gov/
+entrez/misc/data/gc.prt
+max_intron_length All integer 0 Length of the largest intron allowed in a translated nucleotide sequence 
+when linking multiple distinct alignments (a negative value disables 
+linking).86 BLAST® Command Line Applications User Manual

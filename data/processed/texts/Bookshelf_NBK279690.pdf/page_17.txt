@@ -1,0 +1,39 @@
+Quick start
+Created: June 23, 2008; Updated: January 7, 2021.
+A BLAST search against a database requires at least a –query and –db option. The command:
+blastn –db nt –query nt.fsa –out results.out  
+will run a search of nt.fsa (a nucleotide sequence in FASTA format) against the nt database, printing results to 
+the file results.out. If “-out results.out” had been left off, the results would have been printed to stdout (i.e., the 
+screen). The blastn application searches a nucleotide query against a nucleotide database.
+To send the search to our servers and databases, add the –remote option:
+blastn –db nt –query nt.fsa –out results.out -remote 
+See more about this option in the section below, BLAST+ remote service .
+The BLAST+ applications print documentation when invoked with the –h or –help option. The –h option 
+provides abbreviated help, and the –help flag provides more extensive documentation. For example, use –help to 
+get a list of output options for the –outfmt option.
+Create a custom database from a multi-FASTA file of sequences with this minimal command:
+makeblastdb –in mydb.fsa –dbtype nucl –parse_seqids    
+See the section below, Building a BLAST database with local sequences , for more details.
+The BLAST databases are required to run BLAST locally and to support automatic resolution of sequence 
+identifiers . Documentation about these identifiers  can be found at http://www.ncbi.nlm.nih.gov/toolkit/doc/
+book/ch_demo/#ch_demo.T5 . The databases may be retrieved automatically with the update_blastdb.pl PERL 
+script, which is included as part of this distribution. This  script will download multiple tar files for each BLAST 
+database volume if necessary, without having to designate each volume. For example:
+./update_blastdb.pl --decompress swissprot 
+will download all the relevant swissprot tar files.
+The script can also compare your local copy of the database tar file(s)  and only download tar files if the date 
+stamp has changed reflecting  a newer version of the database. This  will allow the script run on a schedule and 
+only download tar files when needed. Documentation for the update_blastdb.pl script can be obtained by 
+running the script without any arguments (perl is required).
+RPS-BLAST ready databases are available at ftp://ftp.ncbi.nih.gov/pub/mmdb/cdd /
+The BLAST taxonomy database is required in order to print the scientific  name, common name, blast name, or 
+super kingdom as part of the BLAST report or in a report with blastdbcmd. The BLAST database contains only 
+the taxid (an integer) for each entry, and the taxonomy database allow BLAST to retrieve the scientific  name etc. 
+from a taxid. The BLAST taxonomy database consists of a pair of files (taxdb.bti and taxdb.btd) that are available 
+as a compressed archive from the NCBI BLAST FTP site ( ftp://ftp.ncbi.nlm.nih.gov/blast/db/taxdb.tar.gz ). The 
+update_blastdb.pl script can be used to download and update this archive; it is recommended that the 
+uncompressed contents of the archive be installed in the same directory where the BLAST databases reside. 
+Assuming proper file permissions and that the BLASTDB environment variable contains the path to the 
+installation directory of the BLAST databases, the following commands accomplish that:
+ # Download the taxdb archive
+perl update_blastdb.pl taxdb9

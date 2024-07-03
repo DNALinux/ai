@@ -1,0 +1,34 @@
+BLAST+ features
+Tom Madden1 and Christiam Camacho2
+Created: June 23, 2008; Updated: March 14, 2021.
+Tasks
+The blastn and blastp applications have a –task option. This  option sets the parameters (e.g., word-size or gap 
+values) to typical values for a specific  type of search. For example, the “megablast” task is optimized for 
+intraspecies comparison as it uses a large word-size, whereas “blastn” is better suited for interspecies 
+comparisons with a shorter word-size. These  tasks resemble the “Program Selection” section of the BLAST web 
+pages and do not preclude the user from setting other options to override those specified  by the task. See 
+Appendix "Options for the command-line application"  for documentation on parameter values for different  
+tasks. The following tasks are currently available:
+Program Task Name Description
+blastp blastp Traditional BLASTP to compare a protein query to a protein database
+blastp-short BLASTP optimized for queries shorter than 30 residues
+blastn blastn Traditional BLASTN requiring an exact match of 11
+blastn-short BLASTN program optimized for sequences shorter than 50 bases
+megablast Traditional megablast used to find very similar (e.g., intraspecies or closely related species) sequences
+dc-megablast Discontiguous megablast used to find more distant (e.g., interspecies) sequences
+Megablast indexed searches
+Indexing provides an alternative way to search for initial matches in nucleotide-nucleotide searches (blastn and 
+megablast) by pre-indexing the N-mer locations in a special data structure, called a database index.
+Using an index can improve search times significantly  under certain conditions. It is most beneficial  when the 
+queries are much shorter than the database and works best for queries under 1 Mbases long. The advantage 
+comes from the fact that the whole database does not have to be scanned during the search.
+Indices can capture masking information, thereby enabling search against databases masked for repeats, low 
+complexity, etc.
+There  are, however, limitations to using indexed search in blast:
+•Index files are about four times larger than the blast databases. If an index does not fit into computer 
+operating memory, then the advantage of using it is eliminated.
+•Word size must be set to 16 or more in order to use an indexed search.
+•Discontiguous search is not supported.
+Reference: Morgulis A, Coulouris G, Raytselis Y , Madden TL, Agarwala R, Schäffer  AA. Database Indexing for 
+Production MegaBLAST Searches. Bioinformatics 2008, 24(16):1757-64. PMID:18567917
+Author Affiliations:  1 Email: madden@ncbi.nlm.nih.gov 2 Email: camacho@ncbi.nlm.nih.gov17

@@ -1,0 +1,23 @@
+Exit CodeMeaning
+0 Success
+1 Error in query sequence(s) or BLAST options
+2 Error in BLAST database
+3 Error in BLAST engine
+4 Out of memory
+5 Network error connecting to NCBI to fetch sequence data
+6 Error creating output files
+255 Unknown error
+In the case of BLAST+ database applications, the possible exit codes are 0 (indicating success) and 1 (indicating 
+failure).
+Options for the command-line applications.
+This  appendix consists of several tables that list option names, types, default values, and a short description of 
+the option. These  tables were first published as an appendix to an article in BMC Bioinformatics ( BLAST+: 
+architecture and applications ). They  have been updated for this manual.
+Table C1: Options common to all BLAST+ search applications. An option of type “flag”  takes no argument, but if present is true. Some 
+options are valid only for a local search (“remote” option not used), others are valid only for a remote search (“remote” option used).
+option type default value description and notes
+db string none BLAST database name.
+query string stdin Query file name.
+query_loc string none Location on the query sequence (Format: start-stop)
+out string stdout Output file name
+evalue real 10.0 Expect value (E) for saving hits76 BLAST® Command Line Applications User Manual

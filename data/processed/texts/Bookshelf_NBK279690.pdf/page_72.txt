@@ -1,0 +1,14 @@
+BLAST+ remote service
+The BLAST+ applications can perform a search on the NCBI servers if invoked with the “–remote” flag. All other 
+command-line options are the same as for a stand-alone search.
+The box below shows an example BLAST+ remote search using the blastn application. First, blastn searches the 
+query against the nt database and produces a standard BLAST report. The query file (nt.u00001) contains the 
+sequence for accession u00001 as FASTA. Second, the UNIX grep utility is used to find the RID for the search. 
+Note that the RID can simply be found near the top of the BLAST report. Third,  the RID is then used with 
+blast_formatter to print out the results as a tabular report. Finally, the results are formatted as XML. The RID is 
+only printed as an example and is no longer valid.
+$ blastn –db nt –query nt.u00001 –out test.out -remote
+$ grep RID test.out
+RID: X3R7GAUS014
+$blast_formatter –rid X3R7GAUS014 –out test.tab –outfmt 7 
+$blast_formatter –rid X3R7GAUS014 –out test.xml –outfmt 5 64 BLAST® Command Line Applications User Manual

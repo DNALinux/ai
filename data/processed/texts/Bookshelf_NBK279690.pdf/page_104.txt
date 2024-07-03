@@ -1,0 +1,35 @@
+b.28 bases exact match for MegaBLAST
+c.3 residue match with score above threshold for BLAST[PX]/TBLASTN (default requires 2 
+word hits on a diagonal)
+d.6 residue match with score above threshold for BLAST[PX]/TBLASTN for fast task “blastp-
+fast” etc. (default requires 2 on diagonal)
+2.Perform a gap free extension based on the initial word hits. If this extension has a score above S_g 
+(set so that about one in 50 database sequences pass) then move on to step 3. Otherwise move on 
+to next sequence.
+3.Perform a gapped extension based on the gap free extension. This  gapped extension does not 
+collect traceback information, but only the extent of the alignment and the resulting score 
+(making it fast). This  gapped extension uses a modified  dynamic programming algorithm that 
+only explores a limited space based on a parameter called X_g. If the resulting alignment passes 
+the score cutoff  (determined by expect value) move on to next step, otherwise move on to next 
+sequence.
+4.Save the result for further processing unless there are already N_i better matching sequences 
+saved. Save the results in order of significance,  keeping the best N_i thus far. Move on to next 
+sequence.
+D.For each entry in the list saved in step C4 above:
+1.Perform a gapped alignment with traceback (i.e., collect score, extent, position of indels, etc.) 
+using an X_fg that is larger than X_g. The larger X_fg means that the score and ranking of a match 
+may change. If CBS, then also adjust the score and expect value based on the composition of the 
+subject sequence (the composition of the query is always considered). This  may change the score 
+and ranking of a match, sometimes dramatically.
+2.Add the resulting match to a new ordered list. A tie (two matches with identical score and expect 
+value) is broken by the order of the sequences in the database. Almost every entry processed in the 
+last step results in a significant  match, but an alignment calculated with CBS may become much 
+less statistically significant  and will no longer be saved.
+E.Format a report based on the list saved in D2:
+1.Discard the N_i-N least significant  matches.
+2.Print results for the first N matches.
+The retention of N_i > N matches through the internals of BLAST is intended to ensure that if some matches 
+become more or less significant,  in the last phase of constructing the alignment, that BLAST will still show the 
+user the most relevant matches. For CBS, we increase N_i by a larger amount than for standard gapped BLAST, 
+as the application of CBS may result in a larger change in the significance  of a match. For the same reason, the 
+internal expect value is also increased from the user requested value if CBS is requested.96 BLAST® Command Line Applications User Manual

@@ -1,0 +1,30 @@
+Table C3 continued from previous page.
+option task type default value description and notes
+gapextend blastp-short integer 1 Cost to extend a gap.
+matrix blastp string BLOSUM62 Scoring matrix name.
+matrix blastp-short string PAM30 Scoring matrix name.
+threshold blastp integer 11 Minimum score to add a word to the BLAST lookup table.
+threshold blastp-short integer 16 Minimum score to add a word to the BLAST lookup table.
+Threshold Blastp-fast Integer 21 Minimum score to add a word to the BLAST lookup table.
+comp_based_stats Blastp and blastp-
+faststring 2 Use composition-based statistics:
+D or d: default (equivalent to 2)
+0 or F or f: no composition-based statistics
+1: Composition-based statistics as in NAR 29:2994-3005, 2001
+2 or T or t : Composition-based score adjustment as in Bioinformatics
+21:902-911, 2005, conditioned on sequence properties
+3: Composition-based score adjustment as in Bioinformatics 
+21:902-911, 2005, unconditionally
+comp_based_stats blastp-short string 0 Use composition-based statistics :
+D or d: default (equivalent to 2)
+0 or F or f: no composition-based statistics
+1: Composition-based statistics as in NAR 29:2994-3005, 2001
+2 or T or t : Composition-based score adjustment as in Bioinformatics
+21:902-911, 2005, conditioned on sequence properties
+3: Composition-based score adjustment as in Bioinformatics 
+21:902-911, 2005, unconditionally
+seg all string no Filter query sequence with SEG (Format: 'yes', 'window locut hicut', or 
+'no' to disable).
+soft_masking blastp boolean false Apply filtering  locations as soft masks (i.e., only for finding  initial 
+matches).
+lcase_masking all flag N/A Use lower case filtering  in query and subject sequence(s).Appendices 83

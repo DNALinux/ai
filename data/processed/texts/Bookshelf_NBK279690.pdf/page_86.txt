@@ -1,0 +1,33 @@
+Table C1 continued from previous page.
+option type default value description and notes
+import_search_strategy string none Search strategy file to read.
+export_search_strategy string none Record search strategy to this file.
+parse_deflines flag N/A Parse query and subject bar delimited sequence identifiers  (e.g., gi|129295).
+num_threads integer 1 Number of threads (CPUs) to use in blast search.
+remote flag N/A Execute search on NCBI servers?
+outfmt string 0 alignment view options:
+0 = pairwise,
+1 = query-anchored showing identities,
+2 = query-anchored no identities,
+3 = flat query-anchored, show identities,
+4 = flat query-anchored, no identities,
+5 = XML Blast output,
+6 = tabular,
+7 = tabular with comment lines,
+8 = Text ASN.1,
+9 = Binary ASN.1
+10 = Comma-separated values
+11 = BLAST archive format (ASN.1)
+12 = Seqalign (JSON),
+13 = Multiple-file  BLAST JSON,
+14 = Multiple-file  BLAST XML2,
+15 = Single-file  BLAST JSON,
+16 = Single-file  BLAST XML2,
+17 = Sequence Alignment/Map (SAM),
+18 = Organism Report
+Options 6, 7, and 10 can be additionally configured  to produce a custom format 
+specified  by space delimited format specifiers.
+The supported format specifiers  are:
+qseqid means Query Seq-id
+qgi means Query GI
+qacc means Query accesion78 BLAST® Command Line Applications User Manual

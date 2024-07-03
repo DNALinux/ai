@@ -1,0 +1,25 @@
+Table C2 continued from previous page.
+option task(s) type default value description and notes
+reward megablast integer 1 Reward for a nucleotide match.
+penalty megablast integer -2 Penalty for a nucleotide mismatch.
+reward blastn, dc-megablast integer 2 Reward for a nucleotide match.
+penalty blastn, dc-megablast integer -3 Penalty for a nucleotide mismatch.
+reward blastn-short integer 1 Reward for a nucleotide match.
+penalty blastn-short integer -3 Penalty for a nucleotide mismatch.
+strand all string both Query strand(s) to search against database/subject. Choice of 
+both, minus, or plus.
+dust all string 20 64 1 Filter query sequence with dust.
+filtering_db all string none Mask query using the sequences in this database.
+window_masker_taxid all integer none Enable WindowMasker filtering  using a Taxonomic ID.
+window_masker_db all string none Enable WindowMasker filtering  using this file.
+soft_masking all boolean true Apply filtering  locations as soft masks (i.e., only for finding  
+initial matches).
+lcase_masking all flag N/A Use lower case filtering  in query and subject sequence(s).
+db_soft_mask all integer none Filtering algorithm ID to apply to the BLAST database as soft 
+mask (i.e., only for finding  initial matches).
+db_hard_mask all integer none Filtering algorithm ID to apply to the BLAST database as 
+hard mask (i.e., sequence is masked for all phases of search).
+perc_identity all integer 0 Percent identity cutoff.
+template_type dc-megablast string coding Discontiguous MegaBLAST template type. Allowed values 
+are coding, optimal and coding_and_optimal.
+template_length dc-megablast integer 18 Discontiguous MegaBLAST template length.Appendices 81

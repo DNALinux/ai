@@ -1,0 +1,29 @@
+Introduction
+Created: June 23, 2008; Updated: January 7, 2021.
+Sequence similarity searching is one of the more important bioinformatics activities and often  provides the first 
+evidence for the function of a newly sequenced gene or piece of sequence. Basic Local Alignment Search Tool 
+(BLAST) is probably the most popular similarity search tool. The National Center for Biotechnology 
+Information (NCBI) first introduced BLAST in 1989. The NCBI has continued to maintain and update BLAST 
+since the first version. In 2009, the NCBI introduced a new version of the stand-alone BLAST applications 
+(BLAST+). The BLAST+ applications have a number of improvements that allow faster searches as well as more 
+flexibility  in output formats and in the search input. These  improvements include: splitting of longer queries so 
+as to reduce the memory usage and to take advantage of modern CPU architectures; use of a database index to 
+dramatically speed up the search; the ability to save a “search strategy” that can be used later to start a new 
+search; and greater flexibility  in the formatting of tabular results.
+The functionality of the BLAST+ applications is organized by search type. As an example, there is a “blastp” 
+application that compares proteins queries to protein databases. The “blastx” application translates a nucleotide 
+query in six frames and searches it against a protein database. This  organization is different  from that of the 
+applications first released in 1997 (e.g., blastall) that supported all types of searches with one application, but it 
+resembles that of the NCBI BLAST web site. An advantage of this design is that each application has only the 
+options relevant to the searches it performs. Additionally, each application can compare a query to a set of 
+FASTA sequences in a file, bypassing the need to create a BLAST database for small and infrequently searched 
+sets. Finally, a “remote” option permits each application to send off a search to the NCBI servers.
+This  manual has several sections. It provides brief installation instructions, a QuickStart, a section describing 
+BLAST+ features in more depth, a “ Cook Book ” section on how to perform a number of tasks, as well as three 
+appendices. The first appendix discusses tools to help with the transition from the older applications (e.g., 
+blastall) to the BLAST+ applications. The second appendix documents exit codes from the BLAST+ applications. 
+The third appendix is a table of BLAST options, the type of input required, and the default values for each 
+application. The fourth appendix lists the scoring parameters that the blastn application supports.
+An introduction to BLAST is outside the scope of this manual, more information on this subject can be found on 
+http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs .
+Please feel free to contact us with any questions, feedback, or bug reports at blast-help@ncbi.nlm.nih.gov.3

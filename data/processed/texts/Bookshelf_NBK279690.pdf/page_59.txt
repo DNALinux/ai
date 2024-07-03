@@ -1,0 +1,50 @@
+Building a BLAST database with your (local) sequences
+Created: June 23, 2008; Updated: January 7, 2021.
+If you would like to search the BLAST databases NCBI offers,  please see  Get NCBI BLAST databases
+The makeblastdb application produces BLAST databases from FASTA files.  It is possible to use completely 
+unstructured (or even blank) FASTA definition  lines, but this is not the recommended procedure. Assigning a 
+unique identifier  to every sequence in the database allows you to retrieve the sequence by identifier  and allows 
+you to associate every sequence with a taxonomic node (through the taxid of the sequence). The unique 
+identifier  can be a simple string (as in the example below) or could be actual accession of the sequence if the 
+sequence comes from a public database (e.g., GenBank). Being able to associate a database sequence with a 
+taxonomic node is especially powerful for the version 5 databases that BLAST can use to limit the search by 
+taxonomy . The identifier  should begin right after  the “>” sign on the definition  line and contain no spaces and 
+the -parse_seqids flag should be used. In general, you should not use a “|” (bar) in your identifier.  The “|” (bar) is 
+a reserved character for the NCBI FASTA ID parser and makeblastdb will return an error unless the bar is used 
+in a specific  manner described at https://ncbi.github.io/cxx-toolkit/pages/ch_demo#ch_demo.T5
+An example FASTA file is:
+$ cat test.fsa 
+>seq1
+MSFSTKPLDMATWPDFAALVERHNGVWGGCWCMAFHAKGSGAVGNREAKEARVREGSTHAALVFDGSACVGWCQFGPTGE
+LPRIKHLRAYEDGQAVLPDWRITCFFSDKAFRGKGVAAAALAGALAEIGRLGGGTVESYPEDAQGRTVAGAFLHNGTLAM
+>seq2
+MKAIDLKAEEKKRLIEGIQDFFYEERNEEIGIIAAEKALDFFLSGVGKLIYNKALDESKIWFSRRLEDISLDYELLYK
+>seq3 
+MTLAAAAQSATWTFIDGDWYEGNVAILGPRSHAMWLGTSVFDGARWFEGVAPDLELHAARVNASAIALGLAPNMTPEQIV
+GLTWDGLKKFDGKTAVYIRPMYWAEHGGYMGVPADPASTRFCLCLYESPMISPTGFSVTVSPFRRPTIETMPTNAKAGCL
+YPNNGRAILEAKARGFDNALVLDMLGNVAETGSSNIFLVKDGHVLTPAPNGTFLSGITRSRTMTLLGDYGFRTTEKTLSV
+RDFLEADEIFSTGNHSKVVPITRIEGRDLQPGPVAKKARELYWDWAHSASVG
+>seq4
+MRSFFHHVAAADPASFGVAQRVLTIPIKRAHIEVTHHLTKAEVDALIAAPNPRTSRGRRDRTFLLFLARTGARVSEATGV
+NANDLQLERSHPQVLLRGKGRRDRVIPIPQDLARALTALLAEHGIANHEPRPIFIGARQERLTRFGATHIVRRAAAQAVT
+IKPALAHKPISPHIFRHSLAMKLLQSGVDLLTIQAWLGHAQVATTHRYAAADVEMMRKGLEKAGVSGDLGLRFRPNDAVL
+QLLTSI
+>seq5
+MTISRVCGSRTEAMLTNGQEIAMTSILKSTGAVALLLLYTLTANATSLMISPSSIERVAPDRAAVFHLRNQMDRPISIKV
+RVFRWSQKGGVEKLEPTGDVVASPISAQLSPNGNRAVRVVRVSKEPLRSEEGYRVVIDEADPTRNTPEAESLSARHVLPV
+LFRPPDVLGPEIELSLTRSDGWLMLVVENKGASRLRRSDVTLAQGSAGIARREGFVGYVLPGLTRHWRVGREDSYSGGIV
+TVSANSSGGAIGEQLVVSGR
+>seq6
+TTLLLQVPIGWGVLHQGGALVVLGFAIAHWRGFVGTYTRDTAIEMRD
+An additional (optional) file mapping the identifiers  to taxids (a number identifying a taxonomic node) may be 
+used to associate each sequence with a taxonomic node.
+$ cat test_map.txt
+seq1 68287
+seq2 2382161
+seq3 68287
+seq4 382
+seq5 382
+seq6 382
+The taxid for a taxonomic node can be looked up via https://www.ncbi.nlm.nih.gov/Taxonomy/TaxIdentifier/
+tax_identifier.cgi . Additionally, the NCBI provides other resources. The files in https://ftp.ncbi.nlm.nih.gov/pub/
+taxonomy/accession2taxid/  provide a mapping from accession to taxid (useful if the sequences are from a public 51

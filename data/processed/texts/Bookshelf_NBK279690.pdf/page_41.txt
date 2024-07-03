@@ -1,0 +1,37 @@
+Create a masked BLAST database
+Created: June 23, 2008; Updated: January 7, 2021.
+Creating a masked BLAST database is a two step process:
+a.Generate the masking data using a sequence filtering  utility like windowmasker or dustmasker
+b.Generate the actual BLAST database using makeblastdb
+For both steps, the input file can be a text file containing sequences in FASTA format, or an existing BLAST 
+database created using makeblastdb. We will provide examples for both scenarios.
+Collect mask information files
+For nucleotide sequence data in FASTA files or BLAST database format, we can generate the mask information 
+files using windowmasker or dustmasker. Windowmasker masks the over-represented sequence data and it can 
+also mask the low complexity sequence data using the built-in dust algorithm (through the -dust option). To 
+mask low-complexity sequences only, we will need to use dustmasker.
+For protein sequence data in FASTA files or BLAST database format, we need to use segmasker to generate the 
+mask information file.
+The following examples assume that BLAST databases, listed in “ Obtaining sample data for this cookbook entry ” , 
+are available in the current working directory. Note that you should use the sequence id parsing consistently. In 
+all our examples, we enable this function by including the “-parse_seqids” in the command line arguments.
+Create masking information using dustmasker
+We can generate the masking information with dustmasker using a single command line:
+$ dustmasker -in hs_chr -infmt blastdb -parse_seqids \
+  -outfmt maskinfo_asn1_bin -out hs_chr_dust.asnb
+Here we specify the input is a BLAST database named hs_chr (-in hs_chr -infmt blastdb), enable the sequence id 
+parsing (-parse_seqids), request the mask data in binary asn.1 format (-outfmt maskinfo_asn1_bin), and name 
+the output file as hs_chr_dust.asnb (-out hs_chr_dust.asnb).
+If the input format is the original FASTA file, hs_chr.fa, we need to change input to -in and -infmt options as 
+follows:
+$ dustmasker -in hs_chr.fa -infmt fasta -parse_seqids \
+  -outfmt maskinfo_asn1_bin -out hs_chr_dust.asnb
+Create masking information using windowmasker
+To generate the masking information using windowmasker from the BLAST database hs_chr, we first need to 
+generate a counts file:
+$ windowmasker -in hs_chr -infmt blastdb -mk_counts \
+  -parse_seqids -out hs_chr_mask.counts
+Here we specify the input BLAST database (-in hs_chr -infmt blastdb), request it to generate the counts (-
+mk_counts) with sequence id parsing (-parse_seqids), and save the output to a file named hs_chr_mask.counts 
+(-out hs_chr_mask.counts).
+To use the FASTA file hs_chr.fa to generate the counts, we need to change the input file name and format:33

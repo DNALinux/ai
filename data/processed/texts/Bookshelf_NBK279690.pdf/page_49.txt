@@ -1,0 +1,45 @@
+Display BLAST search results with custom output format
+Created: June 23, 2008; Updated: January 7, 2021.
+The –outfmt option permits formatting arbitrary fields  from the BLAST tabular and comma-separated-value 
+(CSV) formats. Use the –help option on the command-line application (e.g., blastn) to see the supported fields.  
+The max_target_seqs option should be used with any tabular output to control the number of matches reported.
+Example of custom output format: field selection
+The following example shows how to display the results of a BLAST search using a custom output format. The 
+tabular output format with comments is used, but only the query accession, subject accession, evalue, query 
+start, query stop, subject start, and subject stop are requested. For brevity, only the first 10 lines of output are 
+shown:
+$ echo 1786181 | ./blastn -db ecoli -outfmt "7 qacc sacc evalue 
+qstart qend sstart send" 
+# BLASTN 2.2.18+
+# Query: gi|1786181|gb|AE000111.1|AE000111 
+# Database: ecoli
+# Fields: query acc., subject acc., evalue, q. start, q. end, s.
+ start, s. end
+# 85 hits found
+AE000111        AE000111        0.0     1       10596   1       10596
+AE000111        AE000174        8e-30   5565    5671    6928    6821
+AE000111        AE000394        1e-27   5587    5671    135     219
+AE000111        AE000425        6e-26   5587    5671    8552    8468
+AE000111        AE000171        3e-24   5587    5671    2214    2130
+$
+Example of custom output format: output separator
+One can also customize the output separator in the tabular and comma-separated-value output formats using 
+the delim token immediately after  the numeric output format selector. In the example below ‘@’ is used as a 
+custom output separator:
+$ echo 1786181 | blastn -db ecoli -outfmt '6 delim=@' | head 
+AE000111.1@AE000111.1@100.000@10596@0@0@1@10596@1@10596@0.0@19568
+AE000111.1@AE000174.1@88.991@109@9@3@5565@5671@6928@6821@7.69e-30@132
+AE000111.1@AE000394.1@92.941@85@6@0@5587@5671@135@219@1.29e-27@124
+AE000111.1@AE000425.1@91.860@86@5@2@5587@5671@8552@8468@5.99e-26@119
+AE000111.1@AE000171.1@90.588@85@8@0@5587@5671@2214@2130@2.78e-24@113
+AE000111.1@AE000171.1@90.476@84@8@0@5587@5670@10559@10642@1.00e-23@111
+AE000111.1@AE000376.1@88.889@90@7@3@5587@5675@129@42@1.30e-22@108
+AE000111.1@AE000268.1@89.412@85@9@0@5587@5671@6174@6090@1.30e-22@108
+AE000111.1@AE000112.1@100.000@58@0@0@10539@10596@1@58@1.30e-22@108
+AE000111.1@AE000447.1@89.286@84@9@0@5587@5670@681@598@4.66e-22@106 
+$
+Trace-back operations (BTOP)
+The “Blast trace-back operations” (BTOP) string describes the alignment produced by BLAST. This  string is 
+similar to the CIGAR string produced in SAM format, but there are important differences.  BTOP is a more 
+flexible  format that lists not only the aligned region but also matches and mismatches. BTOP operations consist 
+of 1.) a number with a count of matching letters, 2.) two letters showing a mismatch (e.g., “ AG” means A was 41

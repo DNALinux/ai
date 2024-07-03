@@ -1,0 +1,2 @@
+This  manual documents the BLAST (Basic Local Alignment Search Tool) command line 
+applications developed at the National Center for Biotechnology Information (NCBI).iii

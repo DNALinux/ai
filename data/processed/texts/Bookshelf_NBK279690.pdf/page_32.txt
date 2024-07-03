@@ -1,0 +1,33 @@
+Table continued from previous page.
+GENE_INFO_PATH Path to gene information files (NCBI only). Current working 
+directory
+WINDOW_MASKER_PATH Path to windowmasker directory hierarchy. Current working 
+directory
+The following is an example with comments describing the available parameters for configuration:
+; Start the section for BLAST configuration
+[BLAST]
+; Specifies the path where BLAST databases are installed
+BLASTDB=/home/guest/blast/db
+; Specifies the data sources to use for automatic resolution 
+; for sequence identifiers 
+DATA_LOADERS=blastdb 
+; Specifies the BLAST database to use resolve protein sequences 
+BLASTDB_PROT_DATA_LOADER=custom_protein_database 
+; Specifies the BLAST database to use resolve protein sequences 
+BLASTDB_NUCL_DATA_LOADER=/home/some_user/my_nucleotide_db 
+; Windowmasker settings
+[WINDOW_MASKER]
+WINDOW_MASKER_PATH=/home/guest/blast/db/windowmasker
+; end of file
+Configuring BLAST via environment variables
+Please note that the environment variables take precedence over any settings from the NCBI configuration  file.
+Environment Variable Specifies
+NCBI Path to NCBI configuration  file.
+NCBI_DONT_USE_NCBIRC If defined,  no NCBI configuration  file will be used.
+NCBI_DONT_USE_LOCAL_CONFIG If defined,  no NCBI configuration  file on the local directory or the user’s HOME directory 
+will be used
+BLASTDB Path to BLAST databases.
+BLASTMAT Path to scoring matrix files.
+BATCH_SIZE See “Controlling concatenation of queries” and “Memory usage” sections below.
+NCBI_CONFIG__BLAST__X Assuming X is any of the configuration  parameters from the previous section, it serves the 
+same purpose.24 BLAST® Command Line Applications User Manual

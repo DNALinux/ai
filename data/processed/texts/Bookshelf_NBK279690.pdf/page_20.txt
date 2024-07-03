@@ -1,0 +1,28 @@
+Table continued from previous page.
+db_length Length (size) of the database in letters (bases or amino acid characters)
+db_name BLAST database name
+db_num_seqs Number of sequences in the BLAST database.
+evalue_threshold Expect value limit.
+See Command-line options
+exit_status BLAST program exit status. The value ‘0’ indicates success.
+See the Exit codes  in the manual for more information.
+hitlist_size Number of matches to return. This  is the same value as the max_target_seqs option.
+See Command-line options  in the manual.
+ncbi_app Parameter used by NCBI application logging. All BLAST programs return ‘standalone-blast’
+ncbi_location Default parameter for BLAST. Value always ‘be-me for (Bethesda, Maryland)
+ncbi_role Default parameter. Value always production.
+num_queries Number of query sequences in the BLAST search.
+Opt-out of Usage Reporting
+Y ou can opt-out of the usage reporting by adding a .ncbirc (UNIX like) or ncbi.ini (Windows) configuration  file. 
+In the configuration  file you should add a line under the BLAST section to set BLAST_USAGE_REPORT to 
+false. See  here  for details on setting up a configuration  file.
+Y ou may also opt-out of the usage reporting by setting the environment variable BLAST_USAGE_REPORT to 
+false. In bash (under LINUX) this command would be:
+export BLAST_USAGE_REPORT=false
+Note that this environment variable is only set in the shell (i.e., window) you are currently using and will not be 
+set the next time you login. To permanently opt-out, this variable should be set every time a new shell is opened 
+or with a configuration  file, as described above.
+Y ou can also set this environment variable, turning off usage reporting, when using BLAST+ docker by adding 
+the -e option to your docker invocation:
+-e BLAST_USAGE_REPORT=false
+The NLM privacy policy is available  here .12 BLAST® Command Line Applications User Manual

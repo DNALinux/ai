@@ -1,0 +1,22 @@
+Threading By Query
+Tom Madden and Danae Mancinelli
+Created: June 23, 2008; Updated: October 31, 2023.
+BLAST supports two different  methods to multi-thread your search. Depending on the situation, one method 
+may be faster than another. Starting with the 2.15.0 release, BLAST will select your fastest method. Both 
+methods produce the same results. This  section describes the methods, how BLAST selects one, and how you 
+can override the automatic selection (not recommended).
+The two methods are:
+•ThreadByQuery:  This  method works well for input with many queries and a (relatively) small database. 
+With this method, every thread receives a batch of queries, searches the entire database, and formats the 
+results. The thread will then go back to see if more queries need to be searched. Whether this method is 
+faster depends on the program (e.g., BLASTP or BLASTN) and the task (e.g., blastp-fast). See Table 1 -
+Minimum Sizes for FASTA Query below for details.
+•ThreadByDatabase:  This  method works well for larger databases and handles any number of queries well. 
+With this method, all threads process one batch of queries, splitting up the work of searching the database.
+BLAST now automatically selects the best threading model based on the table data below. Limiting your search 
+by taxid (using -taxids or -taxidlist) or by a GI list effectively  decreases your database size. BLAST will consider 
+that information when deciding on the best threading model.
+Below, we show an example where ThreadByQuery  works well. The orange line shows results for 
+ThreadByQuery,  where each thread works independently on a batch of sequences. The blue line shows the 
+ThreadByDatabase  method appropriate for large databases or a few queries.
+69

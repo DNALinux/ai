@@ -1,0 +1,32 @@
+BLAST search strategies
+BLAST search strategies are files that encode the inputs necessary to perform a BLAST search. The purpose of 
+these files is to be able to seamlessly reproduce a BLAST search in various environments (Web BLAST, command 
+line applications, etc).
+Exporting search strategies on the Web BLAST
+Click on "download" next to the RID/saved strategy in the "Recent Results" or "Saved Strategies" tabs.
+Exporting search strategies with BLAST+ applications
+Add the -export_search_strategy along with a file name to the command line options.
+Importing search strategies on Web BLAST
+Go to the "Saved Strategies" tab, click on "Browse" to select your search strategy file, then click on "View" to load 
+it into the submission page.
+Importing search strategies with BLAST+ applications
+Add the -import_search_strategy along with a file name containing the search strategy file. Note that if provided, 
+the –query, -db, -use_index, and –index_name command line options will override the specifications  of the 
+search strategy file provided (no other command line options will override the contents of the search strategy 
+file).
+Negative GI lists
+Search applications support negative GI lists. This  feature provides a means to exclude GIs from a BLAST 
+database search. The expect values in the BLAST results are based upon the sequences actually searched and not 
+on the underlying database. For an example, see the cookbook.
+Masking in BLAST databases
+It is now possible to create BLAST databases that contain filtered  sequences (also known as masking information 
+or masks). This  filtering  information can be used for soft or hard masking of the subject sequences. For 
+instructions on creating masked BLAST databases, please see the cookbook .
+Custom output formats for BLAST searches
+The BLAST+ search command line applications support custom output formats for the tabular and comma-
+separated value output formats. For more details see “outfmt” in Appendix “Options for the command-line 
+application” as well as the cookbook .
+Custom output formats to extract BLAST database data
+blastdbcmd supports custom output formats to extract data from BLAST databases via the -outfmt command 
+line option. For more details see the blastdbcmd options in Appendix “Options for the command-line 
+application” as well as the cookbook .18 BLAST® Command Line Applications User Manual

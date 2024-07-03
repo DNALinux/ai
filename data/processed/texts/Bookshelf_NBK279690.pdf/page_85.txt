@@ -1,0 +1,26 @@
+Table C1 continued from previous page.
+option type default value description and notes
+subject string none File with subject sequence(s) to search.
+subject_loc string none Location on the subject sequence (Format: start-stop).
+show_gis flag N/A Show NCBI GIs in report.
+num_descriptions integer 500 Show one-line descriptions for this number of database sequences.
+num_alignments integer 250 Show alignments for this number of database sequences.
+max_target_seqs integer 500 Number of aligned sequences to keep. Use with report formats that do not have 
+separate definition  line and alignment sections such as tabular (all outfmt > 4). Not 
+compatible with num_descriptions or num_alignments. Ties are broken by order of 
+sequences in the database.
+max_hsps integer none Maximum number of HSPs (alignments) to keep for any single query-subject pair. 
+The HSPs shown will be the best as judged by expect value. This  number should be an 
+integer that is one or greater. If this option is not set, BLAST shows all HSPs meeting 
+the expect value criteria. Setting it to one will show only the best HSP for every 
+query-subject pair
+html flag N/A Produce HTML output
+gilist string none Restrict search of database to GI’s listed in this file. Local searches only.
+negative_gilist string none Restrict search of database to everything except the GI’s listed in this file. Local 
+searches only.
+entrez_query string none Restrict search with the given Entrez query. Remote searches only.
+culling_limit integer none Delete a hit that is enveloped by at least this many higher-scoring hits.
+best_hit_overhang real none Best Hit algorithm overhang value (recommended value: 0.1)
+best_hit_score_edge real none Best Hit algorithm score edge value (recommended value: 0.1)
+dbsize integer none Effective  size of the database
+searchsp integer none Effective  length of the search spaceAppendices 77

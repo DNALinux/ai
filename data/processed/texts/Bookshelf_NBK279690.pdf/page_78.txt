@@ -1,0 +1,23 @@
+BLASTP search of 19,338 human proteins from the refseq_select protein database against swissprot. The top 
+(red) line is ThreadByDatabase,  and the bottom (blue) line is ThreadbyQuery.  For 32 threads, the search is 2.2 
+times faster (11 minutes vs 24 minutes) with ThreadingByQuery.  The task blastp-fast was used.
+Though  this is not recommended, you may override the automatic selection by BLAST with the -mt_mode. Use 
+one as a value for ThreadByQuery  and 2 for ThreadByDatabase.  The default value for the -mt_mode option is 0, 
+which means BLAST selects a method for you. Y ou can specify the number of threads with the “-num_threads” 
+option. See the command line example below.
+$ blastp –db swissprot -query BIGFASTA.fsa –out test.out -num_threads 32 -mt_mode 1
+To run ThreadByQuery  well, the query file should be above a minimum size and the database below a maximum 
+size. Minimum sizes (in bytes) for FASTA query files and maximum database sizes (bases or residues) are listed 
+in the table below. Both criteria must be satisfied  for BLAST to run a search with ThreadByQuery.  We 
+established the values in this table through a large number of experiments and have found them to be reliable in 
+almost all cases.
+Table 1. -Minimum Sizes for FASTA Query
+Program Task Query file size (bytes) Database (letters)
+BLASTN megablast 10,000,000 6,000,000,000
+BLASTN blastn 1,500,000 150,000,000
+BLASTP blastp-fast 200,000 2,500,000,000
+BLASTP blastp 200,000 740,000,000
+BLASTX blastx-fast 1,250,000 900,000,000
+BLASTX blastx 1,250,000 900,000,000
+TBLASTN tblastn-fast 200,000 350,000,000
+TBLASTN tblastn 200,000 280,000,00070 BLAST® Command Line Applications User Manual

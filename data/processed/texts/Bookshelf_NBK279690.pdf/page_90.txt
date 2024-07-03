@@ -1,0 +1,26 @@
+Table C2 continued from previous page.
+option task(s) type default value description and notes
+use_index megablast boolean false Use MegaBLAST database index. Indices may be created 
+with the makembindex application.
+index_name megablast string none MegaBLAST database index name.
+xdrop_ungap all real 20 Heuristic value (in bits) for ungapped extensions.
+xdrop_gap all real 30 Heuristic value (in bits) for preliminary gapped extensions.
+xdrop_gap_final all real 100 Heuristic value (in bits) for final  gapped alignment.
+no_greedy megablast flag N/A Use non-greedy dynamic programming extension.
+min_raw_gapped_score all integer none Minimum raw gapped score to keep an alignment in the 
+preliminary gapped and trace-back stages. Normally set 
+based upon expect value.
+ungapped all flag N/A Perform ungapped alignment.
+window_size dc-megablast integer 40 Multiple hits window size, use 0 to specify 1-hit algorithm
+Table C3: blastp application options. The blastp application searches a protein sequence against protein subject sequences or a protein 
+database. An option of type “flag”  takes no arguments, but if present the argument is true. Three  different  tasks are supported: 1.) 
+“blastp” , for standard protein-protein comparisons, 2.) “blastp-short” , optimized for query sequences shorter than 30 residues, and 3.) 
+“blastp-fast” , a faster version that uses a larger word-size per https://www.ncbi.nlm.nih.gov/pubmed/17921491 . This  table reflects  the 
+2.2.27 BLAST+ release.
+option task type default value description and notes
+word_size blastp integer 3 Word size of initial match. Valid word sizes are 2-7.
+word_size blastp-short integer 2 Word size of initial match.
+word size blastp-fast Integer 6 Word size of initial match
+gapopen blastp integer 11 Cost to open a gap.
+gapextend blastp integer 1 Cost to extend a gap.
+gapopen blastp-short integer 9 Cost to open a gap.82 BLAST® Command Line Applications User Manual

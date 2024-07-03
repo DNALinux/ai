@@ -1,0 +1,40 @@
+Table D1 continued from previous page.
+reward/penalty gap costs (open/extend) default MegaBLAST gap costs (open/extend)
+3/-4 6/3, 5/3, 4/3, 6/2, 5/2, 4/2 N/A
+4/-5 6/5, 5/5, 4/5, 3/5 N/A
+1/-1 3/2, 2/2, 1/2, 0/2, 4/1, 3/1, 2/1 N/A
+3/-2 5/5 N/A
+5/-4 10/6, 8/6 N/A
+BLAST Substitution Matrices
+BLAST uses a substitution matrix for any program that aligns residues. The program may align residues because 
+both the query and database consist of proteins (e.g. BLASTP) or the program may align DNA translated to 
+protein with protein (e.g. BLASTX). A key element in evaluating the quality of a pairwise sequence alignment is 
+the "substitution matrix", which assigns a score for aligning any possible pair of residues. The theory of amino 
+acid substitution matrices is described in [ 1], and applied to DNA sequence comparison in [ 2]. In general, 
+different  substitution matrices are tailored to detecting similarities among sequences that are diverged by 
+differing  degrees [ 1-3]. A single matrix may nevertheless be reasonably efficient  over a relatively broad range of 
+evolutionary change [ 1-3]. Experimentation has shown that the BLOSUM-62 matrix [ 4] is among the best for 
+detecting most weak protein similarities. For particularly long and weak alignments, the BLOSUM-45 matrix 
+may prove superior. A detailed statistical theory for gapped alignments has not been developed, and the best gap 
+costs to use with a given substitution matrix are determined empirically. Short alignments need to be relatively 
+strong (i.e. have a higher percentage of matching residues) to rise above background noise. Such short but strong 
+alignments are more easily detected using a matrix with a higher "relative entropy" [ 1] than that of BLOSUM-62. 
+In particular, short query sequences can only produce short alignments, and therefore database searches with 
+short queries should use an appropriately tailored matrix. The BLOSUM series does not include any matrices 
+with relative entropies suitable for the shortest queries, so the older PAM matrices [ 5,6] may be used instead. For 
+proteins, a provisional table of recommended substitution matrices and gap costs for various query lengths is:
+Query Length Substitution Matrix Gap Costs
+<35 PAM-30 (9, 1)
+35-50 PAM-70 (10, 1)
+50-85 BLOSUM-80 (10, 1)
+>85 BLOSUM-62 (11, 1)
+Gap Costs
+The raw score of an alignment is the sum of the scores for aligning pairs of residues and the scores for gaps. 
+Gapped BLAST and PSI-BLAST use "affine  gap costs" which charge the score -a for the existence of a gap, and 
+the score -b for each residue in the gap. Thus  a gap of k residues receives a total score of -(a+bk); specifically,  a 
+gap of length 1 receives the score -(a+b).
+Lambda Ratio
+To convert a raw score S into a normalized score S' expressed in bits, one uses the formula S' = (lambda*S - ln 
+K)/(ln 2), where lambda and K are parameters dependent upon the scoring system (substitution matrix and gap 
+costs) employed [ 7-9]. For determining S', the more important of these parameters is lambda. The "lambda ratio" 
+quoted here is the ratio of the lambda for the given scoring system to that for one using the same substitution 94 BLAST® Command Line Applications User Manual

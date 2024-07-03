@@ -1,0 +1,10 @@
+Ignoring the consensus sequence in the multiple sequence 
+alignment in psiblast
+Created: June 23, 2008; Updated: January 7, 2021.
+Often  a consensus sequence is added to a multiple sequence alignment to be used as the master sequence in a 
+PSI-BLAST search. The consensus sequence provides a good option to display the query-subject alignment in 
+the output and to define  which MSA columns are to be converted to PSSM. At the same time adding the 
+consensus sequence changes the statistical properties of the original alignment. To avoid this, the 
+-ignore_msa_master option can be used:
+psiblast -in_msa align1 -db pataa -ignore_msa_master 
+In this case the master sequence is displayed in the output but ignored when the PSSM scores are calculated.61

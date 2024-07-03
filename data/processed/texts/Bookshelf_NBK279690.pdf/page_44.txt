@@ -1,0 +1,37 @@
+$ blastdbcmd -db hs_chr -info 
+we can see that both sets of masking information are available:
+Database: Human Chromosome, Ref B37.1
+        24 sequences; 3,095,677,412 total bases
+Date: Aug 25, 2009  4:43 PM     Longest sequence: 249,250,621 bases
+Available filtering algorithms applied to database sequences:
+Algorithm ID  Algorithm name      Algorithm options                       
+    11        dust                window=64; level=20; linker=1           
+    30        windowmasker                                                
+Volumes:
+        /net/gizmo4/export/home/tao/blast_test/hs_chr
+A more straightforward approach to apply multiple sets of masking information in a single makeblastdb run by 
+providing multiple set of masking data files in a comma delimited list:
+$ makeblastdb -in hs_chr –input_type blastdb -dbtype nucl -parse_seqids \
+  -mask_data hs_chr_dust.asnb, hs_chr_mask.asnb -out hs_chr
+Create a protein BLAST database with masking information
+We can use the masking data file generated in “ Create masking information using segmasker ” to create a protein 
+BLAST database:
+$ makeblastdb -in refseq_protein –input_type blastdb -dbtype prot -parse_seqids \
+ -mask_data refseq_seg.asnb -out refseq_protein -title \
+ "RefSeq Protein Database"
+Using blastdbcmd, we can check the database thus generated:
+$ blastdbcmd -db refseq_protein -info
+This  produces the following summary, which includes the masking information:
+Database: RefSeq Protein Database
+        7,044,477 sequences; 2,469,203,411 total residues
+Date: Sep 1, 2009  10:50 AM     Longest sequence: 36,805 residues
+Available filtering algorithms applied to database sequences:
+Algorithm ID  Algorithm name      Algorithm options                       
+    21        seg                 window=12; locut=2.2; hicut=2.5         
+Volumes:
+        /export/home/tao/blast_test/refseq_protein2.00
+        /export/home/tao/blast_test/refseq_protein2.01
+        /export/home/tao/blast_test/refseq_protein2.02
+Create a nucleotide BLAST database using the masking information 
+extracted from lower case masked FASTA file
+We use the following command line:36 BLAST® Command Line Applications User Manual

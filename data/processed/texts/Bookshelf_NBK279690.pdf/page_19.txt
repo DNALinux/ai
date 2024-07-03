@@ -1,0 +1,42 @@
+Privacy
+Created: June 23, 2008; Updated: March 24, 2022.
+Privacy Statement
+As part of our effort  to improve BLAST+, we have implemented usage reporting to collect limited data. This 
+information shows us whether BLAST+ is being used by the community, and therefore is worth being 
+maintained and developed by NCBI. It also allows us to focus our development efforts  on the most used aspects 
+of BLAST+. If possible, please report your usage, so we can continue to support and develop BLAST+ to best suit 
+your needs.
+Y ou can easily opt-out of sending information about your searches if you wish by following the instructions 
+below . This  offers  you greater privacy control than sending searches over the internet using web tools or the 
+-remote option on a BLAST+ executable, which also accesses the web service.
+Information sent back to NCBI is limited to the name of the BLAST program, database metadata, a few BLAST 
+parameters, as well the number and total size of your queries without any data association that might reveal the 
+context of your research. No sequences from your queries or database are sent to the NCBI. An example set of 
+data from a BLAST search is provided below. More information about each item is shown in the table following 
+the list.
+IP=27.18.28.18
+comp_based_stats=2
+db_date=Aug 26, 2020 3:12 AM
+db_length=179658219
+db_name=swissprot
+db_num_seqs=474714
+evalue_threshold=10.000000
+exit_status=0
+hitlist_size=500
+ncbi_app=standalone-blast
+ncbi_location=be-md
+ncbi_role=production
+num_queries=1
+num_threads=2
+os=UNIX
+output_fmt=11
+program=blastp
+queries_length=656
+run_time=3.076507
+task=blastp
+version=2.11.0
+Reported parameter Description
+IP The apparent IP address of the machine running BLAST
+comp_based_stats Composition based statistics setting
+See Command-line options  in the manual.
+db_date Creation date of the BLAST database11

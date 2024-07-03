@@ -1,0 +1,39 @@
+Installation
+Created: June 23, 2008; Updated: May 16, 2024.
+Installation instructions are available for Windows  and LINUX/UNIX . This  section provides instructions for a 
+few cases not covered by those entries.
+The BLAST+ applications are distributed both as an executable and as source code. For the executable formats 
+we provide installers as well as tarballs; the source code is only provided as a tarball. These  are freely available at 
+ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/ . Please be sure to use the most recent available version; this 
+will be indicated in the file name (for instance, in the sections below, version 2.2.18 is listed, but this should be 
+replaced accordingly).
+MacOSX
+For users without administrator privileges: follow the procedure described in http://www.ncbi.nlm.nih.gov/
+books/NBK52640/
+For users with administrator privileges and machines MacOSX version 10.5 or higher: Download the ncbi-
+blast-2.2.18+.dmg installer and double click on it. Double click the newly mounted ncbi-blast-2.2.18+ volume, 
+double click on ncbi-blast-2.2.18+.pkg and follow the instructions in the installer. By default the BLAST+ 
+applications are installed in /usr/local/ncbi/blast, overwriting its previous contents (an uninstaller is provided 
+and it is recommended when upgrading a BLAST+ installation).
+RedHat Linux
+Download the appropriate *.rpm file for your platform and either install or upgrade the ncbi-blast+ package as 
+appropriate using the commands:
+Install:
+    rpm -ivh ncbi-blast-2.2.18-1.x86_64.rpm
+Upgrade:
+    rpm -Uvh ncbi-blast-2.2.18-1.x86_64.rpm
+Note: one must have root privileges to run these commands. If you do not have root privileges, please use the 
+procedure described in http://www.ncbi.nlm.nih.gov/books/NBK52640/
+Source tarball
+Use this approach to build the BLAST+ applications yourself. Please be sure to have available (or install) the 
+necessary compile time dependencies . Download the tarball, expand it, change directories to the newly created 
+directory, and type the following commands:
+In Linux In macOS
+cd c++ cd c++
+./configure ./configure  --without-openmp
+cd ReleaseMT/build cd ReleaseMT/build
+make all_r make all_r
+The compiled executables will be found in c++/ReleaseMT/bin. Please note that this sequence of commands will 
+build the applications with optimizations, with support for multi-threading and it may require the installation of 
+dependencies (see following section). If a different  configuration  is desired, please use the configure.orig  script 
+located in the same directory.5

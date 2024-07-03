@@ -1,0 +1,12 @@
+Query a BLAST database with an accession, but exclude that 
+accession from the results
+Created: June 23, 2008; Updated: January 7, 2021.
+# Extract a GI from the ecoli database:
+$ blastdbcmd -entry all -db ecoli -dbtype nucl -outfmt %a | head -1 | \
+  tee exclude_me 
+AE000111.1
+# Run the restricted database search, which shows there are no self-hits:
+$ blastn -db ecoli -negative_seqidlist exclude_me -show_gis -num_alignments 0 \
+  -query exclude_me | grep `cat exclude_me`
+Query= AE000111.1 Escherichia coli K-12 MG1655 section 1 of 400 of the 
+$65

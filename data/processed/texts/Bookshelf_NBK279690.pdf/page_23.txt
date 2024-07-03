@@ -1,0 +1,17 @@
+Functionality offered by BLAST+ applications
+Tom Madden1
+Created: June 23, 2008; Updated: September 25, 2020.
+The functionality offered  by the BLAST+ applications has been organized by program type, as to more closely 
+resemble Web BLAST.
+As an example, to run a search of a nucleotide query (translated “on the fly” by BLAST) against a protein 
+database one would use the blastx application. The blastx application will also work in “Blast2Sequences” mode 
+(i.e.: accept FASTA sequences instead of a BLAST database as targets) and can also send BLAST searches over 
+the network to the public NCBI server if desired.
+The BLAST+ package offers  three categories of applications: 1.) search tools, 2.) BLAST database tools, and 3.) 
+sequence filtering  tools. The blastn, blastp, blastx, tblastx, tblastn, psiblast, rpsblast, and rpstblastn are considered 
+search applications, as they execute a BLAST search, whereas makeblastdb, blastdb_aliastool, makeprofiledb,  and 
+blastdbcmd are considered BLAST database applications, as they either create or examine BLAST databases.
+There  is also a new set of sequence filtering  applications described in the section Sequence filtering  applications 
+and an application to build database indices that greatly speed up megablast in some cases (see section titled 
+Megablast indexed searches ).
+Author Affiliation:  1 Email: madden@ncbi.nlm.nih.gov15

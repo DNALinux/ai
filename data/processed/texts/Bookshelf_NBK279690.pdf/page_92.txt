@@ -1,0 +1,26 @@
+Table C3 continued from previous page.
+option task type default value description and notes
+db_soft_mask all integer none Filtering algorithm ID to apply to the BLAST database as soft mask 
+(i.e., only for finding  initial matches).
+db_hard_mask all integer none Filtering algorithm ID to apply to the BLAST database as hard mask 
+(i.e., sequence is masked for all phases of search).
+xdrop_gap_final all real 25 Heuristic value (in bits) for final  gapped alignment/
+window_size Blastp and blastp-
+fastinteger 40 Multiple hits window size, use 0 to specify 1-hit algorithm.
+window_size blastp-short integer 15 Multiple hits window size, use 0 to specify 1-hit algorithm.
+use_sw_tback all flag N/A Compute locally optimal Smith-Waterman alignments?
+Table C4: blastx application options. The blastx application translates a nucleotide query and searches it against protein subject 
+sequences or a protein database. Two different  tasks are supported: 1.) “blastx” for standard translated nucleotide-protein comparison 
+and 2.) “blastx-fast” , a faster version that uses a larger word-size based on https://www.ncbi.nlm.nih.gov/pubmed/17921491 .
+option task type default value description and notes
+word_size Blastx integer 3 Word size for initial match. Valid word sizes are 2-7.
+word_size Blastx-fast Integer 6 Word size for initial match.
+gapopen All integer 11 Cost to open a gap.
+gapextend All integer 1 Cost to extend a gap.
+matrix All string BLOSUM62 Scoring matrix name.
+threshold Blastx integer 12 Minimum score to add a word to the BLAST lookup table.
+threshold Blastx-fast Integer 21 Minimum score to add a word to the BLAST lookup table.
+seg All string 12 2.2 2.5 Filter query sequence with SEG (Format: 'yes', 'window locut hicut', or 'no' 
+to disable).
+soft_masking all boolean false Apply filtering  locations as soft masks (i.e., only for finding  initial matches).
+lcase_masking all flag N/A Use lower case filtering  in query and subject sequence(s).84 BLAST® Command Line Applications User Manual

@@ -1,0 +1,35 @@
+Configuring BLAST
+Tom Madden1
+Created: June 23, 2008; Updated: September 25, 2020.
+The BLAST+ search applications can be configured  by means of a configuration  file or environment variables.
+Configuring BLAST via configuration file
+This  can be accomplished with a configuration  file named .ncbirc (on Unix-like platforms) or ncbi.ini (on 
+Windows). This  is a plain text file that contains sections and key-value pairs to specify configuration  parameters. 
+Lines starting with a semi-colon are considered comments. The application will search for the file in the 
+following order and locations:
+1.Current working directory (*)
+2.User's HOME directory (*)
+3.Directory specified  by the NCBI environment variable
+4.The standard system directory (“/etc” on Unix-like systems, and given by the environment variable 
+SYSTEMROOT on Windows)
+(*) Unless the NCBI_DONT_USE_LOCAL_CONFIG environment variable is defined.
+The search for this file will stop at the first location where it is found and the configurations  settings from that 
+file will be applied. If the configuration  file is not found or if the NCBI_DONT_USE_NCBIRC environment 
+variable is defined,  the default values will apply. The following are the possible configuration  parameters that 
+impact the BLAST+ applications:
+Configuration  Parameter Specifies Default value
+BLASTDB Path to BLAST databases. Current working 
+directory
+DATA_LOADERS Data loaders to use for automatic sequence identifier  resolution. 
+This  is a comma separated list of the following keywords: blastdb, 
+genbank, and none. The none keyword disables this feature and 
+takes precedence over any other keywords specified.blastdb,genbank
+BLASTDB_PROT_DATA_LOADER Locally available BLAST database name to search when resolving 
+protein sequences using BLAST databases. Ignored if 
+DATA_LOADERS does not include the blastdb keyword.nr
+BLASTDB_NUCL_DATA_LOADER Locally available BLAST database name to search when resolving 
+nucleotide sequences using BLAST databases. Ignored if 
+DATA_LOADERS does not include the blastdb keyword.nt
+BLAST_USAGE_REPORT Specifies  whether or not usage information should be returned to 
+the NCBI. Set this value to false to disable this feature.true
+Author Affiliation:  1 Email: madden@ncbi.nlm.nih.gov23

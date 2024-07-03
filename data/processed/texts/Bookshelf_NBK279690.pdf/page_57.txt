@@ -1,0 +1,14 @@
+Use Windowmasker to filter the query sequence(s) in a BLAST 
+search
+Created: June 23, 2008; Updated: January 7, 2021.
+The blastn executable can filter  a query sequence using the windowmasker data files.  This  option can be used to 
+mask interspersed repeats that may lead to spurious matches. The windowmasker data files should be created as 
+discussed in step 1 of “ Create masking information using windowmasker ” or downloaded from the NCBI FTP 
+site. Follow the instructions in Configuring  BLAST  to make sure BLAST will be able to find the windowmasker 
+files in the examples below.
+1. Run BLAST search using Windowmasker for sequence filtering based upon taxid 
+(9606 is the taxid for human).
+$ blastn -query input -db database -window_masker_taxid 9606 -out results.txt
+2. Run BLAST search using Windowmasker for sequence filtering based upon the windowmasker 
+file name.
+$ blastn –query input –db database –window_masker_db 9606/wmasker.obinary49

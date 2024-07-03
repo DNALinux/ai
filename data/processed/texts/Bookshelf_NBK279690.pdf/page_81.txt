@@ -1,0 +1,7 @@
+How to check BLAST database integrity?
+Created: May 16, 2024.
+The blastdbcheck application can validate the integrity of a BLAST database. This  may be helpful to do after  you 
+have downloaded a BLAST database. For instance, to validate the protein swissprot database, run the command:
+$ blastdbcheck -db swissprot -dbtype prot
+If the application reports any errors, please check that there is enough disk space available to store the BLAST 
+database and/or try again.73

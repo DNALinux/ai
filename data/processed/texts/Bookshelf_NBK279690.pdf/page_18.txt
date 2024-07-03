@@ -1,0 +1,2 @@
+# Install it in the BLASTDB directory
+gunzip -cd taxdb.tar.gz | (cd $BLASTDB; tar xvf - )10 BLAST® Command Line Applications User Manual

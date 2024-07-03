@@ -1,0 +1,26 @@
+Table C9: Makeprofiledb  application options. This  application builds an RPS-BLAST database. An option of type “flag”  takes no 
+arguments, but if present the argument is true. COBALT (a multiple sequence alignment program) and DELTA-BLAST both use RPS-
+BLAST searches as part of their processing but use specialized versions of the database. This  application can build databases for 
+COBALT, DELTA-BLAST, and a standard RPS-BLAST search. The “dbtype” option (see entry in table) determines which flavor  of the 
+database is built.
+option type default value Description and notes
+in string stdin Input file that contains a list of scoremat files (delimited by space, tab, or newline)
+binary flag N/A The scoremat files are binary ASN.1
+title string none Title for RPS-BLAST database. If not set, the input file name will be used.
+threshold real 9.82 Threshold  for RPSBLAST lookup table.
+out string input file name Name of BLAST database to be created. Input file name is used if none provided.
+max_file_size string 1GB Maximum file size to use for BLAST database.
+dbtype string rps Specifies  use for RPSBLAST db. One of rps, cobalt, or delta.
+index flag N/A Creates index files.
+gapopen integer none Cost to open a gap. Used only if scoremat files do not contain PSSM scores, otherwise 
+ignored.
+gapextend integer none Cost to extend a gap by one residue. Used only if scoremat files do not contain PSSM 
+scores, otherwise ignored.
+scale real 100 PSSM scale factor.
+matrix string BLOSUM62 Matrix to use in constructing PSSM. One of BLOSUM45, BLOSUM50, BLOSUM62, 
+BLOSUM80, BLOSUM90, PAM250, PAM30 or PAM70. Used only if scoremat files do not 
+contain PSSM scores, otherwise ignored.
+obsr_threshold real 6 Exclude domains with maximum number of independent observations below this value 
+(for use in DELTA-BLAST searches).
+exclude_invalid real true Exclude domains that do not pass validation test (for use in DELTA-BLAST searches).
+logfile string none Program log file (default is stderr).90 BLAST® Command Line Applications User Manual

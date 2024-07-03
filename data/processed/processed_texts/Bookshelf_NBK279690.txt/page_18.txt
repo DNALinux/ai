@@ -1,0 +1,1 @@
+install blastdb directory gunzip cd taxdbtargz cd blastdb tar xvf 10 blast command line application user manual

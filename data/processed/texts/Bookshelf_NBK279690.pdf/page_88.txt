@@ -1,0 +1,35 @@
+Table C1 continued from previous page.
+option type default value description and notes
+stitle means Subject Title
+salltitles means All Subject Title(s), separated by a '<>'
+sstrand means Subject Strand
+qcovs means Query Coverage Per Subject (for all HSPs)
+qcovhsp means Query Coverage Per HSP
+qcovus is a measure of Query Coverage that counts a position in a subject sequence 
+for this measure only once. The second time the position is aligned to the query is not 
+counted towards this measure.
+When not provided, the default value is:
+'qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue 
+bitscore', which is equivalent to the keyword 'std'
+Table C2: blastn application options. The blastn application searches a nucleotide query against nucleotide subject sequences or a 
+nucleotide database. An option of type “flag”  takes no arguments, but if present the argument is true. Four different  tasks are 
+supported: 1.) “megablast” , for very similar sequences (e.g, sequencing errors), 2.) “dc-megablast” , typically used for inter-species 
+comparisons, 3.) “blastn” , the traditional program used for inter-species comparisons, 4.) “blastn-short” , optimized for sequences less 
+than 30 nucleotides.
+option task(s) type default value description and notes
+word_size megablast integer 28 Length of initial exact match.
+word_size dc-megablast integer 11 Number of matching nucleotides in initial match. dc-
+megablast allows non-consecutive letters to match.
+word_size blastn integer 11 Length of initial exact match.
+word_size blastn-short integer 7 Length of initial exact match.
+gapopen megablast integer 0 Cost to open a gap. See appendix “BLASTN reward/penalty 
+values” .
+gapextend megablast integer none Cost to extend a gap. This  default is a function of reward/
+penalty value. See appendix “BLASTN reward/penalty 
+values” .
+gapopen blastn, blastn-short, 
+dc-megablastinteger 5 Cost to open a gap. See appendix “BLASTN reward/penalty 
+values” .
+gapextend blastn, blastn-short, 
+dc-megablastinteger 2 Cost to extend a gap. See appendix “BLASTN reward/penalty 
+values” .80 BLAST® Command Line Applications User Manual

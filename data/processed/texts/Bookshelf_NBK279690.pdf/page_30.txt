@@ -1,0 +1,32 @@
+Taxonomic filtering for BLAST databases
+A popular feature of BLAST is the ability to filter  the search of a BLAST database by  taxonomy . The BLAST+ 
+command line applications provide this functionality via several command line options:
+•taxids
+•negative_taxids
+•taxidlist
+•negative_taxidlist
+These  options take as input NCBI taxonomy IDs (taxIDs), which are stable, unique numerical identifiers  
+for NCBI Taxonomy  entries or TaxNodes (see  Data model in the NCBI taxonomy handbook  for details).
+Here is an example:
+BLASTP search of the nr BLAST database limited to Bacteria (taxID 2)
+1blastp -db nr -taxids 2 -query ...
+Starting with BLAST+ 2.15.0, the BLAST+ command line applications support a new feature: they accept non-
+leaf taxIDs (i.e., those above an organism level, such as the one for primates). This  improvement obviates the 
+need to invoke separate tools or have network connectivity to limit non-leaf taxIDs. To support this feature, the 
+NCBI distributes a standalone, file-based  database called taxonomy4blast.sqlite3 . This  additional database 
+allows efficient  taxonomic filtering  for BLAST databases. For convenience, this database file is distributed 
+alongside all BLAST databases distributed by the NCBI.
+If you are using your own BLAST database(s) and would like to take advantage of this feature, you must  set the 
+taxonomy IDs in your database(s)  and can get the taxonomy4blast.sqlite3 database by downloading  https://
+ftp.ncbi.nlm.nih.gov/blast/db/taxdb.tar.gz  , decompressing it and installing it alongside your other BLAST 
+database(s).
+Note for blastdbcmd users.
+blastdbcmd supports filtering  by taxID as well, but in the case of non-redundant databases (e.g.: protein nr ) - 
+where identical sequences are merged into the same entry in the BLAST database, regarless of its taxonomy - it 
+may be advantageous to use the -target_only command line option when using -taxids . This  will 
+restrict blastdbcmd 's output to taxids matching those in the blastdbcmd invocation and their descendants 
+(unless the -no_taxid_expansion option is used).
+Note for developers and those who compile BLAST source code.
+SQLite version 3.34  or more recent is required for this feature to work, as support for compound statements 
+in recursive CTEs (Common Table Expressions)  is needed.
+Pre-compiled executables from the NCBI do not require that SQLite be installed.22 BLAST® Command Line Applications User Manual

@@ -1,0 +1,10 @@
+Faster sequence lookups by accession
+Created: June 23, 2008; Updated: January 7, 2021.
+Starting with BLASTDB version 5, blastdbcmd has two additional parameters (-taxids and -taxidlists) to 
+efficiently  retrieve sequences by taxid.
+# Retrieves all human entries; 
+# %a prints the accession, %T prints the taxid, %S prints the scientific name
+$ blastdbcmd -db nr -taxids 9606 -outfmt “%a %T %S” -target_only 
+Note: -target_only is used to ensure that only accessions for the human entries are present. Otherwise, it will 
+present all accessions on any sequence with at least one human sequence. This  is important since nr is a non-
+redundant database.67

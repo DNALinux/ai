@@ -1,0 +1,28 @@
+Table C5 continued from previous page.
+option task type default value description and notes
+comp_based_stats all string 2 Use composition-based statistics for tblastn:
+D or d: default (equivalent to 2)
+0 or F or f: no composition-based statistics
+1: Composition-based statistics as in NAR 29:2994-3005, 2001
+2 or T or t : Composition-based score adjustment as in Bioinformatics
+21:902-911, 2005, conditioned on sequence properties
+3: Composition-based score adjustment as in Bioinformatics 21:902-911, 
+2005, unconditionally
+Default = `2'
+Table C6: tblastx application options. The tblastx application searches a translated nucleotide query against translated nucleotide 
+subject sequences or a translated nucleotide database. An option of type “flag”  takes no arguments, but if present the argument is true. 
+This  table reflects  the 2.2.27 BLAST+ release. Only ungapped searches are supported for tblastx.
+option type default value description and notes
+word_size integer 3 Word size for initial match.
+matrix string BLOSUM62 Scoring matrix name.
+threshold integer 13 Minimum word score to add the word to the BLAST lookup table.
+seg string 12 2.2 2.5 Filter query sequence with SEG (Format: 'yes', 'window locut hicut', or 'no' to disable).
+soft_masking boolean false Apply filtering  locations as soft masks (i.e., only for finding  initial matches).
+lcase_masking flag N/A Use lower case filtering  in query and subject sequence(s).
+db_soft_mask integer none Filtering algorithm ID to apply to the BLAST database as soft mask (i.e., only for finding  
+initial matches).
+db_hard_mask integer none Filtering algorithm ID to apply to the BLAST database as hard mask (i.e., sequence is 
+masked for all phases of search).
+strand string both Query strand(s) to search against database subject sequences. Choice of both, minus, or 
+plus.
+query_genetic_code integer 1 Genetic code to translate query, see ftp://ftp.ncbi.nih.gov/entrez/misc/data/gc.prtAppendices 87

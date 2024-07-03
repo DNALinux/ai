@@ -1,0 +1,45 @@
+BLAST database metadata
+Starting from BLAST+ 2.13.0, makeblastdb generates an additional file with the file extension .njs (for nucleotide 
+databases) or .pjs (for protein databases) which contains BLAST database metadata in JSON format. This  file can 
+be easily read by many tools and makes the BLAST database more Findable in the FAIR sense. Here is an 
+example:
+{
+  "version": "1.2",
+  "dbname": "protein-ecoli",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "Escherichia coli protein sequences",
+  "number-of-letters": 1358990,
+  "number-of-sequences": 4289,
+  "last-updated": "2022-03-09T13:39:00",
+  "number-of-volumes": 1,
+  "bytes-total": 2412774,
+  "bytes-to-cache": 1397688,
+  "files": [
+    "protein-ecoli.pdb",
+    "protein-ecoli.phr",
+    "protein-ecoli.pin",
+    "protein-ecoli.pnd",
+    "protein-ecoli.pni",
+    "protein-ecoli.pog",
+    "protein-ecoli.pos",
+    "protein-ecoli.pot",
+    "protein-ecoli.psq",
+    "protein-ecoli.ptf",
+    "protein-ecoli.pto"
+  ]
+}
+The fields  represent the following:
+Field Description
+version Version of the BLASTDB metadata format
+dbname BLAST database base name
+dbtype Molecule type of the BLAST database
+db-version BLAST database version
+description Description of the BLAST database contents (i.e.: BLAST database title)
+number-of-letters Number of bases/residues in the BLAST database
+number-of-sequences Number of sequences in the BLAST database
+last-updated Date when this BLAST database was created
+number-of-volumes Number of BLAST database volumes that makes up this BLAST database
+bytes-total Number of bytes that comprise this BLAST database
+bytes-to-cache Number of bytes required to cache this BLAST database in main memory (RAM) for optimal performance
+files List of file names that comprise this BLAST databaseBLAST+ features 21

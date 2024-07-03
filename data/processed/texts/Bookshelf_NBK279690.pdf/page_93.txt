@@ -1,0 +1,31 @@
+Table C4 continued from previous page.
+option task type default value description and notes
+db_soft_mask all integer none Filtering algorithm ID to apply to the BLAST database as soft mask (i.e., 
+only for finding  initial matches).
+db_hard_mask all integer none Filtering algorithm ID to apply to the BLAST database as hard mask (i.e., 
+sequence is masked for all phases of search).
+xdrop_gap_final all real 25 Heuristic value (in bits) for final  gapped alignment.
+window_size all integer 40 Multiple hits window size, use 0 to specify 1-hit algorithm.
+strand all string both Query strand(s) to search against database/subject. Choice of both, minus, 
+or plus.
+query_genetic_code all integer 1 Genetic code to translate query, see ftp://ftp.ncbi.nih.gov/entrez/misc/data/
+gc.prt
+max_intron_length all integer 0 Length of the largest intron allowed in a translated nucleotide sequence 
+when linking multiple distinct alignments (a negative value disables 
+linking).
+comp_based_stats all integer 2 Use composition-based statistics for blastx:
+D or d: default (equivalent to 2)
+0 or F or f: no composition-based statistics
+1: Composition-based statistics as in NAR 29:2994-3005, 2001
+2 or T or t : Composition-based score adjustment as in Bioinformatics
+21:902-911, 2005, conditioned on sequence properties
+3: Composition-based score adjustment as in Bioinformatics 21:902-911, 
+2005, unconditionally
+Default = `2'
+Table C5: tblastn application options. The tblastn application searches a protein query against nucleotide subject sequences or a 
+nucleotide database translated at search time. Two different  tasks are supported: 1.) “tblastn” for a standard protein-translated 
+nucleotide comparison and 2.) “tblastn-fast” for a faster version with a larger word-size based on https://www.ncbi.nlm.nih.gov/
+pubmed/17921491 .
+option task type default value description and notes
+word_size tblastn integer 3 Word size for initial match. Valid word sizes are 2-7.
+Word size tblastn-fast Integer 6 Word size for initial match.Appendices 85

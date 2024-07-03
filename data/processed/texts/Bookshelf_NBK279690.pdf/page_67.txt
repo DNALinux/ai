@@ -1,0 +1,8 @@
+Specifying a sequence as the multiple sequence alignment 
+master in psiblast
+Created: June 23, 2008; Updated: January 7, 2021.
+The -in_msa psiblast option, unlike blastpgp, does not support the specification  of a master sequence via the 
+-query option, so if one wants to specify a sequence (other than the first one) in the multiple sequence alignment 
+file to be the master sequence, this has to be specified  via the -msa_master_idx option. For instance, in the 
+example below, the third sequence in the multiple sequence alignment would be used as the master sequence:
+psiblast -in_msa align1 -db pataa -msa_master_idx 3 59

@@ -1,0 +1,38 @@
+Improved software installation packages
+The BLAST+ applications are available via Windows and MacOSX installers as well as RPMs (source and binary) 
+and unix tarballs. For more details about these, refer to the installation  section.
+Sequence filtering applications
+The BLAST+ applications include a new set of sequence filtering  applications, namely segmasker, dustmasker, 
+and windowmasker. Segmasker is an application that identifies  and masks low complexity regions of protein 
+sequences. The dustmasker application provides a similar functionality for nucleotide sequences. 
+Windowmasker uses a genome to identify sequences represented too often  to be of interest to most users. See 
+ftp://ftp.ncbi.nlm.nih.gov/pub/agarwala/dustmasker/README.dustmasker  and ftp://ftp.ncbi.nlm.nih.gov/pub/
+agarwala/windowmasker/README.windowmasker  for more information.
+Best-Hits filtering algorithm
+The Best-Hit filtering  algorithm is designed for use in applications that are searching for only the best matches 
+for each query region reporting matches. Its -best_hit_overhang parameter, H, controls when an HSP is 
+considered short enough to be filtered  due to presence of another HSP . For each HSP A that is filtered,  there 
+exists another HSP B such that the query region of HSP A extends each end of the query region of HSP B by at 
+most H times the length of the query region for B.
+Additional requirements that must also be met in order to filter  A on account of B are:
+i. evalue(A) >= evalue(B)
+ii. score(A)/length(A) < (1.0 – score_edge) * score(B)/length(B)
+We consider 0.1 to 0.25 to be an acceptable range for the -best_hit_overhang parameter and 0.05 to 0.25 to be an 
+acceptable range for the -best_hit_score_edge parameter. Increasing the value of the overhang parameter 
+eliminates a higher number of matches, but increases the running time; increasing the score_edge parameter 
+removes smaller number of hits.
+Automatic resolution of sequence identifiers
+The BLAST+ search applications support automatic resolution of query and subject sequence identifiers  
+specified  as GIs or accessions (see the cookbook section for an example). This  feature enables the user to specify 
+one or more sequence identifiers  (GIs and/or accessions, one per line) in a file as the input to the -query and 
+-subject command line options.
+Upon encountering this type of input, by default the BLAST+ search applications will try to resolve these 
+sequence identifiers  in locally available BLAST databases first,  then in the BLAST databases at NCBI, and finally  
+in Genbank (the latter two data sources require a properly configured  internet connection). These  data sources 
+can be configured  via the DATA_LOADERS configuration  option and the BLAST databases to search can be 
+configured  via the BLASTDB_PROT_DATA_LOADER and BLASTDB_NUCL_DATA_LOADER configuration  
+options (see the section on Configuring  BLAST ).
+BLAST-WindowMasker integration in BLAST+ search applications
+The BLAST+ search applications support integration with the windowmasker files via the 
+-window_masker_taxid and the WINDOW_MASKER_PATH configuration  parameter (see Configuring  
+BLAST ) or via the -window_masker_db command line option.BLAST+ features 19

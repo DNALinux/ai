@@ -1,0 +1,39 @@
+that (virtual) and doesn’t depend on the hardware in your system. In general, we recommend that BLAST 
+users simply set the virtual memory to unlimited.
+Create BLAST database with masking information using an existing 
+BLAST database or FASTA sequence file as input
+For example, we can use the following command line to apply the masking information, created above, to the 
+existing BLAST database generated in Obtaining sample data for this cookbook entry :
+$ makeblastdb -in hs_chr –input_type blastdb -dbtype nucl -parse_seqids \
+ -mask_data hs_chr_mask.asnb -out hs_chr -title \
+ "Human Chromosome, Ref B37.1"
+Here, we use the existing BLAST database as input file (-in hs_chr), specify its type (-dbtype nucl), enable 
+parsing of sequence ids (-parse_seqids), provide the masking data (-mask_data hs_chr_mask.asnb), and name 
+the output database with the same base name (-out hs_chr) overwriting the existing one.
+To use the original FASTA sequence file (hs_chr.fa) as the input, we need to use “-in hs_chr.fa” to instruct 
+makeblastdb to use that FASTA file instead.
+We can check the “re-created” database to find out if the masking information was added properly, using 
+blastdbcmd with the following command line:
+$ blastdbcmd -db hs_chr -info
+This  command prints out a summary of the target database:
+Database: human chromosomes, Ref B37.1
+        24 sequences; 3,095,677,412 total bases
+Date: Aug 13, 2009  3:02 PM     Longest sequence: 249,250,621 bases
+Available filtering algorithms applied to database sequences:
+Algorithm ID  Algorithm name      Algorithm options                       
+    30        windowmasker                                                
+Volumes:
+        /export/home/tao/blast_test/hs_chr
+Extra lines under the “ Available filtering  algorithms … ” describe the masking algorithms available. The 
+“ Algorithm ID” field,  30 in our case, is what we need to use if we want to invoke database soft masking during an 
+actual search through the “-db_soft_mask”  parameter.
+We can apply additional masking data to an existing BLAST database with one type of masking information 
+already added. For example, we can apply the dust masking generated above  to the database generated earlier by 
+using this command line:
+$ makeblastdb -in hs_chr –input_type blastdb -dbtype nucl -parse_seqids \
+  -mask_data hs_chr_dust.asnb -out hs_chr -title "Human Chromosome, Ref B37.1"
+Here, we use the existing database as input file (-in hs_chr), specify its input and molecule type (-input_type 
+blastdb -dbtype nucl), enable parsing of sequence ids (-parse_seqids), provide the dust masking data (-
+mask_data hs_chr_dust.asnb), naming the database with the same based name (-out hs_chr) overwriting the 
+existing one.
+Checking the “re-generated” database with blastdbcmd:Create a masked BLAST database 35

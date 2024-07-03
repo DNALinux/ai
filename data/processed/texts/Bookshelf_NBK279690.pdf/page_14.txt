@@ -1,0 +1,10 @@
+Building sources in Windows
+Extract the appropriate tarball (e.g.: ncbi-blast-VERSION+-x64-win64-tar.gz) and open the appropriate MSVC 
+solution or project file (e.g.: c++\compilers\msvc1000_prj\static\build\ncbi_cpp.sln), build the -CONFIGURE- 
+project, click on “Reload” when prompted by the development environment, and then build the -BUILD-ALL- 
+project. The compiled executables will be found in the directory corresponding to the build configuration  
+selected (e.g.: c++\compilers\msvc1000_prj\static\bin\debugdll).
+Note regarding building the source code
+The BLAST source tarballs are a subset of the NCBI C++ toolkit. Information on using and compiling the NCBI 
+C++ toolkit is available at http://www.ncbi.nlm.nih.gov/toolkit/doc/book . Please send questions about compiling 
+the NCBI C++ toolkit to toolbox@ncbi.nlm.nih.gov6 BLAST® Command Line Applications User Manual

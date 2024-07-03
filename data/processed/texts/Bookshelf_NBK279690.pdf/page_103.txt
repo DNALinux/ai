@@ -1,0 +1,44 @@
+scores, but with infinite  gap costs [ 8]. This  ratio indicates what proportion of information in an ungapped 
+alignment must be sacrificed  in the hope of improving its score through extension using gaps. We have found 
+empirically that the most effective  gap costs tend to be those with lambda ratios in the range 0.8 to 0.9.
+References
+1.Altschul S.F. Amino acid substitution matrices from an information theoretic perspective. J. Mol. Biol. 
+1991;219:555–565.
+2.States D.J., Gish W ., Altschul S.F. Improved sensitivity of nucleic acid database searches using application-
+specific  scoring matrices. Methods. 1991;3:66–70.
+3.Altschul S.F. A protein alignment scoring system sensitive at all evolutionary distances. J. Mol. Evol. 
+1993;36:290–300.
+4.Henikoff  S., Henikoff  J.G. Amino acid substitution matrices from protein blocks. Proc. Natl. Acad. Sci. USA. 
+1992;89:10915–10919.
+5.Dayhoff,  M.O., Schwartz, R.M. & Orcutt, B.C. (1978) "A model of evolutionary change in proteins." In "Atlas 
+of Protein Sequence and Structure, vol. 5, suppl. 3," M.O. Dayhoff  (ed.), pp. 345-352, Natl. Biomed. Res. 
+Found., Washington, DC.
+6.Schwartz, R.M. & Dayhoff,  M.O. (1978) "Matrices for detecting distant relationships." In "Atlas of Protein 
+Sequence and Structure, vol. 5, suppl. 3," M.O. Dayhoff  (ed.), pp. 353-358, Natl. Biomed. Res. Found., 
+Washington, DC.
+7.Karlin S., Altschul S.F. Methods for assessing the statistical significance  of molecular sequence features by 
+using general scoring schemes. Proc. Natl. Acad. Sci. USA. 1990;87:2264–2268.
+8.Altschul S.F., Gish W . Local alignment statistics. Meth. Enzymol. 1996;266:460–480.
+9.Altschul S.F., Madden T.L., Schäffer  A.A., Zhang J., Zhang Z., Miller W ., Lipman D.J. Gapped BLAST and 
+PSI-BLAST: a new generation of protein database search programs. Nucleic Acids Res. 1997;25:3389–3402.
+Outline of the BLAST process
+Introduction
+BLAST performs several steps as it searches through a database and winnows the matches, finding  the most 
+significant  matches that it finally  presents to the user. The initial step in this process is the fastest and examines 
+every sequence. Each successive step takes longer but examines fewer sequences. The outline below provides 
+details on the process and a figure  provides a visual representation. This  outline applies only to gapped BLAST. A 
+letter and number in the figure  (e.g., C3) refers to a step in the outline. BLAST is described in greater detail in 
+https://www.ncbi.nlm.nih.gov/pubmed/9254694 .
+Outline
+A.Read in user query and preprocess (mask for low-complexity, etc.)
+B.Read user options and set parameters for the search. This  includes examining how many matches 
+(database sequences) the user wants returned and the expect value. If the user wants N database 
+sequences returned and sets an expect value of E, then:
+1.For Composition-based statistics (CBS), set an (internal) maximum limit of N_i=2*N+50 
+database sequences and an internal expect value of E_i = 5*E. CBS applies only to protein-protein 
+comparisons and is available for BLASTP , BLASTX, TBLASTN, RPSBLAST, and RPSTBLASTN.
+2.Otherwise, set a maximum limit of N_i=MAX(MIN(2*N, N+50),10) database sequences.
+C.Loop over every sequence in the database, performing the following actions:
+1.Scan for initial matching word hits. If an initial hit is found, then move on to step 2, otherwise 
+move on to next sequence. Example initial matching word hits are:
+a.11 bases exact match for BLASTN.Appendices 95

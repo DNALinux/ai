@@ -1,0 +1,29 @@
+Table C8 continued from previous page.
+option type default value Description and notes
+input_type string fasta Input file type, it may be any of the following:
+fasta: for FASTA file(s)
+blastdb: for BLAST database(s)
+asn1_txt: for Seq-entries in text ASN.1 format
+asn1_bin: for Seq-entries in binary ASN.1 format
+dbtype string prot Molecule type of input, values can be nucl or prot.
+title string none Title for BLAST database. If not set, the input file name will be used.
+parse_seqids flag N/A Parse bar delimited sequence identifiers  (e.g., gi|129295) in FASTA input.
+hash_index flag N/A Create index of sequence hash values.
+mask_data string none Comma-separated list of input files containing masking data as produced by NCBI 
+masking applications (e.g. dustmasker, segmasker, windowmasker).
+out string input file name Name of BLAST database to be created. Input file name is used if none provided. 
+This  field  is required if input consists of multiple files.
+max_file_size string 1GB Maximum file size to use for BLAST database. 4GB is the maximum supported by 
+the database structure.
+blastdb_version integer 5 Version 5 (taxonomy aware) is the default starting with the 2.10.0 release. Value 
+must be 4 or 5.
+taxid integer none Taxonomy ID to assign to all sequences.
+taxid_map string none File with two columns mapping sequence ID to the taxonomy ID. The first column 
+is the sequence ID represented as one of:
+1. fasta with accessions (e.g., emb|X17276.1|)
+2. fasta with GI (e.g., gi|4)
+3. GI as a bare number (e.g., 4)
+4. A local ID. The local ID must be prefixed  with "lcl" (e.g., lcl|4).
+The second column should be the NCBI taxonomy ID (e.g., 9606 for human).
+metadata_output_prefix string none Path prefix  for "files"  field  in BLASTDB metadata file
+logfile string none Program log file (default is stderr).Appendices 89

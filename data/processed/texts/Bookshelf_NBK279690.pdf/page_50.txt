@@ -1,0 +1,31 @@
+replaced by G), or 3.) a dash (“-“) and a letter showing a gap. The box below shows a blastn run first with BTOP 
+output and then the same run with the BLAST report showing the alignments.
+$ blastn -query test_q.fa -subject test_s.fa -dust no -outfmt "6 
+qseqid sseqid btop" -parse_deflines
+query1  q_multi 7AG39
+query1  q_multi 7A-39
+query1  q_multi 6-G-A41
+$ blastn -query test_q.fa -subject test_s.fa -dust no -parse_deflines
+BLASTN 2.2.24+
+Query= query1 
+Length=47
+Subject=  
+Length=142
+ Score = 82.4 bits (44),  Expect = 9e-22
+ Identities = 46/47 (97%), Gaps = 0/47 (0%)
+ Strand=Plus/Plus
+Query  1   ACGTCCGAGACGCGAGCAGCGAGCAGCAGAGCGACGAGCAGCGACGA  47
+           ||||||| |||||||||||||||||||||||||||||||||||||||
+Sbjct  47  ACGTCCGGGACGCGAGCAGCGAGCAGCAGAGCGACGAGCAGCGACGA  93
+ Score = 80.5 bits (43),  Expect = 3e-21
+ Identities = 46/47 (97%), Gaps = 1/47 (2%)
+ Strand=Plus/Plus
+Query  1   ACGTCCGAGACGCGAGCAGCGAGCAGCAGAGCGACGAGCAGCGACGA  47
+           ||||||| |||||||||||||||||||||||||||||||||||||||
+Sbjct  1   ACGTCCG-GACGCGAGCAGCGAGCAGCAGAGCGACGAGCAGCGACGA  46
+ Score = 78.7 bits (42),  Expect = 1e-20
+ Identities = 47/49 (95%), Gaps = 2/49 (4%)
+ Strand=Plus/Plus
+Query  1    ACGTCC--GAGACGCGAGCAGCGAGCAGCAGAGCGACGAGCAGCGACGA  47
+            ||||||  |||||||||||||||||||||||||||||||||||||||||
+Sbjct  94   ACGTCCGAGAGACGCGAGCAGCGAGCAGCAGAGCGACGAGCAGCGACGA  14242 BLAST® Command Line Applications User Manual

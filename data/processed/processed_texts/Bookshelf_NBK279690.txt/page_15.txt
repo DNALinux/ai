@@ -1,0 +1,1 @@
+dependency created june 23 2008 updated january 7 2021 runtime updateblastdbpl perl httpswwwperlorg window visual studio 2015 c redistributable runtime package httpswwwmicrosoftcomenus downloaddetailsaspxid48145 compile time needed compiling blast source code sqlite starting blast 2150 lmdb starting blast 2717

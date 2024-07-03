@@ -1,0 +1,12 @@
+Limiting a Search by taxonomy
+Created: June 23, 2008; Updated: January 7, 2021.
+In order to limit a BLAST search by taxonomy, one needs to provide the NCBI taxonomy ID(s) (taxid) for given 
+organism(s). A taxid is simply a number that specifies  a node in the taxonomic tree. For example, 9606 is the 
+taxid for human, 9989 is the taxid for rodentia, and 2 is the taxid for all bacteria. Taxids are preferable to 
+organism names as the latter can be ambiguous. For instance, bacteria is both a genus of insects as well as a 
+superkingdom.
+Additionally, one may use the -negative_taxids and -negative_taxidlist options to exclude sequences by taxid.
+Limiting a BLAST search by taxonomy
+$ blastn –db nt –query QUERY –taxids 9606 –outfmt 7 –out OUTPUT.tab
+For additional details, please see https://www.ncbi.nlm.nih.gov/books/NBK569839/
+#usrman_BLAST_feat.Taxonomic_filtering_fo53

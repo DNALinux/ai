@@ -1,0 +1,22 @@
+Multiple databases vs. spaces in filenames and paths
+Created: June 23, 2008; Updated: January 7, 2021.
+BLAST has been able to search multiple databases since 1997. The databases can be listed after  the “-db” 
+argument or in an alias file (see cookbook entries on blastdb_aliastool ), separated by spaces. Many operating 
+systems now allow spaces in filenames  and directory paths, so some care is required. Basically, one should always 
+have two sets of quotes for any path containing a space. Blastdbcmd is used as an example below, but the same 
+rules apply to makeblastdb as well as the search programs like blastn or blastp.
+To access a BLAST database containing spaces under Microsoft  Windows it is necessary to use two sets of 
+double-quotes, escaping the innermost quotes with a backslash. For example, Users\joeuser\My 
+Documents\Downloads would be accessed by:
+blastdbcmd -db "\"Users\joeuser\My Documents\Downloads\mydb\"" -info
+The first backslash escapes the beginning inner quote, and the backslash following “mydb” escapes the ending 
+inner quote.
+A second database can be added to this command by including it within the outer pair of quotes:
+blastdbcmd -db "\"Users\joeuser\My Documents\Downloads\mydb\" myotherdb" -info
+If the second database had contained a space, it would have been necessary to surround it by quotes escaped by a 
+backslash.
+Under UNIX systems (including LINUX and Mac OS X) it is preferable to use a single quote (‘) in place of the 
+escaped double quote:
+blastdbcmd -db ‘ "path with spaces/mydb" ’ -info 
+Multiple databases can also be listed within the single quotes, similar to the procedure described for Microsoft  
+Windows.57

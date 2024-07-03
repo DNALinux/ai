@@ -1,0 +1,41 @@
+In the first case, the WINDOW_MASKER_PATH configuration  parameter should refer to a directory which 
+contains subdirectories named after  NCBI taxonomy IDs (e.g.: 9606 for human, 10090 for mouse), where the 
+windowmasker unit counts data files should be placed with the following naming convention: wmasker.obinary 
+(for files generated with the obinary format) and/or wmasker.oascii (for files generated with the oascii format). 
+For an example on how to create these files,  please see the Cookbook . Once these windowmasker files and the 
+configuration  file are in place, this feature can be invoked by providing the taxonomy ID to the 
+-window_masker_taxid command line option.
+Alternatively, this feature can also be invoked by providing the path to the windowmasker unit counts data file 
+via the -window_masker_db.
+Please see the Cookbook  for a usage example of this feature.
+DELTA-BLAST: A tool for sensitive protein sequence search
+DELTA-BLAST uses RPS-BLAST to search for conserved domains matching to a query, constructs a PSSM from 
+the sequences associated with the matching domains, and searches a sequence database. Its sensitivity is 
+comparable to PSI-BLAST and does not require several iterations of searches against a large sequence database. 
+See the cookbook  for more information.
+Concatenation of queries
+BLAST works more efficiently  if it scans the database once for multiple queries. This  feature is known as 
+concatenation. It speeds up MegaBLAST searches the most as they spend little time on tasks that consume CPU 
+and most of the time streaming through the database. BLASTN and discontiguous MegaBLAST searches also 
+run faster with concatenation, though the effect  is less pronounced. BLAST+ applies concatenation on all types 
+of searches (e.g., also BLASTP , etc.), and it can be very beneficial  if the input is a large number of queries in 
+FASTA format. BLAST+ concatenates queries by grouping them together until a specific  number of letters (or 
+“chunk size”) is reached. Unfortunately, a constant chunk size for each database scan causes certain problems. 
+For some searches the chunk size is too large, too many letters are searched at once, and the process consumes 
+too much memory. Tests have shown that the number of successful ungapped extensions performed in the 
+preliminary stage is a good predictor of overall memory use during a search. The BLASTN application (starting 
+with the 2.2.28 release) takes advantage of this insight to provide an “adaptive chunk size” . The application starts 
+with a low initial chunk size of 10,000 bases and records how many successful ungapped extensions were 
+performed during search. It adjusts the chunk size on the next database scan with a target of performing two 
+million extensions during the search.
+Query concatenation also means that BLAST will produce no output until the first set of concatenated queries 
+have been processed. Some users find this disconcerting, but it is not a problem.
+BLAST+ remote service
+The BLAST+ applications can also send a search to the servers at the NCBI. In this case, the BLAST+ application 
+is acting as a client and there is no need to install a database or provide more than minimal computing power. 
+The BLAST+ remote service uses the same servers used by the NCBI BLAST website. The BLAST server can 
+return a Request ID (RID) as part of the results, and that RID can be used to reformat the results with the 
+blast_formatter or on the NCBI website. In general, the servers keep the results for an RID for 36 hours. The 
+BLAST+ applications will use the remote service if the –remote flag is added to the command line. The BLAST+ 
+remote service uses a shared resource (the computers at the NCBI), so only one BLAST+ application should run 
+remote searches at a time. An example in the cookbook section demonstrates a remote search.20 BLAST® Command Line Applications User Manual

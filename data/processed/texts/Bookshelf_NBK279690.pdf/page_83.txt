@@ -1,0 +1,32 @@
+Appendices
+Created: June 23, 2008; Updated: March 14, 2021.
+Conversion from C toolkit applications
+The functionality offered  by the BLAST+ applications has been organized by program type. The following graph 
+depicts a correspondence between the NCBI C Toolkit BLAST command line applications and the BLAST+ 
+applications:
+The easiest way to get started using the BLAST+ command line applications is by means of the legacy_blast.pl 
+PERL script which is bundled along with the BLAST+ applications. To utilize this script, simply prefix  it to the 
+invocation of the C toolkit BLAST command line application and append the --path option pointing to the 
+installation directory of the BLAST+ applications. For example, instead of using
+    blastall -i query -d nr -o blast.out 
+use
+    legacy_blast.pl blastall -i query -d nr -o blast.out 
+--path /opt/blast/bin 
+The purpose of the legacy_blast.pl PERL script is to help users make the transition from the C Toolkit BLAST 
+command line applications to the BLAST+ applications. This  script produces its own documentation by 
+invoking it without any arguments.
+The legacy_blast.pl script supports two modes of operation, one in which the C Toolkit BLAST command line 
+invocation is converted and executed on behalf of the user and another which solely displays the BLAST+ 
+application equivalent to what was provided, without executing the command.
+The first mode of operation is achieved by specifying the C Toolkit BLAST command line application invocation 
+and optionally providing the --path argument after  the command line to convert if the installation path for the 
+BLAST+ applications differs  from the default (available by invoking the script without arguments). See example 
+in the first section of the Quick start.
+The second mode of operation is achieved by specifying the C Toolkit BLAST command line application 
+invocation and appending the --print_only command line option as follows:
+$ ./legacy_blast.pl megablast -i query.fsa -d nt -o mb.out --print_only
+/opt/ncbi/blast/bin/blastn -query query.fsa -db "nt" -out mb.out 
+$ 
+Exit codes
+All BLAST+ applications have consistent exit codes to signify the exit status of the application. The possible exit 
+codes along with their meaning are detailed in the table below:75

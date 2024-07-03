@@ -1,0 +1,35 @@
+Table C10 continued from previous page.
+option type default value description and notes
+%mX means sequence masking data, where X is an optional comma-separated list of 
+integers to specify the algorithm ID(s) to display (or all masks if absent or invalid 
+specification).  Masking data will be displayed as a series of 'N-M' values separated by ';' 
+or the word 'none' if none are available. For every format except '%f ', each line of output 
+will correspond to a sequence.
+target_only flag N/A Definition  line should contain target GI only.
+get_dups flag N/A Retrieve duplicate accessions.
+line_length integer 80 Line length for output.
+ctrl_a flag N/A Use Ctrl-A as the non-redundant definition  line separator.
+Table C11: Makembindex application options. The indexed databases created by makembindex are used by production MegaBLAST 
+software  and by a new srsearch utility designed to quickly search for nearly exact matches (up to one mismatch) of short queries against 
+a genomic database. When a FASTA formatted file is used as the input, then masking by lower case letters is incorporated in the index. 
+Makembindex can currently build two types of indices, called “old style” and “new style” indexing. The NCBI offers  full support for the 
+new style and has deprecated the old style. A MegaBLAST search with a new style index requires that both the index and the 
+corresponding BLAST database be present. The index structure is described in PMID:18567917 . Please cite this paper in any 
+publication that uses makembindex.
+option type default value Description and notes
+input string stdin Input file name or BLAST database name, depending on the value of the iformat parameter. 
+For FASTA formatted input, this parameter is optional and defaults to the program's 
+standard input stream.
+output string none The resulting index name. The index itself can consist of multiple files,  called volumes, called 
+<index_name>.00.idx, <index_name>.01.idx,...
+This  option should not be used with new style indices.
+iformat string fasta The input format selector. Possible values are 'fasta' and 'blastdb'.
+old_style_index boolean false The old_style_index is no longer supported. If set to 'false' the new style index is created. 
+New style indices require a BLAST database as input (use -iformat blastdb), which can be 
+downloaded from the NCBI FTP site or created with makeblastdb. The option -output is 
+ignored for a new style index. New style indices are always created at the same location as 
+the corresponding BLAST database.
+db_mask integer None Exclude masked regions of BLAST db from the index. Use makeblastdb to discover the 
+algorithm ID to be used as input for this argument.
+legacy boolean true This  is a compatibility feature to support current production MegaBLAST. If true, then 
+-stride, -nmer, and -ws_hint are ignored. The legacy format must be used for BLAST.92 BLAST® Command Line Applications User Manual

@@ -1,0 +1,4 @@
+National Center for Biotechnology Information (US), Bethesda (MD)
+BLAST is a Registered Trademark of the National Library of Medicine
+NLM Citation: BLAST® Command Line Applications User Manual [Internet]. Bethesda (MD): National Center for Biotechnology 
+Information (US); 2008-.

@@ -1,0 +1,12 @@
+Dependencies
+Created: June 23, 2008; Updated: January 7, 2021.
+Run-time
+•For update_blastdb.pl
+⚬Perl: https://www.perl.org/
+•For Windows only:
+⚬Visual Studio 2015 C++ redistributable runtime package: https://www.microsoft.com/en-us/
+download/details.aspx?id=48145
+Compile time
+These  are needed if you are compiling BLAST from source code.
+•SQLite : starting with BLAST+ 2.15.0
+•LMDB : starting with BLAST+ 2.7.17
