@@ -1,0 +1,5 @@
+What is the word size parameter in BLAST? 
+How to get the results of BLASTP in XML format?
+How to perform a BLAST on a specific taxonomic group?
+What parameters do I use to perform BLAST with epitopes smaller than 10 amino acids?
+Which kind of databases can be searched with BLASTX?
