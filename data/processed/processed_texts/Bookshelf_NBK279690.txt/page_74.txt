@@ -1,1 +1,1 @@
-66 blast command line application user manual
+66 blast command line application user manual faster sequence lookup accession created june 23 2008 updated january 7 2021 starting blastdb version 5 blastdbcmd two additional parameter taxids taxidlists efficiently retrieve sequence taxid retrieves human entry print accession print taxid print scientific name blastdbcmd db nr taxids 9606 outfmt targetonly note targetonly used ensure accession human entry present otherwise present accession sequence least one human sequence important since nr non redundant database67

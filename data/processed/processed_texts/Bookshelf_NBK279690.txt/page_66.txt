@@ -1,1 +1,1 @@
-58 blast command line application user manual
+58 blast command line application user manual specifying sequence multiple sequence alignment master psiblast created june 23 2008 updated january 7 2021 inmsa psiblast option unlike blastpgp support specification master sequence via query option one want specify sequence first one multiple sequence alignment file master sequence specified via msamasteridx option instance example third sequence multiple sequence alignment would used master sequence psiblast inmsa align1 db pataa msamasteridx 3 59

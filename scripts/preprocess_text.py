@@ -43,12 +43,28 @@ def preprocess_files(input_directory, output_directory):
     if not output_dir.exists():
         output_dir.mkdir(parents=True)
     
+    # Get list of files in input directory
+    files = sorted(os.listdir(input_dir))
+    
     # Process each file in the input directory
-    for file_name in os.listdir(input_dir):
+    for i, file_name in enumerate(files):
         if file_name.endswith('.txt'):
             with open(input_dir / file_name, 'r', encoding='utf-8') as file:
-                text = file.read()
-                preprocessed_text = preprocess_text(text)
+                text = file.read().strip()
+                
+                # Check if the file has only one line and is not the last file
+                if len(text.splitlines()) == 1 and i < len(files) - 1:
+                    # Combine with the next file's content
+                    with open(input_dir / files[i + 1], 'r', encoding='utf-8') as next_file:
+                        next_text = next_file.read().strip()
+                        text = ' '.join([text, next_text])
+                        
+                    print(f"Combined {file_name} with {files[i + 1]}")
+                else:
+                    print(f"Processing {file_name}")
+            
+            # Preprocess the text
+            preprocessed_text = preprocess_text(text)
             
             # Save preprocessed text to output directory
             output_file = output_dir / file_name
