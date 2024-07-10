@@ -1,18 +1,35 @@
 1- What is the word size parameter in BLAST? 
   Word size for sequence alignment algorithms is the minimum number of characters required to seed a match between two sequences.
 
+Correct page: p80,82,84,85,87
+Correct text: p88,90,92,93,95
+
 2- How to get the results of BLASTP in XML format?
   To get BLASTP results in XML, you can use the -outfmt option with the value 5
   Code 
   blastp -query your_query_sequence.fasta -db your_database -out results.xml -outfmt 5
+
+Correct page: p64
+Correct text: p72
 
 3- How to perform a BLAST on a specific taxonomic group?
   To limit a BLAST search by taxonomy, one needs to provide the NCBI taxonomy ID(s) (taxid) for given taxonomic group(s). A taxid is simply a number that specifies a node in the taxonomic tree.
   1. -taxids with comma-separated list of taxids, or
   2. -taxidlist with a path to a file that contains a list of taxids, one per line. This file must be present in the local file system where ElasticBLAST is run. Cloud storage locations, like s3:// or gs:// will not work.
 
+Correct page: p22 p53 p69
+Correct text: p30 p61 p77
+
+
 4- What parameters do I use to perform BLAST with epitopes smaller than 10 amino acids?
   Use blastp-short. Blast-short is optimized for query sequences shorter than 30 residues.
 
+Correct page: *p82 p17 p83
+Correct text: *p90 p25 p91
+
+
 5- Which kind of databases can be searched with BLASTX?
   The “blastx” application translates a nucleotide query in six frames and searches it against a protein database. 
+
+Correct page: p3
+Correct text: p11
