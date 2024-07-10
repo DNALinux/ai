@@ -3,7 +3,6 @@ import time
 import ollama
 import chromadb
 import torch
-import h5py
 from transformers import AutoTokenizer, AutoModel
 
 def create_embeddings_and_store_in_chroma(documents_dir, collection_name, model="mxbai-embed-large", database_path='./chroma_db'):
