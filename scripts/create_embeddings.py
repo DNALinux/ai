@@ -1,9 +1,4 @@
-"""
-
-"""
 import os
-
-import chromadb
 
 import generate_embeddings as ge
 from extract_text import extract_and_save_pdf_text
@@ -27,9 +22,3 @@ preprocess_files(processed_path, docs_dir)
 
 collection = ge.create_embeddings_and_store_in_chroma(docs_dir, collection_name, database_path=db_file)
 collection2 = ge.create_embeddings_and_store_in_chroma(processed_path, collection_name2, database_path=db_file2)
-
-client = chromadb.PersistentClient(path=db_file)
-collection = client.get_collection(name=collection_name)
-client2 = chromadb.PersistentClient(path=db_file2)
-collection2 = client2.get_collection(name=collection_name2)
-

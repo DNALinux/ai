@@ -32,8 +32,9 @@ prompts = blast_dna_questions
 
 
 # for each question.
-for q in prompts:
-  print(f"Question: {q}")
+
+for i, q in enumerate(prompts):
+  print(f"Question {i+1}: {q}")
   # generate an embedding for the prompt and retrieve the most relevant doc
   response = ollama.embeddings(
     prompt=q,
@@ -49,10 +50,13 @@ for q in prompts:
 
   output = ollama.generate(
     model="llama3",
-    prompt=f"Using this data: {data}. Respond to this prompt: {q}. Only the answer, don't say according to the text"
+    prompt=f"Using this data: {data}. Respond to this prompt: {q}. "\
+      "Only the answer, don't say according to the text. " \
+      "If an aswer can be inferred from the provided data, use your data"
   )
 
   print(output['response'])
+  print()
 
 #model_name="dmis-lab/biobert-base-cased-v1.2"
 # Initialize BioBERT model and tokenizer
