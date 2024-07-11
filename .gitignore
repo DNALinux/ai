@@ -1,2 +1,3 @@
+*.pyc
 # Ignore specific file
 /data/raw/pdfs/Bookshelf_NBK279690.pdf
