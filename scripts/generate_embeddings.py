@@ -21,7 +21,10 @@ def create_embeddings_and_store_in_chroma(documents_dir, collection_name, model=
     """
     # Initialize Chroma database client with local database path
     client = chromadb.PersistentClient(path=database_path)
-    collection = client.create_collection(name=collection_name)
+    if collection_name in client.list_collections():
+        collection = client.get_collection(name=collection_name)
+    else:
+        collection = client.create_collection(name=collection_name)
 
     # Get total number of documents
     total_documents = len([filename for filename in os.listdir(documents_dir) if filename.endswith(".txt")])
@@ -60,6 +63,77 @@ def create_embeddings_and_store_in_chroma(documents_dir, collection_name, model=
     print(f"Documents embedded and stored in local Chroma database '{database_path}'.")
 
     return collection
+
+def translate_and_add_embeddings(documents_dir, collection_name, model="mxbai-embed-large", database_path='./chroma_db'):
+    """
+    Translates documents from the specified directory into embeddings using the
+    Ollama embedding model and adds them to an existing Chroma database collection.
+
+    Args:
+    - documents_dir (str): Directory path containing text documents (.txt files).
+    - collection_name (str): Name of the Chroma database collection to add to.
+    - model (str): Ollama embedding model to use (default: "mxbai-embed-large").
+    - database_path (str): Path to the local Chroma database file (default: './chroma_db').
+
+    Returns:
+    - chromadb.Collection: Chroma database collection object, or None if an error occurred.
+    """
+    # Initialize Chroma database client with local database path
+    client = chromadb.PersistentClient(path=database_path)
+
+    try:
+        # Attempt to get the existing collection
+        collection = client.get_collection(name=collection_name)
+    except Exception as e:
+        print(f"Error accessing collection '{collection_name}': {e}")
+        return None
+
+    # Get total number of documents
+    total_documents = len([filename for filename in os.listdir(documents_dir) if filename.endswith(".txt")])
+    processed_documents = 0
+
+    # Iterate through text files in the directory
+    for filename in os.listdir(documents_dir):
+        if filename.endswith(".txt"):
+            file_path = os.path.join(documents_dir, filename)
+
+            try:
+                # Read document text from the file
+                with open(file_path, 'r', encoding='utf-8') as file:
+                    document_text = file.read().strip()
+            except Exception as e:
+                print(f"Error reading file {filename}: {e}")
+                continue  # Skip this file and move to the next
+
+            try:
+                # Embedding the document using Ollama
+                start_time = time.time()
+                response = ollama.embeddings(model=model, prompt=document_text)
+                embedding = response["embedding"]
+                end_time = time.time()
+
+                # Store document in Chroma collection
+                collection.add(
+                    ids=[filename],  # Use filename as ID
+                    embeddings=[embedding],
+                    documents=[document_text]
+                )
+
+                processed_documents += 1
+                elapsed_time = end_time - start_time
+                estimated_time_left = (total_documents - processed_documents) * elapsed_time
+
+                print(f"Processed document {processed_documents}/{total_documents}. "
+                      f"Elapsed Time: {elapsed_time:.2f} seconds. "
+                      f"Estimated Time Left: {estimated_time_left:.2f} seconds.")
+
+            except Exception as e:
+                print(f"Error embedding or storing document {filename}: {e}")
+
+    print(f"Documents translated into embeddings and added to Chroma database '{database_path}'.")
+
+    return collection
+
 
 # Function to get embeddings
 def get_embeddings(texts, model, tokenizer, max_length=384, batch_size=64):
