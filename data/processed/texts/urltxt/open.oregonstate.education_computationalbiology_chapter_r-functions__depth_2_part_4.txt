@@ -1,0 +1,11 @@
+eter names inside the function (a and b). This is an important point to which we will return.
+
+In the call above, we let the epsilon parameter take its default value of 0.00001. We could alternatively use a stricter comparison.
+
+In R, arguments to functions may be specified by position (as in the example above), by name, or by a combination.
+
+Many R functions take a few required parameters and many nonrequired parameters with reasonable defaults; this calling scheme allows us to specify the required parameters as well as only those nonrequired ones that we wish to change.
+
+In general, you should specify parameters by position first (if you want to specify any by position), then by name. Although the following calls will work, they’re quite confusing.
+
+We frequently use default parameters to specify named parameters in functions called within the function we’re defining. Here is an example of a function that computes the difference in means of two vectors; it takes an optional remove_NAs parameter that defaults to FALSE. If this is specified as TRUE, the na.rm parameter in the calls to mean() is set to TRUE as well in the computation.

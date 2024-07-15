@@ -1,0 +1,13 @@
+each node’s insert_item() will follow the same logic as above: if self.next_n is None, the new node goes after that node. If not, the node needs to determine if the new node should go between itself and the next node, or if it should “pass the buck” to the node next in line.
+Now we can turn to the code. First, here’s the code for the LinkedList class.
+
+The highlighted lines above are those illustrated in step 2a and are crucial; in particular, the order in which the various variables are set makes all the difference. What would happen if self.first_n = newnode was called before newnode.set_next(self.first_n)? We would lose all references to the rest of the list: itemlist.first_n would refer to newnode, the new node’s .next_n would refer to None, and no variable would refer to the node holding 3—it would be lost in RAM and eventually garbage collected.
+As mentioned above, the class for a Node is quite similar. In fact, it is possible to build linked lists with only one object type, but this would necessitate a “dummy” node to represent an empty list anyway (perhaps storing None in its self.item).
+
+Our new data structure is relatively easy to use, and it keeps itself sorted nicely:
+
+
+Linked List Methods
+
+This idea of “passing the buck” between nodes is pretty clever, and it allows us to write sophisticated queries on our data structure with ease. Suppose we wanted to ask whether a given item is already present in the list.
+To solve a problem like this, we can think of each nod

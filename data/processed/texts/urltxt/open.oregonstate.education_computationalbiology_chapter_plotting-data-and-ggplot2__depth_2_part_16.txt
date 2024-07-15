@@ -1,0 +1,10 @@
+low” (less than $10,000). Unfortunately, the formulas taken by facet_wrap() and facet_grid() do not allow for vectorized expressions, so facet_wrap(~ price/carat < 10000) won’t work.
+
+The solution is to first create a new column of the data frame before plotting, as in dd$price_carat_low <- dd$price/dd$carat < 10000, to create a new logical column, and then facet on the newly created column with facet_wrap(~ price_carat_low).
+
+R also includes a function called cut() specifically for discretizing continuous vectors into factors. The first parameter is the vector to discretize, and the second parameter is either a number of (equal-sized) bins to break the input into, or a vector of breakpoints for the bins.
+
+The cut() can take a labels = parameter as well, for cases when the default labels aren’t sufficient.
+
+Scales
+Each aesthetic used in a plot is associated with a scale, whether it be the x and y or even color or size. For faceted plots, usually any scale adjustments are shared across facets, and for each layer in a plot, all scale properties must be shared as well. The different types of scales—continuous for x and y, color values for color, sizes for size—can all be modified to change the scale name, range, locations of breaks (or tick-marks) and labels of the breaks. There’s more to say about scales than can be covered in this book, but we’ll try to hit the high points.

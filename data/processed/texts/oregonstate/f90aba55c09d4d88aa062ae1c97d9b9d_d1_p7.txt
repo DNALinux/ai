@@ -1,0 +1,13 @@
+h to execute (as a string) and (2) shell = True, which indicates that the Python interpreter should run the command as though we had run it on the command line.
+
+The result of the function call is a single string containing whatever the command printed to standard output. Because it’s a single string, if we want it represented as a list of lines, we need to first .strip() off any newline characters at the end, and then split it on the \n characters that separate the lines.
+
+Running the program, we see that the result is a list of strings, one per file:
+
+With this list of file names in hand, we might wish to run a series of assemblies with the program runAssembly (produced by 454 Life Sciences for assembling transcript sequences). This program requires a -o parameter to specify where outputs should be written as well as a file name input; we generate these with string operations to “build” a command to execute. Once we are satisfied with the commands, we can uncomment the actual call to subprocess.check_output().
+
+This version of the program reports the commands that will be run.[4]
+
+While a command is running via the subprocess.check_output() function in this way, the program will wait before continuing to the next line (though you’ll likely only notice if the command takes a long time to execute). If the command crashes or is killed, the Python program will crash with a CalledProcessError too (usually a good thing!).
+
+Other functions in the subprocess module allow for runnin

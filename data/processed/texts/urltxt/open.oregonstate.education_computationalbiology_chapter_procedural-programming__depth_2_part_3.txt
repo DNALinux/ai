@@ -1,0 +1,9 @@
+count is incremented to 4. The loop returns back to the top, but this time count < 4 results in FALSE, so the block is skipped, and finally execution moves on to print "Done!".
+
+Because the check happens at the start, if count were to start at some larger number like 5, then the loop block would be skipped entirely and only "Done!" would be printed.
+
+Because no “naked data” exist in R and vectors are the most basic unit, the logical check inside the while() works with a logical vector. In the above, that vector just happened to have only a single element. What if the comparison returned a longer vector? In that case, only the first element of the logical vector will be considered by the while(), and a warning will be issued to the effect of condition has length > 1. This can have some strange consequences. Consider if instead of count <- 1, we had count <- c(1, 100). Because of the vectorized nature of addition, the output would be:
+
+Two handy functions can provide a measure of safety from such errors when used with simple conditionals: any() and all(). Given a logical vector, these functions return a single-element logical vector indicating whether any, or all, of the elements in the input vector are TRUE. Thus our while-loop conditional above might better be coded as while(any(count < 4)). (Can you tell the difference between this and while(any(count) < 4)?)
+
+Generating Truncated Random Data, Part I

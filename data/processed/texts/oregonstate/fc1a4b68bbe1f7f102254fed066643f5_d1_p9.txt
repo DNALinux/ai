@@ -1,0 +1,8 @@
+/home$, indicating that I am in /home. This is a helpful reminder of where I am in the filesystem as I work. Previously, it showed only ~, which is actually a shortcut for $HOME, itself a shortcut for the absolute path to my home directory. Consequently, there are a number of ways to go back to my home directory: cd /home/oneils, or cd $HOME, or cd ~, or even just cd with no arguments, which defaults to moving to $HOME.
+
+Relative Paths, Hidden Files, and Directories
+It isn’t always necessary to specify the full, absolute path to locate a file or directory; rather, we can use a relative path. A relative path locates a file or directory relative to the present working directory. If the present working directory is /home/oneils, for example, a file located at the absolute path /home/oneils/Pictures/profile.jpg would have relative path Pictures/profile.jpg. For the file /home/oneils/todo_list.txt, the relative path is just todo_list.txt. If the present working directory was /home, on the other hand, the relative paths would be oneils/Pictures/profile.jpg and oneils/todo_list.txt.
+
+Because relative paths are always relative to the present working directory (rather than the root directory /), they cannot start with a forward slash, whereas absolute paths must start with a leading forward slash. This distinction occasionally confuses new users.
+
+We can use the cd command with relative paths as well, and this is most commonly done for directories present in the current working direct

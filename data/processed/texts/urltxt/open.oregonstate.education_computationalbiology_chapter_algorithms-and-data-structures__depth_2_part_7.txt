@@ -1,0 +1,16 @@
+into the middle requires rearranging the way the data are stored.
+How long does it take to find the smallest element? Because using .append() adds elements to the end of the list, unless we keep the list sorted, we need to search the entire list for the smallest element. This operation takes time , where is the length of the list. If the list is sorted, though, it takes only  time to look at the front of it.
+
+There are trade-offs that we can make when thinking about how to use data structures. Suppose, for example, that we wanted to quickly find the smallest element of a list, even as items are added to it. One possibility would be to sort the list after each addition; if we did that, then the smallest element would always be at index 0 for quick retrieval. But this is a lot of work, and the total time spent sorting would start to outweigh the benefits of keeping the list sorted in the first place! Even better, we could write a function that (1) inserts the new item to the end and then (2) bubbles it backward to its correct location; only one such bubbling would be needed for each insertion, but each is an  operation (unless we could somehow guarantee that only large elements are added).
+
+Finding the smallest item is easy, as we know it is always present at index 0.
+
+
+
+
+Structure
+Insert an Item
+Get Smallest
+
+
+Sorted Simple List

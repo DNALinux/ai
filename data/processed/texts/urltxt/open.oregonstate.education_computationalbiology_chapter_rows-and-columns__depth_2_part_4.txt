@@ -1,0 +1,8 @@
+t in the first column no ID was listed twice. In this case, comparing the counts with and without the sort -k1,1d -u would serve to verify or reject this assumption. In later chapters, we’ll learn more techniques for this kind of “sanity checking.”
+
+Basic Syntax for awk
+Although awk can be used as a full-featured programming language (complete with loops, arrays, and so on), for sophisticated programming needs, other languages like Python and R are usually better suited. Let’s take a look at a practical subset of its syntax.
+
+Statements in the BEGIN block are executed before any line of the input is processed, statements in the unadorned middle block are executed for every line, and statements in the END block are executed after the last line is processed. Each of these blocks is optional, though the middle “for each line” block is rarely omitted in practice.
+
+When processing a line, a number of variables are available for use. Although many of them start with a $, they are not environment variables (because we’ve placed the “program” inside single quotes, they are sent to awk as unaltered strings, $ signs intact).

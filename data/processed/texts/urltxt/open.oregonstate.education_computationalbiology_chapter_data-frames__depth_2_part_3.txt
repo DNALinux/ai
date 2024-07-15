@@ -1,0 +1,9 @@
+ore appropriate colnames() function.
+
+To highlight the list-like nature of data frames, we can work with data frames by column much like lists by element. The three lines in the following example all result in sub_info being a two-column data frame.
+
+An expression like gene_info[2] thus would not return a numeric vector of lengths, but rather a single-column data frame containing the numeric vector. We can use [[]] syntax and $ syntax to refer to the vectors contained within data frames as well (the latter is much more common).
+
+We can even delete columns of a data frame by setting the element to NULL, as in gene_info$lengths <- NULL.
+
+The real charm of data frames is that we can extract and otherwise work with them by row. Just as data frames have column names, they also have row names: a character vector of the same length as each column. Unfortunately, by default, the row names are "1", "2", "3", and so on, but when the data frame is printed, the quotation marks are left off (see the result of print(gene_info) above). The row names are accessible through the rownames() function.

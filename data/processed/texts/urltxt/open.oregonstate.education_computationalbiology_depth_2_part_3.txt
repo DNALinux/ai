@@ -1,0 +1,20 @@
+e, multi-test analyses. Other topics include S3 classes and data visualization with ggplot2.
+
+Author
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Subject
+Computational biology / bioinformatics
+
+Metadata
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Publication and ongoing maintenance of this textbook is possible due to grant support from Oregon State University Ecampus.
+
+Suggest a correction (bit.ly/33cz3Q1)
+
+Privacy (open.oregonstate.education/privacy)
+
+Powered by Pressbooks

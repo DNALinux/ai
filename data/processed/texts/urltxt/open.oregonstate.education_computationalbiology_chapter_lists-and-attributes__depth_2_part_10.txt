@@ -1,0 +1,6 @@
+ters.) If we ran print(athal) at this point, all this information would be printed, but unfortunately in a fairly unfriendly manner:
+
+This output does illustrate something of interest, however. We can chain the $ syntax to access elements of lists and contained lists by name. For example, lengths <- athal$ChrInfo$Lengths extracts the vector of lengths contained in the internal ChrInfo list, and we can even modify elements of these vectors with syntax like athal$ChrInfo$GeneCounts[1] <- 7079 (perhaps a new gene was recently discovered on the first chromosome). Expanding the syntax a bit to use double-brackets rather than $ notation, these are equivalent to lengths <- athal[["ChrInfo"]][["Lengths"]] and athal[["ChrInfo"]][["GeneCounts"]][1] <- 7079.
+
+Attributes, Removing Elements, List Structure
+Lists are an excellent way to organize heterogeneous data, especially when data are stored in a Name → Value association,[1] making it easy to access data by character name. But what if we want to look up some information associated with a piece of data but not represented in the data itself? This would be a type of “metadata,” and R allows us to associate metadata to any piece of data using what are called attributes. Suppose we have a simple vector of normally distributed data:

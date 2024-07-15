@@ -1,0 +1,16 @@
+_n = newnode was called before newnode.set_next(self.first_n)? We would lose all references to the rest of the list: itemlist.first_n would refer to newnode, the new node’s .next_n would refer to None, and no variable would refer to the node holding 3—it would be lost in RAM and eventually garbage collected.
+
+As mentioned above, the class for a Node is quite similar. In fact, it is possible to build linked lists with only one object type, but this would necessitate a “dummy” node to represent an empty list anyway (perhaps storing None in its self.item).
+
+Our new data structure is relatively easy to use, and it keeps itself sorted nicely:
+
+Linked List Methods
+This idea of “passing the buck” between nodes is pretty clever, and it allows us to write sophisticated queries on our data structure with ease. Suppose we wanted to ask whether a given item is already present in the list.
+
+To solve a problem like this, we can think of each node as implementing a decision procedure (using a method, like .is_item_present(query)). The LinkedList interface object would return False if its self.first_n is None (to indicate the list is empty, so the query item can’t be present). If its self.first_n is not None, it calls self.first_n.is_item_present(query), expecting that node to either return True or False.
+
+For a node, the decision procedure is only slightly more complex:
+
+Here is a quick demonstration of the usage (the whole script can be found in the file linkedlist.py):
+
+Notice the similar

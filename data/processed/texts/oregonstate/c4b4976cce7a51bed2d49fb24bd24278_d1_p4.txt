@@ -1,0 +1,11 @@
+(..) into the present working directory (., or “here”).
+
+Copy a File or Directory
+Copying files and directories is similar to moving them, except that the original is not removed as part of the operation. The command for copying is cp, and the syntax is cp <source_path> <destination_path>. There is one caveat, however: cp will not copy an entire directory and all of its contents unless you add the -r flag to the command to indicate the operation should be recursive.
+
+Forgetting the -r when attempting to copy a directory results in an omitting directory warning.
+
+It is possible to simultaneously copy and move (and remove, etc.) many files by specifying multiple sources. For example, instead of cp ../todo_list.txt ., we could have copied both the to-do list and the p450s.fasta file with the same command:
+
+Remove (Delete) a File or Directory
+Files may be deleted with the rm command, as in rm <target_file>. If you wish to remove an entire directory and everything inside, you need to specify the -r flag for recursive, as in rm -r <target_dir>. Depending on the configuration of your system, you may be asked “are you sure?” for each file, to which you can reply with a y. To avoid this checking, you can also specify the -f (force) flag, as in rm -r -f <target_dir> or rm -rf <target_dir>. Let’s create a temporary directory alongside the file copies from above, inside the projects folder, and then remove the p450s.fasta file and the todo_list.txt file as well as the temporary folder.

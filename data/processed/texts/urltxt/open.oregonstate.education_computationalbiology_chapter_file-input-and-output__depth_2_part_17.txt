@@ -1,0 +1,11 @@
+ake two passes over the data: one as in the example to compute the mean, and another to compute the sum of squared differences. This means you’ll need to access the E values twice. Rather than close and reopen the data file, you should create an initially empty list to which you can append each E value (in your first pass over the data) for later use.
+
+To compute the square root of a float, you will need to import the math module by calling import math near the top of your program. Then the math.sqrt() function will return the square root of a float; for example, math.sqrt(3.0) will return the float 1.7320508.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

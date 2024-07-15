@@ -1,0 +1,101 @@
+Primary Navigation
+
+Book Contents Navigation
+
+Preface
+
+Acknowledgements
+
+Dedication
+
+1. Context
+
+2. Logging In
+
+3. The Command Line and Filesystem
+
+4. Working with Files and Directories
+
+5. Permissions and Executables
+
+6. Installing (Bioinformatics) Software
+
+7. Command Line BLAST
+
+8. The Standard Streams
+
+9. Sorting, First and Last Lines
+
+10. Rows and Columns
+
+11. Patterns (Regular Expressions)
+
+12. Miscellanea
+
+13. Hello, World
+
+14. Elementary Data Types
+
+15. Collections and Looping: Lists and for
+
+16. File Input and Output
+
+17. Conditional Control Flow
+
+18. Python Functions
+
+19. Command Line Interfacing
+
+20. Dictionaries
+
+21. Bioinformatics Knick-knacks and Regular Expressions
+
+22. Variables and Scope
+
+23. Objects and Classes
+
+24. Application Programming Interfaces, Modules, Packages, Syntactic Sugar
+
+25. Algorithms and Data Structures
+
+26. An Introduction
+
+27. Variables and Data
+
+28. Vectors
+
+29. R Functions
+
+30. Lists and Attributes
+
+31. Data Frames
+
+32. Character and Categorical Data
+
+33. Split, Apply, Combine
+
+34. Reshaping and Joining Data Frames
+
+35. Procedural Programming
+
+36. Objects and Classes in R
+
+37. Plotting Data and ggplot2
+
+Files
+
+Index
+
+Index
+
+About the Author
+
+Creative Commons License
+
+Recommended Citations
+
+Versioning
+
+A Primer for Computational Biology
+
+11 Patterns (Regular Expressions)

@@ -1,0 +1,8 @@
+scenarios would be missed:
+
+For each gene’s expression measurements, we need a classic ANOVA (analysis of variance) model. After accounting for the variance explained by the genotype difference (to which we can assign a p value indicating whether there is a difference) as well as the variance explained by the treatment (which will also have a p value), is the leftover variance—for the interaction/differential response—significant?
+
+A Single Gene Test, Formulas
+To get started, we’ll run an ANOVA for just a single gene.[3] First, we’ll need to isolate a sub-data frame consisting of readings for only a single ID. We can use the unique() function to get a vector of unique IDs, and then the %in% operator to select rows matching only the first of those.
+
+This data frame contains rows for a single gene and columns for expression, genotype, treatment, and others (we could verify this with a simple print() if needed). We wish to run an ANOVA for these variables, based on a linear model predicting expression values from genotype, treatment, and the interaction of these terms.

@@ -1,0 +1,11 @@
+ending in .py! Thus, when we use import modulename, the interpreter searches for a modulename.py containing the various function and class definitions. Module files may either exist in a system-wide location, or be present in the working directory of the program importing them.[2]
+
+Importing the module in this way creates a namespace for the module. This namespace categorizes all of the functions and classes contained within that module so that different modules may have functions, classes, and variables with the same name without conflicting.
+
+If we have the above two files in the same directory as our program, source code like the following would print 4, 64, "TAC", and 2.71828.
+
+Unfortunately, Python uses the . operator in multiple similar ways, such as indicating a method belonging to an object (as in a_list.append("ID3")) and to indicate a function, variable, or class definition belonging to a namespace (as above).
+
+Thus, as a “container” for names, the namespace allows different modules to name functions, classes, and variables the same way without conflicting. Just as a class may be documented by its API, so may modules: a module’s API describes the functions, classes, and variables it defines. These may also be accessed through the interactive help menu (and online). Try running import re followed by help(re) to see all the functions provided by the re module.
+
+There are a huge number of modules (and packages) available for download online, and Python also comes with

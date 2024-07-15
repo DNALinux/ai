@@ -1,0 +1,7 @@
+gth of the counter vector (which is growing).
+
+To understand why this is the case, we have to inspect the line counter <- c(counter, 1), which appends a new element to the counter vector. Let’s consider a related set of lines, wherein two vectors are concatenated to produce a third.
+
+In the above, names will be the expected four-element vector, but the first_names and last_names have not been removed or altered by this operation—they persist and can still be printed or otherwise accessed later. In order to remove or alter items, the R interpreter copies information from each smaller vector into a new vector that is associated with the variable names.
+
+Now, we can return to counter <- c(counter, 1). The right-hand side copies information from both inputs to produce a new vector; this is then assigned to the variable counter. It makes little difference to the interpreter that the variable name is being reused and the original vector will no longer be accessible: the c() function (almost) always creates a new vector in RAM. The amount of time it takes to do this copying thus grows along with the length of the counter vector.

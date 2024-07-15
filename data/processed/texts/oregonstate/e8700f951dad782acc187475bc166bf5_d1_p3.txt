@@ -1,0 +1,11 @@
+h most programming languages, Python included: if we perform mathematical operations using only int types, the result will always be an int. Thus, if we want to have our operations return a floating point value, we need to convert at least one of the inputs on the right-hand side to a float type first. Fortunately, we can do this in-line:
+
+In the last line above, we see that mathematical expressions can be grouped with parentheses in the usual way (to override the standard order of operations if needed), and if a subexpression returns a float, then it will travel up the chain to induce floating-point math for the rest of the expression.[2]
+
+Another property of importance is that the right-hand side of an assignment is evaluated before the assignment happens.
+
+Aside from the usual addition and subtraction, other mathematical operators of note include ** for exponential powers and % for modulus (to indicate a remainder after integer division, e.g., 7 % 3 is 1, 8 % 3 is 2, 9 % 3 is 0, and so on).
+
+Notice that we’ve reused the variables a, b, and c; this is completely allowable, but we must remember that they now refer to different data. (Recall that a variable in Python is a name that refers to, or references, some data.) In general, execution of lines within the same file (or cell in an iPython notebook) happens in an orderly top-to-bottom fashion, though later we’ll see “control structures” that alter this flow.
+
+Booleans are simple data types that hold either the special valu

@@ -1,0 +1,9 @@
+ctures like while-loops in interesting ways. R excels at generating random data from a given distribution; for example, rnorm(1000, mean = 20, sd = 10) returns a 100-element numeric vector with values sampled from a normal distribution with mean 20 and standard deviation 10.
+
+Although we’ll cover plotting in more detail later, the hist() function allows us to produce a basic histogram from a numeric vector. (Doing so requires a graphical interface like Rstudio for easily displaying the output. See chapter 37, “Plotting Data and ggplot2,” for details on plotting in R.)
+
+What if we wanted to sample numbers originally from this distribution, but limited to the range 0 to 30? One way to do this is by “resampling” any values that fall outside of this range. This will effectively truncate the distribution at these values, producing a new distribution with altered mean and standard deviation. (These sorts of “truncated by resampling” distributions are sometimes needed for simulation purposes.)
+
+Ideally, we’d like a function that encapsulates this idea, so we can say sample <- rnorm_trunc(0, 30, 1000, mean = 20, sd = 10). We’ll start by defining our function, and inside the function we’ll first produce an initial sample.
+
+Note the usage of mean = mean in the call to rnorm(). The right-hand side refers to the parameter passed to the rnorm_trunc() function, the left-hand side refers to the parameter taken by rnorm(), and the interpreter has no problem with this usage.

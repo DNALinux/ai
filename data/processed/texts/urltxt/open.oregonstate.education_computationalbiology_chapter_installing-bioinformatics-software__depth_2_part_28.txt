@@ -1,0 +1,8 @@
+) character): 00001010. On Microsoft systems, they are represented by a pair of 8-bit bytes (“Carriage Return” (CR) followed by NF): 0000110100001010. This means that text files created on Microsoft operating files may not be readable on Unix-like systems, and vice versa.
+
+Fortunately, there are utilities available for converting between these formats. On the command line, the utilities dos2unix and unix2dos convert to and from Unix-like format, respectively. This isn’t often an issue, as most file transfer programs (FireFTP included) automatically perform the appropriate conversion. The command-line utility file can also be used to determine the type of a file, including its newline type.
+
+Putting It All Together
+At this point, we’ve obtained the data we wish to process, and we’ve successfully installed the software we intend to run on that data.
+
+The first step is to run muscle on the p450s.fasta file to produce a multiple alignment. One quick way to identify how a program like muscle should be run (what parameters it takes) is to run it without any parameters. Alternatively, we could try the most common options for getting help: muscle -h, muscle --help, muscle --h, or muscle -help.

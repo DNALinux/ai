@@ -1,0 +1,7 @@
+re changing the contents of some string data by reusing the variable name. In the code below, we are defining strings seqa and seqb, as well as seqc as the concatenation of these, and then seqd as a substring of seqc. Finally, we reuse the seqa variable name to refer to different data (which gets copied from the original).
+
+Here’s how we might represent these variables and the data stored in memory, both before and after the reassignment of seqa.
+
+Because the string "ACTAG" is immutable, redefining seqa results in an entirely different piece of data being created. The original string "ACTAG" will still exist in memory (RAM) for a short time, but because it is not accessible via any variables, Python will eventually clean it out to make room in memory in a process known as garbage collection.[4] Garbage collection is an automatic, periodic process of de-allocating memory used by data that are no longer accessible (and hence no longer needed) by the program.
+
+This immutability of strings could result in code that takes much longer to execute than expected, because concatenating strings results in copying of data (see the results of seqc = seqa + seqb above). For example, if we had a command that concatenated chromosome strings (millions of letters each) to create a genome string, genome = chr1 + chr2 + chr3 + chr4, the result would be a copy of all four chromosomes being created in memory! On the other hand, in many cases, Python can use the immutability of strings to its advan

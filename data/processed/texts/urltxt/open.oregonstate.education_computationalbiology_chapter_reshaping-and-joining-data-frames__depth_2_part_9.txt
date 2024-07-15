@@ -1,0 +1,16 @@
+frame, even if the variable name is to be reused as in df <- rbind(df, df2). Wherever possible, data frames should be generated with a split-apply-combine strategy (such as with group_by() and do()) or a reshaping technique, rather than with many repeated applications of rbind().
+
+Exercises
+Use the spread() function in the tidyr library to produce a CO2_spread data frame that looks like so:
+Next, undo this operation with a gather(), re-creating the CO2 data frame as CO2_recreated.
+
+From the CO2 data frame, generate a data frame like the following, where the last two columns report mean uptake for each Type/conc combination:
+You’ll likely want to start by computing appropriate group-wise means from the original CO2 data.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

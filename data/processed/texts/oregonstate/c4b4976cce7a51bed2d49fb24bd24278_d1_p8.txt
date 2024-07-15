@@ -1,0 +1,9 @@
+press Tab, and the shell will autocomplete the portion of the path or command, up until the autocompletion becomes ambiguous. When the options are ambiguous, the shell will present you with the various matching options so that you can inspect them and keep typing. (If you want to see all options even if you haven’t started typing the next part of a path, you can quickly hit Tab twice.) You can hit Tab as many times as you like while entering a command. Expert command-line users use the Tab key many times a minute!
+
+Getting Help on a Command or Program
+Although we’ve discussed a few of the options(also known as arguments, or flags) for programs like ls, cp, nano, and others, there are many more you might wish to learn about. Most of these basic commands come with “man pages,” short for “manual pages,” that can be accessed with the man command.
+
+This command opens up a help page for the command in question (usually in less or a program similar to it), showing the various parameters and flags and what they do, as well as a variety of other information such as related commands and examples. For some commands, there are also “info” pages; try running info ls to read a more complete overview of ls. Either way, as in less, pressing q will exit the help page and return you to the command prompt.
+
+Viewing the Top Running Programs
+The top utility is invaluable for checking what programs are consuming resources on a machine; it shows in an interactive window the various processes (runn

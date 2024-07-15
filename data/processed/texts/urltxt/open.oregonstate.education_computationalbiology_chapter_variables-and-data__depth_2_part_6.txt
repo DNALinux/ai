@@ -1,0 +1,14 @@
+ay, each side of an ampersand or | must result in a logical—the code a == 9 | 7 is not the same as a == 9 | a == 7 (and, in fact, the former will always result in TRUE with no warning).
+
+Because R is such a dynamic language, it can often be useful to check what type of data a particular variable is referring to. This can be accomplished with the class() function, which returns a character string of the appropriate type.
+
+We’ll do this frequently as we continue to learn about various R data types.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

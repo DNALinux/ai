@@ -1,0 +1,11 @@
+lines and can be appended to a list of strings to be later joined for that ID). While reinventing the FASTA-parsing wheel is good practice for novice coders, the BioPython package provides functions to parse these and many other formats.[7]
+
+BioPython is a large package with many modules and APIs, which you can read more about at http://biopython.org. For the specific application of parsing a FASTA file, a good place to start is a simple web search for “biopython fasta,” which leads us to a wiki page describing the SeqIO module, complete with an example.
+
+This screenshot shows a few differences from the way we’ve been writing code, for example, the use of open() as opposed to io.open(), and the call to print record.id rather than our usual print(record.id) (the former of which will work only in older versions of Python, whereas the latter will work in all reasonably recent versions of Python). Nevertheless, given our knowledge of packages, modules, and objects, we can deduce the following from this simple code example:
+
+If we do some more reading on the SeqIO wiki page, we’d find that the record objects actually have the class SeqRecord, and they also have a seq instance variable providing access to the full sequence.
+
+Putting this all together, here’s a short program that converts a FASTA file to the row/column format we’ve been dealing with.
+
+Syntactic Sugar

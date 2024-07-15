@@ -1,0 +1,9 @@
+ent in the list with an integer starting at zero:
+
+A dictionary works in much the same way, except instead of indices, dictionaries use “keys,” which may be integers or strings.[1] We’ll usually draw dictionaries longwise, and include the keys within the illustrating brackets, because they are as much a part of the dictionary structure as the values:
+
+Let’s create a dictionary holding these keys and values with some code, calling it ids_to_gcs. Note that this name encodes both what the keys and values represent, which can be handy when keeping track of the contents of these structures. To create an empty dictionary, we call the dict() function with no parameters, which returns the empty dictionary. Then, we can assign and retrieve values much like we do with lists, except (1) we’ll be using strings as keys instead of integer indices, and (2) we can assign values to keys even if the key is not already present.
+
+We can then access individual values just like with a list:
+
+However, we cannot access a value for a key that doesn’t exist. This will result in a KeyError, and the program will halt.

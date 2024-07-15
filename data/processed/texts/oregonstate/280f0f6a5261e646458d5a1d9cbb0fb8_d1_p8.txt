@@ -1,0 +1,11 @@
+the printed output of the print(anova1) call above. Because anova1 is a data frame as well as a list, these three names are actually the row names of the data frame. (Sometimes useful data hide in strange places!)
+
+So, given any result of a call to anova(), no matter the formula used in the linear model, we should be able to computationally produce a single-row p-values data frame. But we’ve got to be clever. We can’t just run pvals_df1 <- data.frame(pvals1), as this will result in a single-column data frame with three rows, rather than a single-row data frame with three columns. Rather, we’ll first convert the p-values vector into a list with as.list(), the elements of which will become the columns of the data frame because data frames are a type of list. From there, we can assign the rownames() of anova1 to the colnames() of the pvals_df1 data frame.[4]
+
+The programmatically generated output is as follows:
+
+This time, there’s an extra column for the residuals, but that’s of little significance.
+
+This whole process—taking a sub–data frame representing expression values for a single gene and producing a single-row data frame of p values—is a good candidate for encapsulating with a function. After all, there are well-defined inputs (the sub–data frame of data for a single gene) and well-defined outputs (the p-values data frame), and we’re going to want to run it several thousand times, once for each gene ID.
+
+To get the result for our expr1 sub–data frame, we’d simply need to

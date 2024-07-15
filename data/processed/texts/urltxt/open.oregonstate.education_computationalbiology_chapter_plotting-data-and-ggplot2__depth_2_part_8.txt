@@ -1,0 +1,7 @@
+specified the "smooth" stat. As a consequence, the underlying data representing carat and price were modified by the stat, and the stat knew which variables to smooth on the basis of this aesthetic mapping.
+
+For a second example, let’s look at the "bin" stat and the "bar" geom, which together create a histogram. The "bin" stat checks the x aesthetic mapping to determine which column to bin into discrete counts, and also creates some entirely new columns in the stat-transformed data, including one called ..count... The extra dots indicate to the user that the column produced by the stat is novel. The "bar" geom pays attention to the x aesthetic (to determine each bar’s location on the horizontal axis) and the y aesthetic (to determine each bar’s height).
+
+The result of plotting the above is shown below on the left. To complete the example, below on the right shows the same plot with geom = "point". We can easily see that the stat-transformed data contain only about 30 rows, with columns for bin centers (carat mapped on x) and counts (..count..). The "bin" stat also generates a ..density.. column you can explore.
+
+Smart Defaults, Specialized Layer Functions

@@ -1,0 +1,12 @@
+could use that on the standard input and extract the corresponding lines from the GO file.
+
+Exercises
+Write a function called codon_to_aa() that takes in a single three-base-pair string and returns a one-character string with the corresponding amino acid code. You may need to define all 64 possibilities, so be careful not to make any typos! If the input is not a valid three-base-pair DNA string, the function should return "X" to signify “unknown.” Test your function with a few calls like print(codon_to_aa("TGG")), print(codon_to_aa("TAA")), and print(codon_to_aa("BOB")).
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

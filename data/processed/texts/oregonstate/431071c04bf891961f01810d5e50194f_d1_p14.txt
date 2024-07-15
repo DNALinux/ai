@@ -1,0 +1,13 @@
+committing, we need to enter a commit message, which gives us a chance to summarize the changes that are being committed.
+
+At this point, a git status would merely inform us that we still have untracked files. Let’s suppose we make some edits to runhmmer.sh (adding a new comment line, perhaps), as well as create a new README.txt file describing the project.
+
+Running git status at this point would report a new untracked file, README.txt, as well as a line reading modified: runhmmer.sh to indicate that this file has changed since the last commit. We could continue to edit files and work as needed; when we are ready to commit the changes, we just need to stage the appropriate files and run another commit.
+
+Every version that we commit is saved, and we can easily see a quick log of the history of a project with git log.
+
+Notice that each commit is given a long serial number, such as ec46950b36.... To see the differences between two commits, we can run git diff with just the few characters of each serial number, as in git diff 50c11fe ec4695. The output format isn’t remarkably readable by default.
+
+Many other operations can be performed by git, such as viewing the contents of files from previous versions and “reverting” a project to a previous state (at least for those files that are tracked).
+
+There are two other features worth mentioning. First, it’s not uncommon to have many files that we’d like to leave untracked, but adding all of the rest one at a time with git add is tediou

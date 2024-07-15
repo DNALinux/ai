@@ -1,0 +1,9 @@
+tinue this service. Back in 2011, SGD implemented InterMine (http://www.InterMine.org), an open source data warehouse system with a sophisticated querying interface, to create YeastMine, a multifaceted search and retrieval […]
+Read More
+
+Due to ongoing cuts to our funding, SGD can no longer continue to provide the YeastMine data warehouse resource. It is with heavy hearts that we discontinue this service. Back in 2011, SGD implemented InterMine (http://www.InterMine.org), an open source data warehouse system with a sophisticated querying interface, to create YeastMine, a multifaceted search and retrieval […]
+
+About this newsletter:This is the Summer 2024 issue of the SGD newsletter. The goal of this newsletter is to inform our users about new features in SGD and to foster communication within the yeast community. You can view this newsletter as well as previous newsletters, on the SGD Community Wiki. Contents Give a Gift / Support SGD Budget […]
+Read More
+
+About this newsletter:This is the Summer 2024 issue of the SGD newsletter. The goal of this newsletter is to inform our users about new features in SGD and to foster communication within the yeast community. You can view this newsletter as well as previous newsletters, on the SGD Community Wiki. Contents Give a Gift / Support SGD Budget […]

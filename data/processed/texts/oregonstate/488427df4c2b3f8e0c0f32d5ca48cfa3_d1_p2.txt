@@ -1,0 +1,13 @@
+rator, though the latter is most commonly found and generally preferred.
+
+Here, print() is a function, which prints the contents of its parameter (to the interpreter window in RStudio, or standard output on the command line). This function has the “side effect” of printing the output but doesn’t return anything.[1] By contrast, the abs() function returns the absolute value of its input without any other effects.
+
+The interpreter ignores # characters and anything after them on a single line, so we can use them to insert comments in our code for explanation or to improve readability. Blank lines are ignored, so we can add them to improve readability as well.
+
+You might be curious why the extra [1] is included in the printed output; we’ll return to that point soon, but for now, let it suffice to say that the number 4.4 is the first (and only) of a collection of values being printed.
+
+The right-hand side of an assignment is usually evaluated first, so we can do tricky things like reuse variable names in expressions.
+
+Variable and function names in R deserve some special discussion. There are a variety of conventions, but a common one that we’ll use is the same convention we used for Python: variable names should (1) consist of only letters and numbers and underscores, (2) start with a lowercase letter, (3) use underscores to separate words, and (4) be meaningful and descriptive to make code more readable.
+
+In R, variable and function names are also allowed to include the . charac

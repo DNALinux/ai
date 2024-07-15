@@ -1,0 +1,5 @@
+nts to show the trends in the small majority. Instead, we should either log-adjust the data by plotting aes(x = log(Average_coverage), y = Consensus_length), or log-adjust the scale. If we log-adjusted the data, we’d have to remember that the values are adjusted. It makes better sense to modify the scale itself, and plot the original data on the nonlinear scale. This can be done by supplying a trans = parameter to the scale, and specifying the name of a supported transformation function to apply to the scale as a single-element character vector. In fact, let’s make both the x and y scales log-adjusted. While we’re at it, we’ll specify explicit break marks for the scales, as well as custom labels for those break marks.
+
+The result is below left, and it looks quite good. For a flourish, we can add an annotation_logticks(base = 10) to get logarithmically scaled tick-marks, shown below right.
+
+Other adjustment functions we could have used for the trans = parameter include "log2" or "sqrt", though "log10" is a common choice with which most viewers will be familiar.

@@ -1,0 +1,9 @@
+stdin much like the read-only file handles we saw in previous examples. We can test our program on a simple file holding some gene IDs:
+
+But if we attempt to run our program without giving it any input on the standard input stream, it will sit and wait for data that will never come.
+
+To kill the program, we can use the usual Control-c. The reason for this behavior is that the standard input stream can be used for input from standard out of another program (as we wish to do), or it can be used to build interactive programs. To see this, we can run the same program, except this time we’ll type some input using the keyboard, and when we’re done we’ll send the control code Control-d, which is a way to tell Python we are done sending input.
+
+This hints at some interesting possibilities for interactive programs,[1] but in this case it would likely be confusing for someone wanting to utilize our program by piping data to it. Fortunately, sys.stdin has a method called .isatty() that returns True if there are no data present on the input stream when it is called. (TTY is short for “TeleTYpewriter,” a common name for a keyboard-connected input device of decades past.) So, we can fairly easily modify our program to quit with some helpful usage text if it detects that there are no data present on standard input.
+
+It’s almost always a good idea for a program to check whether it is being called correctly, and to give some helpful usage information if not. It’s also common to include, in co

@@ -1,0 +1,17 @@
+erate on entire vectors return an NA if any element is NA. A canonical example is the mean() function.
+
+Such functions often include an optional parameter that we can give, na.rm = TRUE, specifying that NA values should be removed before the function is run.
+
+While this is convenient, there is a way for us to remove NA values from any vector (see below).
+Other special values in R include NaN, for “Not a Number,” returned by calculations such as the square root of -1, sqrt(-1), and Inf for “Infinity,” returned by calculations such as 1/0. (Inf/Inf, by the way, returns NaN.)
+Returning to the concept of vectorized operations, simple arithmetic operations such as +, *, /, -, ^ (exponent), and %% (modulus) are vectorized as well, meaning that an expression like 3 * 7 is equivalent to c(3) * c(7). When the vectors are longer than a single element, the operation is done on an element-by-element basis.
+
+
+If we consider the * operator, it takes two inputs (numeric or integer) and returns an output (numeric or integer) for each pair from the vectors. This is quite similar to the comparison >, which takes two inputs (numeric or integer or character) and returns a logical.
+
+
+Vector Recycling
+
+What happens if we try to multiply two vectors that aren’t the same length? It turns out that the shorter of the two will be reused as needed, in a process known as vector recycling, or the reuse of the shorter vector in a vectorized operation.
+
+This works well when working with vectors of length on

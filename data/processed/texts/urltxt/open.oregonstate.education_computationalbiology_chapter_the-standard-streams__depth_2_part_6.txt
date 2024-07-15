@@ -1,0 +1,12 @@
+ates that a command spans multiple lines by showing us a >, which shouldn’t be confused with the redirect character that we might type ourselves. The following example shows the exact same command in a more readable form broken over multiple lines, but the highlighted characters have not been typed.
+
+A chain of commands like the above, separated by pipe characters, is often called a “pipeline.” More generally, though, a pipeline can describe any series of steps from input data to output data (as in the Muscle/HMMER series covered in chapter 6).
+
+Counting Simple AT Repeats
+Let’s expand on the small pipeline above to inspect just the “simple” AT repeats, that is, those that are the string “AT” repeated one or more times. We can start with what we have, but rather than just searching for unit:, we’ll modify the pattern to find unit:AT, and see what we get:
+
+The resulting output is close to what we hoped for, but not quite complete, as this pattern also matches things like unit:ATT and unit:ATG.
+
+We probably want to further filter the output, but based on what pattern? In this case, those lines that match not only unit:AT, but also the term dinucleotide. Rather than attempt to produce a single complicated pattern that does this job in a single grep, we can add another grep call into the pipeline.
+
+This command results in the output we want:

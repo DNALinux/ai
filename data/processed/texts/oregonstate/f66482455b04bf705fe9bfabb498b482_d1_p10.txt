@@ -1,0 +1,12 @@
+face for a given instance has buttons for suspending or resuming a suspended instance, as well as buttons for “Stop” (shutting an instance down), “Reboot” (rebooting the instance), and “Delete” (removing the instance and all data stored in it).
+
+Once an instance is up and running, there are several ways to access it. First, it is accessible via SSH at the IP address provided. Note that this IP address is likely to change each time the instance is resumed. Above, the IP address is shown as 128.196.64.36, so we could access it from the OS X Terminal application:
+
+[soneil@mbp ~]$ ssh oneils@128.196.64.36
+
+The Atmosphere Web interface also provides an “Open Web Shell” button, providing command-line access right in your browser. When you are done working with your Atmosphere instance, it’s important to suspend the instance, otherwise you’ll be wasting computational resources that others could be using (as well as your own quota).
+
+Logging Out
+Once finished working with the remote computer, we should log out of the SSH session. Logging out is accomplished by running the command exit on the command line until returned to the local desktop or the SSH client program closes the connection. Alternatively, it suffices to close the SSH client program or window—SSH will close the connection, and no harm will be done. Note, however, than any currently executing program will be killed on logout.
+
+If you are working on an Atmosphere instance or similar remotely hosted virtual machine, it’s a

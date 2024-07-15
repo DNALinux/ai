@@ -1,0 +1,4 @@
+st the as.integer() function, logical indexing, and comparisons like >, generate a sequence r_decimals that contains all values of r that are not round integers. (That is, it should contain all values of r except 1.0, 2.0, 3.0, and so on. There should be 297 of them.)
+We briefly mentioned the %%, or “modulus,” operator, which returns the remainder of a number after integer division (e.g., 4 %% 3 == 1 and 4 %% 4 == 0; it is also vectorized). Given any vector r, for example r <- seq(1, 30, 0.3), produce a vector r_every_other that contains every other element of r. You will likely want to use %%, the == equality comparison, and you might also want to use seq() to generate a vector of indices of the same length as r.
+
+Do the same again, but modify the code to extract every third element of r into a vector called r_every_third.

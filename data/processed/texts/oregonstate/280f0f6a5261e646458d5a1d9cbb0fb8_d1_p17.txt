@@ -1,0 +1,13 @@
+a column for weight and returns a data frame with summary statistics. We can run it on the original data frame:
+
+Alternatively, we can call do() on the grouped data frame, telling it to run mean_sd_weight() on each group (sub-data frame). The syntax for do() differs slightly from that of lapply() in that we specify a . for the positional argument representing the sub-data frame.
+
+The result of the do() is another grouped data frame, made up of the rows returned by the applied function. Notice that the grouping columns have been added, even though we didn’t specify them in the ret_df inside the function.
+
+When developing functions that work with do(), you might run into an error like Error: Results are not data frames at positions: 1, 2. This error message indicates that the function is not returning a data frame type, which is required for do(). To diagnose problems like this, you can add print() statements inside of the function to inspect the contents of variables as the function is applied.
+
+We can also group data frames by multiple columns, resulting in a single group per combination of column entries.[7]
+
+The NA values for some standard deviations are the result of calling sd() on a vector of length one (because there was only one trout measurement per lake).
+
+Although the applied function must take a data frame and return a data frame, there are no restrictions on the nature of the returned data frame. Here our function returns a single-row data frame, but it could ret

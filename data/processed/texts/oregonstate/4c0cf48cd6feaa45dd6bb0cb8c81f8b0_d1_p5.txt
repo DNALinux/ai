@@ -1,0 +1,11 @@
+the left”:
+
+To drive this home, we’ll first remove our pz_stats.table file, and then rerun our grep for unit: on the pz_stats.txt file, but rather than send the result of grep to a file with the > redirect, we’ll direct it straight to the standard input of wc with a | redirect.
+
+In this example, we’ve neither created a new file nor specified a file for wc to read from; the data are stored in a temporary buffer that is handled automatically by the shell and operating system. The less program can also read from standard input, so if we wanted to see the contents of the grep without creating a new file, we could run grep 'unit:' pz_stats.txt | less -S.
+
+Recall that the fasta_stats program wrote its output to standard out, and because grep can read from standard input as well, we can process the entire FASTA file without needing to create any new files by using multiple such buffers:
+
+When this command runs, the results printed by fasta_stats on standard error will still be printed to the terminal (as that is the default and we didn’t redirect standard error), but the standard output results will be filtered through grep and then filtered through wc, producing the eventual output of 471 lines.
+
+At this point, the longish nature of the commands and the fact that our terminal window is only so wide are making it difficult to read the commands we are producing. So, we’ll start breaking the commands over multiple lines by ending partial commands with backslashes. Just as in the shell

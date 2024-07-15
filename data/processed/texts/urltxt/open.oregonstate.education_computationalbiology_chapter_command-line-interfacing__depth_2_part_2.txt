@@ -1,0 +1,10 @@
+those concepts, allowing us to use Python as “glue” to connect other powerful command line concepts.
+
+Standard Input is a File Handle
+In previous chapters, we saw that simple Unix/Linux utilities such as grep and sort can be chained together for a variety of data manipulation tasks.
+
+The above command uses grep to match lines in the file pz_stats.table against the pattern _L, which are printed to standard output. Using the | redirect, we send this output to sort on its standard input and sort the lines on the second column in general numeric order, before piping this output to less -S.
+
+Again, sort and less are not reading their input from a file, but rather from standard input streams. Similarly, they are not writing their output to a file, but just printing to the standard output streams. It’s often useful to design our own small utilities as Python programs that operate in the same way.
+
+The “file handle as a pipe” analogy that we’ve been using will serve us well when writing programs that read input from standard input. The file handle associated with standard input is easy to use in Python. We just have to import the sys module, and then sys.stdin is a variable that references the read-only file handle that works just like any other. We don’t even have to use io.open(). Here’s a program that prints each line passed into it on standard input.

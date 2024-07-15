@@ -1,0 +1,11 @@
+e’s a world of difference between rm -rf project_copy (which deletes the folder project_copy) and rm -rf project _copy (which removes the folders project and _copy, if they exist).
+
+Checking the Size of a File or Directory
+Although ls -lh can show the sizes of files, this command will not summarize how much disk space a directory and all of its contents take up. To find out this information, there is the du (disk usage) command, which is almost always combined with the -s (summarize) and -h (show sizes in human-readable format) options.
+
+As always, . is a handy target, here helping to determine the file space used by the present working directory.
+
+Editing a (Text) File
+There is no shortage of command-line text editors, and while some of them—like vi and emacs—are powerful and can enhance productivity in the long run, they also take a reasonable amount of time to become familiar with. (Entire books have been written about each of these editors.)
+
+In the meantime, a simple text editor available on most systems is nano; to run it, we simply specify a file name to edit:

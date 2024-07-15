@@ -1,0 +1,8 @@
+se and complex code. It is certainly easy to get too ambitious with the idea of classes and objects. Creating custom classes for every little thing risks confusion and needless hassle. In the end, it is up to each programmer to decide what level of encapsulation is right for the project; for most people, good separation of concepts by using classes is an art form that requires practice.
+
+When should you consider creating a class?
+
+Inheritance and Polymorphism
+Despite this discussion of objects, there are some unique features of the object-oriented paradigm that we haven’t covered but are sometimes considered integral to the topic. In particular, most object-oriented languages (Python included) support inheritance and polymorphism for objects and classes.
+
+Inheritance is the idea that some types of classes may be represented as special cases of other types of classes. Consider a class defining a Sequence, which might have instance variables for self.seq and self.id. Sequences might be able to report their length, and so might have a .length_bp() method, returning len(self.seq). There may also be many other operations a generic Sequence could support, like .get_id(). Now, suppose we wanted to implement an OpenReadingFrame class; it too should have a self.id and a self.seq and be able to report its .length_bp(). Because an object of this type would represent an open reading frame, it probably should also have a .get_translation() method returning the amino-acid translation of it

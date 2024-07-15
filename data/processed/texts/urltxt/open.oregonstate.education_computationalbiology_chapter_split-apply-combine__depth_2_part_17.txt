@@ -1,0 +1,13 @@
+t returning a data frame type, which is required for do(). To diagnose problems like this, you can add print() statements inside of the function to inspect the contents of variables as the function is applied.
+
+We can also group data frames by multiple columns, resulting in a single group per combination of column entries.[7]
+
+The NA values for some standard deviations are the result of calling sd() on a vector of length one (because there was only one trout measurement per lake).
+
+Although the applied function must take a data frame and return a data frame, there are no restrictions on the nature of the returned data frame. Here our function returns a single-row data frame, but it could return multiple rows that would be stitched together in the combine step. As an example, here’s a function that, given a data frame, computes the mean() of the weight column, and subtracts that mean from all of the entries, returning the modified data frame (so-called “mean normalization” of the data).
+
+And then we can easily mean-normalize the data on a per group basis!
+
+In the above output, -1.15 and 1.15 are the deviations from the mean of the trout group, and the others are deviations from the mean for the bass group.
+
+More Sugar, Optional Parameters, Summarize

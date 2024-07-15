@@ -1,0 +1,11 @@
+me sequence, the distribution of fragment lengths that will result.
+
+Write a function gbs_cut() that takes a DNA sequence, a regular expression pattern, and a “bin size.” It should return a dictionary mapping sequence lengths, rounded down to the nearest bin size, to the number of fragments produced by the cutter in that bin. As an example, "AAAAGCAGCAAAAAAGCTGCAAGCAGCAAAAA" when processed with "GC[AT]GC" produces fragment sizes of 4, 6, 2, and 5. If grouped in a bin size of 3, the dictionary would have keys 0, 3, and 6, and values 1, 1, and 2.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

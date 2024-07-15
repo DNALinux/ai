@@ -1,0 +1,17 @@
+or, and name (if the list is named). Lists, however, can hold multiple different types of data (including other lists). Suppose we had three different vectors representing some information about the plant Arabidopsis thaliana.
+
+We can then use the list() function to gather these vectors together into a single unit with class "list".
+
+Graphically, we might represent this list like so:
+
+Here, the [1] syntax is indicating that the elements of the list are vectors (as in when vectors are printed). Like vectors, lists can be indexed by index vector and logical vector.
+
+Both of the above assign to the variable sublist a list looking like:
+
+This seems straightforward enough: subsetting a list with an indexing vector returns a smaller list with the requested elements. But this rule can be deceiving if we forget that a vector is the most basic element of data. Because 2 is the length-one vector c(2), athal[2] returns not the second element of the athal list, but rather a length-one list with a single element (the vector of ecotypes).
+
+A graphical representation of this list:
+
+We will thus need a different syntax if we wish to extract an individual element from a list. This alternate syntax is athal[[2]].
+
+If we wanted to extract the second ecotype directly, we would need to use the relatively clunky second_ecotype <- athal[[2]][2], which accesses the second element of the vector (accessed by [2]) inside of the of the second element of the list (accessed by [[2]]).

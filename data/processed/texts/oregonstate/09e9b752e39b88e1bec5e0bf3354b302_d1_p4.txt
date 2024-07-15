@@ -1,0 +1,14 @@
+d() function, which binds such data frames by their columns, and only works if they contain the same number of rows.
+
+A quick print(head(expr_long_split)) lets us know if we’re headed in the right direction.
+
+At this point, the number of columns in the data frame has grown large, so print() has elected to wrap the final column around in the printed output.
+
+Detecting and %in%
+We still don’t have separate columns for tissue and replicate, but we do have this information encoded together in a tissuerep column. Because these values are encoded without a pattern to obviously split on, str_split_fixed() may not be the most straightforward solution.
+
+Although any solution assuming a priori knowledge of large data set contents is dangerous (as extraneous values have ways of creeping into data sets), a quick inspection of the data reveals that the tissue types are encoded as either A, B, or C, with apparently no other possibilities. Similarly, the replicate numbers are 1, 2, and 3.
+
+A handy function in the stringr package detects the presence of a pattern in every entry of a character vector, returning a logical vector. For the column tissuerep containing "A1", "A3", "B1", "B2", "B3", "C1", ..., for example, str_detect(expr_long_split$tissuerep, "A") would return the logical vector TRUE, TRUE, FALSE, FALSE, FALSE, .... Thus we can start by creating a new tissue column, initially filled with NA values.
+
+Then we’ll use selective replacement to fill this column with the value "A" where

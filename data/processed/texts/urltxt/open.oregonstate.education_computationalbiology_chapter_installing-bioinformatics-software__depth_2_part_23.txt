@@ -1,0 +1,17 @@
+vering these sequences of steps, and which tools to use. The following strategies generally work well, though creativity is almost always rewarded.
+
+If we visit the muscle homepage, we’ll see a variety of download options, including binaries for our system, Linux.
+
+Unfortunately, there appear to be two options for Linux binaries: 32-bit and 64-bit. How do we know which of these we want? We can get a hint by running the uname program, along with the -a parameter to give as much information as possible.
+
+The uname program gives information about the operating system, which in this case appears to be GNU/Linux for a 64-bit, x86 CPU. If any of the binaries are likely to work, it will be the “i86linux64” set. We’ll wget that gzipped tarball in the downloads directory.
+
+Note that in this case we haven’t used the -O option for wget, because the file name described by the URL (muscle3.8.31_i86linux64.tar.gz) is what we would like to call the file when it is downloaded anyway. Continuing on to unpack it, we find it contains only an executable that we can attempt to run.
+
+Because it didn’t report an execution error, we can install it by copying it to our $HOME/local/bin directory. While doing so, we’ll give it a simpler name, muscle.
+
+Now our multiple aligner, muscle, is installed!
+
+Exercises
+
+Getting Data

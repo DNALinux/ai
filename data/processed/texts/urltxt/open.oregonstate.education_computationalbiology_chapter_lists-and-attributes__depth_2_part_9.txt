@@ -1,0 +1,9 @@
+tc.), then the quotation marks can be left off.
+
+This shortcut is widely used and convenient, but, because the quotes are implied, we can’t use $ syntax to extract an element by name if that name is stored in an intermediary variable. For example, if extract_name <- "ecotypes", then athal$extract_name will expand to athal[["extract_name"]], and we won’t get the ecotypes vector. This common error reflects a misunderstanding of the syntactic sugar employed by R. Similarly, the $ syntax won’t work for names like "# Chromosomes" because that name contains a space and a special character (for this reason, names of list elements are often simplified).
+
+Frequently, $ syntax is combined with vector syntax if the element of the list being referred to is a vector. For example, we can directly extract the third ecotype, or set the third ecotype.
+
+Continuing with this example, let’s suppose we have another list that describes information about each chromosome. We can start with an empty list, and assign elements to it by name.
+
+This list of two elements relates to A. thaliana, so it makes sense to include it somehow in the athal list. Fortunately, lists can contain other lists, so we’ll assign this chrs list as element of the athal list.

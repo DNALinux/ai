@@ -1,0 +1,7 @@
+you won’t want to type nano -w -i -E -T 4 ... every time you want to edit a Python code file. Fortunately, nano can be configured to automatically use these options if they are specified correctly in a file called .nanorc in your home directory. But this may not be the best choice, either: when editing files that are not Python code, you likely don’t want to convert all your tab entries to spaces. Instead, you may want to define a shell alias called nanopy specifically for editing Python code. To have this shell alias preserved for each login session, the relevant code would need to be added to your .bashrc (assuming your shell is bash):
+
+If you are going to perform the above, double-check that the command is exactly as written. After logging out and back in, you can edit a Python code file with the alias using nanopy helloworld.py.
+
+As evident from the code sample above, nano can also provide syntax highlighting (coloring of code for readability) if your $HOME/.nanorc and related files are configured properly, though it isn’t necessary for programming.
+
+Don’t forget that it is often useful to have multiple terminal windows open simultaneously. You can use one for editing, one for running your program and testing, and perhaps a third running top, displaying how much CPU and RAM your program is using.

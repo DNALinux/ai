@@ -1,0 +1,14 @@
+elevant file names on the command line, as in: ./runhmmer.sh p450s.fasta dmel-all-translation-r6.02.fasta p450s_hmmsearch_dmel.txt.
+
+This runhmmer.sh is a good candidate for inclusion in our $HOME/local/bin so that we can run it from anywhere, though we may want to add lines immediately following the #! line, to provide some help text for anyone who attempts to run the script without providing the correct inputs:
+
+The “if block” above will only execute if the number of parameters given ($#) is not equal to 3. Although languages like Python provide much nicer facilities for this sort of logic-based execution, the ability to conditionally provide usage information for scripts is important. As usual for bash, the interpreter ignores lines that start with #.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

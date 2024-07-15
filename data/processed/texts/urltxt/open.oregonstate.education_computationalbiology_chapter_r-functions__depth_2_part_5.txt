@@ -1,0 +1,12 @@
+ve the same name as the variable being passed will cause no trouble.
+
+Variables and Scope
+Let’s run a quick experiment. Inside our function, the variable result has been assigned with the line result <- abs(a - b) < epsilon. After we run the function, is it possible to access that variable by printing it?
+
+Printing doesn’t work!
+
+This variable doesn’t print because, as in most languages, variables assigned within functions have a scope local to that function block. (A variable’s scope is the context in which it can be accessed.) The same goes for the parameter variables—we would have no more success with print(a), print(b), or print(epsilon) outside of the function.
+
+One of the best features of these local variables is that they are independent of any variables that might already exist. For example, the function creates a variable called result (which we now know is a local variable scoped to the function block). What if, outside of our function, we also had a result variable being used for an entirely different purpose? Would the function overwrite its contents?
+
+True to the independence of the local result variable inside the function, the contents of the external result are not overwritten.

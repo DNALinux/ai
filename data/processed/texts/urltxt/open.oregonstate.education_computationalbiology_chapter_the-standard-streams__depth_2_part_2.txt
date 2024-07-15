@@ -1,0 +1,9 @@
+feature, we’ve created a simple program called fasta_stats that, given a FASTA file name as its first parameter, produces statistics on each sequence. We’ll also look at the file pz_cDNAs.fasta, which contains a set of 471 de novo assembled transcript sequences from Papilio zelicaon, and pz_cDNAs_sample.fasta, which contains only the first two.
+
+We can run the fasta_stats program (after making it executable) with ./fasta_stats pz_cDNAs_sample.fasta.
+
+Based on the information printed, it appears that sequence PZ7180000031590 has a GC content (percentage of the sequence composed of G or C characters) of 37.8%, is 486 base pairs long, the most common five-base-pair sequence is ACAAA (occurring 5 times), and the longest perfect repeat is 10 base pairs long, caused by the pentanucleotide ATTTA, occurring twice.
+
+Much like hmmsearch, this program writes its output to standard output. If we would like to save the results, we know that we can redirect the output of standard out with the > redirect.
+
+When we run this command, however, we see that even though the output file has been created, text is still printed to the terminal! If we use less -S to view the pz_sample_stats.txt file, we see that some of the output has gone to the file.

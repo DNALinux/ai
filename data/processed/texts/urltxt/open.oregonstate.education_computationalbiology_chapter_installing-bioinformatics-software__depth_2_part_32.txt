@@ -1,0 +1,11 @@
+g this script executable with chmod, we could then rerun the analysis by navigating to this directory and running ./runhmmer.sh.
+
+What if we wanted to change the input file, say, to argonase-1s.fasta instead of p450s.fasta? We could create a new project directory to work in, copy this script there, and then change all instances of p450s.fasta in the script to argonase-1s.fasta.
+
+Alternatively, we could use the power of environment variables to architect our script in such a way that this process is easier.
+
+Now the file names of interest are specified only once, near the top of the script, and from then on the script uses its own identifiers (as environment variables) to refer to them. Reusing this script would be as simple as changing the file names specified in three lines.
+
+We can go a step further. It turns out that shell scripts can take parameters from the command line. The first parameter given to a script on the command line will be automatically stored in a variable accessible to the script called $1, the second parameter will be stored in $2, and so on. We can thus further generalize our script:
+
+We could have replaced all instances of $query with $1, but this organization makes our script easier to read in the future, an important consideration when programming. Now we can run a full analysis by specifying the three relevant file names on the command line, as in: ./runhmmer.sh p450s.fasta dmel-all-translation-r6.02.fasta p450s_hmmsearch_dmel.txt.

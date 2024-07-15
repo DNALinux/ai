@@ -1,0 +1,10 @@
+wing the Contents of a (Text) File
+Although there are many tools to view and edit text files, one of the most efficient for viewing them is called less, which takes as a parameter a path to the file to view, which of course may just be a file name in the present working directory (which is a type of relative path).[1]
+
+The invocation of less on the file p450s.fasta opens an “interactive window” within the terminal window, wherein we can scroll up and down (and left and right) in the file with the arrow keys. (As usual, the mouse is not very useful on the command line.) We can also search for a pattern by typing / and then typing the pattern before pressing Enter.
+
+When finished with less, pressing q will exit and return control to the shell or command line. Many of the text formats used in computational biology include long lines; by default, less will wrap these lines around the terminal so they can be viewed in their entirety. Using less -S will turn off this line wrapping, allowing us to view the file without any reformatting. Here’s what the file above looks like when viewed with less -S p450s.fasta:
+
+Notice that the first long line has not been wrapped, though we can still use the arrow keys to scroll left or right to see the remainder of this line.
+
+Creating New Directories

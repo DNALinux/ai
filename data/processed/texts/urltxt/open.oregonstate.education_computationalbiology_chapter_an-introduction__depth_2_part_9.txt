@@ -1,0 +1,10 @@
+he library() function will need to be used (once) for each library in each R script that uses it. These calls are usually collected near the top of the script.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

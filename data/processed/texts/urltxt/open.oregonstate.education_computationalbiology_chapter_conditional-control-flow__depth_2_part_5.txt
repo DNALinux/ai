@@ -1,0 +1,5 @@
+s 1 (or result in an error if count doesn’t exist as a variable at that point). The reverse mistake is harder to make, as Python does not allow variable assignment in if-statement and while-loop definitions.
+
+In the above, the intent is to determine whether the length of seq is a multiple of 3 (as determined by the result of len(seq)%3 using the modulus operator), but the if-statement in this case should actually be if remainder == 0:. In many languages, the above would be a difficult-to-find bug (remainder would be assigned to 0, and the result would be True anyway!). In Python, the result is an error: SyntaxError: invalid syntax.
+
+Still, a certain class of dangerous comparison is common to nearly every language, Python included: the comparison of two float types for equality or inequality.

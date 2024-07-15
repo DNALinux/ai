@@ -1,0 +1,7 @@
+gorical Data.” (The cat() function works similarly, and allows us to include special characters like tabs and newlines by using \t and \n, respectively; cat("Shawn\tO'Neil") would output something like Shawn O'Neil.)
+
+Character types are different from integers and numerics, and they can’t be treated like them even if they look like them. However, the as.character() and as.numeric() functions will convert character strings to the respective type if it is possible to do so.
+
+By default, the R interpreter will produce a warning (NAs induced by conversion) if such a conversion doesn’t make sense, as in as.numeric("Shawn"). It is also possible to convert a numeric or integer type to a character type, using as.character().
+
+The “logical” data type, known as a Boolean type in other languages, is one of the more important types for R. These simple types store either the special value TRUE or the special value FALSE (by default, these can also be represented by the shorthand T and F, though this shorthand is less preferred because some coders occasionally use T and F for variable names as well). Comparisons between other types return logical values (unless they result in a warning or error of some kind). It is possible to compare character types with comparators like < and >; the comparison is done in lexicographic (dictionary) order.

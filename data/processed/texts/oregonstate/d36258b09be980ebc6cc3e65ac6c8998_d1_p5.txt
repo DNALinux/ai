@@ -1,0 +1,13 @@
+the types of skills you wish to acquire and situational needs will play a large role at any given time. Some advice: eventually, learn to program in multiple languages. The benefits of learning more than one language are easily on par with learning to program in the first place!
+
+Hello, World
+R is an interpreted language, meaning that an R program is a text file (or multiple text files, in some cases) with commands that are interpreted by another program interacting with the CPU and RAM through the operating system. On the command line, the R interpreter is simply R, which we can run and send commands to one at a time.
+
+When we are done working with the R interpreter this way, we can run quit(save = "no") to exit, instructing that any temporary data that we haven’t already explicitly saved should not be saved.
+
+We will occasionally need to work with the R interpreter in this way, particularly when we need to install packages. For the most part, however, we will run R programs as executable scripts, much like we did for Python. In this case, we use the Rscript interpreter via the familiar #!/usr/bin/env Rscript line, which as always must be the first line of the file. (See chapter 5, “Permissions and Executables,” for more information on creating executable script files on the command line.)
+
+As with other script types, we can make this script executable with chmod and execute it.
+
+RStudio
+Programming in R on the command line works as well as any other language, but the most c

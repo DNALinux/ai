@@ -1,0 +1,6 @@
+ompatible with our system, then so much the better: we can download them, ensure they are executable, and place them in $HOME/local/bin. Alternatively, we may need to download the source code files and perform the compilation ourselves. In some cases, developers distribute binaries, but certain features of the program can be customized in the compilation process.
+
+For the sake of completeness, we’ll do a source install of HMMER; later, we’ll get some other software as binaries.[1]
+
+Downloading and Unpacking
+We’re going to download the source files for HMMER; first, we are going to create a new directory to store downloads, called downloads, in our home directory (you may already have such a directory).

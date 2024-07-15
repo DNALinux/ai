@@ -1,0 +1,7 @@
+er vectors.
+
+A good method for understanding factors might be to understand one of the historical reasons for their development, even if the reason is no longer relevant today. How much space would the treatment column of the experimental data frame above require to store in memory, if the storage was done naively? Usually, a single character like "c" can be stored in a single byte (8 bits, depending on the encoding), so an entry like "chemical" would require 8 bytes, and "control" would require 7. Given that there are ~360,000 entries in the full table, the total space required would be ~0.36 megabytes. Obviously, the amount of space would be greater for a larger table, and decades ago even a few megabytes of data could represent a challenge.
+
+But that’s for a naive encoding of the data. An alternative could be to encode "chemical" and "control" as simple integers 1 and 2 (4 bytes can encode integers from -2.1 to 2.1 billion), as well as a separate lookup table mapping the integer 1 to "chemical" and 2 to "control". This would be a space savings of about two times, or more if the terms were longer. This type of storage and mapping mechanism is exactly what factors provide.[1]
+
+We can convert a character vector (or factor) into a factor using the factor() function, and as usual the head() function can be used to extract the first few elements.

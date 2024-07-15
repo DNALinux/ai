@@ -1,0 +1,7 @@
+e Chromosome class. Although it is difficult to show here, it’s a good idea to work on and debug each method in turn (with occasional print() statements), starting with the constructors. Because a SNP is only a SNP if the reference and alternative allele differ, we’ll assert this condition in the constructor so an error is produced if we ever try to create a nonpolymorphic SNP (which wouldn’t actually be a SNP at all).
+
+Note the shortcut that we took in the above code for the .is_transversion() method, which calls the .is_transition() method and returns the opposite answer. This sort of “shortcut” coding has its benefits and downsides. One benefit is that we can reuse methods rather than copying and pasting to produce many similar chunks of code, reducing the potential surface area for bugs to occur. A downside is that we have to be more careful—in this case, we’ve had to ensure that the alleles differ (via the assert in the constructor), so a SNP must be either a transition or transversion. (Is this actually true? What if someone were to attempt to create a SNP object with non-DNA characters? It’s always wise to consider ways code could be inadvertently misused.)
+
+The above shows the start of the script and the SNP class; code like this could be tested with just a few lines:
+
+Although we won’t ultimately leave these testing lines in, they provide a good sanity check for the code. If these checks were wrapped in a function that could be called whenever we make changes to the

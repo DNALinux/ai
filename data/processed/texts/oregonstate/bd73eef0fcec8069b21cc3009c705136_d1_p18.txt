@@ -1,0 +1,44 @@
+secutive insertions aren’t uncommon in real-world data.
+More sophisticated structures called “balanced” binary trees have modifications to their insertion methods that ensure the tree stays bushy, no matter what order items are inserted. This is tricky, as it requires manipulating the structure of the tree after insertions, but the structure manipulation itself can’t take too long or the benefit of insertion is lost. Examples of balanced binary trees include so-called red-black trees, and AVL trees (named after Georgy Adelson-Velsky and Evgenii Landis, who first described them).
+
+
+
+
+Structure
+Insert an Item
+Get Smallest
+
+
+Sorted Simple List
+
+
+
+
+Sorted Linked List
+
+
+
+
+“Bushy” Binary Tree
+
+
+
+
+“Un-bushy” Binary Tree
+
+
+
+
+Balanced Binary Tree
+
+
+
+
+
+
+In practice, we don’t make a distinction between “bushy” and “un-bushy” binary trees: simple binary-search trees are  for both .insert_item() and .get_smallest(), because we cannot guarantee bushiness (recall that we assume worst-case performance when analyzing an algorithm). Real applications thus use AVL trees, red-black trees, or other more sophisticated data structures.
+
+Exercises
+
+Add “pass the buck” methods to BinaryTree and its Node class for .print_in_order() and .print_reverse_order(), causing the items to be printed in sorted and reverse-sorted order, respectively.
+Add .count_nodes() methods that return the total number of items stored in the tree. How long does it take, in order notation? Does this depend on whether the tree

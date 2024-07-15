@@ -1,0 +1,9 @@
+different columns in the output.
+
+By default, merge() produces an “inner join,” meaning that rows are present in the output only if entries are present for both the left (heights) and right (ages) inputs. We can specify all = TRUE to perform a full “outer join.” Here’s merge(heights, ages, all = TRUE).
+
+In this example, NA values have been placed for entries that are unspecified. From here, rows with NA entries in either the height or age column can be removed with row-based selection and is.na(), or a “left outer join” or “right outer join,” can be performed with all.x = TRUE or all.y = TRUE, respectively.
+
+In chapter 32, we also looked at cbind() after splitting character vectors into multicolumn data frames. This function binds two data frames into a single one on a column basis. It won’t work if the two data frames don’t have the same number of rows, but it will work if the two data frames have column names that are identical, in which case the output data frame might confusingly have multiple columns of the same name. This function will also leave the data frame rows in their original order, so be careful that the order of rows is consistent before binding. Generally, using merge() to join data frames by column is preferred to cbind(), even if it means ensuring some identifier column is always present to serve as a binding column.
+
+The rbind() function combines two data frames that may have different numbers of rows but have the same number of columns. Further, the colu

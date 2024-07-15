@@ -1,0 +1,13 @@
+stent with this indentation practice).
+
+When using a for-loop to iterate over a list, we need to specify a variable name that will reference each element of the list in turn.
+
+In the above, one line is indented an additional level just below the line defining the for-loop. In the for-loop, the gene_id variable is set to reference each element of the gene_ids list in turn. Here’s the output of the loop:
+
+Using for-loops in Python often confuses beginners, because a variable (e.g., gene_id) is being assigned without using the standard = assignment operator. If it helps, you can think of the first loop through the block as executing gene_id = gene_ids[0], the next time around as executing gene_id = gene_ids[1], and so on, until all elements of gene_ids have been used.
+
+Blocks may contain multiple lines (including blank lines) so that multiple lines of code can work together. Here’s a modified loop that keeps a counter variable, incrementing it by one each time.
+
+The output of this loop would be the same as the output above, with an additional line printing 3 (the contents of counter after the loop ends).
+
+Some common errors when using block structures in Python include the following, many of which will result in an IndentationError.

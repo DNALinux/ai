@@ -1,0 +1,12 @@
+rcentile_range(sample$s1) to get the default interquartile range of the first sample, or as ipercentile_range(samples$s2, lower = 0.05, upper = 0.95), to get the middle 90th percentile range. Similarly, we have the ability to supply the optional parameters through the ... of lapply(), which will in turn supply them to every call of the ipercentile_range function during the apply step.
+
+This syntax might seem a bit awkward, but something like it is necessary if we hope to pass functions that take multiple parameters as parameters to other functions. This also should help illuminate one of the commonly misunderstood features of R.
+
+Functions Are Everywhere
+Although mostly hidden from view, most (if not all) operations in R are actually function calls. Sometimes function names might contain nonalphanumeric characters. In these cases, we can enclose the function name in backticks, as in iqr1 <- `ipercentile_range`(samples$s1). (In chapter 27, “Variables and Data,” we learned that any variable name can be enclosed in backticks this way, though it’s rarely recommended.)
+
+What about something like the lowly addition operator, +? It works much like a function: given two inputs (left-hand-side and right-hand-side vectors), it returns an output (the element-by-element sum).
+
+In fact, + really is a function that takes two parameters, but to call it that way we need to use backticks.
+
+This might be considered somewhat amazing—the “human-readable” version is converted into a corresponding

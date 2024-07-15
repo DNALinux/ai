@@ -1,0 +1,5 @@
+es too short. So, an AminoAcidSequence could override the .length_bp() method to return 3*len(self.seq). The interesting feature of polymorphism is that given an object like gene_A, we don’t even need to know what “kind” of Sequence object it is: running gene_A.length_bp() will return the right answer if it is any of these three kinds of sequence.
+
+These ideas are considered by many to be the defining points of “object-oriented design,” and they allow programmers to structure their code in hierarchical ways (via inheritance) while allowing interesting patterns of flexibility (via polymorphism). We haven’t covered them in detail here, as making good use of them requires a fair amount of practice. Besides, the simple idea of encapsulating data and functions into objects provides quite a lot of benefit in itself!
+
+Exercises

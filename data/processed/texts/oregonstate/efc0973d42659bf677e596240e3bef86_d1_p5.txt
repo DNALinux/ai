@@ -1,0 +1,7 @@
+in the figure below illustrate the scope for some variables in equivalent C++ and Python code. Because C++ uses block-level scoping, and x and y are declared inside of blocks, we cannot access their contents outside of those blocks.
+
+This might seem like an advantage for Python, but in this case we think that that C++ may have it right. After all, if we needed for the y and z variables to be accessible after the if-blocks in the C++ example, we could have declared them along with x. We might even have given them a default value to hold using declarations like int y = -1 and int z = -1; if these variables still hold -1 after the if-blocks are run, then we know that those internal lines didn’t execute. This would be especially helpful if the value of x wasn’t set to five as it is here, but rather is dependent on the input data.
+
+In Python, on the other hand, code like this might cause a problem. If the x variable is dependent on the input data, then the y and z variables might never be set at all, leading to an eventual NameError when they are later accessed. We certainly shouldn’t consider any program that sometimes produces an error, depending on the input data, to be very good!
+
+Probably the best way around this sort of problem is to pretend that Python uses block-level scoping, declaring variables in the widest block/level in which they will be used. None is a good default value that we can later check for if we want to conditionally execute later code on the basis of whet

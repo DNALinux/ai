@@ -1,0 +1,8 @@
+eadable” version is converted into a corresponding function call behind the scenes by the interpreter. The latter, functional representation is easier for the interpreter to make use of than the human-friendly representation. This is an example of syntactic sugar: adjustments to a language that make it “sweeter” for human programmers. R contains quite a lot of syntactic sugar. Even the assignment operator <- is a function call! The line a <- c(1, 2, 3) is actually syntactic sugar for `<-`("a", c(1, 2, 3)).
+
+Because functions are just a type of data and function names are variables, we can easily reassign new functions to old names. Perhaps a colleague has left her R session open, so we decide to redefine + to mean “to the power of”:
+
+Ok, maybe that’s a bit too evil. Another feature of R is that function names that begin and end with % and take two parameters signals that the function can be used as an infix function via syntactic sugar.
+
+Sugary Data Frame Split-Apply-Combine
+Although the basic units of data in R are vectors, and lists are used to store heterogeneous data, data frames are important as a storage mechanism for tabular data. Because lapply() can apply a function to each element of a list, it can also apply a function to each column of a data frame. This fact can be used, for example, to extract all numeric columns from a data frame with an application of lapply() and is.numeric() (the latter returns TRUE when its input is a numeric type; we’ll leave the details a

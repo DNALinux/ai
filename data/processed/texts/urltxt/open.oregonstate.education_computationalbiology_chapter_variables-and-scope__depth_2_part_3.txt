@@ -1,0 +1,9 @@
+hat we could access the variable seq3 from inside the function, even if we shouldn’t. But what about the other way around? Could we access the gc variable, which was defined within the function, outside the function?
+
+In fact, we cannot. The above print(gc) line, even after the computation of seq3_gc, would produce a NameError: name 'gc' is not defined. This error occurs because variables have scope, and the gc variable’s scope is limited, from the time it is defined to the end of the function block in which it is defined (all of the red-highlighted variables share this feature). Variables with limited scope are called local variables. A variable’s scope is the context in which can be used. It defines “how long the variable lives,” or “where the variable exists.” A variable with limited scope, as in the execution of a function, is called a local variable.
+
+After the function call ends, the picture would look more like so:
+
+Eventually, the garbage collector will notice that no variables refer to the data 2, 4, and 11, and it will clear those out of RAM to make room for new data.
+
+Because scope talks about variables, it has little to do with the data to which a variable refers—except to say that data are garbage collected when there are no variables referring to that data in any current scope. Nevertheless, because the gc variable is not in scope after the function ends, we can’t use it outside of the function block.

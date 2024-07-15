@@ -1,0 +1,10 @@
+R suite can produce the profile and search it against the target set, they cannot produce a multiple alignment from a set of sequences that are similar but not all the same length. Although there are many multiple-alignment tools with different features, we’ll download the relatively popular muscle. This time, we’ll install it from binaries.
+It’s worth discussing how one goes about discovering these sequences of steps, and which tools to use. The following strategies generally work well, though creativity is almost always rewarded.
+
+Read the methods sections of papers with similar goals.
+Ask your colleagues.
+Search the Internet.
+Read the documentation and published papers for tools you are already familiar with, as well as those publications that cite them.
+Don’t let the apparent complexity of an analysis prevent you from taking the first steps. Most types of analyses employ a number of steps and many tools, and you may not have a clear picture of what the final procedure will be. Experiment with alternative tools, and look for help when you get stuck. Be sure to document your work, as you will inevitably want to retrace your steps.
+
+If we visit the muscle homepage, we’ll see a variety of download options, including binaries for our system, Linux.

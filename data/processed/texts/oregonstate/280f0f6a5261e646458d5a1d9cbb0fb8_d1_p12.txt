@@ -1,0 +1,12 @@
+type.
+
+The lapply() function can also take as input a vector instead of a list, and it is but one of the many “apply” functions in R. Other examples include apply(), which applies a function to each row or column of a matrix,[6] and sapply() (for “simple apply”), which detects whether the return type should be a vector or matrix depending on the function applied. It’s easy to get confused with this diversity, so to start, it’s best to focus on lapply() given its relatively straightforward (but useful) nature.
+
+Collecting Parameters with …
+The help page for lapply() is interesting. It specifies that the function takes three parameters: X (the list to apply over), FUN (the function to apply), and ..., which the help page details as “optional arguments to FUN.”
+
+The ... parameter is common in R, if a bit mysterious at times. This “parameter” collects any number of named parameters supplied to the function in a single unit. This collection can then be used by the function; often they are passed on to functions called by the function.
+
+To illustrate this parameter, let’s modify our ipercentile_range() function to take two optional parameters, a lower and upper percentile from which the range should be computed. While the interquartile range is defined as the range in the data from the 25th to the 75th percentile, our function will be able to compute the range from any lower or upper percentile.
+
+Now we can call our function as ipercentile_range(sample$s1) to get the default inter

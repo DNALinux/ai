@@ -1,0 +1,16 @@
+led self.root_n, because the node it references is the “root” of the tree. Before any items have been inserted, self.root_n will be None. Upon an item insertion, if self.root_n is None, the new item goes there; otherwise, the buck is necessarily passed to self.root_n. We’ll see why in a moment.
+
+Now, for the Node class, we’ll need a constructor, as well as “get” and “set” methods for both left_n and right_n, which initially are set to None.
+
+What about a node’s .insert_item() method? What sort of decision-making process needs to happen? The process is even simpler than for a sorted linked list. If each node always follows the rule that smaller items can be found to the left and larger or equal items can always be found to the right, then new items can always be inserted at the bottom of the tree. In the tree above, for example, a node holding 8 would be placed to the right of (and “below”) the node holding 7. The decision process for a node is thus as follows:
+
+Is the new item to insert less than our self.item? If so, the new item goes to the left:
+
+Is self.left_n equal to None? If so, then we need to create a new node holding the new item, and set self.left_n to that node.
+If not, we can pass the buck to self.left_n.
+
+
+Otherwise, the item must be larger than or equal to self.item, so it needs to go to the right:
+
+Is self.right_n equal to None? If so, then we need to create a new node holding the new item, and set self.right_n to that node.
+If not, we can pass the buck to sel

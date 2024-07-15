@@ -1,0 +1,5 @@
+is git, which has gained popularity for a number of reasons, including its use in managing popular software projects like the Linux kernel.[4]The git system (which is managed by a program called git) uses a number of vocabulary words we should define first.
+
+The git system, like all version control systems, is fairly complex and provides many features. The basics, though, are: (1) there is a folder containing the project of interest; (2) changes to some files are made over time; (3) edited files can periodically be “staged”; and (4) a “commit” includes a snapshot of all staged files and stores the information in a “version.” (For the record, all of this information is stored in a hidden directory created within the project directory called .git, which is managed by the git program itself.)
+
+To illustrate, let’s create a repository for the p450s project, edit the runhmmer.sh script file as well as create a README.txt file, and commit those changes. First, to turn a directory into a git repository, we need to run git init:

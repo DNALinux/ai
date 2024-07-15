@@ -1,0 +1,9 @@
+re’s the result after transferring our p450s.fasta file.
+
+
+DOS/Windows and Unix/Linux Newlines
+For the most part, the way text is encoded on Microsoft operating systems (like DOS and Windows) and on Unix-like systems (like Linux and OS X) is similar. But there is one difference: how the ends of lines, or “newline characters” are represented. In Unix-like systems, a newline is represented by a single 8-bit byte (the “Line Feed” (NF) character): 00001010. On Microsoft systems, they are represented by a pair of 8-bit bytes (“Carriage Return” (CR) followed by NF): 0000110100001010. This means that text files created on Microsoft operating files may not be readable on Unix-like systems, and vice versa.
+Fortunately, there are utilities available for converting between these formats. On the command line, the utilities dos2unix and unix2dos convert to and from Unix-like format, respectively. This isn’t often an issue, as most file transfer programs (FireFTP included) automatically perform the appropriate conversion. The command-line utility file can also be used to determine the type of a file, including its newline type.
+
+Putting It All Together
+At this point, we’ve obtained the data we wish to process, and we’ve successfully installed the software we intend to run on that data.

@@ -1,0 +1,11 @@
+tion is known as FASTA and is the format we want, so the next step is to navigate to the fasta directory. Other potentially interesting options include the gff and gtf directories, which hold text-based annotation files describing the location and function of genes in the genome. (These formats are often useful for RNA-seq analysis.)
+
+Finally, we see a variety of gzipped files we can wget on the command line. Because we are interested in the full protein data set for this species, we will use the URL for dmel-all-translation-r6.02.fasta.gz.
+
+Before running wget on the file, we’ll create a projects directory in our home directory, and a p450s directory inside there to work in.
+
+Because the file is gzipped, we can use gzip -d to decompress it, and then use less -S to view the results without the long lines wrapped in the terminal window.
+
+The result illustrates the standard format for a FASTA file. Each sequence record begins with line starting with a > character, and the first non-whitespace-containing word following that is considered the sequence ID.
+
+This line might then contain whitespace characters and metadata. Whitespace comprises a sequence of one or more spaces, tabs (represented in Unix/Linux as a special character sometimes written as \t), or newlines (represented in Unix/Linux as a special character sometimes written as \n) in a row.

@@ -1,0 +1,7 @@
+uncompress utility that can handle most common types.
+
+The most common syntax for creating a gzipped tarball uses the tar utility, which can do both jobs of tarring and gzipping the inputs. As an example, the command tar -cvzf hmmer_compress_copy.tar.gz hmmer-3.1b1 would create (c), with verbose output (v), a gzipped (z) tarball in a file (f) called hmmer_compress_copy.tar.gz from the input directory hmmer-3.1b1.
+
+Traditionally, zipped files of source code were the most common way to distribute software. More recently, version control systems (used by developers to track changes to their software over time) have become web-enabled as a way to distribute software to end-users. One such system is git, which allows users to download entire directories of files using a “clone URL” over the web. GitHub is a similarly popular page for hosting these projects. Here’s a screenshot of the GitHub page for Sickle, a fast-quality trimmer for high-throughput sequence data.
+
+The GitHub “HTTPS clone URL” is shown after clicking on the green “Clone or download” link; to download the Sickle source on the command line, one need only run a command like git clone https://github.com/najoshi/sickle.git, provided the git program is installed. (The git program can also be used on the command line for tracking “snapshots” of files in a directory over time, providing a log of the work done. Such logged directories can then be synced to GitHub, making it relatively easy to share projects with others.)

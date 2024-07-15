@@ -1,0 +1,12 @@
+s even presented in a small help menu at the bottom.
+
+Although nano is not as sophisticated as vi or emacs, it does support a number of features, including editing multiple files, cut/copy/paste, find and replace by pattern, and syntax highlighting of code files.
+
+Code files are the types of files that we will usually want to edit with nano, rather than essays or short stories. By default, on most systems, nano automatically “wraps” long lines (i.e., automatically presses Enter) if they would be longer than the screen width. Unfortunately, this feature would cause an error for most lines of code! To disable it, nano can be started with the -w flag, as in nano -w todo_list.txt.
+
+Command-Line Efficiency
+While the shell provides a powerful interface for computing, it is certainly true that the heavy reliance on typing can be tedious and prone to errors. Fortunately, most shells provide a number of features that dramatically reduce the amount of typing needed.
+
+First, wildcard characters like * (which matches any number of arbitrary characters) and ? (which matches any single arbitrary character) allow us to refer to a group of files. Suppose we want to move three files ending in .temp into a temp directory. We could run mv listing the files individually:
+
+Alternatively, we could use mv file*.temp temp; the shell will expand file*.temp into the list of files specified above before passing the expanded list to mv.[2]

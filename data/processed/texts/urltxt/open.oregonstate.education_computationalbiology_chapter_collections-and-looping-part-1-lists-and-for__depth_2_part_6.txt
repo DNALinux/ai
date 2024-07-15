@@ -1,0 +1,11 @@
+for-loop slightly differently by generating a list of integers to use as indices, and iterating over that:
+
+The output of one of the loops above:
+
+The second example above illustrates the rationale behind the inclusive/exclusive nature of the range() function: because indices start at zero and go to one less than the length of the list, we can use range(0, len(ids)) (as opposed to needing to modify the ending index) to properly iterate over the indices of ids without first knowing the length of the list. Seasoned programmers generally find this intuitive, but those who are not used to counting from zero may need some practice. You should study these examples of looping carefully, and try them out. These concepts are often more difficult for beginners, but they are important to learn.
+
+Loops and the blocks they control can be nested, to powerful effect:
+
+In the above, the outer for-loop controls a block of five lines; contained within is the inner for-loop controlling a block of only two lines. The outer block is principally concerned with the variable i, while the inner block is principally concerned with the variable j. We see that both blocks also make use of variables defined outside them; the inner block makes use of sum, i, and j, while lines specific to the outer block make use of sum and i (but not j). This is a common pattern we’ll be seeing more often. Can you determine the value of total at the end without running the code?
+
+List Comprehensions

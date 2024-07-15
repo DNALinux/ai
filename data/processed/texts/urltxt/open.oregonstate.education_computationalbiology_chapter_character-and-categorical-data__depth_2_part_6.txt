@@ -1,0 +1,7 @@
+five samples’ replicate numbers should be; perhaps they were miscoded somehow. Second, we could add "0" as a separate replicate possibility (so a few groups were represented by four replicates, rather than three). Alternatively, we could remove these mystery entries.
+
+Finally, we could remove all measurements for these gene IDs, including the other replicates. For this data set, we’ll opt for the latter, as the existence of these “mystery” measurements throws into doubt the accuracy of the other measurements, at least for this set of five IDs.
+
+To do this, we’ll first extract a vector of the “bad” gene IDs, using logical selection on the id column based on is.na() on the rep column.
+
+Now, for each element of the id column, which ones are equal to one of the elements in the bad_ids vector? Fortunately, R provides a %in% operator for this many-versus-many sort of comparison. Given two vectors, %in% returns a logical vector indicating which elements of the left vector match one of the elements in the right. For example, c(3, 2, 5, 1) %in% c(1, 2) returns the logical vector FALSE, TRUE, FALSE, TRUE. This operation requires comparing each of the elements in the left vector against each of the elements of the right vector, so the number of comparisons is roughly the length of the first times the length of the second. If both are very large, such an operation could take quite some time to finish.

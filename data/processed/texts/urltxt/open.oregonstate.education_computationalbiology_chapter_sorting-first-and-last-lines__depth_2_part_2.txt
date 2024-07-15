@@ -1,0 +1,7 @@
+racters.
+
+Which sequence contains the longest perfect repeat? To answer this question, we could consider sorting the lines according to this seventh column. (First, we’ll have to remove the header lines themselves, which we can accomplish by filtering out lines matching # using the -v flag of grep, or by grepping for unit:, as in chapter 8.) Enter sort, which sorts lines from a text file (or from standard input) by specified columns: sort <file> or ... | sort.
+
+By default, sort sorts by all columns, by comparing the entire lines in “dictionary,” or lexicographic order. To sort by specific columns, we need to use a rather sophisticated syntax. We’ll illustrate with a figure.
+
+The sort utility takes many potential parameters, though the most important are the -k parameters that specify the columns by which to sort and how that sorting should be done, and occasionally the -u flag. The -k (key) parameters are considered in order; the above specifies that the sorting should be done on columns 2 through 4 (conglomerated into a single “column”), considering them in dictionary order, and sorting them in reverse. In the case of ties, only the first column is considered in normal dictionary order, and in the case of further ties, the fifth column is considered in numeric order.[1] (The difference between n and g ordering is that g can handle entries in scientific notation like 1e-6, but generally n is preferred because it is faster and not subject to small rounding errors.)

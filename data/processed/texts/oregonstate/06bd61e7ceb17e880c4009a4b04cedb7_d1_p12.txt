@@ -1,0 +1,15 @@
+then “Releases (FTP).”
+
+From there, we’ll navigate to a recent release, like FB2014_05. Because genomic information is often being updated as better information becomes available, newer versions are indicated by newer releases.
+
+Next we’ll see links for specific species; we’ll work with dmel_r6.02. It is often a good idea to note specific release numbers or release dates for data sets you download, for eventual description in the methods sections of any papers you write that are based on those data.
+
+The most common format for sequence information is known as FASTA and is the format we want, so the next step is to navigate to the fasta directory. Other potentially interesting options include the gff and gtf directories, which hold text-based annotation files describing the location and function of genes in the genome. (These formats are often useful for RNA-seq analysis.)
+
+Finally, we see a variety of gzipped files we can wget on the command line. Because we are interested in the full protein data set for this species, we will use the URL for dmel-all-translation-r6.02.fasta.gz.
+
+Before running wget on the file, we’ll create a projects directory in our home directory, and a p450s directory inside there to work in.
+
+Because the file is gzipped, we can use gzip -d to decompress it, and then use less -S to view the results without the long lines wrapped in the terminal window.
+
+The result illustrates the standard format for a FASTA file. Each sequence record begins with line st

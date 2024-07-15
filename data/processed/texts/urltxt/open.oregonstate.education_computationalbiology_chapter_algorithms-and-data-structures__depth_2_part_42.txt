@@ -1,0 +1,31 @@
+roximately , and so on, so the total work is  which is . Does this mean that in the worst case quicksort() is as slow as bubblesort? Unfortunately, yes. But some very smart people have analyzed quicksort() (assuming the pivot element is chosen at random, rather than using the first element) and proved that in the average case the run time is , and the chances of significantly worse performance are astronomically small. Further, a similar method known as “mergesort” operates by guaranteeing an even 50/50 split (of a different kind).
+
+
+
+
+Algorithm
+Average Case
+Worst Case
+
+
+Bubblesort
+
+
+
+
+Quicksort
+
+
+
+
+Mergesort
+
+
+
+
+
+
+Using random selection for pivot, quicksort() is fast in practice, though mergesort and similar algorithms are frequently used as well. (Python’s .sort() and sorted() use a variant of mergesort called “Timsort.”) Although as mentioned above worst-case analysis is most prevalent in algorithms analysis, quicksort() is one of the few exceptions to this rule.
+These discussions of algorithms and data structures might seem esoteric, but they should illustrate the beauty and creativeness possible in programming. Further, recursively defined methods and sophisticated data structures underlie many methods in bioinformatics, including pairwise sequence alignment, reference-guided alignment, and Hidden Markov Models.
+
+Exercises

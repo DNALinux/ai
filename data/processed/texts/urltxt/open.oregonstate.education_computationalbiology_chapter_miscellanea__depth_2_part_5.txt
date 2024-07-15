@@ -1,0 +1,7 @@
+that the output is human readable, by replacing one or more spaces and tabs by an appropriate number of spaces so that columns are visually aligned: column -t <file> or ... | column -t.
+
+By now, it should be no surprise that column writes its output to standard output. Here’s the result of join -1 1 -2 1 pz_stats.sorted.txt pz_blastx_yeast_top1.sorted.txt | column -t | less -S, which contains the same data as above, but with spaces used to pad out the columns appropriately.
+
+Because most tools like awk and sort use any number of whitespace characters as column delimiters, they can also be used on data post-column.
+
+There are several important caveats when using join. First, if any entries in the key columns are repeated, the output will contain a row for each matching pair of keys.

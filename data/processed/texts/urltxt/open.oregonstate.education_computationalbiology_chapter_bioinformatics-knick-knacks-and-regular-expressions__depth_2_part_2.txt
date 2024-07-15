@@ -1,0 +1,14 @@
+r computational biology, this characteristic is often a hindrance. To get around this limitation, we frequently convert strings into lists of single-character strings, modify the lists as necessary, and convert the lists of characters back to strings when needed. Python comes built-in with a number of functions that operate on lists and strings useful for computational biology.
+
+Converting a String into a List of Single-Character Strings
+Remember that because Python strings are immutable, we can’t run something like
+
+To convert a string into a list of single-character strings, we can pass the string as a parameter to the list() function (which, when called with no parameters, creates an empty list):
+
+Converting a List of Strings into a String
+If we happen to have a list of strings (such as the list of single-character strings above), we can join them into a single string using the .join() method of whatever string we wish to use as a separator for the output string.
+
+The syntax seems a bit backward, "separator".join(list_variable), but it makes sense when considering what the method .-syntax says: it asks the string “separator" to produce a string given the input list list_variable. Because the output is of type string, it makes sense that we should ask a string to do this production.
+
+Reverse a List
+Sometimes we may want to reverse the order of a list. We can do this with the list’s .reverse() method which asks the list to reverse itself in place (but returns None).

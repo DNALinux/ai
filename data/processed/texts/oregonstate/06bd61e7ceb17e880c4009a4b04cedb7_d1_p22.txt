@@ -1,0 +1,8 @@
+omputers), read the man page for scp with man scp, and also read about it online. Try to transfer a file and a directory between machines using scp on the command line.
+Write an executable bash script that automates a process of some kind, and install it in your $HOME/local/bin. Test it after logging out and back in.
+
+
+If you have administrator privileges on the machine, software repositories curated with many packages are also available. Depending on the system, if you log in as root, installing HMMER may be as simple as running apt-get install hmmer or yum install hmmer. ↵A similar tool called curl can be used for the same purpose. The feature sets are slightly different, so in some cases curl is preferred over wget and vice versa. For the simple downloading tasks in this book, either will suffice. ↵The gzip utility is one of the few programs that care about file extensions. While most programs will work with a file of any extension, gzip requires a file that ends in .gz. If you are unsure of a file’s type, the file utility can help; for example, file hmmer-3.1b1.tar.gz reports that the file is gzip-compressed data, and would do so even if the file did not end in .gz. ↵It's not strictly necessary to log back out and back in; when working in bash, running hash -r will cause the shell to update its list of software found in $PATH. ↵
+
+Installation from Binaries
+Our objective is to run HMMER to search for a sequence-set profile in a larger database of sequences. For details, th

@@ -1,0 +1,12 @@
+many other languages). So, alpha.abs <- abs(alpha) is not an uncommon thing to see, though we’ll be sticking with the convention alpha_abs <- abs(alpha). R variables may be almost anything, so long as we are willing to surround the name with back-tick characters. So, `alpha abs` <- abs(alpha) would be a valid line of code, as would a following line like print(`alpha abs`), though this is not recommended.
+
+Numerics, Integers, Characters, and Logicals
+One of the most basic types of data in R is the “numeric,” also known as a float, or floating-pointing number in other languages.[2] R even supports scientific notation for these types.
+
+R also provides a separate type for integers, numbers that don’t have a fractional value. They are important, but less commonly seen in R primarily because numbers are created as numerics, even if they look like integers.
+
+It is possible to convert numeric types to actual integer types with the as.integer() function, and vice versa with the as.numeric() function.
+
+When converting to an integer type, decimal parts are removed, and thus the values are rounded toward 0 (4.8 becomes 4, and -4.8 would become -4.)
+
+The “character” data type holds a string of characters (though of course the string may contain only a single character, or no characters as in ''). These can be specified using either single or double quotes.

@@ -1,0 +1,9 @@
+the last section, which was defined by a “controlling” class (the LinkedList) and a number of nearly identical Nodes, each with a reference to a “next” Node object in the line. So long as certain rules were followed (e.g., that the list was kept in sorted order), this allowed each node to make local decisions that resulted in global answers to questions.
+
+What if we gave each node a bit more power? Rather than a single self.next_n instance variable, what if there were two: a self.left_n and a self.right_n? We will need a corresponding rule to keep things organized: smaller items go toward the left, and larger (or equal-sized) items go toward the right. This data structure is the well-known binary tree.
+
+The illustration above looks quite a bit more complicated. But if we inspect this structure closely, it’s quite similar to the linked list:[3] there is a controlling class of BinaryTree, and instead of a self.first_n instance variable, it has an instance variable called self.root_n, because the node it references is the “root” of the tree. Before any items have been inserted, self.root_n will be None. Upon an item insertion, if self.root_n is None, the new item goes there; otherwise, the buck is necessarily passed to self.root_n. We’ll see why in a moment.
+
+Now, for the Node class, we’ll need a constructor, as well as “get” and “set” methods for both left_n and right_n, which initially are set to None.
+
+What about a node’s .insert_item() method? What sort of decision-making pr

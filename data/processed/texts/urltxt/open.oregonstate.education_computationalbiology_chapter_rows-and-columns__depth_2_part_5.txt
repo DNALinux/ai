@@ -1,0 +1,11 @@
+comment lines with grep -v '#'.
+
+This command prints only the first two columns of the table, separated by a space (the default when a comma is included in a print statement):
+
+Instead of separating the two output columns by a space, we can instead separate them by a string like :::, producing only a single conglomerated column of output.
+
+If we’d like to add a new first column that simply contains the line number, we can use the NR variable in conjunction with the $0 variable:
+
+If-statements allow awk to execute other statements conditionally; the syntax is if( <logical expression> ) { <statements to execute> }. Additionally, if a column contains numeric values, awk can work with them as such, and awk even understands scientific notation. Here’s an example where only lines with HSP E values (the tenth column in our example) of less than 1e-10 are printed.
+
+Notice that the organization of the curly brackets produces a nested block structure; although for this simple case the inside set of brackets could be omitted, it’s usually best practice to include them, as they illustrate exactly which statement is controlled by the preceding if.[1]

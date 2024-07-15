@@ -1,0 +1,10 @@
+e shapiro.test() function can be explored by running print(shapiro.test(rnorm(100, mean = 10, sd = 4))) and print(shapiro.test(rexp(100, rate = 2.0))).
+
+Write a function called wilcox_or_ttest() that takes two equal-length numeric vectors as parameters and returns a p value. If the shapiro.test() reports a p value of less than 0.05 on the difference of the vectors, the returned p value should be the result of a Wilcoxon rank-signed test. Otherwise, the returned p value should be the result of a t.test(). The function should also print information about which test is being run. Test your function with random data generated from rexp() and rnorm().
+
+A Functional Extension
+Having reviewed the procedural control-flow structures if, while, and for, let’s expand on our truncated random sampling example to explore more “functional” features of R and how they might be used. The function we designed, rnorm_trunc(), returns a random sample that is normally distributed but limited to a given range via resampling. The original sampling distribution is specified by the mean = and sd = parameters, which are passed to the call to rnorm() within rnorm_trunc().
+
+What if we wanted to do the same thing, but for rexp(), which samples from an exponential distribution taking a rate = parameter?
+
+The distribution normally ranges from 0 to infinity, but we might want to resample to, say, 1 to 4.

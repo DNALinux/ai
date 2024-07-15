@@ -1,0 +1,15 @@
+to that node.
+If not, we can pass the buck to self.right_n.
+
+
+
+In the previous figure of a tree, 8 would go to the right of 7, 6 would go to the left of 7, 18 would go the right of 11, and so on. The logic for inserting a new item is thus quite simple, from a node’s point of view:
+
+The remaining method to consider is the tree’s .get_smallest(). In the case of a linked list, the smallest item (if present) was the first node in the list, and so could be accessed with no buck passing. But in the case of a binary tree, this isn’t true: the smallest item can be found all the way to the left. The code for .get_smallest() in the Tree class and the corresponding Node class reflects this.
+
+
+In the case of a node, if self.left_n is None, then that node’s item must be the smallest one, because it can assume the message was only ever passed toward it to the left. Similar usage code as for the linked list demonstrates that this wonderful structure (binarytree.py) really does work:
+
+The most interesting question is: how much time does it take to insert a new item into a tree that already contains items? The answer depends on the shape of the tree. Suppose that the tree is nice and “bushy,” meaning that all nodes except those at the bottom have nodes to their left and right.
+
+The time taken to insert an item is the number of times the buck needs to be passed to reach the bottom of the tree. In this case, at each node, the total number of nodes in consideration is reduced by half; first, th

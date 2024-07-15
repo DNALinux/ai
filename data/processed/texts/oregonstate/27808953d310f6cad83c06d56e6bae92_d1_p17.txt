@@ -1,0 +1,10 @@
+any alphanumeric and the underscore,” so r"\w+" is the pattern for a series of these and is equivalent to r"[A-Za-z0-9_]+". The pattern \W matches any character that is not alphanumeric or the underscore, so r"\W+" matches a series of these (equivalent to r"[^A-Za-z0-9_]+"). Perhaps the most important shorthand class is \s, which matches a single whitespace character: a tab, space, or newline character (\S matches any non-whitespace character). This is most useful when parsing input, where it cannot be guaranteed that words are separated by tabs, spaces, or some combination thereof.
+
+In the code above, we’ve replaced the split on "\t" that we’re used to with a re.split() on r"\s+", which will ensure that we correctly parse the pieces of the line even if they are separated with multiple tabs, spaces, or some combination thereof.
+
+Counting Promoter Elements
+Consider the file grape_promoters.txt, which contains on each line 1000bp upstream of gene regions in the Vitis vinifera genome:
+
+These columns are not separated by a tab character, but rather by a variable number of spaces.
+
+Promoter motifs are small DNA patterns nearby gene sequences to which the cellular machinery binds in order to help initiate the gene-transcription process. For example, the ABF protein binds to the DNA pattern "CACGTGGC" if it is near a gene in some plants. Some motifs are flexible and can be described by regular expressions; the GATA protein binds to any short DNA sequence matching the pattern "[AT]GA

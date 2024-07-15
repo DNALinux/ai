@@ -1,0 +1,11 @@
+printing only the two IDs and the E value (columns 1, 2, and 10):
+
+It is easy enough to determine whether a particular column is equal to a given string, for example, to pull out all lines where the first column is YAL054C:
+
+Mathematical computations are a nice feature of awk. For example, columns 4 and 5 contain the total length of the query sequence and subject sequence, respectively, so we might wish to print the ratio of these two as an additional column at the end.
+
+We could then pipe the result to a sort -k3,3g | tail -n 5 to see the five HSPs with the largest ratios. Beware, however, that when performing mathematical operations or comparisons with columns, any contents that can’t be parsed as a number (1.5 can be, as can 2 and 4e-4, but not i5 or NA) may be truncated (e.g., 10x1 is treated as just 10) or treated as 0. Using sort on columns with -g can reveal such potential problems, as the same underlying method is used for parsing.
+
+There are a variety of mathematical functions built into awk. Here’s a sample:
+
+Logical expressions may be combined with Boolean operators, including && for “and” and || for “or” (which produces true if either or both sides are true), and grouping can be accomplished with parentheses. For instance, we might wish to print only those lines where the first column is not equal to the second, and either the tenth column is less than 1e-30 or the second column is YAL044C.

@@ -1,0 +1,10 @@
+81708" or "."). Because we’ll be parsing lines one at a time, all of this information can be provided in the constructor.
+
+SNP objects should be able to answer questions: .is_transition() should return True if the SNP is a transition and False otherwise by looking at the two allele instance variables. Similarly, .is_transversion() should return True if the SNP is a transversion and False otherwise.
+
+Chromosome Class
+A Chromosome object will hold data for an individual chromosome, including the chromosome name (a string, e.g., "1"), and all of the SNP objects that are located on that chromosome. We could store the SNP objects in a list, but we could also consider storing them in a dictionary, which maps SNP locations (integers) to the SNP objects. Then we can not only gain access to the list of SNPs (using the dictionary’s .values() method) or the list of locations (using the dictionary’s .keys() method), but also, given any location, we can get access to the SNP at that location. (We can even use .has_key() to determine whether a SNP exists at a given location.)
+
+The chromosome constructor will initialize the name of the chromosome as self.chrname, but the snps dictionary will start as empty.
+
+A Chromosome object should be able to answer questions as well: .count_transitions() should tell us the number of transition SNPs, and .count_transversions() should return the number of transversion SNPs. We’re also going to need some way to add a SNP object to a chromosome’s SNP dictio

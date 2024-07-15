@@ -1,0 +1,3 @@
+basic commands, analysis tools, Python, R, and so on.
+
+It may seem odd that so much of modern computational research is carried out on the comparatively ancient platform of a text-based interface. Graphical utilities have their place, particularly for data visualization, though even graphics are often best described in code. If we are to most efficiently communicate with computational machinery, we need to share with the machinery a language, or languages. We can share powerful dialects, complete with grammar, syntax, and even analogs for things like nouns (data) and verbs (commands and functions).

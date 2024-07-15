@@ -1,0 +1,9 @@
+nd in both cases, length(gc_content) will return 1, which itself is a vector of length one. This applies to numerics, integers, logicals, and character types. Thus, at least compared to other languages, R has no “naked data”; the vector is the most basic unit of data that R has. This is slightly more confusing for character types than others, as each individual element is a string of characters of any length (including potentially the “empty” string "").
+
+This explains quite a lot about R, including some curiosities such as why print(gc_content) prints [1] 0.34. This output is indicating that gc_content is a vector, the first element of which is 0.34. Consider the seq() function, which returns a vector of numerics; it takes three parameters:[1] (1) the number at which to start, (2) the number at which to end, and (3) the step size.
+
+When we print the result, we’ll get output like the following, where the list of numbers is formatted such that it spans the width of the output window.
+
+The numbers in brackets indicate that the first element of the printed vector is 1.0, the sixteenth element is 8.5, and the thirty-first element is 16.0.
+
+By the way, to produce a sequence of integers (rather than numerics), the step-size argument can be left off, as in seq(1,20). This is equivalent to a commonly seen shorthand, 1:20.

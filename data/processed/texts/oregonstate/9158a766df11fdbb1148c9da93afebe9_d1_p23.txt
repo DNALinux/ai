@@ -1,0 +1,8 @@
+one last coordinate adjustment, the values mapped to the horizontal and vertical axes are sometimes directly comparable, but the range is different. In our random subsample of diamonds dd, for example, the x and z columns are both measured in millimeters (representing the “width” and “height” of the diamond), but the z values are generally smaller. For illustration, a single unit on the horizontal axis should be the same size as a single unit on the vertical axis, but ggplot2 doesn’t ensure such sizing by default. We can specify the size by adding a coord_equal() coordinate adjustment.
+
+Notice that without coord_equal() in the above left, the axes sizes aren’t quite comparable, but the grid marks are perfect squares in the above right. The coord_equal() adjustment can also be made with log-adjusted plots, and can sometimes produce nicer output even if the two axes aren’t in the same units. Here’s a comparison with and without coord_equal() applied to the final version of the contig length-versus-coverage plot above.
+
+As always, there are a number of other coordinate adjustments that are possible, and we’ve only covered some of the most useful or interesting. See http://docs.ggplot2.org for the full documentation.
+
+Theming, Annotations, Text, and Jitter
+So far, we’ve covered customizing how data are plotted and axes/coordinates are represented, but we haven’t touched on “ancillary” properties of the plot like titles, background colors, and font sizes. These are part of the “th

@@ -1,0 +1,14 @@
+process so that it should end.
+
+But if the rogue program is in a particularly bad error state, it won’t stop even with a Control-c, and a “hard” kill is necessary. To do this requires logging in to the same machine with another terminal window to regain some command-line access. Run top, and note the PID (process ID) of the offending process. If you don’t see it in the top window, you can also try running ps augx, which prints a table of all running processes. Suppose the PID for the process to kill is 24516; killing this process can be done by running kill -9 24156. The -9 option specifies that the operating system should stop the process in its tracks and immediately clean up any resources used by it. Processes that don’t stop via a kill -9 are rare (though you can’t kill a process being run by another user), and likely require either a machine reboot or administrator intervention.
+
+Exercises
+Create a hidden directory inside of your home directory called .hidden. Inside of this directory, create a file called notes. Edit the file to contain tricks and information you fear you might forget.[3]
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

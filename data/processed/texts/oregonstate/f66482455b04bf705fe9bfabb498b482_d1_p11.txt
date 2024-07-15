@@ -1,0 +1,10 @@
+r similar remotely hosted virtual machine, it’s a good idea to also suspend the instance so that time spent not working isn’t counted against your usage limit.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

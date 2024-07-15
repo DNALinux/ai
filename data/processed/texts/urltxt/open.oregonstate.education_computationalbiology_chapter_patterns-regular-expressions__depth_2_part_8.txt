@@ -1,0 +1,6 @@
+use the ~ comparator instead of the == comparator in an if-statement, as in awk '{if($1 ~ /PZ718[[:digit:]]+/) {print $3}}', which prints the third column of each line where the first column matches the pattern PZ718[[:digit:]]+.
+
+Back-Referencing
+According to the definition above for the header lines in the pz_cDNAs.fasta file, the IDs should be characterizable as a pseudorandom identifier followed by, optionally, an underscore and a set of capital letters specifying the group. Using grep '>' to extract just the header lines, we can inspect this visually:
+
+If we send these results through wc, we see that this file contains 471 header lines. How can we verify that each of them follows this pattern? By using a regular expression with grep for the pattern, and comparing the count to 471. Because IDs must begin immediately after the > symbol in a FASTA file, that will be part of our pattern. For the pseudorandom section, which may or may not start with PZ but should at least not include an underscore or a space, we can use the pattern [^_[:space:]]+ to specify one or more nonunderscore, nonwhitespace characters. For the optional group identifier, the pattern would be (_[A-Z]+){0,1} (because {0,1} makes the preceding optional). Putting these together with grep -E and counting the matches should produce 471.

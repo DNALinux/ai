@@ -1,0 +1,15 @@
+d hence an integer of 1 encodes "chemical") and "control" as its second (so 2 encodes "control").
+
+This special "class" attribute controls how functions like str() and print() operate on an object, and if we want to change it, this is better done by using the class() accessor function rather than the attr() function as above. Let’s change the class back to factor.
+
+Renaming Factor Levels
+Because levels are stored as an attribute of the data, we can easily change the names of the levels by modifying the attribute. We can do this with the attr() function, but as usual, a specific accessor function called levels() is preferred.
+
+Why is the levels() function preferred over using attr()? Because when using attr(), there would be nothing to stop us from doing something irresponsible, like setting the levels to identical values, as in c("Water", "Water"). The levels() function will check for this and other absurdities.
+
+What the levels() function can’t check for, however, is the semantic meaning of the levels themselves. It would not be a good idea to mix up the names, so that "Chemical" would actually be referring to plants treated with water, and vice versa:
+
+The reason this is a bad idea is that using levels() only modifies the "levels" attribute but does nothing to the underlying integer data, breaking the mapping.
+
+Reordering Factor Levels
+Although we motivated factors on the basis of memory savings, in modern versions of R, even character vectors are stored internally using a

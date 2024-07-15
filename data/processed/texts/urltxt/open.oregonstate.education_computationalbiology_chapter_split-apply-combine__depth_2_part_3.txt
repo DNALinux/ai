@@ -1,0 +1,7 @@
+’s start a new analysis script that loads this data frame before we begin our analysis of it. For this script we may also need the stringr library, and we’re going to include the dplyr library as well (which we assume has been separately installed with install.packages("dplyr") in the interactive console).
+
+The load() function creates a variable with the same name that was used in save(), and for convenience we’ve created a copy of the data frame with a shorter variable name, expr. While these sorts of R data files are convenient for R users, the benefit of a write.table() approach would be that other users and languages would have more direct access to the data (e.g., in Python or even Microsoft Excel).
+
+This data set represents a multifactor analysis of gene expression[1] in two genotypes of a plant, where a control treatment (water) and a chemical treatment (pesticide) have been applied to each. Further, three tissue types were tested (A, B, and C, for leaf, stem, and root, respectively) and two or three replicates were tested for each combination for statistical power. These data represent microarray readings and have already been normalized and so are ready for analysis.[2] (These data are also anonymized for this publication at the request of the researchers.)
+
+For now, we’ll focus on the genotype and treatment variables. Ignoring other variables, this gives us around 24 expression readings for each gene.

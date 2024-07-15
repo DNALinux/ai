@@ -1,0 +1,9 @@
+columns of the stat-adjusted data (in this case, the output columns from the stat are identical to the input columns).[3] Finally, we note that ggplot2 has seamlessly handled the categorical column of cut.
+
+To save the result to a file or when not working in a graphical interface, we can use the pdf() function before the call to plot() followed by dev.off(), as we did for the Base-R graphics. Alternatively, we can use the specialized ggsave() function, which also allows us to specify the overall size of the plot (in inches at 300 dpi by default for PDFs).
+
+Let’s add a layer to our plot that will also plot points on the x and y axes, by carat and price. This additional layer, however, will use a "smooth" stat, and we won’t color the points. (In recent versions of ggplot2, this layer example also requires a params = list(method = "auto") which sets the stat’s smoothing method. Below we’ll see how to write more compact code with this and other parameters set automatically.)
+
+In this case, the original data have been transformed by the "smooth" stat, so x = carat, y = price now specifies the columns in the stat-transformed data frame. If we were to switch this layer’s geom to "line", we would get a plot like below on the left, and if we add a color = cut in the aes() call, we would get a plot like below on the right.
+
+In the right plot above, multiple lines have been created; they are a bit difficult to see, but we’ll see how to fix that in a bit. Note that the order of the laye

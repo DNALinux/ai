@@ -1,0 +1,9 @@
+and how access to the system is granted.[1] Most of the files that are important for these configurations are “owned” by root, and for security purposes, other users can’t tamper with them. In fact, all users of the system usually own the files in their own home directory, and these files can’t be tampered with by other users (except for root, who has access to everything). These security settings are controlled via permissions associated with every file and directory.
+
+Root can also put users together into groups, allowing users in the same group to share files with each other but not outsiders, if they so choose. Groups may have more than one user, and a single user may be part of more than one group, as in the following example illustrating three groups and eight users.
+
+The groups command shows the groups to which a user belongs; in the above example, groups oneilst would report emrichlab and hellmannlab. To see your own groups, you can always use something like groups $USER (relying on the shell to replace $USER with your username).
+
+Unfortunately, there’s no surefire or easy way to list all the members of a particular group—at least not without some deep knowledge of how the system is configured or some programming expertise. On some systems, a command like getent group <groupname> will provide the answer; getent group faculty would report emrichs, schmidtj, and hellmannj for the example above.
+
+If you are unsure of a person’s username, the finger command may come to t

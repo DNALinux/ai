@@ -1,0 +1,8 @@
+-readable output:
+
+Reading and Writing Tabular Data, Wrapping Long Lines
+Before we go much further, we’re going to want to be able to import data into our R programs from external files (which we’ll assume to be rows and columns of data in text files). We’ll do this with read.table(), and the result will be a type of data known as a “data frame” (or data.frame in code). We’ll cover the nuances of data frames later, but note for now that they can be thought of as a collection of vectors (of equal length), one for each column in the table.
+
+As an example, let’s suppose we have a tab-separated text file in our present working directory called states.txt.[3] Each row represents one of the US states along with information on population, per capita income, illiteracy rate, murder rate (per 100,000), percentage of high school graduates, and region (all measured in the 1970s). The first row contains a “header” line with column names.
+
+Later in the file, someone has decided to annotate Michigan’s line, indicating it as the “mitten” state:

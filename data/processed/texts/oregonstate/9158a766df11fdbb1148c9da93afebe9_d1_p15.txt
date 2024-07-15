@@ -1,0 +1,9 @@
+color, and a panel would be created for each cut/color combination.
+
+The facet_grid() function works much like facet_wrap() but allows us to facet according to not one but two variables (or two combinations of multiple variables) simultaneously. One of the variables will vary across rows of panels, and the other will vary across columns. The first parameter is still a formula, but usually of the form <column_1> ~ <column_2>. Let’s replace the facet_wrap(~ cut) with facet_grid(cut ~ color):
+
+As the number of facets increases, readability can decrease, but having cut along the rows and color along the columns certainly helps reveal trends. In this facet specification, we see that “fair” diamonds are relatively rare in the data set, and the largest diamonds tend to be premium or ideal cuts in poor colors (I and J). Producing PDFs with larger dimensions in ggsave() can make plots with many features more readable.
+
+Like facet_wrap(), facet_grid() can take a scales = parameter to allow panel x and y axes to vary, though again this isn’t generally recommended, as it makes panels difficult to compare visually. The facet_grid() function includes another optional parameter, margins =, which when set to TRUE adds “aggregate” panels for each column and row of panels. Here’s the plot with facet_grid(cut ~ color, margins = TRUE):
+
+When plotting a grid of facets, we can also use a period in the specification to indicate that the grid should consist of only a single row or column of panels.

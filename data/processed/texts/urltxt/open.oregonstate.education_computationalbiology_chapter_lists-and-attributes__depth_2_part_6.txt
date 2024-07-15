@@ -1,0 +1,17 @@
+o print() called str(), which nicely prints the structure of a list (or other data object). Here’s the result of calling str(athal) at this point.
+
+Removing an element or attribute from a list is as simple as assigning it the special value NULL.
+
+The printed structure reveals that this information has been removed.
+
+What is the point of all this detailed list making and attribute assigning? It turns out to be quite important, because many R functions return exactly these sorts of complex attribute-laden lists. Consider the t.test() function, which compares the means of two vectors for statistical equality:
+
+When printed, the result is a nicely formatted, human-readable result.
+
+If we run str(tresult), however, we find the true nature of tresult: it’s a list!
+
+Given knowledge of this structure, we can easily extract specific elements, such as the p value with pval <- tresult$p.value or pval <- tresult[["p.value"]].
+One final note about lists: vectors (and other types) can be converted into a list with the as.list() function. This will come in handy later, because lists are one of the most general data types in R, and we can use them for intermediary data representations.
+
+
+Exercises

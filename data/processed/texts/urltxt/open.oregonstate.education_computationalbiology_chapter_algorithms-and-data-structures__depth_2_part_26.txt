@@ -1,0 +1,8 @@
+e-sorted linked list. ↵Factorials can be easily (and slightly more efficiently) computed with a loop, but we’re more interested in illustrating the concept of a self-calling function. ↵Additionally, the operations of defining a function and executing it are disjoint, so there’s nothing to stop a function being defined in terms of itself. ↵This proof is a visually oriented one, and not terribly rigorous. A more formalized proof would develop what is known as a recurrence relation for the behavior of the algorithm, in the form of , to be solved for , representing the time taken to sort items. ↵
+
+When analyzing the running time of an algorithm, however, we only care about the “big stuff.”
+
+Order Notation
+In computing an algorithm’s run time, we only care about the highest-order terms, and we tend to ignore constants that aren’t related to the “size” of the input. We say that the run time is order of the highest-order term (without constants), which we denote with an uppercase: is
+
+We read this as “five squared minus four is order squared” or “five squared minus four is big-oh squared.” Because this run time talks about a particular algorithm, we might also say “bubblesort is order squared.” Big-O notation implies that, roughly, an algorithm will run in time less than or equal to the equation interpreted as a function of the input size, in the worst case (ignoring constants and small terms).

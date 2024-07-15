@@ -1,0 +1,7 @@
+help page for lapply() is interesting. It specifies that the function takes three parameters: X (the list to apply over), FUN (the function to apply), and ..., which the help page details as “optional arguments to FUN.”
+
+The ... parameter is common in R, if a bit mysterious at times. This “parameter” collects any number of named parameters supplied to the function in a single unit. This collection can then be used by the function; often they are passed on to functions called by the function.
+
+To illustrate this parameter, let’s modify our ipercentile_range() function to take two optional parameters, a lower and upper percentile from which the range should be computed. While the interquartile range is defined as the range in the data from the 25th to the 75th percentile, our function will be able to compute the range from any lower or upper percentile.
+
+Now we can call our function as ipercentile_range(sample$s1) to get the default interquartile range of the first sample, or as ipercentile_range(samples$s2, lower = 0.05, upper = 0.95), to get the middle 90th percentile range. Similarly, we have the ability to supply the optional parameters through the ... of lapply(), which will in turn supply them to every call of the ipercentile_range function during the apply step.

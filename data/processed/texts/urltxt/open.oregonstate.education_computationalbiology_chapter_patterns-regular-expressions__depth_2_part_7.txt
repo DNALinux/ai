@@ -1,0 +1,7 @@
+ter. These can even be combined: [A-Za-z0-9] matches any digit or letter. In the POSIX extended syntax used by sed, 0-9 can also be specified as [:digit:]. Notice the lack of brackets in the former—to actually match any single digit, the regular expression is [[:digit:]] (which, yes, is annoying). To match any nondigit, we can negate the bracketed set as [^[:digit:]].
+
+These POSIX character classes are especially useful when we want to match character types that are difficult to type or enumerate. In particular, [[:space:]] matches one of any whitespace character (spaces, tabs, newlines), and [[:punct:]] matches any “punctuation” character, of which there are quite a few. The [[:space:]] character class is particularly helpful when you are reformatting data stored in rows and columns but are not sure whether the column separators are spaces, tabs, or some combination.
+
+In many regular expression syntaxes (including those used by Perl, Python, R, and some versions of sed), even shorter shortcuts for character classes are available. In these, \d is equivalent to [[:digit:]], \D is equivalent to [^[:digit:]], \s for [[:space:]], \S for [^[:space:]], among others.
+
+As it turns out, regular expressions can be utilized by grep as well as awk. When using grep, we can specify that the pattern should be treated as an extended regular expression by adding the flag -E (as opposed to the -r used for sed.) Thus grep -E '[[:digit:]]+' extracts lines that contain an integer.

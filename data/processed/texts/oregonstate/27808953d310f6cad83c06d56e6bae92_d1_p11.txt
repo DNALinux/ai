@@ -1,0 +1,11 @@
+xercises
+
+Write a function called reverse_complement() that takes a DNA sequence parameter and returns its reverse complement (i.e., reverses the string, switches A’s and T’s, and switches G’s and C’s).
+DNA sequences that are destined to be turned into proteins are “read” by the cellular machinery in one of six “reading frames” with lengths that are multiples of three. The first three are derived from the sequence itself, starting at index 0, index 1, and index 2; the first three reading frames of "ACTAGACG" are "ACTAGA", "CTAGAC", and "TAGACG".
+
+To derive reading frames three, four, and five, we first reverse-complement the sequence ("CGTCTAGT") and then produce frames from indices 0, 1, and 2, resulting in "CGTCTA", "GTCTAG", and "TCTAGT".
+
+Using the reverse_complement() function from above (and potentially the get_windows() function from chapter 18, “Python Functions”), write a seq_to_six_frames() function that takes a DNA sequence as a parameter and returns a list of the six reading frames (as strings).
+Write a function called longest_non_stop() that takes a DNA sequence as a parameter and returns the longest amino acid sequence that can be produced from it. This is done by generating the six reading frames from the sequence, converting each to an amino acid sequence (probably using the dna_to_aa() function from chapter 20, “Dictionaries”), and then trimming the resulting sequences down to the first “stop” codon ("*") if there are any.
+
+In the DNA sequence seq = "AGCTACTA

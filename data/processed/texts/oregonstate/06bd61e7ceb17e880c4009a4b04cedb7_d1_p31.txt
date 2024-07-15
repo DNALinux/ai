@@ -1,0 +1,11 @@
+s matrix of letters and numbers. As a reminder, our project directory now contains the original sequence file, a multiple-alignment file, and the HMM profile file, as well as the D. melanogaster protein file in which we wish to search for the profile.
+
+At this point, we are ready to search for the profile in the D. melanogaster protein set with hmmsearch. As usual, we’ll first inspect the usage for hmmsearch.
+
+This brief help text indicates that hmmsearch may take a number of optional parameters (and we’d have to run hmmsearch -h to see them), and the last two parameters are required. These last two parameters constitute the HMM profile file we are searching for, as well as the <seqdb> in which to search. It doesn’t say what format <seqdb> should be, so we’ll try it on our D. melanogaster FASTA file and hope for the best (if it fails, we’ll have to read more help text or documentation).
+
+Note that there was no required option for an output file. Running this command causes quite a lot of information to be printed to the terminal, including lines like:
+
+And, when we run ls, we find that no output file has been created.
+
+It seems that hmmsearch, by default, prints all of its meaningful output to the terminal. Actually, hmmsearch is printing its output to the standard output stream. Standard output is the primary output mechanism for command-line programs (other than writing files directly). By default, standard output, also known as “standard out” or “stdout,” is printed to the

@@ -1,0 +1,7 @@
+splay window. To see all the columns (including our new interaction_BY column), we can convert the grouped table back into a regular data frame and print the head() of it with print(head(data.frame(pvals_interaction_sig))). For the curious, the interaction_BY value of this ID is 0.048.
+
+Exercises
+
+We spent a fair amount of work ensuring that the data frame generated and returned by sub_df_to_pvals_df() was programmatically generated. Take advantage of this fact by making the formula a secondary parameter of the function, that is, as function(sub_df, form), so that within the function the linear model can be produced as lm1 <- lm(form, data = sub_df).Next, run the analysis with group_by() and do(), but specify some other formula in the do() call (perhaps something like expression ~ genotype + treatment + tissue).
+In a previous exercise in this chapter, we wrote a function that took a portion of the CO2 data frame and returned a data frame with a p value for a comparison of CO2 uptake values between chilled and nonchilled plants. Now, use group_by() and do() to run this test for each conc group, producing a data frame of p values. Use p.adjust() with Bonferroni correction to add an additional column of multiply-corrected values.
+While functions called by do() must take a data frame as their first parameter and must return a data frame, they are free to perform any other actions as well, like generating a plot or writing a file. Use group_by(), do(), and write.table() to write t

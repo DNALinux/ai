@@ -1,0 +1,8 @@
+ar expression above.
+
+Notice that the string TAG is both a type of codon in general ([ACTG]{3,3}) and a stop, so technically both of the first two options are valid according to the regular expression. By the rules of greediness, the first will be matched, which we can verify with a simple echo and sed.
+
+The regular expression syntax used by sed is similar to the syntax used in languages such as Perl, Python, and R. In fact, all of the examples we’ve seen so far would work the same in those languages (though they are applied by their own specific functions rather than a call to sed). One helpful feature provided by more modern regular expression engines like these is that operators like * and + can be made nongreedy (though I prefer the clearer term “reluctant”) by following them with a question mark. In Python, the regular expression ATG([ACTG]{3,3})+?((TAA)|(TAG)|(TGA)) would match the second option. (When not following a *, or +, it makes the previous optional; thus TG(T)?CC is equivalent to TG(T){0,1}CC.) More sophisticated features allow the user to access all the matches of a pattern, even if they overlap, so that the most satisfying one can be pulled out by some secondary criteria. Unfortunately, sed does not support nongreedy matching and several other advanced regular expression features.
+
+Character Classes and Regular Expressions in Other Tools
+We often wish to use charset brackets to match any one of a “class” of characters; for example, [0123456789] matches any si

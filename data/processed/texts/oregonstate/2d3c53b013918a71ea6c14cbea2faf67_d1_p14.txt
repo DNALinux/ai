@@ -1,0 +1,9 @@
+blem. The strategy here will be as follows: the mean of a set of numbers is defined as their sum, divided by the count of them. We’ll need to keep at least two important variables, eval_sum and counter. After opening the file with io.open(), we can loop through the lines and extract each E value. (This will require cleaning up the line with .strip(), splitting it into pieces using .split("\t"), and finally converting the E value to a float rather than using the string.) For each line that we see, we can add the E value extracted to the eval_sum variable, and we’ll add 1 to the counter variable as well. In the end, we can simply report eval_sum/counter.
+
+It often helps to convert this strategy into something partway between natural language and code, called pseudocode, which can help tremendously in organizing your thoughts, particularly for complex programs:
+
+With the pseudocode sketched out, we can write the actual code for our program. When executed, it reliably prints Mean is: 1.37212611293e-08.
+
+Note that the actual Python code (in blast_mean.py) ended up looking quite a lot like the pseudocode—this is one of the frequently cited selling points for Python. (For this reason, we’ll also skip the pseudocode step for most examples in this book, though it can still be a valuable technique when programming in any language.)
+
+This may seem like a fair amount of work to compute a simple mean, but it is a consequence of writing software “from scratch,” and we have to start somewhe

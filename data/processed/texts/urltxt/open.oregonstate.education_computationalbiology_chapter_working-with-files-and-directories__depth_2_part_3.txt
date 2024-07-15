@@ -1,0 +1,14 @@
+e as a relative path inside the present working directory.
+
+Move or Rename a File or Directory
+The mv utility serves to both move and rename files and directories. The simplest usage works like mv <source_path> <destination_path>, where <source_path> is the path (absolute or relative) of the file/directory to rename, and <destination_path> is the new name or location to give it.
+
+In this example, we’ll rename p450s.fasta to p450s.fa, move it into the projects folder, and then rename the projects folder to projects_dir.
+
+Because mv serves a dual role, the semantics are important to remember:
+
+Said another way, mv attempts to guess what it should do, on the basis of whether the destination already exists. Let’s quickly undo the moves above:
+
+A few other notes: First, when specifying a path that is a directory, the trailing / is optional: mv projects_dir/ projects is the same as mv projects_dir projects if projects_dir is a directory (similarly, projects could have been specified as projects/). Second, it is possible to move multiple files into the same directory, for example, with mv p450s.fasta todo_list.txt projects. Third, it is quite common to see . referring to the present working directory as the destination, as in mv ../file.txt . for example, which would move file.txt from the directory above the present working directory (..) into the present working directory (., or “here”).
+
+Copy a File or Directory

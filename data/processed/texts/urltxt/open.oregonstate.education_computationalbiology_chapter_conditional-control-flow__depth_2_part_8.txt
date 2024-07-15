@@ -1,0 +1,20 @@
+p_count_seq.py) the commented-out line #print(codon).
+
+While coding, we used this line to print each codon to be sure that 3bp subsequences were reliably being considered, especially the first and last in seq1.txt (ATA and AAT). This is an important part of the debugging process because it is easy to make small “off-by-one” errors with this type of code. When satisfied with the solution, we simply commented out the print statement.
+
+For windowing tasks like this, it can occasionally be easier to access the indices with a while-loop.
+
+If we wished to access nonoverlapping codons, we could use index = index + 3 rather than index = index + 1 without any other changes to the code. Similarly, if we wished to inspect 5bp windows, we could replace instances of 3 with 5 (or use a windowsize variable).
+
+Exercises
+Write code that prints the total molecular weight for the sequence in the file seq.txt. The result should be 21483.8. Call your program mol_weight_seq.py.
+
+Because the tab characters cause the output to align differently depending on the length of the ID string, you may wish to run the output through the command line tool column with a -t option, which automatically formats tab-separated input.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

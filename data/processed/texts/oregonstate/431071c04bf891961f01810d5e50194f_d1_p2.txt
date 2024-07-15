@@ -1,0 +1,10 @@
+rd output streams. There are many other useful command line utilities, and we’ll cover a few more, but we needn’t spend quite as much time with them as we have for awk and sed.
+
+Manipulating Line Breaks
+All of the features of the tools we’ve covered so far assume the line as the basic unit of processing; awk processes columns within each line, sed matches and replaces patterns in each line (but not easily across lines), and so on. Unfortunately, sometimes the way data break over lines isn’t convenient for these tools. The tool tr translates sets of characters in its input to another set of characters as specified: ... | tr '<set1>' '<set2>'[1]
+
+As a brief example, tr 'TA' 'AT' pz_cDNAs.fasta would translate all T characters into A characters, and vice versa (this goes for every T and A in the file, including those in header lines, so this tool wouldn’t be too useful for manipulating FASTA files). In a way, tr is like a simple sed. The major benefit is that, unlike sed, tr does not break its input into a sequence of lines that are operated on individually, but the entire input is treated as a single stream. Thus tr can replace the special “newline” characters that encode the end of each line with some other character.
+
+On the command line, such newline characters may be represented as \n, so a file with the following three lines
+
+could alternatively be represented as line 1\nline 2\nline 3\n (most files end with a final newline character). Supposing this file was called lines.

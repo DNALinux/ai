@@ -1,0 +1,12 @@
+ack of the Functions!
+While R has a dedicated function for computing the interquartile range (the range of data values between the 25th percentile and the 75th), let’s write our own so that we can explore functions more generally. We’ll call it ipercentile_range, to note that it computes an interpercentile range (where the percentiles just happen to be quartiles, for now).
+
+Next, let’s make a list containing some samples of random data.
+
+To compute the three interquartile ranges, we could call the function three times, once per element of the list, and store the results in another list.
+
+Not too bad, but we can do better. Notice the declaration of the function—we’ve used the assignment operator <- to assign to ipercentile_range, just as we do with other variables. In fact, ipercentile_range is a variable! And just as with other data, we can check its class and print it.
+
+When it is printed, we see the source code for the function:
+
+In R, functions are a type of data just like any other. Thus R is an example of a “functional” programming language.[5] One of the important implications is that functions can be passed as parameters to other functions; after all, they are just a type of data. This is a pretty tricky idea. Let’s explore it a bit with the lapply() function. This function takes two parameters: first, a list, and second, a function to apply to each element of the list. The return value is a list representing the collated outputs of each function application. So, inste

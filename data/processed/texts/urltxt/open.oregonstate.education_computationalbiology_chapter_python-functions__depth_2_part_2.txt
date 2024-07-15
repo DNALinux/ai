@@ -1,0 +1,11 @@
+the large.
+
+~Donald Knuth
+
+Functions (sometimes called “subroutines”) are arguably the most important concept in programming. We’ve already seen their use in many contexts, for example, when using functions like len() and float(). Here’s a bit of code that computes the GC content of a DNA sequence in a variable called seq:
+
+What if we wanted to compute the GC content for multiple different variables in our code? Should we rewrite our GC-computing for-loop for each different variable? No way! First, we’d be at a much higher risk of bugs (it’s a probabilistic fact that more typing leads to more typos). Second, the whole point of programming is for the computer to do all the work, not us.
+
+Ideally, we’d like to encapsulate the functionality of computing GC content, just as the functionality of getting the length of a sequence is encapsulated by the len() function. We want to just be able to say gc = gc_content(seq). Functions allow us to do exactly this: encapsulate a block of code for reuse whenever we need it. There are three important parts of a function:
+
+Ignoring point 2, functions can actually represent a mathematical ideal: they relate inputs to outputs. They even have domains (the set of all valid inputs) and ranges (the set of all potential outputs).

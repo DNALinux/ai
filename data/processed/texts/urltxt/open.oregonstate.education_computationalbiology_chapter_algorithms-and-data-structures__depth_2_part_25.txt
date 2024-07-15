@@ -1,0 +1,2 @@
+55).
+Next, write a function called fib_loop() that returns theth Fibonacci by using a simple loop. What is the run time, in order notation, in terms of? Compare how long it takes to compute fib(35) versus fib_loop(35), and then try fib(40) versus fib_loop(40). Why do you think fib() takes so much longer? Try drawing the “call trees” for fib(1), fib(2), fib(3), fib(4), fib(5), and fib(6). Could you make a guess as to what the run time of this function is in order notation? Can you imagine any ways it could be sped up?

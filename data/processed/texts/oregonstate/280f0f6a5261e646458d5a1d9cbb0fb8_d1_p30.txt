@@ -1,0 +1,7 @@
+t results ends up being 15, that’s a 75% false discovery rate, indicating that we can expect most of the kept results to be false positives.
+
+Instead of specifying the number of false positives we’re willing to accept, we can instead specify the rate and deal with whatever number of kept results come out. There are several of these “FDR-controlling” methods available, and some make more assumptions about the data than others. For example, the methods of Benjamini and Hochberg (described in 1995 and known by the acronym “BH”) and Benjamini, Hochberg, and Yekutieli (from 2001, known as “BY”) differ in the amount of independence the many tests are assumed to have. The BY method assumes less independence between tests but generally results in more results for a given FDR rate. (Consult your local statistician or statistics textbook for details.)
+
+The p.adjust() function allows us to run either the Bonferroni, BH, or BY correction methods. It takes two arguments: first, a vector of p values to adjust, and, second, a method = parameter that can be set to "bonferroni", "BH", or "BY". (There are other possibilities, but these three are the most commonly used.) Returned is a vector of the same length of adjusted FDR values—selecting all entries with values less than Q is equivalent to setting an FDR rate cutoff of Q.
+
+In the final analysis of all genes, we will produce a BY-adjusted column for the interaction p values, and then select from the data set only those rows where the FDR ra

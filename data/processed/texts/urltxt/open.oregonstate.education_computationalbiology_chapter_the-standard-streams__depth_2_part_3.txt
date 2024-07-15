@@ -1,0 +1,12 @@
+>. The second, called standard error, is also by default printed to the terminal but is not redirected with >.
+
+By default, like standard output, standard error (also known as “standard err” or “stderr”) is printed to the terminal.
+
+Because standard error usually contains diagnostic information, we may not be interested in capturing it into its own file. Still, if we wish, bash can redirect the standard error to a file by using the 2> redirect.[1]
+
+We might pictorially represent programs and their output as alternative information flows:
+
+Filtering Lines, Standard Input
+It can often be useful to extract lines from a file based on a pattern. For example, the pz_sample_stats.txt file contains information on what each column describes, as well as the data itself. If we want to extract all the lines that match a particular pattern, say, unit:, we can use the tool grep (for Global search for Regular Expression and Print), which prints to standard output lines that match a given pattern (or don’t match a given pattern, if using the -v flag): grep '<pattern>' <file>. To illustrate, we’ll first run fasta_stats on the full input file, redirecting the standard output to a file called pz_stats.txt.
+
+Looking at the file with less -S pz_stats.txt, we can see that informational lines as well as data-containing lines are stored in the file:

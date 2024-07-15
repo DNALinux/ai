@@ -1,0 +1,7 @@
+malized proof would develop what is known as a recurrence relation for the behavior of the algorithm, in the form of , to be solved for , representing the time taken to sort items. ↵
+
+One of the most interesting features of the factorial function is that it can be defined in terms of itself:
+
+If we wanted to compute factorial(7), a logical way to think would be: “first, I’ll compute the factorial of 6, then multiply it by 7.” This reduces the problem to computing factorial(6), which we can logically solve in the same way. Eventually we’ll want to compute factorial(1), and realize that is just 1. The code follows this logic impeccably:
+
+As surprising as it might be, this bit of code really works.[4] The reason is that the parameter n is a local variable, and so in each call of the function it is independent of any other n variable that might exist.[5] The call to factorial(7) has an n equal to 7, which calls factorial(6), which in turn gets its own n equal to 6, and so on. Each call waits at the subanswer = factorial(n-1) line, and only when factorial(1) is reached do the returns start percolating back up the chain of calls. Because calling a function is a quick operation (), the time taken to compute factorial(n) is , one for each call and addition computed at each level.

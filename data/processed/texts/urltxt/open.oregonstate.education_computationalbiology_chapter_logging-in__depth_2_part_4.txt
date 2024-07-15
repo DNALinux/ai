@@ -1,0 +1,7 @@
+ll need to be installed and run. In the Host Name (or IP address) field, enter the host name or IP address, as discussed above. Leave the port number to the default of 22, and click Open.
+
+If you have successfully entered the host name or IP, you will be prompted for your username and password (and potentially to verify the key fingerprint).
+
+Finally, if you are already running a Linux or other Unix-like operating system, the steps for logging in remotely via SSH will be similar to those for Mac OS X, though you’ll need to find the Terminal utility on your own. If you are using CyVerse Atmosphere, then you can utilize a terminal window right in the web browser by clicking on the Access By Shell tab or Open Web Shell link. In all cases, the text-based interface will be identical, because the remote computer, rather than your local desktop, determines the display.
+
+Logging in Further, Changing Your Password

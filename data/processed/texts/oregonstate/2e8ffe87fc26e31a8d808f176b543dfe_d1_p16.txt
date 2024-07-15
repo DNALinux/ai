@@ -1,0 +1,12 @@
+t how should we define our regions? Let’s say we want to consider regions of 100,000 bases. Then we might consider bases 1 to 100,000 to be a region, 100,001 to 200,000 to be a region, and so on, up until the start of the region considered is past the last SNP location. We can accomplish this with a while-loop. The strategy will be to keep information on the densest region found so far (including its density as well as start and end location), and update this answer as needed in the loop.[8]
+
+In the above, we needed to access the position of the last SNP on the chromosome (so that the code could stop considering regions beyond the last SNP). Rather than write that code directly in the method, we decided that should be its own method, and marked it with a “todo” comment. So, we need to add this method as well:
+
+In the code that prints the results, we can add the new call to .max_density(100000) for each chromosome, and print the relevant information.
+
+Let’s call our new snps_ex_density.py (piping the result through column -t to more easily see the tab-separated column layout):
+
+Again, none of the individual methods or sections of code are particularly long or complex, yet together they represent a rather sophisticated analysis program.
+
+Summary
+Perhaps you find these examples using classes and objects for problem solving to be elegant, or perhaps not. Some programmers think that this sort of organization results in overly verbose and complex code. It is certainly easy to get t

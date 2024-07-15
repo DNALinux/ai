@@ -1,0 +1,9 @@
+s (where this “model” is a list with a particular set of elements). To get the associated p values, we’ll need to run it through R’s anova() function.
+
+Printing the result shows that the p values (labeled "Pr(>F)") for the genotype, treatment, and interaction terms are 0.97, 0.41, and 0.56, respectively. If we want to extract the p values individually, we’ll need to first inspect its structure with str(), revealing that the result is both a list and a data frame—unsurprising because a data frame is a type of list. The three p values are stored in the "Pr(>F)" name of the list.
+
+We can thus extract the p values vector as pvals1 <- anova1$"Pr(>F)"; notice that we must use the quotations to select from this list by name because of the special characters ((, >, and )) in the name. For the sake of argument, let’s store these three values in a data frame with a single row, and column names "genotype", "treatment", and "genotype:treatment" to indicate what the values represent.
+
+Output:
+
+This isn’t bad, but ideally we wouldn’t be “hard coding” the names of these p values into the column names. The information is, after all, represented in the printed output of the print(anova1) call above. Because anova1 is a data frame as well as a list, these three names are actually the row names of the data frame. (Sometimes useful data hide in strange places!)

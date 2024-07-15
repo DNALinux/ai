@@ -1,0 +1,10 @@
+your home directory) by running muscle --help and hmmsearch --help. Both commands should display help text instead of an error. Further, check that the versions being found by the shell are from your home directory by running which hmmsearch and which muscle.
+Determine whether you have the “NCBI Blast+” tools installed by searching for the blastn program. If they are installed, where are they located? If they are not installed, find them and install them from binaries.
+Install sickle from the git repo at https://github.com/najoshi/sickle. To install it, you will need to follow the custom instructions inside of the README.md file. If you don’t have the git program, it is available for binary and source install at http://git-scm.com.
+
+
+Getting Data
+Now that we’ve got the software installed for our example analysis, we’ll need to get some data. Supposing we don’t have any novel data to work with, we’ll ask the following question: can we identify, using HMMER and muscle, homologues of P450-1A1 genes in the Drosophila melanogaster protein data set? (This is a useless example, as the D. melanogaster genome is already well annotated.)
+The first step will be to download the D. melanogaster data set, which we can find on http://flybase.org, the genome repository for Drosophila genomes. Generally, genome repositories like FlyBase provide full data sets for download, but they can be difficult to find. To start, we’ll navigate to “Files,” then “Releases (FTP).”
+
+From there, we’ll navigat

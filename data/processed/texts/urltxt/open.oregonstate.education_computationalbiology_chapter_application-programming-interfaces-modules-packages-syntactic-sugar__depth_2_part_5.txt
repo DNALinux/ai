@@ -1,0 +1,15 @@
+de:
+
+Tutorials for these specific modules may be found online, as may lists of many other packages and modules that come installed with Python or that are available for download.
+
+Creating a Module
+Let’s create a module called MyVCFModule.py to hold the two class definitions and parsing function from the last example. While we’re doing so, we’ll also convert the comments that we had created for our classes, methods, and functions into “docstrings.” Docstrings are triple-quoted strings that provide similar functionality to comments, but can be parsed later to produce the module’s API. They may span multiple lines, but should occur immediately inside the corresponding module, class, or function definition. Here we leave out the contents of the methods and functions (which are the same as in the previous chapter) to save space:
+
+The program that makes use of this module, which exists in a separate file in the same directory (perhaps called snps_ex2.py), is short and sweet.[4]
+
+Should other projects need to parse VCF files, this module may again be of use. By the way, because we documented our module with docstrings, its API is readily accessible through the interactive help interface.
+
+Part of the API help page:
+
+Packages
+As if Python didn’t already have enough “boxes” for encapsulation—functions, objects, modules, and so on—there are also packages. In Python, a “package” is a directory containing some module files.[5]

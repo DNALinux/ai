@@ -1,0 +1,9 @@
+blank lines in our output is that the print() function, for our convenience, appends a \n to the end of any string that we print (otherwise, most of our output would all be on the same line). Thus each line read in from the file is being printed with two \n characters. We’ll learn how to print without an additional newline later, when we learn how to write data to files. For now, we’ll solve the problem by removing leading and trailing whitespace (spaces, tabs, and newlines) by asking a string to run its .strip() method.
+
+Although we’re calling import io again, it is just for clarity: a program only needs to import a module once (and usually these are collected near the top of the program). Here’s the modified output:
+
+If you feel adventurous (and you should!), you can try method chaining, where the dot syntax for methods can be appended so long as the previous method returned the correct type.
+
+To tie this into earlier concepts, after we’ve extracted each line and stripped off the trailing whitespace, we can use .split("\t") to split each line into a list of strings. From there, we can use float() to convert the second element of each into a float type, and compute the mean GC content.
+
+The above prints the average GC content of the three lines as 0.523333333. (Because .strip() also returns a string, we could have further chained methods, as in line1_list = fhandle.readline().strip().split("\t").)

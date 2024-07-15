@@ -1,0 +1,5 @@
+ls. Below, the string "#BFBCFF" specifies the light purple color at the top of the scale, based on the RGB color-coding scheme.
+
+We’ve also included a trans = "log10" adjustment in this color scale, indicating that it can be transformed just as other continuous scales. Using a log10 adjustment on a color scale may or may not be a good idea. For this data set, it more clearly illustrates the distribution of contigs in the plotted space, but makes comparisons between cells and to the legend more difficult.
+
+The RGB Color System

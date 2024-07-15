@@ -1,0 +1,7 @@
+ting is one of the techniques that can be fairly difficult to do in other graphics packages, but is easy in ggplot2. Facets implement the idea of “small multiples” championed by Edward Tufte.[5] Different subsets of the data are plotted in independent panels, but each panel uses the same axes (scales), allowing for easy comparisons across panels. In ggplot2(), we can add a facet specification by adding another function call to the “chain” of layer functions defining the plot. Faceting is almost always done on discrete columns of the input data frame, though below are some techniques for discretizing continuous columns.
+
+The first facet-specification function is facet_wrap(). It takes one required parameter, three less often used but occasionally helpful parameters, and a few more that we won’t discuss here.
+
+Returning to the dotplots of the diamonds data, recall that there appeared to be some relationship between the “cut” and “depth” of diamonds, but in the previous plots, this relationship was difficult to see. Let’s plot the same thing as above, but this time facet on the cut column.
+
+Faceting this way produces a separate panel for each cut type, all on the same axes, but anything plot-specific (such as the fit lines) are computed independently. This reveals that “ideal” cut diamonds tend to have a depth of around 62, whereas lower-quality cuts deviate from this value. To facet on cut and color, the formula would be ~ cut + color, and a panel would be created for each cut/

@@ -1,0 +1,16 @@
+# characters.
+
+Notice in the above that even the final newline has been replaced, and our command prompt printed on the same line as the output. Similarly, tr (and sed) can replace characters with newlines, so tr '#' '\n' would undo the above.
+
+Using tr in combination with other utilities can be helpful, particularly for formats like FASTA, where a single “record” is split across multiple lines. Suppose we want to extract all sequences from pz_cDNAs.fasta with nReads greater than 5. The strategy would be something like:
+
+At this point, the stream would look like so, where each line represents a single sequence record (with extraneous @ characters inserted):
+
+Joining Files on a Common Column (and Related Row/Column Tasks)
+Often, the information we want to work with is stored in separate files that share a common column. Consider the result of using blastx to identify top HSPs against the yeast open reading frame set, for example.
+
+The resulting file pz_blastx_yeast_top1.txt contains the standard BLAST information:
+
+Similarly, we can save a table of sequence information from the fasta_stats program with the comment lines removed as pz_stats.table.
+
+Viewing the file with less -S:

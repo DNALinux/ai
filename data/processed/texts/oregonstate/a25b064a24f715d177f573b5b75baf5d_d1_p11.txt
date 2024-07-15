@@ -1,0 +1,13 @@
+utput is a named numeric vector:
+
+The unique() function removes duplicates in a vector, leaving the remaining elements in order of their first occurrence, and the rev() function reverses a vector.
+
+There is the sort() function, which sorts a vector (in natural order for numerics and integers, and lexicographic (dictionary) order for character vectors). Perhaps more interesting is the order() function, which returns an integer vector of indices describing where the original elements of the vector would need to be placed to produce a sorted order.
+
+In this example, the order vector, 2 5 3 4 1, indicates that the second element of rev_uniq would come first, followed by the fifth, and so on. Thus we could produce a sorted version of rev_uniq with rev_uniq[order_rev_uniq] (by virtue of vectors’ index-based selection), or more succinctly with rev_uniq[order(rev_uniq)].
+
+Importantly, this allows us to rearrange multiple vectors with a common order determined by a single one. For example, given two vectors, id and score, which are related element-wise, we might decide to rearrange both sets in alphabetical order for id.
+
+The sample() function returns a random sampling from a vector of a given size, either with replacement or without as specified with the replace = parameter (FALSE is the default if unspecified).
+
+The rep() function repeats a vector to produce a longer vector. We can repeat in an element-by-element fashion, or over the whole vector, depending on whether the each = par

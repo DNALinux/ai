@@ -1,0 +1,9 @@
+a "t", but rather a tab character), patterns for regular expressions in Python are usually expressed as “raw strings,” indicated by prefixing them with an r. So, r"ATG" is also the pattern for a start codon, but r"\t" is the regular expression for "\" and "t" rather than the tab character.
+
+Python regular expression functionality is imported with the re module by using import re near the top of the script. There are many functions in the re module for working with strings and regular expression patterns, but we’ll cover just the three most important ones: (1) searching for a pattern in a string, (2) replacing a pattern in a string, and (3) splitting a string into a list of strings based on a pattern.
+
+Searching for a Pattern in a String
+Searching for a pattern is accomplished with the re.search() function. Most functions in the re module return a special SRE_Match data type, or a list of them (with their own set of methods), or None if no match was found. The if- statement (and while-loops) in Python treats None as false, so we can easily use re.search() in an if-statement. The result of a successful match can tell us the location of the match in the query using the .start() method:
+
+
+Replace a Pattern in a String

@@ -1,0 +1,12 @@
+especially handy when we define and update our own variables. We can accomplish this task with an = assignment (not to be confused with the == comparison). This command prints the average E values in our example BLAST result file.
+
+This command works because the right-hand side of an assignment to a variable with = is evaluated before the assignment happens. Thus, in the BEGIN block, the sumeval variable is initialized to 0, then for each line the value of sumeval is added to the contents of the tenth column (the E value of that line), and the result is stored in sumeval. Finally, in the END block, sumeval contains the total sum of E values, and we can divide this result by the number of lines processed, NR.
+
+We can execute multiple statements within a single block if we separate them with semicolons. In the above example, the average E value computed includes self-hits. We can filter them out with an if-statement before modifying sumeval, but then we won’t want to divide the result by NR, because that will include the self-hit counts as well. To solve this problem, we’ll need to keep two variables.
+
+As before, some IDs are still present more than one time in the first column with this solution, so it may make better sense to first filter the desired lines by using the awk and sort -k1,1d -u solution from above, and then use another awk for the average computation.
+
+Exercises
+Previous/next navigation
+
+License

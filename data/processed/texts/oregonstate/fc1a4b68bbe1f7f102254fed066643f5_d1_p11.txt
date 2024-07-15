@@ -1,0 +1,19 @@
+l -a -h (where the parameters may be given in any order), or with a single parameter as ls -lah, though not all utilities provide this flexibility.
+
+Some of these columns of information are describing the permissions associated with the various files and directories; we’ll look at the permissions scheme in detail in later chapters.
+
+When using ls -a, we see two “special” directories: . and .. are their names. These directories don’t really exist per se but are instead shortcuts that refer to special locations relative to the directory they are contained in. The . directory is a shortcut for the same directory it is contained in. Colloquially, it means “here.” The .. directory is a shortcut for the directory above the directory containing it. Colloquially, it means “up.”
+
+Every directory has these “virtual” links, and they can be used as relative paths themselves or in relative or absolute paths. Here, for example, we can cd . to stay where we are, or cd .. to go up one directory:
+
+If we like, we can go up two directories with cd ../..:
+
+We can even use . and .. in longer relative or absolute paths (number 2 in the figure below illustrates the relatively odd path of /media/./cdrom0, which is identical to /media/cdrom0).
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Bo

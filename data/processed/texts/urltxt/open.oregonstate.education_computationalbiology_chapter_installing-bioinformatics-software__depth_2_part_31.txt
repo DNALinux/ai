@@ -1,0 +1,10 @@
+terminal.
+
+Fortunately, it is possible to redirect the standard output stream into a file by indicating this to our shell with a > redirect operator, and specifying a file name or path. In this case, we’ll redirect the output of standard out to a file called p450s_hmmsearch_dmel.txt.
+
+When this command executes, nothing is printed, and instead our file is created. When using the > redirect, the file will be overwritten if it already exists. If, instead, we wished to append to an existing file (or create a new file if there is no file to append to), we could have used the >> redirect.
+
+Here are the contents of our final analysis, a simple text file with quite a bit of information, including some nicely formatted row and column data, as displayed by less -S p450s_hmmsearch_dmel.txt.
+
+Reproducibility with Scripts
+It is highly unlikely that an analysis of this type is performed only once. More often than not, we’ll wish to adjust or replace the input files, compare to different protein sets, or adjust the parameters for the programs ran. Thus it make sense to capture the analysis we just performed as an executable script, perhaps called runhmmer.sh.

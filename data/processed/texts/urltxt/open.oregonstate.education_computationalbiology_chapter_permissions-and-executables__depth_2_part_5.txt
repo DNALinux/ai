@@ -1,0 +1,8 @@
+minimally accessible. In particular, all the directories in the path to a shared directory need to have at least x for the group if they are to be accessed in any way by group members.
+
+Executables and $PATH
+What is a “program?” On a Unix-like system, it’s a file that has executable permissions for some user or users. (It also helps if that file contains some instructions that make sense to execute!) Often these are encoded in a “binary” format—simply long strings of 0’s and 1’s representing machine code that the CPU can interpret—but they may in some contexts also be human-readable text files. Many of the programs we’ve been using, like echo and ls, are executable files that live in the /bin directory along with many others, including bash, our shell program.
+
+If we like, we can even attempt to take a look at one of these with less. For example, we can try to examine the contents of the bash program with less /bin/bash; even though less reports a warning that the file is binary encoded, it won’t hurt to try.
+
+A binary-encoded file doesn’t look like much when we attempt to convert it to text and view it with less. In any case, here’s an “execution rule” we’re going to break almost immediately: to get the shell to run a program (executable file), we specify the absolute or relative path to it.

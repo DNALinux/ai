@@ -1,0 +1,9 @@
+mportant to understand that, as we are working in the command-line environment, we always have a “place,” a directory (or folder) in which we are working called the present working directory, or PWD. The shell keeps track of the present working directory in an environment variable, $PWD.
+
+When you first log in, your present working directory is set to your home directory; echo $PWD and echo $HOME will likely display the same result. There is also a dedicated program for displaying the present working directory, called pwd.
+
+We can list the files and directories that are stored in the present working directory by using the ls command.
+
+This command reveals that I have a number of directories in my home directory (/home/oneils) with names like Music and Pictures (helpfully colored blue) and a file called todo_list.txt.
+
+We can change the present working directory—that is, move to another directory—by using the cd command, giving it the path that we’d like to move to.

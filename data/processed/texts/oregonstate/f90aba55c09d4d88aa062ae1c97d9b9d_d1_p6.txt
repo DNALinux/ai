@@ -1,0 +1,8 @@
+The argparse module also automates the printing and formatting of help information that can be accessed by users who run the program with a -h or --help flag. A variety of tutorials for argparse can be found online. (There is also a simpler, but less featureful, module optparse.)
+
+Executing Shell Commands within Python
+It is sometimes useful to execute other programs from within our own programs. This could be because we want to execute an algorithmically generated series of commands (e.g., perhaps we want to run a genome assembly program on a variety of files in sequence), or perhaps we want to get the output of a program run on the command line.
+
+Consider the command line task of listing all of the files in the current directory matching the pattern cluster*.fasta. For this we can use ls -1 cluster*.fasta, where -1 tells ls to print its output as a single column of file names, and cluster*.fasta matches all file names matching the desired pattern (like cluster_AB.fasta, cluster_AC.fasta, cluster_AG.fasta, and cluster_D.fasta.).
+
+There are a few ways to get this information in a Python program, but one of the easiest is to run the ls -1 cluster*.fasta command from within our program, capturing the result as a string.[3] The subprocess module allows us to do exactly this by using the subprocess.check_output() function. This function takes a number of potential parameters, but we’ll run it with just two: (1) the command we wish to execute (as a string) and (2) shell = True, w

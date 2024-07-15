@@ -1,0 +1,8 @@
+x86 CPU architectures are still common, and software compiled for one won’t work on the other. If the developer has made available compiled binaries compatible with our system, then so much the better: we can download them, ensure they are executable, and place them in $HOME/local/bin. Alternatively, we may need to download the source code files and perform the compilation ourselves. In some cases, developers distribute binaries, but certain features of the program can be customized in the compilation process.
+
+For the sake of completeness, we’ll do a source install of HMMER; later, we’ll get some other software as binaries.[1]
+
+Downloading and Unpacking
+We’re going to download the source files for HMMER; first, we are going to create a new directory to store downloads, called downloads, in our home directory (you may already have such a directory).
+
+If we were to click on the link in the HMMER download page, the web browser would attempt to download the file located at the corresponding URL (http://eddylab.org/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz) to the local desktop. Because we want the file downloaded to the remote system, clicking on the download button won’t work. What we need is a tool called wget, which can download files from the Internet on the command line.[2] The wget utility takes at least one important parameter, the URL, to download. It’s usually a good idea to put URLs in quotes, because they often have characters that confuse the shell and would need to b

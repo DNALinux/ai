@@ -1,0 +1,7 @@
+es in languages commonly used for bioinformatics.
+
+There are two related topics that are not covered in this book. First, I avoid topics related to “system administration,” which involves installing and managing operating systems and computer hardware, except where necessary. Second, I focus on computing for bioinformatics or computational biology, rather than bioinformatics itself. Thus this book largely avoids discussing the detailed mathematical models and algorithms underlying the software we will install and use. This is not to say that a good scientist can avoid mathematics, statistics, and algorithms—these are simply not the primary focus here.
+
+Bioinformatics and computational biology are quickly growing and highly interdisciplinary fields, bringing computational experts and biologists into close and frequent contact. To be successful, these collaborations require a shared vocabulary and understanding of diverse skill sets; some of this understanding and vocabulary are discussed here. Although most of this book focuses on the nuts and bolts of data analysis, some chapters focus more on topics specifically related to computer science and programming, giving newcomers a chance to understand and communicate with their computational colleagues as well as forming a basis for more advanced study in bioinformatics.
+
+Organization

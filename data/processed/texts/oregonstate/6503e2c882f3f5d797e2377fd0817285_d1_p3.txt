@@ -1,0 +1,8 @@
+nary and source forms at ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/.
+
+This chapter only briefly covers running BLAST on the command line in simple ways. Reading the help information (e.g., with blastn --help) and the NCBI BLAST Command Line Applications User Manual at http://www.ncbi.nlm.nih.gov/books/NBK1763/ is highly recommended. The NCBI manual covers quite a few powerful and handy features of BLAST on the command line that this book does not.
+
+BLAST Types
+The programs in the BLAST+ suite can search for and against sequences in protein format (as we did for the HMMER example) and in nucleotide format (A’s, C’s, T’s, and G’s). Depending on what type the query and subject sets are, different BLAST programs are used.
+
+While two nucleotide sequences (N comparisons in the figure above) may be compared directly (as may two protein sequences, represented by P), when we wish to compare a nucleotide sequence to a protein sequence, we need to consider which reading frame of the nucleotide sequence corresponds to a protein. The blastx and tblastn programs do this by converting nucleotide sequences into protein sequences in all six reading frames (three on the forward DNA strand and three on the reverse) and comparing against all of them. Generally such programs result in six times as much work to be done. The tblastx program compares nucleotide queries against nucleotide subjects, but it does so in protein space with all six conversions compared to all six on both s

@@ -1,0 +1,9 @@
+hould be related to the predicted values. Note the format of the formula: response_vector ~ predictor_vector1 + predictor_vector2 + predictor_vector1 : predictor_vector2, indicating that we wish to determine how to predict values in the response vector using elements from the predictor vectors.
+
+If the vectors or factors of interest exist within a data frame (as is the case here), then the lm() function can work with column names only and a data = argument.
+
+We can then print the linear model returned with print(lm1), as well as its structure with str(lm1), to see that it contains quite a bit of information as a named list:
+
+Before we continue, what is this expression ~ genotype + treatment + genotype : treatment “formula”? As usual, we can investigate a bit more by assigning it to a variable and using class() and str().
+
+The output indicates that the class is of type "formula" and that it has an ".Environment" attribute. It’s a bit opaque, but a formula type in R is a container for a character vector of variable names and a syntax for relating them to each other. The environment attribute specifies where those variables should be searched for by default, though functions are free to ignore that (as in the case of data = for lm(), which specifies that the variables should be considered column names in the given data frame). Formulas don’t even need to specify variables that actually exist. Consider the following formula and the all.vars() function, which inspects a formula an

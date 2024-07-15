@@ -1,0 +1,9 @@
+arameters (Rule 1). This rule works closely with our definition of a variable in Python, as a name that refers to some data.
+
+This is a powerful concept, allowing us to pass parameters to functions and get returned values. In Python, a single piece of data may be referenced by multiple variables. Parameter variables are new names for the same data. We can explore this concept with a simple example.
+
+In this code sample, we have created a single list, but we are associating two variable names with it, nums and numsb. When we modify the list through one name, the change is reflected through the other (we can only change the data because lists are mutable, but even immutable data may be referred to by multiple names).
+
+The same thing happens when we use a parameter in a function. Let’s revisit the gc_content() function, which makes use of a base_composition() function that we wrote (but leave out here for clarity). In this listing, all of the variable names belonging to the function are highlighted in red, whereas other “global” variable names are highlighted in purple and underlined with a dashed line. According to Rule 1, we shouldn’t see any purple/underlined variables in the function definition.
+
+Outside of the function, the string data "ACCCTAGACTG" was assigned to the variable seq3, but inside the function, it was assigned to the variable seq. Inside the function, the data value 0.54 was referenced by the variable gc, and outside it was referenced by seq3_gc.[1]

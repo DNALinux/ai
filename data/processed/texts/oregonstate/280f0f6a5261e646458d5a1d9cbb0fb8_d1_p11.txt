@@ -1,0 +1,13 @@
+ed outputs of each function application. So, instead of using the four lines above to apply ipercentile_range() to each element of samples, we can say:
+
+The resulting list will have the same three values as above, and the names of the elements in the output list will be inherited from the input list (so sample_irqs$s1 will hold the first range or 5.44, for this random sample anyway).
+
+This is an example of the powerful “split-apply-combine” strategy for data analysis. In general, this strategy involves splitting a data set into pieces, applying an operation or function to each, and then combining the results into a single output set in some way.
+
+When the input and output are both lists, this operation is also known as a “map.” In fact, this paradigm underlies some parallel processing supercomputer frameworks like Google’s MapReduce and the open-source version of Hadoop (although these programs aren’t written in R).
+
+Because lists are such a flexible data type, lapply() is quite useful. Still, in some cases—like this one—we’d prefer the output to be a vector instead of a list. This is common enough to warrant a conversion function called unlist() that extracts all of the elements and subelements of a list to produce a vector.
+
+Be warned: because lists are more flexible than vectors, if the list given to unlist() is not simple, the elements may be present in the vector in an odd order and they will be coerced into a common data type.
+
+The lapply() function can also take as inp

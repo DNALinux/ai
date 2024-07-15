@@ -1,0 +1,9 @@
+lso consider more advanced methods for this sort of pattern-based column splitting. As well, although we’re working with columns of data frames, it’s important to remember that they are still vectors (existing as columns), and that the functions we are demonstrating primarily operate on and return vectors.
+
+If our assumption, that "A", "B", and "C" were the only possible tissue types, was correct, there should be no NA values left in the tissue column. We should verify this assumption by attempting to print all rows where the tissue column is NA (using the is.na() function, which returns a logical vector).
+
+In this case, a data frame with zero rows is printed. There is a possibility that tissue types like "AA" have been recoded as simple "A" values using this technique—to avoid this outcome, we could use a more restrictive regular expression in the str_detect(), such as "^A\d$", which will only match elements that start with a single "A" followed by a single digit. See chapter 11, “Patterns (Regular Expressions),” and chapter 21, “Bioinformatics Knick-knacks and Regular Expressions,” for more information on regular-expression patterns.
+
+A similar set of commands can be used to fill a new replicate column.
+
+Again we search for leftover NA values, and find that this time there are some rows where the rep column is reported as NA, apparently because a few entries in the table have a replicate number of 0.

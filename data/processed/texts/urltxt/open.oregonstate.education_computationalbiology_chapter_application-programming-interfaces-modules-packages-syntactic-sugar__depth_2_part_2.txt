@@ -1,0 +1,11 @@
+m is to run Python in the interactive mode on the command line.[1]
+
+To do this, we execute the python interpreter without specifying a file to interpret. The result is a Python prompt, >>>, where we can type individual lines of Python code and see the results.
+
+The interactive mode, aside from providing an interface for running quick tests of Python functionality, includes a help system! Simply run the help() function on either a class name (like help(list)) or an instance of the class.
+
+This command opens an interactive viewer in which we can scroll to see all the methods that an object of that type provides. Here’s a sample from the help page:
+
+Browsing through this documentation reveals that Python lists have many methods, including .append(), .count(), and others. Sometimes the documentation isn’t as clear as one would hope. In these cases, some experimentation may be required. Between the description above and some code tests, for example, can you determine what a list’s .count() method does and how to use it effectively?
+
+The set of methods and instance variables belonging to an object or class is known as its API, or Application Programming Interface. The API is the set of functions, methods, or variables provided by an encapsulated collection of code. APIs are an important part of programming because they represent the “user interface” for programming constructs that others have written.

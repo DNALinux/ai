@@ -1,0 +1,19 @@
+ndexing by logical doesn’t afford us this possibility.
+We can perform selective replacement this way as well; let’s suppose Students A and C retake their quizzes and moderately improve their scores.
+
+And the printed output:
+
+In this case, the length of the replacement vector (c(159, 169)) is equal to the number of TRUE values in the indexing vector (c(TRUE, FALSE, TRUE)); we’ll explore whether this is a requirement below.
+In summary, we have three important ways of indexing into/selecting from/selectively replacing in vectors:
+
+by index number vector,
+by character vector (if the vector is named), and
+by logical vector.
+
+
+Vectorized Operations, NA Values
+
+If vectors are the most basic unit of data in R, all of the functions and operators we’ve been working with—as.numeric(), *, and even comparisons like >—implicitly work over entire vectors.
+
+In this example, each element of the character vector has been converted, so that class(numerics) would return "numeric". The final character string, "9b3x", cannot be reasonably converted to a numeric type, and so it has been replaced by NA. When this happens, the interpreter produces a warning message: NAs introduced by coercion.
+NA is a special value in R that indicates either missing data or a failed computation of some type (as in attempting to convert "9b3x" to a numeric). Most operations involving NA values return NA values; for example, NA + 3 returns NA, and many functions that operate on entire vectors return an NA if any elemen

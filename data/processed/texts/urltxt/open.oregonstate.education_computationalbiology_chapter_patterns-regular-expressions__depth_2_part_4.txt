@@ -1,0 +1,7 @@
+t based on “patterns” or, more formally, regular expressions. A regular expression is a syntax for describing pattern matching in strings. Regular expressions are described by the individual characters that make up the pattern to search for, and “meta-operators” that modify parts of the pattern for flexibility. In [ch]at, for example, the brackets function as a meta-operator meaning “one of these characters,” and this pattern matches both cat and hat, but not chat. Regular expressions are often built by chaining smaller expressions, as in [ch]at on the [mh]at, matching cat on the hat, cat on the mat, hat on the hat, and hat on the mat.
+
+In the example above, the entire pattern was specified by _, which is not a meta-operator of any kind, and so each instance of _ was replaced by the replacement (a space character). The meta-operators that are supported by regular expressions are many and varied, but here’s a basic list along with some biologically inspired examples:
+
+So far our patterns aren’t really all that flexible, because most of the pieces covered to this point match a single character. The next five meta-operators resolve that limitation.
+
+The usage of * deserves a detailed example. Consider the pattern ATG[ATGC]*TGA, where ATG is the pattern for a start codon, [ATGC]* indicates zero or more DNA bases in a row, and TGA is one of the canonical stop codons. This pattern matches ATGTACCTTGA, and also matches ATGTGA (where the middle part has been matched zero times).

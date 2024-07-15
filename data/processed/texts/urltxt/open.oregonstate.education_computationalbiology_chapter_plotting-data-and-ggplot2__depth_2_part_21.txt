@@ -1,0 +1,6 @@
+fferent values) and the quality of the light-emitting devices (many of which can’t produce very bright light or be fully turned off in operation). Color blindness is a genetic anomaly caused by having only one or two of the three cone types, and a few rare but lucky individuals possess four cone types along with greater acuity in color vision (tetrachromacy).
+
+Something to consider when devising color scales is that not all of them are created equally—a fair percentage of viewers will have some form of color blindness, and another fair percentage of viewers will prefer to print a plot on a black-and-white printer. The scale_color_brewer() function helps the user select good color palettes; it is based on the work found at colorbrewer2.org. Other scale types can be similarly adjusted, including alpha (transparency), and the sizes of points and lines.
+
+Coordinates
+In addition to modifying properties of the scales, we can also modify how those scales are interpreted in the overall plot and in relation to each other. Some of the coordinate modifications are less common, but others (like coord_equal(), below) are handy. Often, coordinate adjustments are illustrated by considering a dotplot or barplot in polar coordinates.

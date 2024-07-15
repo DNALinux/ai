@@ -1,0 +1,19 @@
+resumed. Above, the IP address is shown as 128.196.64.36, so we could access it from the OS X Terminal application:
+
+[soneil@mbp ~]$ ssh oneils@128.196.64.36
+
+The Atmosphere Web interface also provides an “Open Web Shell” button, providing command-line access right in your browser. When you are done working with your Atmosphere instance, it’s important to suspend the instance, otherwise you’ll be wasting computational resources that others could be using (as well as your own quota).
+
+Logging Out
+Once finished working with the remote computer, we should log out of the SSH session. Logging out is accomplished by running the command exit on the command line until returned to the local desktop or the SSH client program closes the connection. Alternatively, it suffices to close the SSH client program or window—SSH will close the connection, and no harm will be done. Note, however, than any currently executing program will be killed on logout.
+
+If you are working on an Atmosphere instance or similar remotely hosted virtual machine, it’s a good idea to also suspend the instance so that time spent not working isn’t counted against your usage limit.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

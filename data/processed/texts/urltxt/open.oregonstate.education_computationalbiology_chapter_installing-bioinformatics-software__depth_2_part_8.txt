@@ -1,0 +1,8 @@
+to specify $HOME/local, because the bin portion of the path is implied (and other directories like lib and share might also be created alongside the bin directory). Finally, our modified canonical install process will consist of three steps: ./configure --prefix=$HOME/local, make, and make install.
+
+At this point, if we navigate to our $HOME/local directory, we will see the added directories and binary files.
+
+Because these executable files exist in a directory listed in the $PATH variable, we can, as always, type their names on the command prompt when working in any directory to run them. (Though, again, we may need to log out and back in to get the shell to see these new programs.[4])
+
+Installation from Binaries
+Our objective is to run HMMER to search for a sequence-set profile in a larger database of sequences. For details, the HMMER documentation (available on the website) is highly recommended, particularly the “Tutorial” section, which describes turning a multiple alignment of sequences into a profile (with hmmbuild) and searching that profile against the larger set (with hmmsearch). It is also useful to read the peer-reviewed publication that describes the algorithms implemented by HMMER or any other bioinformatics software. Even if the material is outside your area of expertise, it will reveal the strengths and weaknesses of software.

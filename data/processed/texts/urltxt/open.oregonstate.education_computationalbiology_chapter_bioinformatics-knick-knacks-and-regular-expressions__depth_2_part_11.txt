@@ -1,0 +1,8 @@
+of "ACTAGACG" are "ACTAGA", "CTAGAC", and "TAGACG".
+
+To derive reading frames three, four, and five, we first reverse-complement the sequence ("CGTCTAGT") and then produce frames from indices 0, 1, and 2, resulting in "CGTCTA", "GTCTAG", and "TCTAGT".
+
+Using the reverse_complement() function from above (and potentially the get_windows() function from chapter 18, “Python Functions”), write a seq_to_six_frames() function that takes a DNA sequence as a parameter and returns a list of the six reading frames (as strings).
+Write a function called longest_non_stop() that takes a DNA sequence as a parameter and returns the longest amino acid sequence that can be produced from it. This is done by generating the six reading frames from the sequence, converting each to an amino acid sequence (probably using the dna_to_aa() function from chapter 20, “Dictionaries”), and then trimming the resulting sequences down to the first “stop” codon ("*") if there are any.
+
+In the DNA sequence seq = "AGCTACTAGGAAGATAGACGATTAGAC", for example, the six translations are SY*EDRRLD (Frame 1), ATRKIDD* (Frame 2), LLGR*TIR (Frame 3), V*SSIFLVA (Frame 4), SNRLSS** (Frame 5), and LIVYLPSS (Frame 6). In order of lengths, the possibilities are thus "V", "SY", "LLGR", "SNRLSS", "ATRKIDD", and "LIVYLPSS". As a result, longest_non_stop(seq) should return "LIVYLPSS".

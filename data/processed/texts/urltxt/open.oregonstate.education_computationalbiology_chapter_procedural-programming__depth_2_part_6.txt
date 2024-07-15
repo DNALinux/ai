@@ -1,0 +1,11 @@
+le else block, the else if() or else keywords must appear on the same line as the previous closing curly bracket. This differs slightly from other languages and is a result of the way the R interpreter parses the code.
+
+Generating Truncated Random Data, Part II
+One of the issues with our rnorm_trunc() function is that if the desired range is small, it might still require many resampling efforts to produce a result. For example, calling sample_trunc <- rnorm_trunc(15, 15.01, 1000, 20, 10) will take a long time to finish, because it is rare to randomly generate values between 15 and 15.01 from the given distribution. Instead, what we might like is for the function to give up after some number of resamplings (say, 100,000) and return a vector containing NA, indicating a failed computation. Later, we can check the returned result with is.na().
+
+The example so far illustrates a few different things:
+
+For-Loops
+For-loops are the last control-flow structure we’ll study for R. Much like while-loops, they repeat a block of code. For-loops, however, repeat a block of code once for each element of a vector (or list), setting a given variable name to each element of the vector (or list) in turn.
+
+While for-loops are important in many other languages, they are not as crucial in R. The reason is that many operations are vectorized, and functions like lapply() and do() provide for repeated computation in an entirely different way.

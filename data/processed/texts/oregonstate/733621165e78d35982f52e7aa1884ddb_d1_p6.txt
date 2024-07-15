@@ -1,0 +1,12 @@
+de as an argument; or (3) making the code file an executable script in the command line environment using #! syntax.
+
+Jupyter Notebook
+For those wishing to program Python without working on the command line, a variety of graphical environments are available. A typical installation of Python from http://python.org includes the “Idle” code editor. One of the nicer alternatives to this default is known as Jupyter, which runs in a web browser allows the programmer to interleave sections of code and documentation.
+
+Installing Jupyter requires that Python already be installed (from http://python.org), and then requires using the command line terminal in Linux, OS X, or Windows; see http://jupyter.org/install for details. Once installed, it can be started from the command line by running jupyter notebook:
+
+The Jupyter interface will open in the default desktop web browser, showing the list of folders and files in whatever directory the command was run from.
+
+Clicking the “New” button, followed by “Python Notebook” will create a new notebook document composed of “cells.” Cells in a notebook can contain human-readable text (as documentation) or lines of Python code. Whether the text in the cell is interpreted as code or text depends on the choice made in the “Cell” menu.
+
+Each cell may be “executed” by clicking on the “Play” button; doing so causes text cells to change to a nicely formatted output, and executes lines of code for code cells. But beware: the output of a given cell often

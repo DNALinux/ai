@@ -1,0 +1,10 @@
+ta frame columns are usually vectors, making rbind() a repeated application of c().
+
+One solution to this problem in R is to “preallocate” a vector (or data frame) of the appropriate size, and use replacement to assign to the elements in order using a carefully constructed loop.
+
+(Here we’re simply placing values of 1 into the vector, but more sophisticated examples are certainly possible.) This code runs much faster but has the downside of requiring that the programmer know in advance how large the data set will need to be.[2]
+
+Does this mean we should never use loops in R? Certainly not! Sometimes looping is a natural fit for a problem, especially when it doesn’t involve dynamically growing a vector, list, or data frame.
+
+Exercises
+Start by setting input <- 0 and rand to a random integer between 1 and 100 with rand <- sample(seq(1,100), size = 1). Next, while input != rand: Read a guess from the user and convert it to an integer, storing the result in input. If input < rand, print "Higher!", otherwise if input > rand, print "Lower!", and otherwise report "You got it!".

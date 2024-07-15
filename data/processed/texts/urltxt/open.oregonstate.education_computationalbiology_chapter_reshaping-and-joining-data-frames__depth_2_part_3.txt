@@ -1,0 +1,8 @@
+use.
+
+Gathering for Tidiness
+The gather() function in the tidyr package makes most untidy data frames tidier. The first parameter taken is the data frame to fix up, and the second and third are the “key” and “value” names for the newly created columns, respectively (without quotes). The remaining parameters specify the column names that need to be tidied (again, without quotes). Suppose we had a small, untidy data frame called expr_small, with columns for id, annotation, and columns for expression in the C6 and L4 genotypes.
+
+In this case, we would run the gather() function as follows, where sample and expression are the new column names to create, and C6 and L4 are the columns that need tidying. (Notice the lack of quotation marks on all column names; this is common to both the tidyr and dplyr packages’ syntactic sugar.)
+
+Notice that the data in the nongathered, nontidied columns (id and annotation) have been repeated as necessary. If no columns to tidy have been specified (C6 and L4 in this case), the gather() assumes that all columns need to be reorganized, resulting in only two output columns (sample and expression). This would be obviously incorrect in this case.

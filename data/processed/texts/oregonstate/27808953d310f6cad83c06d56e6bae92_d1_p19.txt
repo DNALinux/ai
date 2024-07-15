@@ -1,0 +1,10 @@
+urther filter the results through the sort and head command line utilities to identify which promoters are most likely to be found by GATA: ./grape_count_gata.py | sort -k2,2nr | head -n 10.
+
+Exercises
+To derive reading frames three, four, and five, we first reverse-complement the sequence ("CGTCTAGT") and then produce frames from indices 0, 1, and 2, resulting in "CGTCTA", "GTCTAG", and "TCTAGT".
+
+Using the reverse_complement() function from above (and potentially the get_windows() function from chapter 18, “Python Functions”), write a seq_to_six_frames() function that takes a DNA sequence as a parameter and returns a list of the six reading frames (as strings).
+
+In the DNA sequence seq = "AGCTACTAGGAAGATAGACGATTAGAC", for example, the six translations are SY*EDRRLD (Frame 1), ATRKIDD* (Frame 2), LLGR*TIR (Frame 3), V*SSIFLVA (Frame 4), SNRLSS** (Frame 5), and LIVYLPSS (Frame 6). In order of lengths, the possibilities are thus "V", "SY", "LLGR", "SNRLSS", "ATRKIDD", and "LIVYLPSS". As a result, longest_non_stop(seq) should return "LIVYLPSS".
+
+The restriction enzymes cut on the basis of patterns; for example, the ApeK1 enzyme cuts DNA molecules at the pattern "GC[AT]GC". Based on the recognized patterns, some enzymes are “frequent cutters” and some are not; more frequent cutters sample more locations in a genome but sacrifice depth of sequencing. For this reason, researchers often want to know, given an enzyme pattern and genome sequence, the distribution of fragment lengths

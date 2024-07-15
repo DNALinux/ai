@@ -1,0 +1,16 @@
+of a data frame can be useful for determining what types they actually are.
+
+Exercises
+Next, add to the suffix_only data frame columns for base_id and suffix, where base IDs are the parts before the underscore and suffices are the parts after the underscore (e.g., base_id is "PZ7180000023260" and suffix is "APN" for the ID "PZ7180000023260_APN").
+
+Finally, produce versions of these two data frames where the GO: prefix has been removed from all entries of the second column.
+
+We are interested in pulling out all rows that have "A", "B", or "C" in the current_grade column. Describe, in detail, what each of the three potential solutions does:How does R interpret each one (i.e., what will R try to do for each), and what would the result be? Which one(s) is (are) correct? Which will report errors? Are the following three lines any different from the above three in what R tries to do?
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

@@ -1,0 +1,17 @@
+s a name, which we’ll call "disttype". Attributes are assigned in a fashion similar to names.
+
+When printed, the output shows the attributes that have been assigned as well.
+
+We can separately extract a given attribute from a data item, using syntax like sample_dist <- attr(sample, "disttype"). Attributes are used widely in R, though they are rarely modified in day-to-day usage of the language.[2]
+
+To expand our A. thaliana example, let’s assign a “kingdom” attribute to the species vector.
+
+At this point, we’ve built a fairly sophisticated structure: a list containing vectors (one of which has an attribute) and another list, itself containing vectors, with the various list elements being named. If we were to run print(athal), we’d see rather messy output. Fortunately, R includes an alternative to print() called str(), which nicely prints the structure of a list (or other data object). Here’s the result of calling str(athal) at this point.
+
+Removing an element or attribute from a list is as simple as assigning it the special value NULL.
+
+The printed structure reveals that this information has been removed.
+
+What is the point of all this detailed list making and attribute assigning? It turns out to be quite important, because many R functions return exactly these sorts of complex attribute-laden lists. Consider the t.test() function, which compares the means of two vectors for statistical equality:
+
+When printed, the result is a nicely formatted, human-readable result.

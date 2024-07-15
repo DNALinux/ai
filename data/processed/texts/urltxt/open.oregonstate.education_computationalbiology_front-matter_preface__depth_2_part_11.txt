@@ -1,0 +1,11 @@
+of writing this book, I knew we would be targeting multiple formats: print on demand, web, ebook, and so on. Additionally, during the editing process it spent some time as a Microsoft Word document. As code is very sensitive to formatting changes, this ensured that every version would be identical and correct, and it allowed me to easily overlay some blocks with visual annotations. Although I have scripts that automate the production of these images, it does have the downside of making adjustments more cumbersome.
+
+An additional feature–which some readers might consider a bug–is that it is not possible to copy-and-paste these code blocks from electronic versions of the book. In my experience copying and pasting code actively hinders the learning process, as it encourages skipping details of concepts and prevents learning from mistakes.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

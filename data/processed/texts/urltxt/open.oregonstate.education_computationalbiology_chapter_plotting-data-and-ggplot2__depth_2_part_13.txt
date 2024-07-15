@@ -1,0 +1,8 @@
+non-linear smooth and "lm" will produce a linear fit.
+
+As a general note, ggplot2 enforces that all layers share the same scales. For this reason, we would not want to plot in one layer x = carat, y = depth and in another x = carat, y = price; all of the y values will be forced into a single scale, and because depth ranges up to ~70 while prices range up to ~18,000, the depth values would be indiscernible. This also applies to color mappings, if multiple layers utilize them.
+
+The ggplot2 package enforces these rules for ease of understanding of plots that use multiple layers. For the same reasons, ggplot2 doesn’t support multiple y axes (i.e., a “left” y axis and “right” y axis), nor does it natively support three-dimensional plots that are difficult to read on a two-dimensional surface, like paper or a computer monitor.[4]
+
+Faceting
+Faceting is one of the techniques that can be fairly difficult to do in other graphics packages, but is easy in ggplot2. Facets implement the idea of “small multiples” championed by Edward Tufte.[5] Different subsets of the data are plotted in independent panels, but each panel uses the same axes (scales), allowing for easy comparisons across panels. In ggplot2(), we can add a facet specification by adding another function call to the “chain” of layer functions defining the plot. Faceting is almost always done on discrete columns of the input data frame, though below are some techniques for discretizing continuous columns.

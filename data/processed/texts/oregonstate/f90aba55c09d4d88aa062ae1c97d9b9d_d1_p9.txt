@@ -1,0 +1,11 @@
+r sd() function might well call the mean() function.)
+
+Your program should print usage information and exit if either there are no data provided on standard input, or if there is no threshold argument.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

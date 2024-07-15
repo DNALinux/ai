@@ -1,0 +1,12 @@
+ribute of result; suppose the class is "x". If a print.x() exists, that function will be called; otherwise, the print will fall back to print.default(), which produces output similar to str().
+
+There are many different "print." methods; we can see them with methods("print").
+
+Similarly, there are a variety of ".lm" methods specializing in dealing with data that have a "class" attribute of "lm". We can view these with methods(class = "lm").
+
+The message about nonvisible functions being asterisked indicates that, while these functions exist, we can’t call them directly as in print.lm(lm_result); we must use the generic print(). Many functions that we’ve dealt with are actually generics, including length(), mean(), hist(), and even str().
+
+So, in its own way R, is also quite “object oriented.” A list (or other type, like a vector or data frame) with a given class attribute constitutes an object, and the various specialized methods are part of the class definition.
+
+Creating Our Own Classes
+Creating novel object types and methods is not something beginning R programmers are likely to do often. Still, an example will uncover more of the inner workings of R and might well be useful.

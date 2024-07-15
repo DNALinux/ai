@@ -1,0 +1,10 @@
+rested in the first five columns, and the main questions are:
+
+We may in the future have other questions about transitions and transversions on a per-chromosome basis. To answer the questions above, and to prepare for future ones, we’ll start by defining some classes to represent these various entities. This example will prove to be a bit longer than others we’ve studied, partially because it allows us to illustrate answering multiple questions using the same codebase if we do some extra work up front, but also because object-oriented designs tend to result in significantly more code (a common criticism of using classes and objects).
+
+SNP Class
+A SNP object will hold relevant information about a single nonheader line in the VCF file. Instance variables would include the reference allele (a one-character string, e.g., "A"), the alternative allele (a one-character string, e.g., "G"), the name of the chromosome on which it exists (a string, e.g., "1"), the reference position (an integer, e.g., 799739), and the ID of the SNP (e.g., "rs57181708" or "."). Because we’ll be parsing lines one at a time, all of this information can be provided in the constructor.
+
+SNP objects should be able to answer questions: .is_transition() should return True if the SNP is a transition and False otherwise by looking at the two allele instance variables. Similarly, .is_transversion() should return True if the SNP is a transversion and False otherwise.
+
+Chromosome Class

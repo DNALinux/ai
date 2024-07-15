@@ -1,0 +1,8 @@
+e expression analysis. Following each apex are additional, more advanced topics that shouldn’t be overlooked. The second half of Part I covers the powerful paradigm of data pipelines and a variety of important command-line analysis tools such as awk and sed. Part II covers some topics related to software packages and concludes with an introduction to algorithms and data structures. Finally, Part III follows its apex with handy functions for manipulating and plotting complex data sets.
+
+Finally, the text includes an extensive number of examples. To get a proper feel for the concepts, it is highly recommended that you execute the commands and write the code for yourself, experimenting and trying variations as you feel necessary. It is difficult for even the sharpest of minds to absorb material of this nature by reading alone.
+
+Availability
+This book is available both as an open-access online resource as well as in print. The open-access license used for the online version is the Creative Commons CC BY-NC-SA, or “Attribution-NonCommercial-ShareAlike” license. According to https://creativecommons.org/licenses/, “This license lets others remix, tweak, and build upon [the] work non-commercially, as long as they credit [the author] and license their new creations under the identical terms.”
+
+The data files and many of the completed scripts mentioned within the text are available for direct download here: https://open.oregonstate.education/computationalbiology/back-matter/files/.

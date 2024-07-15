@@ -1,0 +1,12 @@
+ze many of these “fall-through” settings and defaults, though we’ll specify all data and mappings for each layer for clarity. (And yes, different layers can use different data frames for their data = parameter.)
+
+There are many specialized layer functions for specific stats and geoms. Documentation for them and other features of ggplot2 can be found at http://docs.ggplot2.org (inactive link as of 5/17/2021).
+
+Exercises
+
+More Aesthetics and Mathematical Expressions
+The geom_point() layer function deserves some special attention, not only because scatterplots are a particularly useful plot type for data exploration, but also because we can use it to illustrate more features of the ggplot2 package. Unfortunately, scatterplots tend to suffer from “overplotting” issues when the number of data points is large, as in previous examples. For now, we’ll get around this issue by generating a random subset of 1,000 diamonds for plotting, placing the sample in a data frame called dd.
+
+First, the geom_point() layer accepts a number of aesthetics that might be useful in other situations as well.
+
+The result is probably too many aesthetics to map to values from the data, but sometimes for exploratory purposes (rather than publication), this isn’t a bad thing. In this plot we can see a few interesting features of the data. (1) Diamonds are usually cut to carat sizes that are round numbers (0.25, 0.5, 1.0, etc.). (2) The price per carat (mapped to color) is generally higher for larger diamonds

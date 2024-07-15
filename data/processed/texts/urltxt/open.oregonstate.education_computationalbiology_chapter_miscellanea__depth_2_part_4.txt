@@ -1,0 +1,7 @@
+ult, join only outputs rows where data are present in both files. Both input files are required to be similarly sorted (either ascending or descending) on the key columns: join -1 <key column in file1> -2 <key column in file2> <file1> <file2>.
+
+Like most tools, join outputs its result to standard output, which can be redirected to a file or other tools like less and awk. Ideally, we’d like to say join -1 1 -2 1 pz_stats.txt pz_blastx_yeast_top1.txt to indicate that we wish to join these files by their common first column, but as of yet the files are not similarly sorted. So, we’ll first create sorted versions.
+
+Now we can run our join -1 1 -2 1 pz_stats.sorted.txt pz_blastx_yeast_top1.sorted.txt, piping the result into less. The output contains all of the columns for the first file, followed by all of the columns of the second file (without the key column), separated by single spaces.
+
+Instead of viewing the output with less, piping it into an awk '{if($1 > 0.5) print $1}' would quickly identify those sequences with BLAST matches and GC content over 50%.

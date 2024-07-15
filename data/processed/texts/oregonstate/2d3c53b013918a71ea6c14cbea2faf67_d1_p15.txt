@@ -1,0 +1,8 @@
+tware “from scratch,” and we have to start somewhere! Additionally, the benefit of learning these techniques will pay off over the long run when it comes to solving novel problems.
+
+The Process of Programming
+Although the process of designing a strategy (and pseudocode) seems tedious, it’s highly recommended. As you progress in your abilities, your strategies and pseudocode will become more terse and higher level, but you should never skip the planning steps before coding. (On the other hand, there is also the danger of over-planning, but this more often effects teams of coders working on large projects.)
+
+There’s another thing worth noting at this point: programs like the above are almost never written top-to-bottom in their entirety, at least not without requiring significant debugging! You may forget that the result of splitting a string results in a list of strings, resulting in an error on a line like eval_sum = eval_sum + eval_str because eval_sum is a float, while eval_str is a string. After finding and fixing this error, you may find yet another error if you attempt to print with a line like print("Mean is: " + mean), because again the types don’t match and can’t be concatenated. After all this, perhaps you find the resulting mean to unexpectedly be a large number, like 131.18, only to find out it was because you accidently used eval_str = line_list[11], forgetting that list indices start at 0.
+
+There are two strategies for avoiding long chains of annoying bugs like t

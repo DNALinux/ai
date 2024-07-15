@@ -1,0 +1,7 @@
+with Chromosome objects in previous chapters, while SNP objects were dealt with by the Chromosome objects). The LinkedList object will have methods like .insert_item() and .get_smallest(). The other objects will be of type Node, and each of these will have an instance variable self.item that will refer to the item stored by an individual Node. So, drawing just the objects in RAM, our sorted linked list of three items (4, 7, and 9) might look something like this:
+
+(The objects are unlikely to be neatly organized this way in RAM—we’re showing them in a line for illustration only.) The arrows in this figure indicate that after we create a new LinkedList object called itemlist, this variable is a name that refers to an object, and each Node object has a self.item instance variable that refers to a “data” object of some type, like an integer or string.[2]
+
+Now, if this collection of objects were to exist as shown, it wouldn’t be that useful. Our program would only be able to interact with the itemlist object, and in fact there are no variables that refer to the individual Node objects, so they would be deleted via garbage collection.
+
+Here’s the trick: if an instance variable is just a variable (and hence a reference to an object), we can give each Node object a self.next_n instance variable that will refer to the next node in line. Similarly, the LinkedList object will have a self.first_n instance variable that will refer to the first one.

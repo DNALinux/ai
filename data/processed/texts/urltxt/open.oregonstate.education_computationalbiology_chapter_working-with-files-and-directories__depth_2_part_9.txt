@@ -1,0 +1,6 @@
+or memory (and those processes that are running are owned by the administrator root). But if any user were running processes that required more than a tiny bit of CPU, they would likely be shown. To instead sort by RAM usage, use the key sequence Control-M. When finished, q will quit top and return you to the command prompt.
+
+Of particular importance are the %CPU and %MEM columns. The first may vary from 0 up to 100 (percent) times the number of CPU cores on the system; thus a value of 3200 would indicate a program using 100% of 32 CPU cores (or perhaps 50% of 64 cores). The %MEM column ranges from 0 to 100 (percent). It is generally a bad thing for the system when the total memory used by all process is near or over 100%—this indicates that the system doesn’t have enough “working memory” and it may be attempting to use the much slower hard drive as working memory. This situation is known as swapping, and the computer may run so slowly as to have effectively crashed.
+
+Killing Rogue Programs
+It sometimes happens that programs that should run quickly, don’t. Perhaps they are in an internal error state, looping forever, or perhaps the data analysis task you had estimated to take a minute or two is taking much longer. Until the program ends, the command prompt will be inaccessible.

@@ -1,0 +1,7 @@
+se to capture the analysis we just performed as an executable script, perhaps called runhmmer.sh.
+
+Note in the above that we’ve broken the long hmmsearch line into two by ending it midway with a backslash and continuing it on the next line. The backslash lets bash know that more of the command is to be specified on later lines. (The backslash should be the last character on the line, with no spaces or tabs following.) After making this script executable with chmod, we could then rerun the analysis by navigating to this directory and running ./runhmmer.sh.
+What if we wanted to change the input file, say, to argonase-1s.fasta instead of p450s.fasta? We could create a new project directory to work in, copy this script there, and then change all instances of p450s.fasta in the script to argonase-1s.fasta.
+Alternatively, we could use the power of environment variables to architect our script in such a way that this process is easier.
+
+Now the file names of interest are specified only once, near the top of the script, and from then on the script uses its own identifiers (as environment variables) to refer to them. Reusing this script would be as simple as changing the file names specified in three lines.

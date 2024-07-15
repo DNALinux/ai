@@ -1,0 +1,7 @@
+olor of which will represent some statistic of the points in that cell.[6]
+
+There are two layer functions we can use for such a heat map, stat_summary_2d() and stat_summary_hex(). The former produces square cells, and the latter hexagons. (The stat_summary_hex() layer requires that we have the "binhex" package installed via install.packages("binhex") in the interactive console.) We’ll use stat_summary_hex(), as it’s a bit more fun. This layer function requires more than the usual number of parameters and aesthetics:
+
+This might be a bit confusing without an example, so let’s replace the dotplot layer with a stat_summary_hex() layer plotting x and y the same way, but coloring cells by the mean gccontent of dots within that cell.
+
+The result, below left, has cells colored by the mean function applied to all of the gccontent values (from the z aesthetic), but it doesn’t reveal how many points are present in each cell. For this, we can use fun = length, which returns the number of elements in a vector rather than the mean, resulting in the plot below right.

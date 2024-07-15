@@ -1,0 +1,31 @@
+des in consideration is reduced by half; first, then , then , and so on, until there is only a single place the new item could go. How many times can a number be divided in half until reaching a value of 1 (or smaller)? The formula is . It takes the same amount of time to find the smallest item for a bushy tree, because the length down the left-hand side is the same as any other path to a “leaf” in the tree.
+
+
+
+
+Structure
+Insert an Item
+Get Smallest
+
+
+Sorted Simple List
+
+
+
+
+Sorted Linked List
+
+
+
+
+“Bushy” Binary Tree
+
+
+
+
+
+
+In general, the logarithm of is much smaller than itself, so a binary tree trades off some speed in finding the smallest element for speed in insertion.
+Note, however, that the shape of a tree depends on the order in which the items are inserted; for example if 10 is inserted into an empty tree, followed by 9, the 9 will go to the left. Further inserting 8 will put it all the way to the left of 9. Thus, it is possible that a tree isn’t in fact bushy, but rather very unbalanced. For an extreme example, if the numbers from  were inserted in that order, the tree would look like so:
+
+In this case, the tree has degenerated into a reverse-sorted linked list. So, the insertion time (for 1, for example) is , and finding the smallest item is also, because the tree is heavily unbalanced in a leftward direction. Unfortunately, in practice, we can’t guarantee the order in which data will be inserted, and such runs of consecutive insertions aren’t uncommon in real-world

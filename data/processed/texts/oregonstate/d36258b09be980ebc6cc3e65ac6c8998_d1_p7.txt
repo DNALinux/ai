@@ -1,0 +1,7 @@
+ipt on the command line. To do this, we use the button with a green plus sign.
+
+The new pane is an editor for our code file. Here we’ve entered three lines of code (a line like #!/usr/bin/env Rstudio is only necessary for running R scripts on the command line).
+
+The file editor pane contains a number of buttons, four of which are worth discussing immediately. First, the save button (the small blue diskette) saves the file—R script files traditionally get the file extension .R. Farther to the right, the Run button sends the highlighted section of code to the interpreter window, even if that section is multiple lines (which are executed by the interpreter in sequence, as with most languages). The next button (with the loopy blue arrow) reruns the most recently run section of code, even if it is not highlighted. Finally, the Source button runs all the code in the file, just as would the Rscript version on the command line. The outputs of Run and Source are shown in the interpreter pane below, in black text.
+
+Note that the Run button allows the programmer to execute lines of code out of their natural order—we could just as easily run lines 2, 3, and 4 in that order (by highlighting them with the mouse and clicking Run) as we could 4 followed by 3 followed by 2 (by highlighting and running each in turn). As it turns out, programs are usually sensitive to the order in which lines of code are executed! So, as much as possible, avoid the Run button and instead use the Source button.

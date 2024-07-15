@@ -1,0 +1,7 @@
+ication function is facet_wrap(). It takes one required parameter, three less often used but occasionally helpful parameters, and a few more that we won’t discuss here.
+
+Returning to the dotplots of the diamonds data, recall that there appeared to be some relationship between the “cut” and “depth” of diamonds, but in the previous plots, this relationship was difficult to see. Let’s plot the same thing as above, but this time facet on the cut column.
+
+Faceting this way produces a separate panel for each cut type, all on the same axes, but anything plot-specific (such as the fit lines) are computed independently. This reveals that “ideal” cut diamonds tend to have a depth of around 62, whereas lower-quality cuts deviate from this value. To facet on cut and color, the formula would be ~ cut + color, and a panel would be created for each cut/color combination.
+
+The facet_grid() function works much like facet_wrap() but allows us to facet according to not one but two variables (or two combinations of multiple variables) simultaneously. One of the variables will vary across rows of panels, and the other will vary across columns. The first parameter is still a formula, but usually of the form <column_1> ~ <column_2>. Let’s replace the facet_wrap(~ cut) with facet_grid(cut ~ color):

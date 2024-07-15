@@ -1,0 +1,8 @@
+why does it work? Why does the function need to take an x parameter that isn’t even used? What happens if you change one of the random samples to use rnorm(100, mean = 0.1, sd = 1)?
+
+As an example, if df1 <- data.frame(id = c("PRQ", "XL2", "BB4"), val = c(23, 45.6, 62)), then print(numeric_cols(df1)) should print a data frame with only the val column. If df2 <- data.frame(srn = c(461, 514), name = c("Mel", "Ben"), age = c(27, 24)), then print(numeric_cols(df2)) should print a data frame with only srn and age columns.
+
+The iris data frame is a commonly-referenced built-in R data set, describing measurements of petals for a variety of iris species. Here’s the output of print(head(iris)):
+Use group_by() to group the iris data frame by the Species column, and then do() along with your subset_rows() function to generate a data frame consisting of 10 random rows per species.
+
+Next, write a function one_vs_all_by_species() that again takes two parameters; the first will be a sub-data frame representing a single species (sub_df), but the second will be a data frame with data for all species (all_df). This function should group all_df by species, and use do() to call compare_petal_widths() on each group sending along sub_df as a secondary parameter. It should return the result.

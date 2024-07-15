@@ -1,0 +1,10 @@
+ned these two with syntax like chrnames_to_chrs[chrname].add_snp().
+
+Finally, a small block of code prints out the results by looping over the keys in the dictionary, accessing each Chromosome object and asking it the number of transitions and transversions:
+
+We’ll have to remove or comment out the testing code (particularly the tests we expected to fail) to see the results. But once we do that, we can run the program (called snps_ex.py).
+
+What we’ve created here is no small thing, with nearly 150 lines of code! And yet each piece of code is encapsulated in some way; even the long for-loop represents the code to parse the input file and populate the chrnames_to_chrs dictionary. By clearly naming our variables, methods, and classes we can quickly see what each entity does. We can reason about this program without too much difficulty at the highest level of abstraction but also delve down to understand each piece individually. As a benefit, we can easily reuse or adapt this code in a powerful way by adding or modifying methods.
+
+An Extension: Searching for SNP-Dense Regions
+Counting transitions and transversions on a per-chromosome basis for this VCF file could have been accomplished without defining classes and objects. But one of the advantages of spending some time organizing the code up front is that we can more easily answer related questions about the same data.

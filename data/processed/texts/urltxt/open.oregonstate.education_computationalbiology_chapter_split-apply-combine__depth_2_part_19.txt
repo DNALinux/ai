@@ -1,0 +1,8 @@
+), but our mean_sd_weight() function only returns a single-row data frame with columns made of simple summary statistics. For this sort of simplified need, the dplyr package provides a specialized function called summarize(), taking a grouped data frame and other parameters indicating how such group-wise summary statistics should be computed. This example produces the same output as above, without the need for the intermediary mean_sd_weight() function.
+
+The dplyr package provides quite a few other features and functions to explore, but even the simple combination of group_by() and do() represent a powerful paradigm. Because R is such a flexible language, the sort of advanced syntactic sugar used by dplyr is likely to become more common. Although some effort is required to understand these domain-specific languages (DSLs) and how they relate to “normal” R, the time spent is often worth it.
+
+Exercises
+Start by writing a function null_pval() that generates two random samples with rnorm(100, mean = 0, sd = 1), compares them with t.test(), and returns the p value. The function should take a single parameter, say, x, but not actually make any use of it.
+
+Next, generate a list of 10,000 numbers with 10k_nums_list <- as.list(seq(1,10000)), and call 10k_pvals_list <- lapply(10k_nums, null_pval). Turn this into a vector with 10k_pvals_vec <- unlist(10k_pvals_list) and inspect the distribution with hist(10k_pvals_vec).

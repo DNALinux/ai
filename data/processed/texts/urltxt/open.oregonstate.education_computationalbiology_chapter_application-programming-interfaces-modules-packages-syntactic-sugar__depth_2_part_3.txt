@@ -1,0 +1,10 @@
+refers, especially for looking up the API for objects of that type. The type() function comes in handy when combined with a print() call—it prints the type (the class) of data referenced by a variable. The result can then be investigated with help().
+
+Modules
+Consider this chunk of code from the example in chapter 23, “Objects and Classes,” which makes use of the Chromosome and SNP class definitions:
+
+This segment of code takes a file name and produces a dictionary with nicely organized contents of the file. Because this functionality is succinctly defined, it makes sense to turn this into a function that takes the file name as a parameter and returns the dictionary. The code is almost exactly the same, except for being wrapped up in a function definition.
+
+Later, we can call this function to do all the work of parsing a given file name:
+
+Now, what if this function and the two class definitions were things that we wanted to use in other projects? We may wish to make a module out of them—a file containing Python code (usually related to a single topic, such as a set of functions or class definitions related to a particular kind of data or processing).

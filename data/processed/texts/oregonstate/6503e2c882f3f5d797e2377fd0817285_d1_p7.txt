@@ -1,0 +1,7 @@
+In particular, do we want to limit the number of HSPs and target sequences reported for each query? Because we’re mostly interested in determining which proteins match others, we probably only need to keep one hit. But each protein’s best hit will likely be to itself! So we’d better keep the top two with -max_target_seqs 2 and only the best HSP per hit with -max_hsps 1. We’ll also use an -evalue 1e-6, a commonly used cutoff.[2]
+
+For the output, we’ll create a tab-separated output with comment lines (-outfmt 7), creating columns for the query sequence ID, subject sequence ID, HSP alignment length, percentage identity of the alignment, subject sequence length, query sequence length, start and end positions in the query and subject, and the E value. (The coded names—qseqid, sseqid, length, etc.—can be found by running blastp -help.) Finally, we’ll call the output file yeast_blastp_yeast_top2.txt and use four processors to speed the computation (which will only really help if the machine we are logged in to has at least that many).
+
+It’s a long command, to be sure! This operation takes several minutes to finish, even with -num_threads 4 specified. When it does finish, we can see with less that the output file contains the columns we specified interspersed with the comment lines provided by -outfmt 7.
+
+In the output snippet above, YAL0005C has an HSP with itself (naturally), but also one with YLL024C. We’ll consider basic analyses containing this sort of data—rows and columns sto

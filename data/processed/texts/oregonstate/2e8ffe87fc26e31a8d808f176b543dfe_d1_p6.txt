@@ -1,0 +1,11 @@
+as calling geneA.set_seq("ACTAGGGG"), as defined above.
+
+So why might we want to use “getter” and “setter” methods as opposed to directly modifying or reading an object’s instance variables? The difference is related a bit to politeness—if not to the object itself, then to whomever wrote the code for the class. By using methods, we are requesting that the object change its sequence data, whereas directly setting instance variables just reaches in and changes it—which is a bit like performing open-heart surgery without the patient’s permission!
+
+This is a subtle distinction, but it’s considered serious business to many programmers. To see why, suppose that there are many methods that won’t work at all on RNA sequences, so we must make sure that the sequence instance variable never has any U characters in it. In this case, we could have the .set_seq() method decide whether or not to accept the sequence:
+
+Python has an assert statement for this sort of error checking. Like a function, it takes two parameters, but unlike a function, parentheses are not allowed.
+
+When using an assert, if the check doesn’t evaluate to True, then the program will stop and report the specified error. The complete code for this example can be found in the file gene_class.py.
+
+Using methods when working with objects is about encapsulation and letting the objects do as much work as possible. That way, they can ensure correct results so that you (or whomever you are sharing code with, which might be “fut

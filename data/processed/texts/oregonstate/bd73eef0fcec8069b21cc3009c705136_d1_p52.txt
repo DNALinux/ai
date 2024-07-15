@@ -1,0 +1,10 @@
+(e.g., first_half = input_list[0:len(input_list)/2]); these can then be sorted recursively with mergesort(), and finally the merge() function can be used to combine the sorted pieces into a single answer. If all steps in the function (not counting the recursive calls) are , then the total time will be .
+
+Implement merge() and mergesort().
+The Fibonacci numbers (1, 1, 2, 3, 5, 8, 13, etc.) are, like the factorials, recursively defined:
+      
+Write a recursive function fib() that returns theth Fibonacci number (fib(1) should return 1, fib(3) should return 2, fib(10) should return 55).
+Next, write a function called fib_loop() that returns theth Fibonacci by using a simple loop. What is the run time, in order notation, in terms of? Compare how long it takes to compute fib(35) versus fib_loop(35), and then try fib(40) versus fib_loop(40). Why do you think fib() takes so much longer? Try drawing the “call trees” for fib(1), fib(2), fib(3), fib(4), fib(5), and fib(6). Could you make a guess as to what the run time of this function is in order notation? Can you imagine any ways it could be sped up?
+
+
+When analyzing an algorithm in Python, however, not all lines are a single computational step. For example, Python has a built-in sorted() function for sorting, and although it is not as slow as bubblesort, it takes much longer than one step to sort millions of numbers. If an algorithm makes use of a function like sorted(), the run time of that (based on the size of the input given) al

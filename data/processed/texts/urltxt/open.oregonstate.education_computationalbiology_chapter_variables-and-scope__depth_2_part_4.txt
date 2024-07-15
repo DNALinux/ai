@@ -1,0 +1,5 @@
+local variables is that they exist independently of any other variables that might happen to exist at the time with the same name (sometimes they are said to “shadow” other variables with the same name). Consider the following code:
+
+What do you think the last line, print(gc), will print? If you guessed "Measure of G and C bases in a sequence", you are right! Even though the gc_content() function defines its own gc variable, because this variable is local, it does not “step on” the outside gc variable. In summary:
+
+One of the important lessons of scope is knowing when it might lead to trouble. This is easiest to see if we were to compare how scoping works with another language, C++ in this case. In C++, variables are declared with their types, and variables declared within an if-statement block (or any other block) are also local to that block. This means that they go out of scope when the block ends. If we were to try and use them outside of the block in which they were declared, an error would occur.

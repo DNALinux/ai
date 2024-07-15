@@ -1,0 +1,14 @@
+ing file = "".
+
+Finally, to get command line parameters into an R script as a character vector, the line args <- commandArgs(trailingOnly = TRUE) will do the trick. Here’s a simple script that will read a table on standard input, write it to standard output, and also read and print out any command line arguments:
+
+Try making this script executable on the command line, and running it on p450s_blastp_yeast_top1.txt with something like cat p450s_blastp_yeast_top1.txt | ./stdin_stdout_ex.R arg1 'arg 2'.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

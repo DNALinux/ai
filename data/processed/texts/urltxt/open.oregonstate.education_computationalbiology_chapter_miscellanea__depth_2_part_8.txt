@@ -1,0 +1,6 @@
+nt $0}'. Similarly, if we want to ensure that all rows of a table have the same number of columns, we could run the data through awk '{print NF}' to print the number of columns in each row and then apply extract/sort/uniq, expecting all column counts to be collapsed into a single entry.
+
+Basic Plotting with gnuplot
+Further illustrating the power of awk, sed, sort, and uniq, we can create a text-based “histogram” of coverages for the sequences in the pz_cDNAs.fasta file, which are stored in the third column of the header lines (e.g., >PZ7180000000004_TX nReads=26 cov=9.436). We’ll start by isolating the coverage numbers with grep (to select only header lines), sed (to replace = characters with spaces), and awk (to extract the new column of coverage numbers), while simultaneously printing only the integer portion of the coverage column.
+
+The output is a simple column of integers, representing rounded-down coverages. Next, a sort -k1,1n | uniq -c will produce the counts for each coverage bin, revealing that most sequences (281) are at 1X coverage, a handful are at 2X and 3X, and higher coverages are increasingly rare.

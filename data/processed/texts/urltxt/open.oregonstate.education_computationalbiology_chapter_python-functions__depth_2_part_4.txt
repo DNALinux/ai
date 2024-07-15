@@ -1,0 +1,12 @@
+a File
+In chapter 17, “Conditional Control Flow,” one of the exercises involved computing the molecular weight for each sequence in a tab-separated file of IDs and sequences, ids_seqs.txt. Here are the lines of this file viewed with less -S:
+
+If you completed the molecular weight exercise in chapter 17, you might have found it somewhat challenging. Without using functions, you likely needed to use a for-loop to iterate over each line of the file, and within there another for-loop to iterate over each base of the current sequence, and inside of that an if-statement to determine the molecular weight of each base.
+
+Here we’ll write a similar program, except this time we’ll make use of a function that returns the GC content of its parameter. The entire solution is actually quite short and readable.
+
+In the above code (ids_seqs_gcs.py), there’s a clear “separation of concerns” that makes designing a solution easier. One function handles counting bases in a DNA sequence, and another the computation of the GC content. With those out of the way, we can turn our focus to parsing the input file and printing the output.
+
+To simplify exposition, most of the small code samples in the next few chapters don’t involve creating new functions. Most of the exercises will suggest writing functions as a means of breaking a problem down into its component parts, however.
+
+Exercises

@@ -1,0 +1,15 @@
+set the genome of newbug (one base at a time) to be the same as that of oldbug, c) call newbug.mutate_random_base(), and d) add oldbug and newbug to new_pop. Finally, this method should 3) set self.bug_pop to new_pop.
+
+The Population class will also have a .cull() method; this should reduce self.bug_pop to the top 50% of bug objects by fitness. (You might find the exercise above discussing .__lt__() and similar methods useful, as they will allow you to sort self.bug_pop by fitness if implemented properly.)
+
+Finally, implement a .get_mean_fitness() method, which should return the average fitness of self.bug_pop.
+
+To test your code, instantiate a p = Population() object, and in a for-loop: 1) run p.create_offspring(), 2) run p.cull(), and 3) print p.get_mean_fitness(), allowing you to see the evolutionary progress of your simulation.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

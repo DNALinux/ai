@@ -1,0 +1,8 @@
+ow the length of the string before the program is run. We need to remember, though, that the index of the last character is one less than the length, based on the indexing rules.
+
+Similarly, if we want a substring from position 2 to the end of the string, we need to remember the peculiarities of the [] slice notation, which is inclusive:exclusive.
+
+Immutability
+In some languages it is possible to change the contents of a string after it’s been created. In Python and some other languages, this is not the case, and strings are said to be immutable. Data are said to be immutable if they cannot be altered after their initial creation. The following line of code, for example, would cause an error like TypeError: 'str' object does not support item assignment:
+
+Languages like Python and Java make strings immutable for a variety of reasons, including computational efficiency and as a safeguard to prevent certain common classes of programming bugs. For computational biology, where we often wish to modify strings representing biological sequences, this is an annoyance. We’ll learn several strategies to work around this problem in future chapters.

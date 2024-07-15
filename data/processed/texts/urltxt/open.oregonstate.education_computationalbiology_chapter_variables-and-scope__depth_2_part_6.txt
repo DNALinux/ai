@@ -1,0 +1,16 @@
+er and visual clue that these variables are intended to be used outside of the nested if-blocks, and that we should check their contents before using them later.
+
+C++ and other block-level-scoped languages thus encourage “short-lived” variables, which is a good programming mantra. Defining variables only when needed and using them for as short a time as possible helps to produce clearer, more modular, and even more efficient code (because short-lived variables allow the garbage collector to clean out more data). In a way, breaking Rule 1 of functions is a similar type of abuse of variable scope.
+
+Beginning programmers often find it easier to avoid these conventions by setting a large number of variables near the beginning of a program and then accessing and setting them at various points throughout the program. This is sometimes colloquially called “spaghetti code,” because the long-distance connections created between the different areas of code resemble spaghetti. Rarely does this strategy pay off, however.
+
+As discussed in chapter 25, “Algorithms and Data Structures,” local variables and similar concepts allow us to solve complex problems in fascinating and elegant ways.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

@@ -1,0 +1,21 @@
+y where nested parentheses matches are saved). The entire expression match is saved in \0.
+
+To complete the example, we’ll modify the pattern used in the grep to capture both relevant parts of the pattern, replacing them with \1-gene\2.
+
+The contents of pz_cDNAs.fasta, after running it through the sed above, are as follows:
+
+Back-references may be used within the pattern itself as well. For example, a sed -r 's/([A-Za-z]+) \1/\1/g' would replace “doubled” words ([A-Za-z]+) \1 with a single copy of the word \1, as in I like sed very very much, resulting in I like sed very much. But beware if you are thinking of using substitution of this kind as a grammar checker, because this syntax does not search across line boundaries (although more complex sed programs can). This example would not modify the following pair of lines (where the word the appears twice):
+
+A few final notes about sed and regular expressions in general will help conclude this chapter.
+
+Some people, when confronted with a problem, think, “I know, I’ll use regular expressions.” Now they have two problems.
+
+~Jamie Zawinski
+
+Exercises
+How many sequences are composed of only a single exon? Next, produce a list of sequence IDs in a file called multi_exon_ids.txt containing all those sequence IDs with more than one exon as a single column.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4

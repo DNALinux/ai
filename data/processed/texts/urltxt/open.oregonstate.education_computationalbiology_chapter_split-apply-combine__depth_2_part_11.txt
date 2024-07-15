@@ -1,0 +1,11 @@
+nvolves splitting a data set into pieces, applying an operation or function to each, and then combining the results into a single output set in some way.
+
+When the input and output are both lists, this operation is also known as a “map.” In fact, this paradigm underlies some parallel processing supercomputer frameworks like Google’s MapReduce and the open-source version of Hadoop (although these programs aren’t written in R).
+
+Because lists are such a flexible data type, lapply() is quite useful. Still, in some cases—like this one—we’d prefer the output to be a vector instead of a list. This is common enough to warrant a conversion function called unlist() that extracts all of the elements and subelements of a list to produce a vector.
+
+Be warned: because lists are more flexible than vectors, if the list given to unlist() is not simple, the elements may be present in the vector in an odd order and they will be coerced into a common data type.
+
+The lapply() function can also take as input a vector instead of a list, and it is but one of the many “apply” functions in R. Other examples include apply(), which applies a function to each row or column of a matrix,[6] and sapply() (for “simple apply”), which detects whether the return type should be a vector or matrix depending on the function applied. It’s easy to get confused with this diversity, so to start, it’s best to focus on lapply() given its relatively straightforward (but useful) nature.
+
+Collecting Parameters with …

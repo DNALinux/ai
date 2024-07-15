@@ -1,0 +1,10 @@
+blueprint). In Python, each piece of data we routinely encounter constitutes an object. Each data type we’ve dealt with so far (lists, strings, dictionaries, and so on) has a class definition—a blueprint—that defines it. For example, lists have data (numbers, strings, or any other type) and methods such as .sort() and .append().
+
+In a sense, calling object methods makes a request of the object: nums_list.sort() might be interpreted as “object referred to by nums_list, please run your sort() method.” Upon receiving this message, the object will reorder its data.[3]
+
+Creating New Classes
+Definitions for Python classes are just blocks of code, indicated by an additional level of indentation (like function blocks, if-statement blocks, and loop blocks). Each class definition requires three things, two of which we are already familiar with:
+
+One peculiarity of Python is that each method of an object must take as its first argument a parameter called self,[4] which we use to access the instance variables. Let’s start by defining a class, Gene (class names traditionally begin with a capital letter): each Gene object will have (1) an id (string) and (2) a sequence (also a string). When creating a Gene object, we should define its id and sequence by passing them as parameters to the __init__ method.
+
+Outside of the block defining the class, we can make use of it to create and interact with Gene objects.

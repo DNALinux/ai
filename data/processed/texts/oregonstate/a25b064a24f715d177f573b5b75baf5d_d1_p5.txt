@@ -1,0 +1,14 @@
+were extracted (the third element followed by the second element). We can use a similar syntax to selectively replace elements by specific indices in vectors.
+
+Selective replacement is the process of replacing selected elements of a vector (or similar structure) by specifying which elements to replace with [] indexing syntax combined with assignment <-.[2]
+R vectors (and many other data container types) can be named, that is, associated with a character vector of the same length. We can set and subsequently get this names vector using the names() function, but the syntax is a little odd.
+
+Named vectors, when printed, display their names as well. The result from above:
+
+Named vectors may not seem that helpful now, but the concept will be quite useful later. Named vectors give us another way to subset and selectively replace in vectors: by name.
+
+Although R doesn’t enforce it, the names should be unique to avoid confusion when selecting or selectively replacing this way. Having updated Student A’s and Student B’s score, the change is reflected in the output:
+
+There’s one final and extremely powerful way of subsetting and selectively replacing in a vector: by logical vector. By indexing with a vector of logicals of the same length as the vector to be indexed, we can extract only those elements where the logical vector has a TRUE value.
+
+While indexing by index number and by name allows us to extract elements in any given order, indexing by logical doesn’t afford us this possibil

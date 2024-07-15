@@ -1,0 +1,9 @@
+(If you hastily skipped chapters 28 and 30 to learn about data frames, now’s the time to return to them!) Data frames are essentially named lists, where the elements are vectors representing columns. But data frames provide a few more features than simple lists of vectors. They ensure that the component column vectors are always the same length, and they allow us to work with the data by row as well as by column. Data frames are some of the most useful and ubiquitous data types in R.
+
+While we’ve already covered using the read.table() function to produce a data frame based on the contents of a text file, it’s also possible to create a data frame from a set of vectors.
+
+When printed, the contents of the column vectors are displayed neatly, with the column names along the top and row names along the left-hand side.
+
+As with read.table(), the data.frame() function takes an optional stringsAsFactors argument, which specifies whether character vectors (like ids) should be converted to factor types (we’ll cover these in detail later). For now, we’ll disable this conversion.
+
+Running str(gene_info) reveals the data frame’s list-like nature:

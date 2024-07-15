@@ -1,0 +1,8 @@
+leaving the highest-GC-content sequences on top. From there, we can use a sort -k7,7nr -u to re-sort the data (even though they are already sorted!) by the seventh column, keeping only the top line per repeat length.
+
+Output:
+
+There is one small concern, however: how can we be sure that our careful ordering by GC content wasn’t undone in the second sort? After all, the second sort would technically be free to reorder ties according to the seventh column, resulting in incorrect output. There is an additional flag for sort, the -s flag, indicating that stable sorting should be used. Stable sorting means that, in the case of ties, elements are left in their original order. So, to be safe, we could use a secondary sort of sort -k7,7nr -u -s, though a careful reading of the documentation for sort indicates that on most systems the -u flag implies the -s flag.
+
+First and Last Lines
+Often we wish to extract from a file (or from standard input) the first or last few lines. The tools head and tail are designed to do exactly this, and in combination with other tools are surprisingly handy. The head tool extracts the first lines of a file or standard input: head -n <number> <file> or ... | head -n <number>. The tail tool extracts the last lines of a file or standard input: tail -n <number> <file> or ... | tail -n <number>.

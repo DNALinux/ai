@@ -1,0 +1,13 @@
+he above, we know that the 20 extracted is a vector of length one. The 2 used in the brackets is also a vector of length one; thus the line above is equivalent to second_el <- nums[c(2)]. Does this mean that we can use longer vectors for extracting elements? Yes!
+
+In fact, the extracted elements were even placed in the resulting two-element vector in the order in which they were extracted (the third element followed by the second element). We can use a similar syntax to selectively replace elements by specific indices in vectors.
+
+Selective replacement is the process of replacing selected elements of a vector (or similar structure) by specifying which elements to replace with [] indexing syntax combined with assignment <-.[2]
+
+R vectors (and many other data container types) can be named, that is, associated with a character vector of the same length. We can set and subsequently get this names vector using the names() function, but the syntax is a little odd.
+
+Named vectors, when printed, display their names as well. The result from above:
+
+Named vectors may not seem that helpful now, but the concept will be quite useful later. Named vectors give us another way to subset and selectively replace in vectors: by name.
+
+Although R doesn’t enforce it, the names should be unique to avoid confusion when selecting or selectively replacing this way. Having updated Student A’s and Student B’s score, the change is reflected in the output:

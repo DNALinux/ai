@@ -1,0 +1,12 @@
+nd the chances of significantly worse performance are astronomically small. Further, a similar method known as “mergesort” operates by guaranteeing an even 50/50 split (of a different kind).
+
+Using random selection for pivot, quicksort() is fast in practice, though mergesort and similar algorithms are frequently used as well. (Python’s .sort() and sorted() use a variant of mergesort called “Timsort.”) Although as mentioned above worst-case analysis is most prevalent in algorithms analysis, quicksort() is one of the few exceptions to this rule.
+
+These discussions of algorithms and data structures might seem esoteric, but they should illustrate the beauty and creativeness possible in programming. Further, recursively defined methods and sophisticated data structures underlie many methods in bioinformatics, including pairwise sequence alignment, reference-guided alignment, and Hidden Markov Models.
+
+Exercises
+The mergesort() function should first split the input list into two almost-equal-sized pieces (e.g., first_half = input_list[0:len(input_list)/2]); these can then be sorted recursively with mergesort(), and finally the merge() function can be used to combine the sorted pieces into a single answer. If all steps in the function (not counting the recursive calls) are , then the total time will be .
+
+Implement merge() and mergesort().
+
+Write a recursive function fib() that returns theth Fibonacci number (fib(1) should return 1, fib(3) should return 2, fib(10) should return 55).

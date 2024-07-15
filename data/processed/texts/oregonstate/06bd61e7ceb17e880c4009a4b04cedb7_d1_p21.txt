@@ -1,0 +1,10 @@
+run it from anywhere, though we may want to add lines immediately following the #! line, to provide some help text for anyone who attempts to run the script without providing the correct inputs:
+
+The “if block” above will only execute if the number of parameters given ($#) is not equal to 3. Although languages like Python provide much nicer facilities for this sort of logic-based execution, the ability to conditionally provide usage information for scripts is important. As usual for bash, the interpreter ignores lines that start with #.
+
+Exercises
+
+Create a new folder in your projects folder called c_elegans. Locate the FASTA file for the reference genome of Caenorhabditis elegans from http://wormbase.org, and download it to this folder using wget. The file you are searching for will be named something like c_elegans.PRJNA13758.WS244.genomic.fa.gz. After it is downloaded, decompress it and view it with less -S.
+Install an SFTP client on your desktop, like FireFTP or CyberDuck, and attempt to connect to the same machine you log in to via SFTP. Download a FASTA file of some potentially homologous sequences from Uniprot to your local desktop, and transfer it to your remote c_elegans directory.
+Try running muscle and HMMER on the sequences you downloaded from uniprot.org against the C. elegans genome.
+If you have access to more than one Unix-based machine (such as an OS X desktop and a remote Linux computer, or two remote Linux computers), read the man page for scp with man scp,

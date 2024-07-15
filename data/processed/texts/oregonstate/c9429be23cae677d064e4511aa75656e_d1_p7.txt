@@ -1,0 +1,12 @@
+nd rbind()
+Even after data frames have been reshaped and otherwise massaged to make analyses easy, occasionally similar or related data are present in two different data frames. Perhaps the annotations for a set of gene IDs are present in one data frame, while the p values from statistical results are present in another. Usually, such tables have one or more columns in common, perhaps an id column.
+
+Sometimes, each entry in one of the tables has a corresponding entry in the other, and vice versa. More often, some entries are shared, but others are not. Here’s an example of two small data frames where this is the case, called heights and ages.
+
+The merge() function (which comes with the basic installation of R) can quickly join these two data frames into one. By default, it finds all columns that have common names, and uses all entries that match in all of those columns. Here’s the result of merge(heights, ages):
+
+This is much easier to use than the command line join program: it can join on multiple columns, and the rows do not need to be in any common order. If we like, we can optionally specify a by = parameter, to specify which column names to join by as a character vector of column names. Here’s merge(heights, ages, by = c("first")):
+
+Because we specified that the joining should only happen by the first column, merge() assumed that the two columns named last could contain different data and thus should be represented by two different columns in the output.
+
+By default, mer

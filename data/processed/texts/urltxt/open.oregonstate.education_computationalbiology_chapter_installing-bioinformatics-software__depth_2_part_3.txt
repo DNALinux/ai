@@ -1,0 +1,6 @@
+, but the button indicates that the download is made for MacOS X/Intel, the operating system running on my personal laptop. Because we are remotely logged in to a Linux computer, this download won’t work for us. Clicking the “Alternative Download Options” link reveals options that might work for the Linux system we’re using.
+
+In this screenshot, we see a number of interesting download options, including one for “Source,” two for “Linux binaries,” and below a suggestion of some documentation, to which we’ll return later.
+
+Source or Binary?
+Some bioinformatics software is created as a simple script of the kind discussed in chapter 5: a text file with a #! line referencing an interpreting program (that is hopefully installed on the system) and made executable with chmod.

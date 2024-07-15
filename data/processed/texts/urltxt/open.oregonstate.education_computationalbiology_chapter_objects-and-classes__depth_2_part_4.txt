@@ -1,0 +1,7 @@
+just to clarify the object creation process.) Executing the above:
+
+Note that even though each method (including the constructor) takes as its first parameter self, we don’t specify this parameter when calling methods for the objects. (For example, .print_id() takes a self parameter that we don’t specify when calling it.) It’s quite common to forget to include this “implicit” self parameter; if you do, you’ll get an error like TypeError: print_id() takes no arguments (1 given), because the number of parameters taken by the method doesn’t match the number given when called. Also, any parameters sent to the creation function (Gene("AY342", "CATTGAC")) are passed on to the constructor (__init__(self, creationid, creationseq)).
+
+What is self? The self parameter is a variable that is given to the method so that the object can refer to “itself.” Much like other people might refer to you by your name, you might refer to yourself as “self,” as in “self: remember to resubmit that manuscript tomorrow.”
+
+Interestingly, in some sense, the methods defined for classes are breaking the first rule of functions: they are accessing variables that aren’t passed in as parameters! This is actually all right. The entire point of objects is that they hold functions and data that the functions can always be assumed to have direct access to.

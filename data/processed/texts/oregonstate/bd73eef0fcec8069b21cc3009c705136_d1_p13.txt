@@ -1,0 +1,31 @@
+s it take to insert an item into a list that is already of length? Because the new item might have to go at the end of the list, the buck might need to be passed times, meaning an insertion is . What about getting the smallest element? In the LinkedList’s .get_smallest() method, it only needs to determine whether self.first_n is None, and if not, it returns the element stored in that node. Because there is no buck passing, the time is .
+
+
+
+
+Structure
+Insert an Item
+Get Smallest
+
+
+Sorted Simple List
+
+
+
+
+Sorted Linked List
+
+
+
+
+
+
+The creation of the sorted linked list structure didn’t get us much over a more straightforward list kept in sorted order via bubbling, but the ideas implemented here pave the way for much more sophisticated solutions.
+
+Exercises
+
+How much time would it take to insert sequences into a Python list, and then at the end sort it with bubblesort in the worst-case scenario (using order notation)?
+How much time would it take to insert elements into a sorted linked list that starts empty, in the worst-case scenario (using order notation)? (Note that the first insertion is quick, but the second item might take two buck-passes, the third may take three, and so on.)
+Add “pass the buck” methods to the LinkedList and Node classes that result in each item being printed in order.
+Write “pass the buck” methods that cause the list of items to be printed, but in reverse order.
+Add methods to the LinkedList and Node classes so that the linked list can be converted into a

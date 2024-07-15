@@ -1,0 +1,10 @@
+s, spaces, or some combination thereof.
+
+Counting Promoter Elements
+Consider the file grape_promoters.txt, which contains on each line 1000bp upstream of gene regions in the Vitis vinifera genome:
+
+These columns are not separated by a tab character, but rather by a variable number of spaces.
+
+Promoter motifs are small DNA patterns nearby gene sequences to which the cellular machinery binds in order to help initiate the gene-transcription process. For example, the ABF protein binds to the DNA pattern "CACGTGGC" if it is near a gene in some plants. Some motifs are flexible and can be described by regular expressions; the GATA protein binds to any short DNA sequence matching the pattern "[AT]GATA[GA]". We wish to analyze the V. vinifera upstream regions above, and count for each the number of occurrences of the GATA motif. Our output should look like so:
+
+After importing the io and re modules, we’ll first write a function count_motifs() that takes two parameters: first a sequence in which to count motif matches, and second a motif for which to search. There are a variety of ways we could code this function, but a simple solution will be to use re.split() to split the sequence on the motif regular expression—the number of motifs will then be the length of the result minus one (because if no motifs are found, no split will be done; if one is found, one split will be done, and so on).

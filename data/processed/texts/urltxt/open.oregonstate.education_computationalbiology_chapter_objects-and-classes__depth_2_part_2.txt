@@ -1,0 +1,7 @@
+bit of built-in functionality through importable modules such as sys, re, and subprocess.
+
+Python provides another advantage: it is naturally “object oriented,” even though we haven’t discussed this point yet. Although there are competing paradigms for the best way to architect programs, the object-oriented paradigm is commonly used for software engineering and large-project management.[1] Even for small programs, though, the basic concepts of object orientation can make the task of programming easier.
+
+An object, practically speaking, is a segment of memory (RAM) that references both data (referred to by instance variables) of various types and associated functions that can operate on the data.[2] Functions belonging to objects are called methods. Said another way, a method is a function that is associated with an object, and an instance variable is a variable that belongs to an object.
+
+In Python, objects are the data that we have been associating with variables. What the methods are, how they work, and what the data are (e.g., a list of numbers, dictionary of strings, etc.) are defined by a class: the collection of code that serves as the “blueprint” for objects of that type and how they work.

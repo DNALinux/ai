@@ -1,0 +1,10 @@
+from the Tools → Developer submenu. Connecting the client to a remote computer requires that we first configure the connection by selecting “Create an account.” The basic required information includes an account name, the host to connect to (e.g., an IP address like 128.196.64.120 or a host name like files.institution.edu), as well as our login name and password.
+
+We also need to tell the client which protocol to connect with, which is done on the “Connection” tab; we want SFTP on port 22.
+
+With that accomplished, we can transfer any file back and forth using the green arrows in the interface, where the remote filesystem is shown on the right and the local filesystem is shown on the left. Here’s the result after transferring our p450s.fasta file.
+
+
+DOS/Windows and Unix/Linux Newlines
+For the most part, the way text is encoded on Microsoft operating systems (like DOS and Windows) and on Unix-like systems (like Linux and OS X) is similar. But there is one difference: how the ends of lines, or “newline characters” are represented. In Unix-like systems, a newline is represented by a single 8-bit byte (the “Line Feed” (NF) character): 00001010. On Microsoft systems, they are represented by a pair of 8-bit bytes (“Carriage Return” (CR) followed by NF): 0000110100001010. This means that text files created on Microsoft operating files may not be readable on Unix-like systems, and vice versa.
+Fortunately, there are utilities available for converting between these formats. On the comma

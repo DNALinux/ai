@@ -1,0 +1,13 @@
+tput of BLAST, which is formatted as a simple text table with tabs separating the columns. Here’s what the file, pz_blastx_yeast_top1.txt, looks like in less -S. Although the reader will have to take our word for it, the eleventh column of this file contains E values like 5e-14, 2e-112, and 1e-18.
+
+When solving a problem like this, it’s usually a good idea to first write, in simple English (or your nonprogramming language of choice), the strategy you intend to use to solve the problem. The strategy here will be as follows: the mean of a set of numbers is defined as their sum, divided by the count of them. We’ll need to keep at least two important variables, eval_sum and counter. After opening the file with io.open(), we can loop through the lines and extract each E value. (This will require cleaning up the line with .strip(), splitting it into pieces using .split("\t"), and finally converting the E value to a float rather than using the string.) For each line that we see, we can add the E value extracted to the eval_sum variable, and we’ll add 1 to the counter variable as well. In the end, we can simply report eval_sum/counter.
+It often helps to convert this strategy into something partway between natural language and code, called pseudocode, which can help tremendously in organizing your thoughts, particularly for complex programs:
+import io
+open fhandle
+
+counter = 0
+sum_eval = 0.0
+
+for each line in fhandle
+linestripped = line.strip()
+break into a list of strings wit

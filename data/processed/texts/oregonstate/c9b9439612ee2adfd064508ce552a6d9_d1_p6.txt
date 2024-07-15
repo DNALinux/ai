@@ -1,0 +1,9 @@
+ithin functions might seem somewhat strange, but the upshot is important: functions can be fully encapsulated. If they are designed correctly, their usage cannot affect the code context in which they are used (the only way standard R functions can affect the “outside world” is to return some value). Functions that have this property and always return the same value given the same inputs (e.g., have no random component) are called “pure.” They can be treated as abstract black boxes and designed in isolation of the code that will use them, and the code that uses them can be designed without consideration of the internals of functions it calls. This type of design dramatically reduces the cognitive load for the programmer.
+
+Now, let’s try the reverse experiment: if a variable is defined outside of the function (before it is called), can it be accessed from within the function block definition?
+
+The lack of error in the output indicates that yes, the function block can access such external variables:
+
+This means that it is possible to write functions that take no parameters and simply access the external variables they will need for computation.
+
+But writing such functions is fairly bad practice. Why? Because although the function still cannot affect the external environment, it is now quite dependent on the state of the external environment in which it is called. The function will only work if external variables called vec1, vec2, and epsilon happen to exist and have the right t

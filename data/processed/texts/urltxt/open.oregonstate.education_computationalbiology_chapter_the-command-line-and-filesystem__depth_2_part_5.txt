@@ -1,0 +1,12 @@
+dd) that there are a variety of shells available, owing to the long history of Unix and Linux. In the beginning, the interfaces were quite simple, but over time better interfaces/shells were developed that included new features (consider how the “Start” menu has changed over the years on Microsoft Windows versions). We can run a different shell, if it is installed, by simply running it like any other program. The tcsh shell, itself an outgrowth of the csh shell, is sometimes the default instead of bash. (Both csh and tcsh are older than bash.)
+
+When running tcsh, the setenv command takes the place of export, and the syntax is slightly different.
+
+Although bash and similar shells like dash and zsh are most commonly found (and recommended), you might find yourself needing to use a shell like csh or its successor, tcsh. In this book, the assumption is that you are using bash, but when different commands would be needed to accomplish the same thing in the older tcsh or csh, a footnote will explain.
+
+To get back to bash from tcsh, a simple exit will suffice.
+
+In general, it can be difficult to determine which shell is running on the basis of the look of the command prompt; using echo $0 right on the command line is the most reliable way.
+
+Files, Directories, and Paths
+With some of the more difficult concepts of the shell out of the way, let’s turn to something a bit more practical: understanding how directories (also known as folders) and files are organized.

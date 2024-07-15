@@ -1,0 +1,11 @@
+s than item B if the first element of A is less than the first element of B; in the case of a tie, the second element is considered, and so on. If in this process we run out of elements for comparison, that shorter one is smaller. When applied to strings, lexicographic order corresponds to the familiar alphabetical order.
+
+Let’s print the sorted version of a Python list of strings, which does its sorting using the comparisons above. Note that numeric digits are considered to be “less than” alphabetic characters, and uppercase letters come before lowercase letters.
+
+Boolean connectives let us combine conditionals that return True or False into more complex statements that also return Boolean types.
+
+These can be grouped with parentheses, and usually should be to avoid confusion, especially when more than one test follow a not.[2]
+
+Finally, note that generally each side of an and or or should result in only True or False. The expression a == 3 or a == 7 has the correct form, whereas a == 3 or 7 does not. (In fact, 7 in the latter context will be taken to mean True, and so a == 3 or 7 will always result in True.)
+
+Logical Dangers

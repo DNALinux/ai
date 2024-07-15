@@ -1,0 +1,8 @@
+he same underlying data, whereas in the R code the local param variable is a new variable for new underlying data. These two paradigms are found in a wide variety of languages; the latter is known as “pass-by-value,” though one could think of it as “pass-by-copy.” This doesn’t mean that R always creates a copy–it uses a “copy-on-write” strategy behind the scenes to avoid excess work. As for the former, the Python documentation refers to it as “pass-by-assignment,” and the effect is similar to “pass-by-reference.” (The term “pass-by-reference” has a very narrow technical definition, but is often used as a catch-all for this type of behavior.)
+
+There are advantages and disadvantages to both strategies. The somewhat more difficult scheme used by Python is both speedier and allows for more easy implementations of some sophisticated algorithms (like the structures covered in chapter 25, “Algorithms and Data Structures”). The pass-by-value scheme, on the other hand, can be easier to code with, because functions that follow rule 1 above can’t surreptitiously modify data: they are “side effect free.”
+
+Getting Help
+The R interpreter comes with extensive documentation for all of the functions that are built-in. Now that we know how to write functions, reading this documentation will be easy.
+
+The help page for a particular function can be accessed by running help("function_name") in the interactive console, as in help("t.test") for help with the t.test() function.

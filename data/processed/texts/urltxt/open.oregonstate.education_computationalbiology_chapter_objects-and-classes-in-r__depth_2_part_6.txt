@@ -1,0 +1,10 @@
+d originalmean(), which returns the object’s original_mean? In this case, we need to create our own specialized method as well as the generic function that dispatches to that method. Here’s how that looks:
+
+These functions—the constructor, specialized methods, and generic functions that don’t already exist in R—need to be defined only once, but they can be called as many times as we like. In fact, packages in R that are installed using install.packages() are often just such a collection of functions, along with documentation and other materials.
+
+Object-oriented programming is a large topic, and we’ve only scratched the surface. In particular, we haven’t covered topics like polymorphism, where an object may have multiple classes listed in the "class" attribute. In R, the topic of polymorphism isn’t difficult to describe in a technical sense, though making effective use of it is a challenge in software engineering. If an object has multiple classes, like "anova" and "data.frame", and a generic like print() is called on it, the interpreter will first look for print.anova(), and if that fails, it will try print.data.frame(), and failing that will fall back on print.default(). This allows objects to capture “is a type of” relationships, so methods that work with data frames don’t have to be rewritten for objects of class anova.
+
+Exercises
+Previous/next navigation
+
+License

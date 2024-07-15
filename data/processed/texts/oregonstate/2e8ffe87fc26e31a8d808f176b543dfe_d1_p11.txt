@@ -1,0 +1,7 @@
+y to add a SNP object to a chromosome’s SNP dictionary because it starts empty. We’ll accomplish this with an .add_snp() method, which will take all of the information for a SNP, create the new SNP object, and add it to the dictionary. If a SNP already exists at that location, an error should occur, because our program shouldn’t accept VCF files that have multiple rows with the same position for the same chromosome.
+
+For overall strategy, once we have our classes defined (and debugged), the “executable” portion of our program will be fairly simple: we’ll need to keep a collection of Chromosome objects that we can interact with to add SNPs, and at the end we’ll just loop through these and ask each how many transitions and transversions it has. It makes sense to keep these Chromosome objects in a dictionary as well, with the keys being the chromosome names (strings) and the values being the Chromosome objects. We’ll call this dictionary chrnames_to_chrs.
+
+As we loop through each line of input (reading a file name given in sys.argv[1]), we’ll split it apart and check whether the chromosome name is in the dictionary with .has_key(). If so, we’ll ask the object in that slot to add a SNP with .add_snp(). If not, then we’ll need to first create a new Chromosome object, ask it to .add_snp(), and finally add it to the dictionary. Of course, all of this should happen only for nonheader lines.
+
+We’ll start with the SNP class, and then the Chromosome class. Although it is difficult to sh

@@ -1,0 +1,6 @@
+ses
+No doubt readers familiar with BLAST have been curious: aren’t there databases of some kind involved in BLAST searches? Not necessarily. As we’ve seen, simple FASTA files will suffice for both the query and subject set. It turns out, however, that from a computational perspective, simple FASTA files are not easily searched. Thus BLAST+ provides a tool called makeblastdb that converts a subject FASTA file into an indexed and quickly searchable (but not human-readable) version of the same information, stored in a set of similarly named files (often at least three ending in .pin, .psq, and .phr for protein sequences, and .nin, .nsq, and .nhr for nucleotide sequences). This set of files represents the “database,” and the database name is the shared file name prefix of these files.
+
+Running makeblastdb on a FASTA file is fairly simple: makeblastdb -in <fasta file> -out <database name> -dbtype <type> -title <title> -parse_seqids, where <type> is one of prot or nucl, and <title> is a human-readable title (enclosed in quotes if necessary). The -parse_seqids flag indicates that the sequence IDs from the FASTA file should be included in the database so that they can be used in outputs as well as by other tools like blastdbcmd (discussed below).
+
+Once a BLAST database has been created, other options can be used with blastn et al.:
