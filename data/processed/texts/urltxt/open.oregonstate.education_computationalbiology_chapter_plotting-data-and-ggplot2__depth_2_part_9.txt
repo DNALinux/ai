@@ -1,7 +1,0 @@
-commonly paired with the identity statistic. (In fact, in older versions of ggplot2, if a stat or geom was unspecified in the call to layer(), a default was used on the basis of the other. Newer versions require both geom = and stat = to be specified when calling layer().) Similarly, when a binning statistic is used, the y aesthetic mapping defaults to ..count.. if unspecified.
-
-Because it is so common to specify a plot by specifying the statistical mapping to use, ggplot2() provides specialized layer functions that effectively move the specification of the stat to the function name and use the default geom (though it can still be changed). Similarly, we often wish to specify a plot by the geom type and accept the default stat for that geom (though, again, this can be changed by adding a stat = parameter.) Here are two more ways to plot the left histogram above:
-
-(There is a geom_bar() layer function, but its default is not the binning statistic; hence the alternative geom_histogram().) To reproduce the plot above on the right, we could use stat_bin(data = diamonds, mapping = aes(x = carat), geom = "point").
-
-With so many defaults being set, the plotting commands can become quite small. These specialized layer functions represent the most commonly used methods for plotting in ggplot2, being both flexible and quick.

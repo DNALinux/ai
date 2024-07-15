@@ -1,7 +1,0 @@
-tches an "AT" repeated 10 to 100 times) and standard notation for the start and end of the string. (Note that r"^([ACTG])+$" matches a string of DNA and only DNA. For more detailed examples of these regular expression constructs, refer to chapter 11.)
-
-The regular expression syntax of Python, however, does differ from the POSIX-extended syntax we discussed for sed, and in fact provides an extra-extended syntax known as “Perl-style” regular expressions. These support a number of sophisticated features, two of which are detailed here.
-
-First, operators that specify that a match should be repeated—such as plus signs, curly brackets, and asterisks—are by default “greedy.” The same is true in the POSIX-extended syntax used by sed. In Python, however, we have the option of making the operator non-greedy, or more accurately, reluctant. Consider the pattern r"([ACTG])+(TAG|TAA|TGA)", which matches a DNA sequence terminated by a stop codon. The greedy part, ([ACTG])+, will consume all but the last stop codon, leaving as little of the remaining string as possible to make the rest of the pattern match.
-
-In Python, if we want to make the plus sign reluctant, we can follow it with a question mark, which causes the match to leave as much as possible for later parts of the pattern.

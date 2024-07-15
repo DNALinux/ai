@@ -1,9 +1,0 @@
-r to arrays or vectors in other languages. Like letters in strings, elements of a list are indexed starting at 0 using [] syntax. We can also use brackets to create a list with a few elements of different types, though in practice we won’t do this often.
-
-Just like with strings, we can use [] notation to get a sublist “slice,” and we can use the len() function to get the length of a list.
-
-Unlike strings, though, lists are mutable, meaning we can modify them after they’ve been created, for example, by replacing an element with another element. As mentioned above, lists can even contain other lists!
-
-We will typically want our code to create an empty list, and then add data elements to it one element at a time. An empty list is returned by calling the list() function with no parameters. Given a variable which references a list object, we can append an element to the end using the .append() method, giving the method the element we want to append as a parameter.
-
-This syntax might seem a bit odd compared to what we’ve seen so far. Here new_list.append("G") is telling the list object the new_list variable refers to to run its .append() method, taking as a parameter the string "G". We’ll explore the concepts of objects and methods more formally in later chapters. For now, consider the list not just a collection of data, but a “smart” object with which we can interact using . methods.

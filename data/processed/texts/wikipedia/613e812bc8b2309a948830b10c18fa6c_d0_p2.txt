@@ -1,0 +1,9 @@
+ment work of a previously developed program for protein and DNA sequence similarity searches, FASTA, by adding a novel stochastic model developed by Samuel Karlin and Stephen Altschul.[5] They proposed "a method for estimating similarities between the known DNA sequence of one organism with that of another",[3] and their work has been described as "the statistical foundation for BLAST."[6] Subsequently, Altschul, Gish, Miller, Myers, and Lipman designed and implemented the BLAST program, which was published in the Journal of Molecular Biology in 1990 and has been cited over 100,000 times since.[7]
+
+While BLAST is faster than any Smith-Waterman implementation for most cases, it cannot "guarantee the optimal alignments of the query and database sequences" as Smith-Waterman algorithm does. The Smith-Waterman algorithm was an extension of a previous optimal method, the Needleman–Wunsch algorithm, which was the first sequence alignment algorithm that was guaranteed to find the best possible alignment. However, the time and space requirements of these optimal algorithms far exceed the requirements of BLAST.
+
+BLAST is more time-efficient than FASTA by searching only for the more significant patterns in the sequences, yet with comparative sensitivity. This could be further realized by understanding the algorithm of BLAST introduced below.
+
+Examples of other questions that researchers use BLAST to answer are:
+
+BLAST is also often used as part of other algorithms that require approxima

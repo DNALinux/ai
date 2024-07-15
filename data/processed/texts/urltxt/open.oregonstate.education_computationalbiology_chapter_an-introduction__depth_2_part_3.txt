@@ -1,3 +1,0 @@
-ts initial release in 2005.
-
-Where the analysis of biological data is concerned, both languages have grown rapidly. The bioconductor packages in R provide many statistical bioinformatics tools, while BioPython focuses on some statistical methods and many sequence-oriented methods such as multiple alignment. As of this writing, both languages appear be heading toward a common feature set: relatively recent Python packages such as pandas, numpy, scipy, and statsmodels add functionality that has been present in R for decades, while R has grown in general functionality and popularity. For now, though, both languages still make great additions to a computational biologist’s repertoire, and both are supported by large and engaged communities.

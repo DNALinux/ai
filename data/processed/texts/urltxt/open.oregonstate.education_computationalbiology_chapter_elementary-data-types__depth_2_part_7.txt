@@ -1,5 +1,0 @@
-pied from the original).
-
-Here’s how we might represent these variables and the data stored in memory, both before and after the reassignment of seqa.
-
-Because the string "ACTAG" is immutable, redefining seqa results in an entirely different piece of data being created. The original string "ACTAG" will still exist in memory (RAM) for a short time, but because it is not accessible via any variables, Python will eventually clean it out to make room in memory in a process known as garbage collection.[4] Garbage collection is an automatic, periodic process of de-allocating memory used by data that are no longer accessible (and hence no longer needed) by the program.

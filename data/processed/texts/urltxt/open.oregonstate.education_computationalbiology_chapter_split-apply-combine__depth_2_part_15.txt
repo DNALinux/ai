@@ -1,9 +1,0 @@
-icating which categorical columns define groups of rows and returns such a “grouped” data frame, while do() applies a given function to each group of a grouped data frame, and returns a data frame of results with grouping information included.
-
-To illustrate, we’ll first create a simple data frame on which to work, representing samples of fish from one of two different lakes: Green Lake or Detroit Lake.
-
-The nicely formatted printout:
-
-First, we’ll group the data frame by the species column using group_by(). This function takes a data frame (or column-named matrix or similar) and a listing of column names (without quotes) that define the groups as additional parameters. As with using the data = parameter for lm(), the function looks within the data frame for the columns specified.
-
-Is this data frame different from the original? Yes, but mostly in the attributes/metadata. When printed, we get some information on the “source” (where the data are stored—dplyr can access data from remote databases) and the groups:

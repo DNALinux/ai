@@ -1,8 +1,0 @@
-ore impressive is that we could have just as easily used median instead of mean, or any other function that operates on a numeric vector to produce a numeric summary. This idea of specifying functions as parameters in other functions is one of the powerful “functional” approaches taken by R, and we’ll be seeing more of it.
-
-Final Notes about Factors
-In many ways, factors work much like character vectors and vice versa; %in% and == can be used to compare elements of factors just as they can with character vectors (e.g., tissues_factor == "A" returns the expected logical vector).
-
-Factors enforce that all elements are treated as one of the levels named in the levels attribute, or NA otherwise. A factor encoding 1 and 2 as male and female, for example, will treat any other underlying integer as NA. To get a factor to accept novel levels, the levels attribute must first be modified with the levels() function.
-
-Finally, because factors work much like character vectors, but don’t print their quotes, it can be difficult to tell them apart from other types when printed. This goes for simple character vectors when they are part of data frames. Consider the following printout of a data frame:

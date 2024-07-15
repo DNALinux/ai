@@ -1,9 +1,0 @@
-be selected <- gene_info[gene_info$lengths < 200 | gene_info$gcs < 0.3, ]. The printed output:
-
-If we wished to extract the gcs vector from this result, we could use something like selected_gcs <- selected$gcs. Sometimes more compact syntax is used, where the $ and column name are appended directly to the [] syntax.
-
-Alternatively, and perhaps more clearly, we can first use $ notation to extract the column of interest, and then use [] logical indexing on the resulting vector.
-
-Because subsetting data frame rows by logical condition is so common, there is a specialized function for this task: subset(). The first parameter is the data frame from which to select, and later parameters are logical expressions based on column names within that data frame (quotation marks are left off). For example, selected <- subset(gene_info, lengths < 200 | gcs < 0.3). If more than one logical expression is given, they are combined with & (and). Thus subset(gene_info, lengths < 200, gcs < 0.3) is equivalent to gene_info[gene_info$lengths < 200 & gene_info$gcs < 0.3 ,].
-
-While the subset() function is convenient for simple extractions, knowing the ins and outs of [] selection for data frames as it relates to lists and vectors is a powerful tool. Consider the order() function, which, given a vector, returns an index vector that can be used for sorting. Just as with using order() to sort a vector, we can use order() to sort a data frame based on a particular column.

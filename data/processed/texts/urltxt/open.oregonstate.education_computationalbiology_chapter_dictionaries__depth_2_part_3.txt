@@ -1,9 +1,0 @@
-about how the key/value pairs are stored internally. Also, each unique key can only be present once in the dictionary and associated with one value, though that value might be something complex like a list, or even another dictionary. Perhaps a better analogy would be a set of labeled shelves, where each label can only be used once.
-
-There are a variety of functions and methods that we can use to operate on dictionaries in Python. For example, the len() function will return the number of key/value pairs in a dictionary. For the dictionary above, len(ids_to_gcs) will return 3. If we want, we can get a list of all the keys in a dictionary using its .keys() method, though this list may be in a random order because dictionaries are unordered. We could always sort the list, and loop over that:
-
-Similarly, we can get a list of all the values using .values(), again in no particular order. So, ids_to_gcs.values() will return a list of three floats.[2]
-
-If we try to get a value for a key that isn’t present in the dictionary, we’ll get a KeyError. So, we will usually want to test whether a key is present before attempting to read its value. We can do this with the dictionary’s .has_key() method, which returns True if the key is present in the dictionary.[3]
-
-Counting Gene Ontology Terms

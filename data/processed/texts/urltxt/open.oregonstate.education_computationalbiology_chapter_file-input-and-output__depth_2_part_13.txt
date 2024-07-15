@@ -1,4 +1,0 @@
-ette tape, perhaps a fitting analogy given that files were once stored on such tapes. ↵It’s also possible to open a file handle for simultaneous reading and writing. We won’t cover it here, as that functionality is less often needed. ↵
-
-Computing a Mean
-Let’s put many of the skills we’ve learned so far into practice to compute the mean of the E values from the output of BLAST, which is formatted as a simple text table with tabs separating the columns. Here’s what the file, pz_blastx_yeast_top1.txt, looks like in less -S. Although the reader will have to take our word for it, the eleventh column of this file contains E values like 5e-14, 2e-112, and 1e-18.

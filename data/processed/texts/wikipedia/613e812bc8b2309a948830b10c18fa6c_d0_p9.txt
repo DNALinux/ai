@@ -1,0 +1,11 @@
+wider range of scoring matrices, making it easier to tailor a search to a specific evolutionary distance.
+
+An extremely fast but considerably less sensitive alternative to BLAST is BLAT (Blast Like Alignment Tool). While BLAST does a linear search, BLAT relies on k-mer indexing the database, and can thus often find seeds faster.[22] Another software alternative similar to BLAT is PatternHunter.
+
+Advances in sequencing technology in the late 2000s has made searching for very similar nucleotide matches an important problem. New alignment programs tailored for this use typically use BWT-indexing of the target database (typically a genome). Input sequences can then be mapped very quickly, and output is typically in the form of a BAM file. Example alignment programs are BWA, SOAP, and Bowtie.
+
+For protein identification, searching for known domains (for instance from Pfam) by matching with Hidden Markov Models is a popular alternative, such as HMMER.
+
+An alternative to BLAST for comparing two banks of sequences is PLAST. PLAST provides a high-performance general purpose bank to bank sequence similarity search tool relying on the PLAST[23] and ORIS[24] algorithms. Results of PLAST are very similar to BLAST, but PLAST is significantly faster and capable of comparing large sets of sequences with a small memory (i.e. RAM) footprint.
+
+For applications in metagenomics, where the task is to compare billions of short DNA reads against tens of millions of protein references, DIAMOND[25] ru

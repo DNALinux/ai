@@ -1,0 +1,8 @@
+tein sequences, against a database of known protein sequences. This tool is useful when the reading frame of the DNA sequence is uncertain or contains errors that might cause mistakes in protein-coding. BLASTx provides combined statistics for hits across all frames, making it helpful for the initial analysis of new DNA sequences.[16]
+
+BLASTp, or Protein BLAST, is used to compare protein sequences. You can input one or more protein sequences that you want to compare against a single protein sequence or a database of protein sequences. This is useful when you're trying to identify a protein by finding similar sequences in existing protein databases.[17]
+
+Parallel BLAST[edit]
+Parallel BLAST versions of split databases are implemented using MPI and Pthreads, and have been ported to various platforms including Windows, Linux, Solaris, Mac OS X, and AIX. Popular approaches to parallelize BLAST include query distribution, hash table segmentation, computation parallelization, and database segmentation (partition). Databases are split into equal sized pieces and stored locally on each node. Each query is run on all nodes in parallel and the resultant BLAST output files from all nodes merged to yield the final output. Specific implementations include MPIblast, ScalaBLAST, DCBLAST and so on.[18]
+
+MPIblast makes use of a database segmentation technique to parallelize the computation process.[19] This allows for significant performance improvements when conducting BLAST searches across a

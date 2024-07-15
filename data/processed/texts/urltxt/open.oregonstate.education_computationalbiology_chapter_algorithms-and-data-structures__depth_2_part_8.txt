@@ -1,7 +1,0 @@
-create for only a little benefit, it does have its uses and serves as a building block for many other sophisticated structures.
-
-Sorted Linked Lists
-
-Our data structure, called a “sorted linked list,” will keep a collection of items in sorted order, and will do the work of inserting new items in the correct location in that order. These items could be integers, floats, or strings, anything that can be compared with the < operator (which, recall, compares strings in lexicographic order; as discussed in previous chapters, we can even define our own object types that are comparable with > by implementing .__lt__(), .__eq__() and similar methods).
-To accomplish this task, we’re going to make heavy use of classes and objects, and the fact that a variable (even an instance variable) is a name that refers to an object.
-The strategy will be to have two types of objects: the first, which we’ll call a LinkedList, will be the main type of object with which our programs will interact (much like we interacted with Chromosome objects in previous chapters, while SNP objects were dealt with by the Chromosome objects). The LinkedList object will have methods like .insert_item() and .get_smallest(). The other objects will be of type Node, and each of these will have an instance variable self.item that will refer to the item stored by an individual Node. So, drawing just the objects in RAM, our sorted linked list of three items (4, 7, and 9) might look something like this:

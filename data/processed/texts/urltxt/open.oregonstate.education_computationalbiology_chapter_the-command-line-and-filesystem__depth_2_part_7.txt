@@ -1,7 +1,0 @@
-ment variable $HOME; try running echo $HOME to see the absolute path to your own home directory.
-
-What about special devices like CD-ROM drives and network drives? On a Windows operating system, these would get their own “root” directory with names like D: and E: (with the main hard drive usually having the name C:). On Unix-based operating systems, there is only ever one filesystem hierarchy, and the top level is always /. Special devices like CD-ROM drives and network drives are mounted somewhere in the filesystem. It may be that the directory /media remains empty, for example, but when a CD-ROM is inserted, a new directory may appear inside that directory, perhaps with the absolute path /media/cdrom0, and the files on the CD-ROM will appear in that location.
-
-Determining how and where such devices are mounted is the job of the system administrator. On OS X machines, inserted devices appear in /Volumes. If you are logged in to a large computational infrastructure, your home directory likely isn’t located on the internal hard drive of the remote computer, but rather mounted from a network drive present on yet another remote computer. This configuration allows users to “see” the same filesystem hierarchy and files no matter which remote computer they happen to log in to, if more than one is available. (For example, even /home might be a network mount, and so all users’ home directories might be available on a number of machines.)
-
-Getting around the Filesystem

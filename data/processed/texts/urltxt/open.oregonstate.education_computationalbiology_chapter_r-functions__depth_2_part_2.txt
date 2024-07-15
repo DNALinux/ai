@@ -1,7 +1,0 @@
-encapsulate a block of code, making it reusable as well as allowing us to consider the block in isolation of the rest of the program. As with functions in most languages, R functions consist of three main parts:
-
-Let’s consider the problem of determining which elements of two numeric vectors, say vec1 and vec2, are close enough to equal to call them equal. As mentioned in chapter 27, “Variables and Data,” the standard way to check if all elements in two equal-length vectors are approximately pairwise-equal is to use isTRUE(all.equal(vec1, vec2)), which returns a single TRUE if this is the case and a single FALSE if not.
-
-But perhaps we’d rather like a logical vector indicating which elements are approximately equal. The most straightforward way to do this is by comparing the absolute difference between the elements with some small epsilon value.
-
-As a review of the last chapter, what is happening here is that the - operation is vectorized over the left- and right-hand sides, producing a vector (using vector recycling if one of the two were shorter, which not the case here; see chapter 28), as is the abs() function, which takes a vector and returns a vector of absolute values. Similarly, the < operator is vectorized, and because epsilon is a vector of length one, so it is compared to all elements of the result of abs(vec1 - vec2) using vector recycling, for the final result of a logical vector.

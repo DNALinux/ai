@@ -1,8 +1,0 @@
-ory, and (3) the paths specified in the $BLASTDB environment variable.
-
-The tool blastdbcmd can be used to get information about BLAST databases—for example, with blastdbcmd -db <database name> -info—and can show the databases in a given path with blastdbcmd -list <path> (so, blastdbcmd -list $BLASTDB will show the databases found in the default search paths). This tool can also be used to extract sequences or information about them from databases based on information like the IDs reported in output files. As always, reading the help and documentation for software like BLAST is highly recommended.
-
-Running a Self-BLAST
-To put these various tools and options to use, let’s consider using blastp to look for proteins that are similar in sequence to other proteins in the yeast exome. First, we’ll need to use wget to download the protein data set (after locating it at http://yeastgenome.org), and then gzip -d to decompress it, calling it orf_trans.fasta.
-
-In order to find sequences that are similar to others, we’re going to want to blastp this file against itself. So, we’ll start by creating a database of these sequences.

@@ -1,8 +1,0 @@
-. Fortunately, gather() accepts an additional bit of syntactic sugar: using - and specifying the columns that don’t need to be gathered. We could thus gather the full data set with
-
-The gather() function takes a few other optional parameters, for example, for removing rows with NA values. See help("gather") in the interactive interpreter for more information.
-
-Ungathering with spread()
-While this organization of the data—with each row being an observation and each column being a variable—is usually most convenient for analysis in R, sharing data with others often isn’t. People have an affinity for reading data tables where many measurements are listed in a single row, whereas “tidy” versions of data tables are often long with many repeated entries. Even when programmatically analyzing data tables, sometimes it helps to have multiple measurements in a single row. If we wanted to compute the difference between the C6 and L4 genotype expressions for each treatment condition, we might wish to have C6_expression and L4_expression columns, so that we can later use vectorized subtraction to compute a C6_L4_difference column.
-
-The spread() function in the tidyr provides this, and in fact is the complement to the gather() function. The three important parameters are (1) the data frame to spread, (2) the column to use as the “key,” and (3) the column to use as the “values.” Consider the expr_gathered_small data frame from above.

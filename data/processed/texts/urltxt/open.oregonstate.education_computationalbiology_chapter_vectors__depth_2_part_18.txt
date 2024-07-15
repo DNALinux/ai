@@ -1,3 +1,0 @@
-or recycling, and the types of data involved (e.g., numeric vectors and logical vectors). To get you started, the first line adds a new column to the states data frame called "newpop" that contains the same information as the "population" column. 
-Determine the number of unique regions that are listed in the states data frame. Determine the number of unique regions represented by states with greater than the median income.
-What does the sum() function report for a numeric vector c(2, 3, 0, 1, 0, 2)? How about for c(1, 0, 0, 1, 1, 0)? And, finally, how about for the logical vector c(TRUE, FALSE, FALSE, TRUE, TRUE, FALSE)? How could the sum() function thus be useful in a logical context?

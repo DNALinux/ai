@@ -1,7 +1,0 @@
-ile that is a bit odd, and has turned on some coloring. Your nano may not be configured for this syntax highlighting. If not, don’t worry: we are creating a simple text file.
-
-After we save the file (Control-o, then Enter confirm the file name to write) and exit nano (Control-x), we can add execute permissions to the file (for everyone, perhaps) with chmod +x myprog.sh.
-
-It would appear that we might have created a program—we do have an executable file, and you might have guessed that the special syntax we’ve used makes the file executable in a meaningful way. Let’s try it out: according to our execution rule, we can specify the absolute path to it to run it.
-
-It ran! What we’ve created is known as a script to be run by an interpreter; in this case, the interpreter is bash. A script is a text file with execute permissions set, containing commands that may be run by an interpreter, usually specified through the absolute path at the top of the script with a #! line. An interpreter is a program that can execute commands, sometimes specified in a script file.

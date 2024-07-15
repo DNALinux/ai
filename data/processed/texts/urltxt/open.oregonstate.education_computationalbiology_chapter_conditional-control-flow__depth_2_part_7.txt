@@ -1,9 +1,0 @@
-lities, we can use a for-loop and string slicing to inspect every 3bp subsequence of the sequence; the 3bp sequence at index 0 of seq occurs at seq[0:3], the one at position 1 occurs at seq[1:4], and so on.
-
-We must be careful not to attempt to read a subsequence that doesn’t occur in the sequence. If seq = "AGAGAT", there are only four possible 3bp sequences, and attempting to select the one starting at index 4, seq[4:7], would result in an error. To make matters worse, string indexing starts at 0, and there are also the peculiarities of the inclusive/exclusive nature of [] slicing and the range() function!
-
-To help out, let’s draw a picture of an example sequence, with various indices and 3bp subsequences we’d like to look at annotated.
-
-Given a starting index index, the 3bp subsequence is defined as seq[index:index + 3]. For the sequence above, len(seq) would return 15. The first start index we are interested in is 0, while the last start index we want to include is 12, or len(seq) - 3. If we were to use the range() function to return a list of start sequences we are interested in, we would use range(0, len(seq) - 3 + 1), where the + 1 accounts for the fact that range() includes the first index, but is exclusive in the last index.[4]
-
-We should also remember to run .strip() on the read sequence, as we don’t want the inclusion of any \n newline characters messing up the correct computation of the sequence length!

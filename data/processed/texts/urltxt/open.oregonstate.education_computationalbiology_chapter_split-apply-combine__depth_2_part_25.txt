@@ -1,2 +1,0 @@
-dditional column of multiply-corrected values.
-While functions called by do() must take a data frame as their first parameter and must return a data frame, they are free to perform any other actions as well, like generating a plot or writing a file. Use group_by(), do(), and write.table() to write the contents of the CO2 data frame into seven text files, one for each conc level. Name them conc_95.txt, conc_175.txt, and so on. You may need paste() or str_c() (from the stringr library) to generate the file names.

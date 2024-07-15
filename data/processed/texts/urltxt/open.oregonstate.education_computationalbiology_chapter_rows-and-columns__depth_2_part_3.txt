@@ -1,7 +1,0 @@
-column (represented by $1) are not equal to (!=) the second column ($2), then the code in the following pair of curly brackets is executed, and the line ($0) is printed (to standard output).
-
-In theory, at this point we should be able to replace the less -S with a wc to count the lines, and thus counting the number of sequences that had matches to other sequences. Unfortunately, in this case, theory doesn’t align with reality: inspecting the output above reveals that ID YDR545W is still represented by two lines, so this sequence would be counted twice.
-
-Why? In the BLAST command, we requested the top two HSPs per query with -max_target_seqs 2 and -max_hsps 1, so we expected that the best HSP would be to the sequence itself, with the second best (if it existed) to be to a non-self-hit. But in this case, blastx decided to report two non-self-hits. In fact, if we were to inspect YDR545W, YOR396W, and YLR467W, we’d find that their sequences are identical, and so BLAST needed to pick two HSPs out of the three-way tie.
-
-In order to get the correct number of sequences that had matches to others, we need to remove any duplicates that might still be found in the first column. We can do this by adding a sort -k1,1d -u, for a final answer of 2,884.

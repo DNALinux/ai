@@ -1,9 +1,0 @@
-choose in some cases to store the result of an expression in a variable for later use, or we may wish to use a more complex expression directly. The choice is a balance between verbose code and less verbose code, either of which can enhance readability. You should use whatever makes the most sense to you, the person most likely to have to read the code later!
-
-Python makes it easy to extract a single-character string from a string using brackets, or “index” syntax. Remember that in Python, the first letter of a string occurs at index 0.
-
-The use of brackets is also known as “slice” syntax, because we can them it to extract a slice (substring) of a string with the following syntax: string_var[begin_index:end_index]. Again, indexing of a string starts at 0. Because things can’t be too easy, the beginning index is inclusive, while the ending index is exclusive.
-
-A good way to remember this confusing bit of syntax is to think of indices as occurring between the letters.
-
-If a string looks like it could be converted to an int or float type, it probably can be with the float() or int() conversion functions. If such a conversion doesn’t make sense, however, Python will crash with an error. For example, the last line below will produce the error ValueError: could not convert string to float: XY_2.7Q.

@@ -1,9 +1,0 @@
-r than will comfortably fit on the axes. Aside from changing their size, it sometimes helps to angle them by 30 or 45 degrees. When doing so, it also looks best to set hjust = 1 to right-justify the labels.
-
-As this example might suggest, theming is itself a complex topic within ggplot2, and there are many options and special internal functions modifying nearly all aspects of a plot.
-
-Although ggsave() accepts width = and height = parameters specifying the overall size of the output file, because these parameters include the legend and axis labels, the plotting region has its aspect ratio determined automatically. Indicating that the plotting region should take a specific aspect ratio (defined as the height of the region over the width) also occurs within a theme() call.
-
-The observant reader might have noticed that, by default, all plotting regions in ggplot2 use a light gray background. This is intentional: the idea is that a plot with a white background, when embedded into a manuscript, will leave a visual “hole,” interrupting the flow of the text. The shade of gray chosen for the default background is meant to blend in with the overall shade of a column of text.
-
-Some users prefer to use a more traditional white background, but doing so requires adjusting multiple elements, including the background itself, grid lines, and so on. So, ggplot2 includes a number of functions that can change the overall theme, such as theme_bw().

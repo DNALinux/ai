@@ -1,7 +1,0 @@
-R than in other languages. One way to determine whether this is true (and to what extent) is to write a quick loop that iterates one million times, perhaps printing on every 1,000th iteration. (We accomplish this by keeping a loop counter and using the modulus operator %% to check whether the remainder of counter divided by 1000 is 0.)
-
-When we run this operation we find that, while not quite instantaneous, this loop doesn’t take long at all. Here’s a quick comparison measuring the time to execute similar code for a few different languages (without printing, which itself takes some time) on a 2013 MacBook Pro.
-
-While R is the slowest of the bunch, it is “merely” twice as slow as the other interpreted languages, Python and Perl.
-
-The trouble with R is not that for-loops are slow, but that one of the most common uses for them—iteratively lengthening a vector with c() or a data frame with rbind()—is very slow. If we wanted to illustrate this problem, we could modify the loop above such that, instead of adding one to counter, we increase the length of the counter vector by one with counter <- c(counter, 1). We’ll also modify the printing to reflect the interest in the length of the counter vector rather than its contents.

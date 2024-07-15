@@ -1,9 +1,0 @@
-can certainly do better.
-One of the interesting features of the insert_item() method used by nodes in both the tree and linked list is that this method, for any given node, calls itself, but in another node. In reality, there aren’t multiple copies of the method stored in RAM; rather, a single method is shared between them, and only the self parameter is really changing. So, this method (which is just a function associated with a class) is actually calling itself.
-In a related way, it turns out that any function (not associated with an object) can call itself. Suppose we wanted to compute the factorial function, defined as
-
-      
-One of the most interesting features of the factorial function is that it can be defined in terms of itself:
-
-      
-If we wanted to compute factorial(7), a logical way to think would be: “first, I’ll compute the factorial of 6, then multiply it by 7.” This reduces the problem to computing factorial(6), which we can logically solve in the same way. Eventually we’ll want to compute factorial(1), and realize that is just 1. The code follows this logic impeccably:

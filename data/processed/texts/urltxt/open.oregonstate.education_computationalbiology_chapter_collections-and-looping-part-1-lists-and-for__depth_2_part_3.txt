@@ -1,7 +1,0 @@
-mutable), but this operation doesn’t return anything of use.[1]
-
-This type of command opens up the possibility for some insidious bugs; for example, a line like new_list = new_list.append("C") looks innocent enough and causes no immediate error, but it is probably not what the programmer intended. The reason is that the new_list.append("C") call successfully asks the list to modify itself, but then the None value is returned, which would be assigned to the new_list variable with the assignment. At the end of the line, new_list will refer to None, and the list itself will no longer be accessible. (In fact, it will be garbage collected in due time.) In short, use some_list.append(el), not some_list = some_list.append(el).
-
-We often want to sort lists, which we can do in two ways. First, we could use the sorted() function, which takes a list as a parameter and returns a new copy of the list in sorted order, leaving the original alone. Alternatively, we could call a lists .sort() method to ask a list to sort itself in place.
-
-As with the .append() method above, the .sort() method returns None, so the following would almost surely have resulted in a bug: a_list = a_list.sort().

@@ -1,7 +1,0 @@
-prising and elegant methods they enable. Computer science students spend years learning about these topics, and the themes in this chapter underlie much of bioinformatics.
-
-We’ll start with algorithms, which according to a classic book on the topic—Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein—are:
-
-any well-defined computational procedure that takes some value, or set of values, as input and produces some value, or set of values, as output.
-
-With such a broad definition, all of the Python coding we’ve done could accurately be categorized as practice in algorithms. The word “algorithm,” by the way, derives from the name of the eighth-century Persian mathematician al-Khwārizmī, who developed systematic approaches for solving equations (among other accomplishments). Although most functioning code may be characterized as an algorithm, algorithms usually involve more than just collating data and are paired with well-defined problems, providing a specification for what valid inputs are and what the corresponding outputs should be. Some examples of problems include:

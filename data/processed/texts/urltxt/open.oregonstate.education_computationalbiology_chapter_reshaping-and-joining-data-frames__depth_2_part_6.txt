@@ -1,9 +1,0 @@
-a frame to work on, the second is the column to split within that data frame, the third specifies a character vector of newly split column names, and the fourth optional sep = parameter specifies the pattern (regular expression) to split on.
-
-Similarly, the extract() function splits a column into multiple columns based on a pattern (regular expression), but the pattern is more general and requires an understanding of regular expressions and back-referencing using () capture groups. Here, we’ll use the regular expression pattern "([A-Z])([0-9])" to match any single capital letter followed by a single digit, each of which get captured by a pair of parentheses. These values will become the entries for the newly created columns.
-
-Although we covered regular expressions in earlier chapters, for entries like C6_control_b3 where we assume the encoding is well-described, we could use a regular expression like "(C6|L4)_(control|chemical)_(A|B|C)(1|2|3)".
-
-While these functions are convenient for working with columns of data frames, an understanding of str_split_fixed() and str_detect() is nevertheless useful for working with character data in general.
-
-Joining/Merging Data Frames, cbind() and rbind()

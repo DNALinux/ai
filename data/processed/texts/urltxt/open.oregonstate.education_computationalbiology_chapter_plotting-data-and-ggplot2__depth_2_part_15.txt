@@ -1,5 +1,0 @@
-nds are relatively rare in the data set, and the largest diamonds tend to be premium or ideal cuts in poor colors (I and J). Producing PDFs with larger dimensions in ggsave() can make plots with many features more readable.
-
-Like facet_wrap(), facet_grid() can take a scales = parameter to allow panel x and y axes to vary, though again this isn’t generally recommended, as it makes panels difficult to compare visually. The facet_grid() function includes another optional parameter, margins =, which when set to TRUE adds “aggregate” panels for each column and row of panels. Here’s the plot with facet_grid(cut ~ color, margins = TRUE):
-
-When plotting a grid of facets, we can also use a period in the specification to indicate that the grid should consist of only a single row or column of panels. While facet_wrap() can also produce only a single row or grid, the margins = TRUE option can be used with facet_grid() to produce a row or column while simultaneously producing an aggregate panel. Here’s the same plot with facet_grid(. ~ cut, margins = TRUE).

@@ -1,9 +1,0 @@
-yVCF folder; cd to there and use ls to view the contents:Next, we need to install it—this will set up the module and its needed files, and put them into a hidden folder called .local inside of your home directory (Python also looks there for modules and packages by default). To get it into .local in your own home directory rather than using a system-wide install (which you may not have permission to do), we have to add --user to the command that runs the setup.py script:Once this is done, go back to your original directory, and then you can fire up the Python interactive interpreter, load the module, and view its API:(Sadly, the API documentation in the package itself is not that great—the online version at http://pyvcf.rtfd.org is better, specifically in the introduction.)
-
-Previous/next navigation
-
-License
-A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
-
-Share This Book
-Powered by Pressbooks

@@ -1,9 +1,0 @@
-hem. These include vectors of various types, lists, data frames, factors, indexing, replacement, and vector recycling.
-
-At some point won’t we discuss analyzing a meaningful data set? Yes, and that point is now. We’ll continue to work with the gene expression data from chapter 32, “Character and Categorical Data,” after it’s been processed to include the appropriate individual columns using the functions in the stringr library. Here’s the code from the last chapter which pre-processed the input data:
-
-As we continue, we’ll likely want to rerun our analysis script in different ways, without having to rerun all of the code above, as it takes a few minutes to run this preprocessing script. One good strategy would be to write this “cleaned” data frame out to a text file using write.table(), and read it back in to an analysis-only script with read.table(). Just for variety, though, let’s use the save() function, which stores any R object (such as a list, vector, or data frame) to a file in a compressed binary format.
-
-The traditional file extension for such an R-object file is .Rdata. Such data files are often shared among R programmers.
-
-The first few lines of the saved data frame are all readings for the same gene. There are ~360,000 lines in the full data frame, with readings for over 11,000 genes. (The script above, which processes the expr_long_coded.txt file, can be found in the file expr_preprocess.R.) The figure below shows the results of print(head(expr_long_split)):

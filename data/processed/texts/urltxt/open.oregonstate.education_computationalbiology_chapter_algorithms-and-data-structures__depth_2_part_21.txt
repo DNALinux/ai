@@ -1,6 +1,0 @@
-ts less than the pivot; eq, containing the elements equal to the pivot; and gt, containing elements greater than the pivot. Next, we’ll sort lt and gt to produce lt_sorted and gt_sorted. The answer, then, is a new list containing first the elements from lt_sorted, then the elements from eq, and finally the elements from gt_sorted.
-The interesting parts of the code below are the highlighted lines: how do we sort lt and gt to produce lt_sorted and gt_sorted?
-
-We could use Python’s built-in sorted() function, but that’s clearly cheating. We could use bubblesort, but doing so would result in our function suffering the same time bound as for bubblesort (we say “time bound” because the order notation essentially provides an upper bound on time usage). The answer is to use recursion: because lt and gt must both be smaller than the input list, as subproblems they are getting closer to the base case, and we can call quicksort() on them!
-
-Let’s attempt to analyze the running time of quicksort()—will it be better than, equal to, or worse than bubblesort? As with the binary trees covered previously, it turns out the answer is “it depends.”

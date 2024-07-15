@@ -1,8 +1,0 @@
-we can get the next bit of data out of the end of the pipe, but that’s it.[3] One might think that a command like line5 = fhandle[4] would work, but instead it would produce an error like TypeError: '_io.BufferedReader' object has no attribute '__getitem__'.
-
-On the other hand, like lists, file handles are iterable, meaning we can use a for-loop to access each line in order. A simple program to read lines of a file and print them one at a time (without extra blank lines) might look like this:
-
-Like .readline(), using a for-loop extracts lines from the pipe. So, if you call .readline() twice on a file handle attached to a file with 10 lines, and then run a for-loop on that file handle, the for-loop will iterate over the remaining 8 lines. This call could be useful if you want to remove a header line from a text table before processing the remaining lines with a loop, for example.
-
-Writing Data
-Writing data to a file works much the same way as reading data: we open a file handle (which again works like a pipe), and call a method on the handle called .write() to write strings to it. In this case, instead of using the "rU" parameter in calling io.open(), we’ll use "w" to indicate that we want to write to the file. Be warned: when you open a file handle for writing in this manner, it overwrites any existing contents of the file. If you’d rather append to the file, you can instead use "a".[4]

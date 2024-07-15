@@ -1,8 +1,0 @@
-used like dictionaries in Python and hash tables in other languages, because of this easy and effective Name → Value lookup operation. It should be noted that (at least as of R 3.3), name lookups in lists are not as efficient as name lookups in Python dictionaries or other true hash tables. For an efficient and more idiomatic hash table/dictionary operation, there is also the package hash available for install with install.packages("hash"). ↵For example, the names of a vector are stored as an attribute called “names”—the lines names(scores) <- c("Student A", "Student B", "Student C") and attr(scores, "names") <- c("Student A", "Student B", "Student C") are (almost) equivalent. Still, it is recommended to use specialized functions like names() rather than set them with attr() because the names() function includes additional checks on the sanity of the names vector. ↵
-
-Named Lists, Lists within Lists
-Like vectors, lists can be named—associated with a character vector of equal length—using the names() function. We can use an index vector of names to extract a sublist, and we can use [[]] syntax to extract individual elements by name.
-
-We can even extract elements from a list if the name of the element we want is stored in another variable, using the [[]] syntax.
-
-As fun as this double-bracket syntax is, because extracting elements from a list by name is a common operation, there is a shortcut using $ syntax.

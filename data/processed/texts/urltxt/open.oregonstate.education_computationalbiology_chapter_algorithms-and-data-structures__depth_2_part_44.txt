@@ -1,1 +1,0 @@
-to what the run time of this function is in order notation? Can you imagine any ways it could be sped up?

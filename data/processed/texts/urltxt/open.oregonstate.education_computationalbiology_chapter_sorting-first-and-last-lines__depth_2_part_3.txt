@@ -1,7 +1,0 @@
-al -u flag (which may be specified before or after the keys, or even mixed in) specifies that after all the keys are considered, if there are still any ties between rows, then only the first row should be output. It outputs only “unique” lines according to the overall sorting order.
-
-By default, sort uses whitespace as the column separator, though it can be changed (run man sort for more information). To view information about the longest perfect repeat, we will use sort -k7,7nr, indicating that we wish sort on the seventh column only, in reverse numeric order.
-
-The first few lines of output indicate that the longest perfect repeat is 94 bases long and occurs in sequence PZ805359 (this sequence’s GC content is 0, because it’s composed entirely of a long AT repeat).
-
-The results also indicate that there are a number of ties; several sequences contain perfect repeats of length 18 base pairs. If we only wanted one sequence reported per different repeat length, we could try sort -k7,7nr -u. We could alternatively modify our sort to secondarily sort by GC content (second column), sort -k7,7nr -k2,2g.

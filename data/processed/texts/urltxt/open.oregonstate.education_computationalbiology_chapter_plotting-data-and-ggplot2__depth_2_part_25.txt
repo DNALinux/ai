@@ -1,7 +1,0 @@
-theme elements, if we wish to also modify individual theme elements with theme(), those must be added to the chain after the call to theme_bw().
-
-One feature of ggplot2 not yet covered is the use of text within plots, which are not theme adjustments but rather special types of plot layers. The geom_text() layer function makes it easy to create “dotplots” where each point is represented by a text label rather than a point. Here’s an example plotting the first 30 diamonds by carat and price, labeled by their cut.
-
-In the result (below left), it’s difficult to see that multiple diamonds are plotted in the same location in some cases. This type of overplotting can happen with points as well; adding a position = "jitter" option to the geom_text() layer slightly modifies the location of all the geoms so that they stand out (below right).
-
-Various aesthetics of the text can be mapped to values of the data, including size, angle, color, and alpha. As with other layers, to change the font size (or other property) for all points to a constant value, the instruction should be given outside of the aes() call.

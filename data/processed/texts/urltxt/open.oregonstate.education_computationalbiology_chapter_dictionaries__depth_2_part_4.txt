@@ -1,7 +1,0 @@
-line gives a gene ID, an annotation with a GO number, and a corresponding human-readable term associated with that number.
-
-In this file, each gene may be associated with multiple GO numbers, and each GO number may be associated with multiple genes. Further, each GO term may be associated with multiple different GO numbers. How many times is each ID found in this file? Ideally, we’d like to produce tab-separated output that looks like so:
-
-Our strategy: To practice some of the command line interaction concepts, we’ll have this program read the file on standard input and write its output to standard output (as discussed in chapter 19, “Command Line Interfacing”). We’ll need to keep a dictionary, where the keys are the gene IDs and the values are the counts. A for-loop will do to read in each line, stripping off the ending newline and splitting the result into a list on the tab character, \t. If the ID is in the dictionary, we’ll add one to the value. Because the dictionary will start empty, we will frequently run into IDs that aren’t already present in the dictionary; in these cases we can set the value to 1. Once we have processed the entire input, we can loop over the dictionary printing each count and ID.
-
-In the code below (go_id_count.py), when the dictionary has the seqid key, we’re both reading from the dictionary (on the right-hand side) and writing to the value (on the left-hand side).

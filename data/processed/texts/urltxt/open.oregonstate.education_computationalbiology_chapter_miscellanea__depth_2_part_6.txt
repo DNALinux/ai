@@ -1,7 +1,0 @@
-directing standard output from ./fasta_stats pz_cDNAs.txt through grep -v '#', we could equivalently say join -1 1 -2 1 <(./fasta_stats pz_cDNAs.fasta | grep -v '#' | sort -k1,1d) <(sort -k1,1d pz_blastx_yeast_top1.txt).
-
-Finally, unless we are willing to supply an inordinate number of arguments, the default for join is to produce only lines where the key information is found in both files. More often, we might wish for all keys to be included, with “missing” values (e.g., NA) assumed for data present in only one file. In database parlance, these operations are known as an “inner join” and “full outer join” (or simply “outer join”), respectively.
-
-Where join does not easily produce outer joins, more sophisticated tools can do this and much more. For example, the Python and R programming languages (covered in later chapters) excel at manipulating and merging collections of tabular data. Other tools utilize a specialized language for database manipulation known as Structured Query Language, or SQL. Such databases are often stored in a binary format, and these are queried with software like MySQL and Postgres (both require administrator access to manage), or simpler engines like sqlite3 (which can be installed and managed by normal users).[2]
-
-Counting Duplicate Lines

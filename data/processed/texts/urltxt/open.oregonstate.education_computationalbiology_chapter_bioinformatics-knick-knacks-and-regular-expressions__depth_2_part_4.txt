@@ -1,8 +1,0 @@
-signing the seq variable to whatever is returned by the method.
-
-Commands versus Queries
-Why do some operations (like a list’s .sort() method) change the data in place but return None, while others (like a string’s .split() method or the len() function) return something but leave the original data alone? Why is it so rare to see operations that do both? The reason is that the designers of Python (usually) try to follow what is known as the principle of command-query separation, a philosophical principle in the design of programming languages that states that single operations should either modify data or return answers to queries, but not both.
-
-The idea behind this principle is that upon reading code, it should be immediately obvious what it does, a feature that is easily achieved if each operation only has one thing it can do. When operations both change data and return an answer, there is a temptation to “code by side effect,” that is, to make use of simultaneous effects to minimize typing at the cost of clarity. Compared to many other languages, Python makes a stronger attempt to follow this principle.
-
-Regular Expressions

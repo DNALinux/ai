@@ -1,8 +1,0 @@
-multiple executable files with the same name in this list of paths, can we discover which one the shell will execute? Yes: in bash we can make this determination using the which command.[3]
-
-What about a command like cd? We can try to use which to locate a program called cd, but we’ll find that nothing is reported.
-
-This is because cd is not a program (executable file), but rather a “command,” meaning the shell notices that it’s a special keyword it should handle, rather than searching for an executable file of that name. Said another way, bash is performing the action, rather than calling an external executable program. Knowing about the difference between commands handled by the shell and programs that are executable files is a minor point, but one that could be confusing in cases like this.
-
-Making Files Executable
-Let’s do something decidedly weird, and then come back and explain it. First, we’ll use nano to create a new file called myprog.sh, using the -w flag for nano to ensure that long lines are not automatically wrapped (nano -w myprog.sh). In this file, we’ll make the first two characters #!, followed immediately by the absolute path to the bash executable file. On later lines, we’ll put some commands that we might run in bash, like two echo calls.

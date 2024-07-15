@@ -1,9 +1,0 @@
-cho hello for the relative path (because /bin is four folders above our present working directory).
-
-Now for the rule-breaking part: we already know that we can just run echo without specifying a path to the program. This means that when we attempt to run a program, the shell must be able to find the executable file somehow. How is this done?
-
-The answer, as with so many questions involving the shell, is an environment variable called $PATH. Let’s check the contents of this variable:[2]
-
-The $PATH environment variable contains a simple string, describing a list of absolute paths separated by : characters. When we specify what looks to the shell like the name of a program, it searches this list of paths, in order, for an executable file of that name. When we type echo, it tries /usr/local/sbin/echo, then /usr/local/bin/echo, and so on, until it finds it in /bin/echo.
-
-The first matching executable file the shell finds in the directories listed in $PATH is the one that is executed. This could lead to some mischief: if a coworker with a penchant for practical jokes could modify your $PATH variable, he could add his own home directory as the first entry. From there, he could create an executable file called, say, ls that did whatever he wanted, and you would unknowingly be running that! It is possible for anyone with access to your account to modify your $PATH, so it’s a good idea not to leave your terminal window open around anyone with a dastardly sense of humor.

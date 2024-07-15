@@ -1,9 +1,0 @@
-l do all of the fancy indexing operations on them covered in previous chapters.
-
-The do() function applies a function to each group of rows of a grouped data frame using a split-apply-combine strategy. The function applied must take as its first parameter a data frame, and it must return a data frame. Let’s write a function that, given a data frame or sub-data frame (group) of the fish data, returns a single-row data frame with columns for mean_weight and sd_weight. Both the mean() and sd() functions can take an na.rm argument to strip out any potential NA values in their inputs, so perhaps our function should take a similar optional parameter.
-
-This function takes as input a data frame with a column for weight and returns a data frame with summary statistics. We can run it on the original data frame:
-
-Alternatively, we can call do() on the grouped data frame, telling it to run mean_sd_weight() on each group (sub-data frame). The syntax for do() differs slightly from that of lapply() in that we specify a . for the positional argument representing the sub-data frame.
-
-The result of the do() is another grouped data frame, made up of the rows returned by the applied function. Notice that the grouping columns have been added, even though we didn’t specify them in the ret_df inside the function.

@@ -1,4 +1,0 @@
-empt to connect to the same machine you log in to via SFTP. Download a FASTA file of some potentially homologous sequences from Uniprot to your local desktop, and transfer it to your remote c_elegans directory.
-Try running muscle and HMMER on the sequences you downloaded from uniprot.org against the C. elegans genome.
-If you have access to more than one Unix-based machine (such as an OS X desktop and a remote Linux computer, or two remote Linux computers), read the man page for scp with man scp, and also read about it online. Try to transfer a file and a directory between machines using scp on the command line.
-Write an executable bash script that automates a process of some kind, and install it in your $HOME/local/bin. Test it after logging out and back in.

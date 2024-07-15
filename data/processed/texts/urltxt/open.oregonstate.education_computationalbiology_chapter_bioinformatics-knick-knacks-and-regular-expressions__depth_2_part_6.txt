@@ -1,9 +1,0 @@
-string to look in, and (4) the maximum number of replacements to make (0 to replace all matches). This function returns a list[1] containing two elements: at index 0, the modified copy of the string, and at index 1, the number of replacements made.
-
-
-Split a String into a List of Strings Based on a Pattern
-
-We’ve already seen that we can split a string based on simple strings with .split(). Being able to split on complex regular expressions is often useful as well, and the re.split() function provides this functionality.
-
-We’ll leave it as an exercise for the reader to determine what would be output for a sequence where the matches are back to back, or where the matches overlap, as in re.split(r"ATA", "GCATATAGG").
-The Language of Regular Expressions, in Python

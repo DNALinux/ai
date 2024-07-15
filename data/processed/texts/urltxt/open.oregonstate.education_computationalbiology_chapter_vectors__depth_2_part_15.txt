@@ -1,7 +1,0 @@
-e of these individual vectors, we can use a special $ syntax, with the column name following the $.
-
-So long as the column name is sufficiently simple (in particular, so long as it doesn’t have any spaces), then the quote marks around the column name can be (and often are) omitted.
-
-Although this syntax can be used to extract a column from a data frame as a vector, note that it refers to the vector within the data frame as well. In a sense, states$income is the vector stored in the states data frame. Thus we can use techniques like selective replacement to work with them just like any other vectors. Here, we’ll replace all instances of “North Central” in the states$region vector with just the term “Central,” effectively renaming the region.[4]
-
-Writing a data frame to a tab-separated file is accomplished with the write.table() function.[5] As with read.table(), write.table() can take quite a few parameters, most of which have reasonable defaults. But there are six or so we’ll want to set more often than others. Let’s write the modified states data frame to a file called states_modified.txt as a tab-separated file.

@@ -1,9 +1,0 @@
-t need to stage the appropriate files and run another commit.
-
-Every version that we commit is saved, and we can easily see a quick log of the history of a project with git log.
-
-Notice that each commit is given a long serial number, such as ec46950b36.... To see the differences between two commits, we can run git diff with just the few characters of each serial number, as in git diff 50c11fe ec4695. The output format isn’t remarkably readable by default.
-
-Many other operations can be performed by git, such as viewing the contents of files from previous versions and “reverting” a project to a previous state (at least for those files that are tracked).
-
-There are two other features worth mentioning. First, it’s not uncommon to have many files that we’d like to leave untracked, but adding all of the rest one at a time with git add is tedious. Fortunately, git add -A looks at the contents of the file .gitignore (which may need to be created): any files or directories listed in .gitignore will not be staged by git add -A. (And the .gitignore file can be tracked.)

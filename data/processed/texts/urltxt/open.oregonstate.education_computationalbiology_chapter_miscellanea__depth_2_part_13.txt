@@ -1,7 +1,0 @@
-change, so logging them would be unnecessary. Similarly, because the output file p450s_hmmsearch_dmel.txt is generated programmatically and can always be regenerated (if we have a version of the program that created it), we won’t track that, either. To “stage” files for the next commit, we use git add; to stage all files in the project directory, we would use git add -A, but here we want to stage only runhmmer.sh, so we’ll run git add runhmmer.sh.
-
-No message has been printed, but at any time we can see the status of the git process by running git status.
-
-The status information shows that we have one new file to track, runhmmer.sh, and a number of untracked files (which we’ve left untracked for a reason). Now we can “commit” these staged files to a new version, which causes the updated staged files to be stored for later reference. When committing, we need to enter a commit message, which gives us a chance to summarize the changes that are being committed.
-
-At this point, a git status would merely inform us that we still have untracked files. Let’s suppose we make some edits to runhmmer.sh (adding a new comment line, perhaps), as well as create a new README.txt file describing the project.

@@ -1,8 +1,0 @@
-in order to accommodate the increasingly complex and diverse needs of researchers for searching and comparing data, SGD implemented InterMine, an open source data warehouse system with a […]
-Read More
-
-Here at SGD we provide high-quality curated genomic, genetic, and molecular information on the genes and gene products of the budding yeast Saccharomyces cerevisiae. Twelve years ago, in order to accommodate the increasingly complex and diverse needs of researchers for searching and comparing data, SGD implemented InterMine, an open source data warehouse system with a […]
-
-More Articles
-
-Community Forum

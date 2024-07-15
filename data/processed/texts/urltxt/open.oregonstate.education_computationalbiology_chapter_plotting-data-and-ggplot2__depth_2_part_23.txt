@@ -1,8 +1,0 @@
-are possible, and we’ve only covered some of the most useful or interesting. See http://docs.ggplot2.org for the full documentation.
-
-Theming, Annotations, Text, and Jitter
-So far, we’ve covered customizing how data are plotted and axes/coordinates are represented, but we haven’t touched on “ancillary” properties of the plot like titles, background colors, and font sizes. These are part of the “theme” of the plot, and many aspects of the theme are adjusted by the theme() function. The exception is the addition of a title to a plot, which is accomplished with the ggtitle() function.
-
-The text-based parts of a plot are organized hierarchically (see the documentation for theme() for the full list). For example, modifying the text = parameter will modify all text elements, while modifying axis.text = adjusts the tick labels along both axes, and axis.text.x = specifies properties of only the x-axis tick labels. Other text-theme elements include legend.text, axis.title (for axis names), plot.title, and strip.text (for facet labels).
-
-To adjust properties of these elements, we use a call to element_text() within the call to theme(). We can produce a quick plot counting diamonds by their cut and clarity, for example, setting a plot title and changing the overall text size to 16, and just the title size to 20. Shrinking text can be especially helpful for cases when facet labels or theme labels are too large to fit their respective boxes.

@@ -1,8 +1,0 @@
-is as simple as:
-
-Because the entries in the “key” column name become new column names, it would usually be a mistake to use a numeric column here. In particular, if we were to mix up the order and instead run spread(expr_gathered_small, expression, sample), we’d end up with a column for each unique value in the expression column, which could easily number in the hundreds of thousands and would likely crash the interpreter.
-
-In combination with group_by(), do(), and summarize() from the dplyr package, gather() and spread() can be used to aggregate and analyze tabular data in an almost limitless number of ways. Both the dplyr and tidyr packages include a number of other functions for working with data frames, including filtering rows or columns by selection criteria and organizing rows and columns.
-
-Splitting Columns
-In chapter 32, “Character and Categorical Data,” we learned how to work with character vectors using functions like str_split_fixed() to split them into pieces based on a pattern, and str_detect() to produce a logical vector indicating which elements matched a pattern. The tidyr package also includes some specialized functions for these types of operations. Consider a small data frame expr_sample with columns for id, expression, and sample, like the precleaned data frame considered in previous chapters.

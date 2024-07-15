@@ -1,9 +1,0 @@
-and assigns it to line.
-
-Let’s create a small file with three lines each containing a gene ID, a tab, and a corresponding GC-content value.
-
-Now let’s create a program that reads and prints the data. When we are finished reading data from a file, we need to run the file handle’s .close() method. Using .close() causes the file handle to alert the operating system that we are done reading data from the handle. At this point the operating system is free to remove the back-end “pipe” and any data that might be in it.
-
-If the file doesn’t exist or is not readable by the program, you will get an IOError indicating either No such file or directory or Permission denied with the file name you attempted to open.[2] Because our file does exist, we can successfully execute the code and inspect the results:
-
-There are a few things to note here. First, each time we call fhandle.readline(), the file handle returns a different string: the next string waiting to be popped out of the pipe. Second, we see that the output contains our three lines, but separated by blank lines: this is because there are “newline” characters already in the file. We don’t see these newline characters, but we can represent them ourselves if we like, in a string with the control code \n. Similarly, tab characters have a control code like \t. The file is actually a single serial string, and the .readline() method asks the file handle to return everything up to and including the next \n.

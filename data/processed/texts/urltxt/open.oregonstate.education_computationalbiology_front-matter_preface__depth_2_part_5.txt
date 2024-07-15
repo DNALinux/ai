@@ -1,5 +1,0 @@
-utput data.
-
-“Well, here it is! The p values in this last column will tell you which results are the most important,” she says as she sorts the file on that column (in mere seconds) to reveal the top few records with the lowest p values. Recalling that the significant results should theoretically correlate to the GC content of the sequences in certain positions, I ask if it’s possible to test for that. “Yes, it’s definitely possible,” she answers. “Well, extracting just the most significant sequences will be easy given this table. But then I’ll have to write a short program, probably in Python, which I just started learning, to compute the aggregate GC content of those sequences on a position-by-position basis. From there it won’t be hard to feed the results into an R script to test for differences in each group compared to all the others. It should only take a few hours, but I’m a bit busy this week. I’ll see what I can do by next Friday, but you’ll owe me more than just coffee!”
-
-A Few Goals

@@ -40,6 +40,7 @@ def extract_and_save_pdf_text(pdf_path, output_dir):
         save_text_to_file(page_text.page_content[:], output_dir, filename)  # Ensure page_text.text is a string
         print(f"Saved page {page_num} to {output_dir}/{filename}")
 
+
 def is_relevant_link(link, base_url):
     """Determine if a link is relevant based on simple heuristics."""
     if link.startswith('/'):
@@ -79,7 +80,6 @@ def extract_content(url, visited):
 
     return '\n'.join(grouped_text), [link['href'] for link in soup.find_all('a', href=True) if is_relevant_link(link['href'], url)]
 
-
 def save_content_to_files(text, directory, chunk_size, overlap_size, base_url, depth):
     """Save the extracted text into files of a specified chunk size with overlap."""
     os.makedirs(directory, exist_ok=True)
@@ -104,7 +104,6 @@ def save_content_to_files(text, directory, chunk_size, overlap_size, base_url, d
             file.write(chunk_text)
 
         print(f"Part {i+1} of text from {base_url} has been saved to {file_path}")
-
 
 def crawl_and_extract(url, directory, chunk_size=200, overlap_size=50, max_depth=1, depth=0, visited=None):
     """Crawl the website and extract content recursively."""

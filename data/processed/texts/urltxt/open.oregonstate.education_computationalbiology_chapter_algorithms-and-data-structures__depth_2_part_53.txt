@@ -1,7 +1,0 @@
-ta on which to operate must get “closer” to the base case. If they do not, then the chain of calls will never finish.
-
-Applying recursion to sorting items is relatively straightforward. The more difficult part will be determining how fast it runs for a list of size. We’ll illustrate the general strategy with an algorithm called quicksort, first described in 1960 by Tony Hoare.
-
-For an overall strategy, we’ll implement the recursive sort in a function called quicksort(). The first thing to check is whether the list is of length 1 or 0: if so, we can simply return it since it is already sorted. (This is the base case of the recursive method.) If not, we’ll pick a “pivot” element from the input list; usually, this will be a random element, but we’ll use the first element as the pivot to start with. Next, we’ll break the input list into three lists: lt, containing the elements less than the pivot; eq, containing the elements equal to the pivot; and gt, containing elements greater than the pivot. Next, we’ll sort lt and gt to produce lt_sorted and gt_sorted. The answer, then, is a new list containing first the elements from lt_sorted, then the elements from eq, and finally the elements from gt_sorted.
-
-The interesting parts of the code below are the highlighted lines: how do we sort lt and gt to produce lt_sorted and gt_sorted?

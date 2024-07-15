@@ -1,8 +1,0 @@
-include an additional newline character "\n". Thus, if you wish to write multiple lines to a file handle, you have to add them yourself. Here’s an example that prints the numbers 0 through 9 to a file, one per line.
-
-As mentioned above, a file handle opened for writing works like a pipe that is set up by the operating system. When writing, however, we put data into the pipe, and the operating system pulls the data out the other side, writing it to the file on disk.
-
-Because the operating system is busy handling similar requests for many programs on the system, it may not get around to pulling the data from the pipe and writing to the file on disk right away. So, it’s important that we remember to call the .close() method on the file handle when we are done writing data; this tells the operating system that any information left in the pipe should be flushed out and saved to disk, and that the pipe structure can be cleaned up. If our program were to crash (or were to be killed) before the handle was properly closed, data in the pipe may never get written.
-
-Computing a Mean
-Let’s put many of the skills we’ve learned so far into practice to compute the mean of the E values from the output of BLAST, which is formatted as a simple text table with tabs separating the columns. Here’s what the file, pz_blastx_yeast_top1.txt, looks like in less -S. Although the reader will have to take our word for it, the eleventh column of this file contains E values like 5e-14, 2e-112, and 1e-18.

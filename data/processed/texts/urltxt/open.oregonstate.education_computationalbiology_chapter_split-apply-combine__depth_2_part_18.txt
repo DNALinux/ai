@@ -1,7 +1,0 @@
-input group data frame. This is somewhat clearer when we want to specify optional arguments to the applied function. In this case, we may want to specify that NA values should be removed by setting remove_nas = TRUE in each call to mean_sd_weight().
-
-Speaking of syntactic sugar, the magrittr package (which is installed and loaded along with dplyr, though written by a different author) provides an interesting infix function, %>%. Consider the common pattern above; after the creation of a data frame (fish), we run it through a function to create an intermediary result (fish_by_species from group_by()), run that through another function to get another result (stats_by_species from mean_sd_weight()), and so on. While this process is clear, we could avoid the creation of multiple lines of code if we were willing to nest some of the function calls.
-
-This line of code certainly suffers from some readability problems. The infix %>% function supplies its left-hand side to its right-hand side (located by . in the right-hand side), returning the result of the call to the right-hand function. Thus we can rewrite the above as follows.
-
-Notice the similarity between this and method chaining in Python and stdin/stdout pipes on the command line. (It’s also possible to omit the . if it would be the first parameter, as in fish %>% group_by(species) %>% do(mean_sd_weight(.)).)

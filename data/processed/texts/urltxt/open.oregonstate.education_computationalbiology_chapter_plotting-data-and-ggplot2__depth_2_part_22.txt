@@ -1,9 +1,0 @@
-geom used is "bar" or "line".
-
-The coord_flip() function can be used to flip the x and y axes. This feature is especially useful when the desire is to produce a horizontal histogram or boxplot.
-
-When setting the fill aesthetic, the subbars are stacked, which is the default. For a plot with bars presented side by side, one can add the position = "dodge" argument to the geom_bar() layer call.
-
-For one last coordinate adjustment, the values mapped to the horizontal and vertical axes are sometimes directly comparable, but the range is different. In our random subsample of diamonds dd, for example, the x and z columns are both measured in millimeters (representing the “width” and “height” of the diamond), but the z values are generally smaller. For illustration, a single unit on the horizontal axis should be the same size as a single unit on the vertical axis, but ggplot2 doesn’t ensure such sizing by default. We can specify the size by adding a coord_equal() coordinate adjustment.
-
-Notice that without coord_equal() in the above left, the axes sizes aren’t quite comparable, but the grid marks are perfect squares in the above right. The coord_equal() adjustment can also be made with log-adjusted plots, and can sometimes produce nicer output even if the two axes aren’t in the same units. Here’s a comparison with and without coord_equal() applied to the final version of the contig length-versus-coverage plot above.

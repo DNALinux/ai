@@ -1,9 +1,0 @@
-input is not a valid three-base-pair DNA string, the function should return "X" to signify “unknown.” Test your function with a few calls like print(codon_to_aa("TGG")), print(codon_to_aa("TAA")), and print(codon_to_aa("BOB")).
-
-Previous/next navigation
-
-License
-A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
-
-Share This Book
-Powered by Pressbooks

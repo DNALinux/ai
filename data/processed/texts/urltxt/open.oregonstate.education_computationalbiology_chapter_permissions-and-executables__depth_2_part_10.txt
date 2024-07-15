@@ -1,7 +1,0 @@
-tory can be found in $PATH. Because $PATH is an environment variable, we can set it with export, making use of the fact that environment variables inside of double quotes (but not single quotes) are expanded to their contents.
-
-Because the right-hand side of the = is evaluated before the assignment happens, the $PATH variable now contains the full path to the local/bin directory, followed by the previous contents of $PATH.[4] If we type a program name without specifying a path to it, the shell will search our own install location first!
-
-There’s only one problem: every time we log out and log back in, modifications of environment variables that we’ve made are forgotten. Fortunately, bash looks for two important files when it starts:[5] (1) commands in the .bash_login file (in your home directory) are executed whenever bash starts as a consequence of a login session (e.g., when entering a password causes bash to start), and (2) commands in the .bashrc file (in your home directory) are executed whenever bash starts (e.g., on login and when bash is executed via a #! script).
-
-If you want to see a friendly greeting every time you log in, for example, you might add the line echo "Hello $USER, nice to see you again!" to your .bash_login file. Because we want our $PATH to be modified even if bash somehow starts without our logging in, we’ll add the export command to the .bashrc file.

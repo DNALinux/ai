@@ -1,9 +1,0 @@
-s in reverse alphabetical order, for example:
-
-Rather than assigning to a separate tissues_factor variable, we could replace the data frame column with the ordered vector by assigning to expr_long_split$tissue.
-
-We often wish to order the levels of a factor according to some other data. In our example, we might want the “first” tissue type to be the one with the smallest mean expression, and the last to be the one with the highest mean expression. A specialized function, reorder(), makes this sort of ordering quick and relatively painless. It takes three important parameters (among other optional ones):
-
-Here’s a quick canonical example. Suppose we have two vectors (or columns in a data frame), one of sampled fish species (“bass,” “salmon,” or “trout”) and another of corresponding weights. Notice that the salmon are generally heavy, the trout are light, and the bass are in between.
-
-If we were to convert the species vector into a factor with factor(species), we would get the default alphabetical ordering: bass, salmon, trout. If we’d prefer to organize the levels according to the mean of the group weights, we can use reorder():

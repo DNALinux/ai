@@ -1,5 +1,0 @@
-is also quite sophisticated, and Python is catching up with increasingly powerful libraries like matplotlib). A basic installation of R provides an entire set of tools for plotting, and there are many libraries available for installation that extend or supplement this core set. One of these is ggplot2, which differs from many other data visualization packages in that it is designed around a well-conceived “grammar” of graphics.[1]
-
-The ggplot2 package is not the most powerful or flexible—the graphics provided by default with R may take that title. Neither is ggplot2 the easiest—simpler programs like Microsoft Excel are much easier to use. What ggplot2 provides is a remarkable balance of power and ease of use. As a bonus, the results are usually professional looking with little tweaking, and the integration into R makes data visualization a natural extension of data analysis.
-
-A Brief Introduction to Base-R Graphics
