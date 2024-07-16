@@ -1,0 +1,7 @@
+as well as create a README.txt file, and commit those changes. First, to turn a directory into a git repository, we need to run git init:
+
+This step creates the hidden directory .git containing the required files for tracking by the system. We don’t usually need to work directly with this directory—the git software will do that for us. Next, we will create our first version by staging our first files, and running our first commit. We could keep tracked versions of all the files in this directory, but do we want to? The data files like dmel-all-translation-r6.02.fasta are large and unlikely to change, so logging them would be unnecessary. Similarly, because the output file p450s_hmmsearch_dmel.txt is generated programmatically and can always be regenerated (if we have a version of the program that created it), we won’t track that, either. To “stage” files for the next commit, we use git add; to stage all files in the project directory, we would use git add -A, but here we want to stage only runhmmer.sh, so we’ll run git add runhmmer.sh.
+
+No message has been printed, but at any time we can see the status of the git process by running git status.
+
+The status information shows that we have one new file to track, runhmmer.sh, and a number of untracked files (which we’ve left untracked for a reason). Now we can “commit” these staged files to a new version, which causes the updated staged files to be stored for later reference. When committing, we need to enter a commit message, whi

@@ -1,0 +1,12 @@
+n can use the immutability of strings to its advantage. Suppose, for example, that we wanted to get a large substring from a large string, centromere_region = chr1[0:1500000]. In this case, Python doesn’t need to make a copy of the substring in memory. Because the original string can never change, all it needs is some bookkeeping behind the scenes to remember that the centromere_region variable is associated with part of string chr1 references. This is why seqd in the figure above does not duplicate data from seqc.
+
+None of this discussion is to imply that you should worry about the computational efficiency of these operations at this point. Rather, the concept of immutability and the definition of a variable (in Python) as a “name that refers to some data” are important enough to warrant formal discussion.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

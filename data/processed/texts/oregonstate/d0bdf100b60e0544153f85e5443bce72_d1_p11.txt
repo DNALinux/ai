@@ -1,0 +1,15 @@
+e via resampling. The original sampling distribution is specified by the mean = and sd = parameters, which are passed to the call to rnorm() within rnorm_trunc().
+
+What if we wanted to do the same thing, but for rexp(), which samples from an exponential distribution taking a rate = parameter?
+
+The distribution normally ranges from 0 to infinity, but we might want to resample to, say, 1 to 4.
+
+One possibility would be to write an rexp_trunc() function that operates similarly to the rnorm_trunc() function, with changes specific for sampling from the exponential distribution.
+
+The two functions rnorm_trunc() and rexp_trunc() are incredibly similar—they differ only in the sampling function used and the parameters passed to them. Can we write a single function to do both jobs? We can, if we remember two important facts we’ve learned about functions and parameters in R.
+
+Here, we’ll use ... to collect an arbitrary set of parameters and pass them on to internal function calls. When defining a function to take ..., it is usually specified last. So, we’ll write a function called sample_trunc() that takes five parameters:
+
+We can call our sample_trunc() function using any number of sampling functions. We’ve seen rnorm(), which takes mean = and sd = parameters, and rexp(), which takes a rate = parameter, but there are many others, like dpois(), which generates Poisson distributions and takes a lambda = parameter.
+
+In the first example above, mean = 20, sd = 10 is collated into ... in th

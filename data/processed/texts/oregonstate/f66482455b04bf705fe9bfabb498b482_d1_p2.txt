@@ -1,0 +1,13 @@
+remotely via the SSH (Secure-SHell) login protocol. Accounts of this type are frequently available at universities and research institutions, though you may also consider using or installing Linux on your own hardware. Additionally, the CyVerse Collaborative provides free command-line access to biological researchers through their Atmosphere system; see the end of this chapter for information on how to access this system using your web browser.
+
+Before explaining anything in detail, let’s cover the actual process of logging in to a remote computer via SSH. To do this, you will need four things:
+
+If you are using a computer running Mac OS X, the client software will be command line oriented and is accessible from the Terminal utility. The Terminal is located in the Utilities folder, inside of the Applications folder.[1]
+
+In the window that opens up, you will see a prompt for entering commands. On my computer it looks like this:
+
+At this prompt, enter the following: ssh <username>@<hostname or ip>. Note that you don’t actually type the angle brackets; angle brackets are just some commonly used nomenclature to indicate a field you need to specify. To log in to my account with username oneils at the Oregon State University’s main Linux computer (shell.onid.oregonstate.edu), for example, I would type:
+
+To log in to a CyVerse instance with IP address 128.196.64.193 (and username oneils), however, I would use:
+
+After pressing Enter to run the command, you may be asked to “verify the

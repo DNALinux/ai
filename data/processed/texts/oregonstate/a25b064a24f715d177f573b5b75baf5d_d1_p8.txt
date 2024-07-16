@@ -1,0 +1,16 @@
+works well when working with vectors of length one against longer vectors, because the length-one vector will be recycled as needed.
+
+If the length of the longer vector is not a multiple of the length of the shorter, however, the last recycle will go only partway through.
+
+When this happens, the interpreter prints a warning: longer object length is not a multiple of shorter object length. There are few situations where this type of partial recycling is not an accident, and it should be avoided.
+Vector recycling also applies to selective replacement; for example, we can selectively replace four elements of a vector with elements from a two-element vector:
+
+More often we’ll selectively replace elements of a vector with a length-one vector.
+
+These concepts, when combined with vector indexing of various kinds, are quite powerful. Consider that an expression like values > 35 is itself vectorized, with the shorter vector (holding just 35) being recycled such that what is returned is a logical vector with TRUE values where the elements of values are greater than 35. We could use this vector as an indexing vector for selective replacement if we wish.
+
+More succinctly, rather than create a temporary variable for select_vec, we can place the expression values > 35 directly within the brackets.
+
+Similarly, we could use the result of something like mean(values) to replace all elements of a vector greater than the mean with 0 easily, no matter the order of the elements!
+
+More often, we’l

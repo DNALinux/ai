@@ -1,0 +1,9 @@
+hat checks whether the user has given a file name (and produces some help text if not) and reads the data in. Again, we are storing a collection of Chromosome objects in a chrnames_to_chrs dictionary. For each VCF line, we determine whether a Chromosome with that name already exists: if so, we ask that object to .add_snp(). If not, we create a new Chromosome object, ask it to .add_snp(), and add it to the dictionary.
+
+In the chr_obj = chrnames_to_chrs[chrname] line above, we are defining a variable referring to the Chromosome object in the dictionary, and after that we are asking that object to add the SNP with .add_snp(). We could have combined these two with syntax like chrnames_to_chrs[chrname].add_snp().
+
+Finally, a small block of code prints out the results by looping over the keys in the dictionary, accessing each Chromosome object and asking it the number of transitions and transversions:
+
+We’ll have to remove or comment out the testing code (particularly the tests we expected to fail) to see the results. But once we do that, we can run the program (called snps_ex.py).
+
+What we’ve created here is no small thing, with nearly 150 lines of code! And yet each piece of code is encapsulated in some way; even the long for-loop represents the code to parse the input file and populate the chrnames_to_chrs dictionary. By clearly naming our variables, methods, and classes we can quickly see what each entity does. We can reason about this program without too much difficulty at the

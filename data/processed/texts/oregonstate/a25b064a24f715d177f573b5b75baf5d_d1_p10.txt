@@ -1,0 +1,12 @@
+” and | combines two logical vectors with “or.” Use these, along with the %% operator discussed above, to produce a vector div_3_4 of all integers between 1 and 1,000 (inclusive) that are evenly divisible by 3 and evenly divisible by 4. (There are 83 of them.) Create another, not_div_5_6, of numbers that are not evenly divisible by 5 or 6. (There are 667 of them. For example, 1,000 should not be included because it is divisible by 5, and 18 should not be included because it is divisible by 6, but 34 should be because it is divisible by neither.)
+
+
+Common Vector Functions
+As vectors (specifically numeric vectors) are so ubiquitous, R has dozens (hundreds, actually) of functions that do useful things with them. While we can’t cover all of them, we can quickly cover a few that will be important in future chapters.
+First, we’ve already seen the seq() and length() functions; the former generates a numeric vector comprising a sequence of numbers, and the latter returns the length of a vector as a single-element integer vector.
+
+Presented without an example, mean(), sd(), and median() return the mean, standard deviation, and median of a numeric vector, respectively. (Provided that none of the input elements are NA, though all three accept the na.rm = TRUE parameter.) Generalizing median(), the quantile() function returns the Yth percentile of a function, or multiple percentiles if the second argument has more than one element.
+
+The output is a named numeric vector:
+
+The unique() fun

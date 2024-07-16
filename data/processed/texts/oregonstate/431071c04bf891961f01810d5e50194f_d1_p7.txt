@@ -1,0 +1,12 @@
+e3 (which can be installed and managed by normal users).[2]
+
+Counting Duplicate Lines
+We saw that sort with the -u flag can be used to remove duplicates (defined by the key columns used). What about isolating duplicates, or otherwise counting or identifying them? Sadly, sort isn’t up to the task, but a tool called uniq can help. It collapses consecutive, identical lines. If the -c flag is used, it prepends each line with the number of lines collapsed: uniq <file> or ... | uniq.
+
+Because uniq considers entire lines in its comparisons, it is somewhat more rigid than sort -u; there is no way to specify that only certain columns should be used in the comparison.[3] The uniq utility will also only collapse identical lines if they are consecutive, meaning the input should already be sorted (unless the goal really is to merge only already-consecutive duplicate lines). Thus, to identify duplicates, the strategy is usually:
+
+Let’s again consider the output of ./fasta_stats pz_cDNAs.fasta, where column 4 lists the most common 5-mer for each sequence. Using this extract/sort/uniq pattern, we can quickly identify how many times each 5-mer was listed.
+
+The result lists the counts for each 5-mer. We could continue by sorting the output by the new first column to identify the 5-mers with the largest counts.
+
+It is often useful to run uniq -c on lists of counts produced by uniq -c. Running the result above through awk '{print $1}' | sort -k1,1n | uniq -c reveals that 90 5-mers are listed onc

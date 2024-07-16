@@ -1,0 +1,9 @@
+son is done in lexicographic (dictionary) order.
+
+But beware: in R (and Python), such comparisons also work when they should perhaps instead result in an error: character types can be validly compared to numeric types, and character values are always considered larger. This particular property has resulted in a number of programming mistakes.
+
+R supports <, >, <=, >=, ==, and != comparisons, and these have the same meaning as for the comparisons in Python (see chapter 17, “Conditional Control Flow,” for details). For numeric types, R suffers from the same caveat about equality comparison as Python and other languages: rounding errors for numbers with decimal expansions can compound in dangerous ways, and so comparing numerics for equality should be done with care. (You can see this by trying to run print(0.2 * 0.2 / 0.2 == 0.2), which will result in FALSE; again, see chapter 17 for details.[3]) The “official” way to compare two numerics for approximate equality in R is rather clunky: isTRUE(all.equal(a, b)) returns TRUE if a and b are approximately equal (or, if they contain multiple values, all elements are). We’ll explore some alternatives in later chapters.
+
+Speaking of programming mistakes, because <- is the preferred assignment operator but = is also an assignment operator, one must be careful when coding with these and the == or < comparison operators. Consider the following similar statements, all of which have different meanings.
+
+R also supports logical connectives,

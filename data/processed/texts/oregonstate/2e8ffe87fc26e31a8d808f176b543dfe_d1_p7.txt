@@ -1,0 +1,12 @@
+ver you are sharing code with, which might be “future you”) don’t have to. Objects can have any number of instance variables, and the methods may access and modify them, but it’s a good idea to ensure that all instance variables are left in a coherent state for a given object. For example, if a Gene object has an instance variable for the sequence, and another holding its GC content, then the GC content should be updated whenever the sequence is. Even better is to compute such quantities as needed, like we did above.[5]
+
+The steps for writing a class definition are as follows:
+
+Exercises
+Instantiate your class into at least two objects, and try your methods on them.
+
+The example below illustrates this more thoroughly, but having some practice first will be beneficial.
+
+When comparing two Gene objects, for example, we might say that they are equal if their sequences are equal, and geneA is less than geneB if geneA.seq < geneB.seq. Thus we can add a special method __eq__(), which, given the usual self and a reference to another object of the same type called other, returns True if we’d consider the two equal and False otherwise:We can also implement an __lt__() method for “less than”:With these, Python can work out how to compare Gene objects with < and ==. The other comparisons can be enabled by defining __le__() (for <=), __gt__() (for >), __ge__() (for >=) and __ne__() (for !=).
+
+Finally, if we have a list of Gene objects genes_list which define these comparators, then Pytho

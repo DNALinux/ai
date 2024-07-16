@@ -1,0 +1,12 @@
+ndle. Unlike other output-oriented file handles, data are regularly flushed from the pipe (either for printing or to another program’s standard input).
+
+Command Line Parameters
+So far, even though we’ve been executing our programs from the command line, none of our Python programs have accepted input parameters. Consider the example from chapter 18, “Python Functions,” where we computed the GC content for each sequence in a file. Rather than hard-coding the file name into the io.open() call, it would be preferable to supply the file name to work with on the command line, as in ./ids_seqs_gcs.py ids_seqs.txt.
+
+The sys module again comes to the rescue. After importing sys, the variable sys.argv references a list of strings that contain, starting at index 0, the name of the script itself, then each parameter. Because sys.argv is always a list of strings, if we want to input a float or integer argument, we’ll need to convert the appropriate parameter using int() or float() before use.
+
+This code also determines whether the expected number of parameters has been given by the user by looking at len(sys.argv), exiting if this isn’t the case.
+
+As with other programs run on the command line, if we wish to send a single parameter that contains spaces, we need to wrap it in single or double quotes.
+
+Although we won’t cover it here, the argparse module makes writing scripts that require input parameters of different types relatively easy. The argparse module also automates the printing a

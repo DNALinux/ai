@@ -1,0 +1,12 @@
+l of the rest one at a time with git add is tedious. Fortunately, git add -A looks at the contents of the file .gitignore (which may need to be created): any files or directories listed in .gitignore will not be staged by git add -A. (And the .gitignore file can be tracked.)
+
+Second, the git system makes it relatively easy to share projects online with others, by creating repositories on sites like GitHub. After setting up an account at http://github.com (or on a similar site, such as http://bitbucket.com), you can “push” the current state of your project from the command line to the web. (Future commits can also be pushed as you create them.) Other users can then “clone” the project from the website by using the git clone command discussed briefly in chapter 6. GitHub and similar websites feature excellent tutorials for interfacing their products with your own command line repositories, should you desire to use them.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

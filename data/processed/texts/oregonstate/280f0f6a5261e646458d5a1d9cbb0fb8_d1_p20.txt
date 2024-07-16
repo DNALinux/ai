@@ -1,0 +1,12 @@
+e simple combination of group_by() and do() represent a powerful paradigm. Because R is such a flexible language, the sort of advanced syntactic sugar used by dplyr is likely to become more common. Although some effort is required to understand these domain-specific languages (DSLs) and how they relate to “normal” R, the time spent is often worth it.
+
+Exercises
+Start by writing a function null_pval() that generates two random samples with rnorm(100, mean = 0, sd = 1), compares them with t.test(), and returns the p value. The function should take a single parameter, say, x, but not actually make any use of it.
+
+Next, generate a list of 10,000 numbers with 10k_nums_list <- as.list(seq(1,10000)), and call 10k_pvals_list <- lapply(10k_nums, null_pval). Turn this into a vector with 10k_pvals_vec <- unlist(10k_pvals_list) and inspect the distribution with hist(10k_pvals_vec).
+
+What does this test reveal? What is the code you wrote doing, and why does it work? Why does the function need to take an x parameter that isn’t even used? What happens if you change one of the random samples to use rnorm(100, mean = 0.1, sd = 1)?
+
+As an example, if df1 <- data.frame(id = c("PRQ", "XL2", "BB4"), val = c(23, 45.6, 62)), then print(numeric_cols(df1)) should print a data frame with only the val column. If df2 <- data.frame(srn = c(461, 514), name = c("Mel", "Ben"), age = c(27, 24)), then print(numeric_cols(df2)) should print a data frame with only srn and age columns.
+
+The iris data frame is a c

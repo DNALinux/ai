@@ -1,0 +1,8 @@
+the Run button and instead use the Source button. This means that sections of code will be rerun as you develop your programs. The benefit is that you can be sure that your code will run in a non-RStudio environment as well, and you will be less likely to create confusing code.[1] For the most part, we won’t illustrate code directly in RStudio, but rather as simple text files and snippets of them.
+
+Libraries/Packages
+While a default installation of the R interpreter includes a huge number of functions and packages, many additional libraries have been made available on CRAN (the Comprehensive R Archive Network), providing important new functions. Fortunately, installing these libraries from CRAN is easy and requires only the interactive R interpreter and an internet connection.[2]
+
+As an example, we’ll install the stringr package, which provides additional functions for working with character-like data types (this will be the first additional package we’ll need in later chapters). To install it at the interactive R console, we need to run install.packages("stringr"). You may be asked whether the package should be installed in a “personal library” and whether to create such a personal library, to which you can answer y. You may also be prompted to select a nearby geographical location from which to download the package, also known as a “mirror.”
+
+Once the package has been installed, using it in an R script is as easy as first calling library("stringr") or library(stringr), afte

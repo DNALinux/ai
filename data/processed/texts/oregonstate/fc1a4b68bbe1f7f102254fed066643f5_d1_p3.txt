@@ -1,0 +1,8 @@
+m that we ran, which consisted of a program name and several parameters, separated by spaces. In the figure below, the command prompt consists of oneils@atmosphere ~$.
+
+The echo program might seem absurdly simple, as it just prints its parameters. But it is quite useful in practice and as a learning tool. For example, we can use echo to print not only simple strings, but also the contents of an environment variable, which is a variable bit of information (usually holding strings of text) that is accessible by the shell and other programs the user runs. Accessing the contents of an environment variable requires prefixing it with a $.
+
+The shell (and other programs) commonly uses environment variables to store information about your login session, much like how, in a GUI interface, a “variable” remembers the wallpaper picture for the desktop. Environment variables control many aspects of the command-line environment, and so they are quite important. Many of these are set automatically when we log in. For example, $USER.
+
+Setting Environment Variables, Dealing with Spaces
+Setting environment variables is something we’ll have to know how to do eventually, but learning now will give us an opportunity to discuss some of the finer points of how the shell interprets our commands. In bash, the most commonly used shell, setting environment variables is done with the export command, taking as the first parameter what the variable name should be (without the $) and what it should be set

@@ -1,0 +1,7 @@
+Ignoring other variables, this gives us around 24 expression readings for each gene.
+
+This sort of design is quite common in gene expression studies. It is unsurprising that gene expression will differ between two genotypes, and that gene expression will differ between two treatments. But genotypes and treatments frequently react in interesting ways. In this case, perhaps the L4 genotype is known to grow larger than the C6 genotype, and the chemical treatment is known to be harmful to the plants. Interestingly, it seems that the chemical treatment is less harmful to the L4 genotype.
+
+The natural question is: which genes might be contributing to the increased durability of L4 under chemical exposure? We can’t simply look for the differences in mean expression between genotypes (with, say, t.test()), as that would capture many genes involved in plant size. Nor can we look for those with mean expression differences that are large between treatments, because we know many genes will react to a chemical treatment no matter what. Even both signals together (left side of the image below) are not that interesting, as they represent genes that are affected by the chemical and are involved with plant size, but may have nothing at all to do with unique features of L4 in the chemical treatment. What we are really interested in are genes with a differential response to the chemical between two the two genotypes (right side of the image below).
+
+Does that mean that we can look for genes whe

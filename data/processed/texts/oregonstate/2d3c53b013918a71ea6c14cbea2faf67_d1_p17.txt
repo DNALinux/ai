@@ -1,0 +1,13 @@
+on. This is known as “unit testing,” a common practice in professional software development.
+
+Finally, remember that every programmer, no matter her experience level, gets frustrated from time to time! This is entirely normal, and a good strategy when this happens is to take a brief walk, or even take a break for the day, picking up again the next day. Some find they program efficiently in the morning, others late at night. Whatever you do, avoid the temptation to program by trial and error, mindlessly tweaking the code in the hopes that it will produce the output you want. Even if you succeed this way (which rarely happens), you’re likely to produce code with insidious bugs, and it may well be unreadable even to yourself in a few days’ time.
+
+Exercises
+To accomplish this, you’ll need to make two passes over the data: one as in the example to compute the mean, and another to compute the sum of squared differences. This means you’ll need to access the E values twice. Rather than close and reopen the data file, you should create an initially empty list to which you can append each E value (in your first pass over the data) for later use.
+
+To compute the square root of a float, you will need to import the math module by calling import math near the top of your program. Then the math.sqrt() function will return the square root of a float; for example, math.sqrt(3.0) will return the float 1.7320508.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright ©

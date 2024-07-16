@@ -1,0 +1,14 @@
+programming languages don’t have, but also because they can become difficult to read and understand owing to their compactness. As an example, what do you think the following comprehension does? [x for x in range(2, n) if x not in [j for i in range(2, sqrtn) for j in range (i*2, n, i)]] (Suppose n = 100 and sqrtn = 10. This example also makes use of the fact that range() can take a step argument, as in range(start, stop, step). )
+
+Exercises
+Your code should still work if the substring occurs at the start or end of the sequence, or if the subsequence occurs back to back (e.g., in "GATACCGATAGATA", "GATA" occurs at positions 1, 7, and 11). As a hint, you may assume the subsequence is not self-overlapping (e.g., you needn’t worry about locating "GAGA" in "GAGAGAGAGA", which would occur at positions 1, 3, 5, and 7).
+
+This problem is a bit tricky, but it will help you organize your thoughts around loops and lists. You might start by first determining the number of rows in the data, and then building the “structure” of rows as a list of empty lists.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

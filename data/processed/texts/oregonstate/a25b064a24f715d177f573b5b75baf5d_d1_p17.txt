@@ -1,0 +1,11 @@
+use R isn’t as frequently used that way, but also because it’s quite easy.
+When using read.table(), for example, data can be read from standard input by using the file name "stdin". Anything that is printed from an R script goes to standard output by default. Because R does a fair amount of formatting when printing, however, it is often more convenient to print data frames using write.table() specifying file = "".
+Finally, to get command line parameters into an R script as a character vector, the line args <- commandArgs(trailingOnly = TRUE) will do the trick. Here’s a simple script that will read a table on standard input, write it to standard output, and also read and print out any command line arguments:
+
+Try making this script executable on the command line, and running it on p450s_blastp_yeast_top1.txt with something like cat p450s_blastp_yeast_top1.txt | ./stdin_stdout_ex.R arg1 'arg 2'.
+
+
+Exercises
+
+Suppose we have any odd-length numeric vector (e.g., sample<- c(3.2, 5.1, 2.5, 1.6, 7.9) or sample <- runif(25, min = 0, max = 1)). Write some lines of code that result in printing the median of the vector, without using the median() or quantile() functions. You might find the length() and as.integer() functions to be helpful.
+If sample is a sample from an exponential distribution, for example, sample <- rexp(1000, rate = 1.5), then the median of the sample is generally smaller than the mean. Generate a vector, between_median_mean, that contains all values of sample that ar

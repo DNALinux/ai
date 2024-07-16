@@ -1,0 +1,10 @@
+t relatively easy to share projects with others.)
+
+Compiling the Source
+Having downloaded and unpacked the HMMER source code, the first step is to check the contents of the directory and look for any README or INSTALL files. Such files are often included and contain important information from the software developer.
+
+Taking a look at the contents of the hmmer-3.1b1 directory, there is an INSTALL file, which we should read with less. Here’s the top part of the file:
+
+The installation documentation describes a number of commands, including many we’ve already run (for extracting the data from the gzipped tarball). There are also four more commands listed: ./configure, make, make check, and make install. Three of these comprise the “canonical install process”—make check is an optional step to check the success of the process midway through. The three important steps are: (1) ./configure, (2) make, and (3) make install.
+
+This final step, make install, may lead us to ask: what is the install location? By default, it will be something like /usr/bin—a system-wide location writable to by only the administrator. So, unless we are logged in as root (the administrator), the final step in the process will fail. We must specify the install location, and although the install itself happens in the third step, the entire process is configured in the first step. There may be many options that we can specify in the ./configure step, though the install location (known as the PREFIX) is by far th

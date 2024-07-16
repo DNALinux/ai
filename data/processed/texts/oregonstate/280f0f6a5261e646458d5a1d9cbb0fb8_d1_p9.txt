@@ -1,0 +1,12 @@
+for our expr1 sub–data frame, we’d simply need to call something like pvals_df1 <- sub_df_to_pvals_df(exp1). The next big question is: how are we going to run this function not for a single gene, but for all 11,000 in the data set? Before we can answer that question, we must learn more about the amazing world of functions in R.
+
+Exercises
+A default installation of R includes a number of example data sets. Consider the CO2 data frame, which describes CO2 uptake rates of plants in different treatments ("chilled" and "nonchilled"; see help(CO2) for more detailed information). Here’s the output of print(head(CO2)):
+The conc column lists different ambient CO2 concentrations under which the experiment was performed. Ultimately, we will want to test, for each concentration level, whether the uptake rate is different in chilled versus nonchilled conditions. We’ll use a simple t test for this.
+
+Start by writing a function that takes a data frame with these five columns as a parameter and returns a single-row, single-column data frame containing a p value (reported by t.test()) for chilled uptake rates versus nonchilled uptake rates. (Your function will need to extract two vectors of update rates to provide to t.test(), one for chilled values and one for nonchilled.)
+
+Next, extract a sub–data frame containing rows where conc values are 1000, and run your function on it. Do the same for a sub–data frame containing conc value of 675.
+
+Attack of the Functions!
+While R has a dedicated func

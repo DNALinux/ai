@@ -1,0 +1,9 @@
+but rather special types of plot layers. The geom_text() layer function makes it easy to create “dotplots” where each point is represented by a text label rather than a point. Here’s an example plotting the first 30 diamonds by carat and price, labeled by their cut.
+
+In the result (below left), it’s difficult to see that multiple diamonds are plotted in the same location in some cases. This type of overplotting can happen with points as well; adding a position = "jitter" option to the geom_text() layer slightly modifies the location of all the geoms so that they stand out (below right).
+
+Various aesthetics of the text can be mapped to values of the data, including size, angle, color, and alpha. As with other layers, to change the font size (or other property) for all points to a constant value, the instruction should be given outside of the aes() call.
+
+Individual text labels—as well as individual line segments, rectangles, points, and other geoms—can be added with an annotate() layer. Such a layer takes as its first argument the name of the geom that will be added, and subsequently any aesthetics that should be set for that geom (without a call to aes()). Here’s an illustration, finishing out the previous length/coverage plot example. (The hjust = 0 in the text annotation indicates that the text should be left-justified with respect to the reference x and y.)
+
+Ideally, we would strive to produce publication-ready graphics with well-documented and easily editable code. In som

@@ -1,0 +1,11 @@
+y srn and age columns.
+
+The iris data frame is a commonly-referenced built-in R data set, describing measurements of petals for a variety of iris species. Here’s the output of print(head(iris)):
+Use group_by() to group the iris data frame by the Species column, and then do() along with your subset_rows() function to generate a data frame consisting of 10 random rows per species.
+
+Next, write a function one_vs_all_by_species() that again takes two parameters; the first will be a sub-data frame representing a single species (sub_df), but the second will be a data frame with data for all species (all_df). This function should group all_df by species, and use do() to call compare_petal_widths() on each group sending along sub_df as a secondary parameter. It should return the result.
+
+Finally, a function all_vs_all_by_species() can take a single data frame df, group it by species, and call one_vs_all_by_species() on each group, sending along df as a secondary parameter, returning the result. In the end, all that is needed is to call this function on iris.
+
+Gene Expression, Finished
+With the discussion of split-apply-combine and dplyr under our belts, let’s return to the task of creating and analyzing a linear model for each ID in the gene expression data set. As a reminder, we had left off having read in the “cleaned” data set, extracting a sub-data frame representing a single ID, and writing a function that takes such a sub-data frame and returns a single-row data frame of p valu

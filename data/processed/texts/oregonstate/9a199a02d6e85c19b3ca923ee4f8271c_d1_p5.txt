@@ -1,0 +1,11 @@
+ey, we’re both reading from the dictionary (on the right-hand side) and writing to the value (on the left-hand side).
+
+But when the key is not present, we’re simply writing to the value. In the loop that prints the dictionary contents, we are not checking for the presence of each id before reading it to print, because the list of ids_list is guaranteed to contain exactly those keys that are in the dictionary, as it is the result of ids_to_counts.keys().
+
+What’s the advantage of organizing our Python program to read rows and columns on standard input and write rows and columns to standard output? Well, if we know the built-in command line tools well enough, we can utilize them along with our program for other analyses. For example, we can first filter the data with grep to select those lines that match the term transcriptase:
+
+The result is only lines containing the word “transcriptase”:
+
+If we then feed those results through our program (cat PZ.annot.txt | grep 'transcriptase' | ./go_id_count.py), we see only counts for IDs among those lines.
+
+Finally, we could pipe the results through wc to count these lines and determine how many IDs were annotated at least once with that term (21). If we wanted to instead see which eight genes had the most annotations matching “transcriptase,” we could do that, too, by sorting on the counts and using head to print the top eight lines (here we’re breaking up the long command with backslashes, which allow us to continue typing on the next li

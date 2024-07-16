@@ -1,0 +1,7 @@
+pairs), and the gccontent column shows the percentage of G or C bases of the contig.
+
+Let’s produce a dotplot for this data with Average_coverage on the x axis and Consensus_length on the y.
+
+The result isn’t very good. There are outliers on both axes, preventing us from seeing any trends in the data. Let’s adjust the x scale by adding a scale_x_continuous(), setting name = to fix up the name of the scale, and using limits = to set the limits of the scale to c(0, 1000). We’ll also use the corresponding scale_y_continuous() to set a proper name for the y axis. (For discrete scales, such as in the boxplot example above, the corresponding functions are scale_x_discrete() and scale_y_discrete().)
+
+This is much better. It appears that most of the longer contigs have a coverage of about 100X. Sadly, this strategy leaves out many large data points to show the trends in the small majority. Instead, we should either log-adjust the data by plotting aes(x = log(Average_coverage), y = Consensus_length), or log-adjust the scale. If we log-adjusted the data, we’d have to remember that the values are adjusted. It makes better sense to modify the scale itself, and plot the original data on the nonlinear scale. This can be done by supplying a trans = parameter to the scale, and specifying the name of a supported transformation function to apply to the scale as a single-element character vector. In fact, let’s make both the x and y scales log-adjusted. While we’re at it, we’ll specify explici

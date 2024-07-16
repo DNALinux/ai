@@ -1,0 +1,12 @@
+s a means of breaking a problem down into its component parts, however.
+
+Exercises
+Write a program with a function called get_windows() that takes three parameters: the sequence to extract windows from (string), the window size (int), and the step size (int). The function should return a list of strings, one per window, with no “partial windows” if the last window would run off the end of the sequence.(You might find a while-loop to be more helpful than a for-loop for this exercise.) Use this code to test your function:This code should output the following:
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

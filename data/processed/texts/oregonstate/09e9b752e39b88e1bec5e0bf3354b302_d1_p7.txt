@@ -1,0 +1,15 @@
+of the elements of the right vector, so the number of comparisons is roughly the length of the first times the length of the second. If both are very large, such an operation could take quite some time to finish.
+
+Nevertheless, we can use the %in% operator along with logical selection to remove all rows containing a “bad” gene ID.
+
+At this point, we could again check for NA values in the rep column to ensure the data have been cleaned up appropriately. If we wanted, we could also check length(bad_rows[bad_rows]) to see how many bad rows were identified and removed. (Do you see why?)
+
+Pasting
+While above we discussed splitting contents of character vectors into multiple vectors, occasionally we want to do the opposite: join the contents of character vectors together into a single character vector, element by element. The str_c() function from the stringr library accomplishes this task.
+
+The str_c() function is also useful for printing nicely formatted sentences for debugging.
+
+The Base-R function equivalent to str_c() is paste(), but while the default separator for str_c() is an empty string, "", the default separator for paste() is a single space, " ". The equivalent Base-R function for str_detect() is grepl(), and the closest equivalent to str_split_fixed() in Base-R is strsplit(). As mentioned previously, however, using these and other stringr functions for this type of character-vector manipulation is recommended.
+
+Factors
+By now, factors have been mentioned a few times in

@@ -1,0 +1,11 @@
+ld use stat_bin(data = diamonds, mapping = aes(x = carat), geom = "point").
+
+With so many defaults being set, the plotting commands can become quite small. These specialized layer functions represent the most commonly used methods for plotting in ggplot2, being both flexible and quick.
+
+Another example of defaults being set is the geom_boxplot() layer function, which uses a "boxplot" geom (a box with whiskers) and a default "boxplot" stat. The boxplot geom recognizes a number of aesthetics for the various pieces that position the box and whiskers, including x, y, middle, upper, lower, ymin, and ymax. Fortunately, most of these required values are created by the boxplot stat and set accordingly (much like the y aesthetic defaults to ..count.. for histograms); only the x and y aesthetics are required to determine the others.
+
+We’ve mapped a discrete variable to x and a continuous variable to y—a boxplot would make considerably less sense the other way around! There is also a corresponding stat_boxplot() layer function, which specifies the stat and uses the default corresponding geom (boxplot).
+
+So far, we’ve been individually specifying the data = and mapping = parameters for each layer. It is common to see them set only once in the call to ggplot(), in which case they are inherited for all subsequent layers. We can also leave off the data = and mapping = names if we first specify the data.
+
+Most users of ggplot2 prefer to utilize many of these “fall-through” settings and defau

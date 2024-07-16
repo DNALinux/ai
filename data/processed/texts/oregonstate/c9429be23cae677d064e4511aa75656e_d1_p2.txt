@@ -1,0 +1,7 @@
+he data worked in our favor (after we split the sample column into genotype, treatment, and other columns, at least). In particular, each row of the data frame represented a single measurement, and each column represented a variable (values that vary across measurements). This allowed us to easily group measurements by the ID column. It also worked well when building the linear model, as lm() uses a formula describing the relationship of equal-length vectors or columns (e.g., expr$expression ~ expr$treatment + expr$genotype), which are directly accessible as columns of the data frame.
+
+Data are often not organized in this “tidy” format. This data set, for example, was originally in a file called expr_wide.txt with the following format:
+
+Data formats like this are frequently more convenient for human readers than machines. Here, the id and annotation columns (the latter not shown) are variables as before, but the other column names each encode a variety of variables, and each row represents a large number of measurements. Data in this “shape” would be much more difficult to analyze with the tools we’ve covered so far.
+
+Converting between this format and the preferred format (and back) is the primary goal of the tidyr package. As usual, this package can be installed in the interactive interpreter with install.packages("tidyr"). The older reshape2 package also handles this sort of data reorganization, and while the functions provided there are more flexible and powerful, tidyr c

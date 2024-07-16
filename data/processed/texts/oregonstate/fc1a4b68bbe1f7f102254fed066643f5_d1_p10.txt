@@ -1,0 +1,9 @@
+directories present in the current working directory, as reported by ls. In fact, both relative and absolute paths are allowed wherever a file or directory needs to be specified.
+
+A few notes about moving around directories: (1) Unix-like operating systems are nearly always case sensitive, for commands, parameters, and file and directory names. (2) Because of the way spaces are treated on the command line, it is uncommon to see spaces in file or directory names. The command cd mydocuments is much easier to type than cd my\ documents or cd 'my documents'. (3) If you forget to specify cd before specifying a path, a cryptic permission denied error will occur, rather than an error specific to the lack of cd command.
+
+By default, when running the ls program to list the contents of the present working directory, all files and directories that start with a . are hidden. To see everything including the hidden files, we can add the -a flag to ls.
+
+It turns out there are quite a few hidden files here! Many of those starting with a ., like .bash_login, are actually configuration files used by various programs. We’ll spend some time with those in later chapters.
+
+On the topic of ls, there are many additional parameters we can give to ls: include -l to show “long” file information including file sizes, and -h to make those file sizes “human readable” (e.g., 4K versus 4,196 bytes). For ls, we can specify this combination of options as ls -l -a -h (where the parameters may be given in any

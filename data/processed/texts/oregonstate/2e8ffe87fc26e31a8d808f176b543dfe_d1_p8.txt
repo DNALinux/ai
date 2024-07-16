@@ -1,0 +1,8 @@
+es_list which define these comparators, then Python can sort according to our comparison criteria with genes_list.sort() and sorted(genes_list).
+
+Explore these concepts by defining your own ordered data type, implementing __eq__(), __lt__(), and the other comparison methods. Compare two objects of those types with the standard comparison operators, and sort a list of them. You might also try implementing a __repr__() method, which should return a string representing the object, enabling print() (as in print(geneA)).
+
+Counting SNPs
+As it turns out, multiple classes can be defined that interact with each other: instance variables of a custom class may refer to custom object types. Consider the file trio.subset.vcf, a VCF (variant call format) file for describing single-nucleotide polymorphisms (SNPs, pronounced “snips”) across individuals in a group or population. In this case, the file represents a random sampling of SNPs from three people—a mother, a father, and their daughter—compared to the reference human genome.[6]
+
+This file contains a variety of information, including header lines starting with # describing some of the coding found in the file. Columns 1, 2, 3, 4, and 5 represent the chromosome number of the SNP, the SNP’s position on the chromosome, the ID of the SNP (if it has previously been described in human populations), the base present in the reference at that position, and an alternative base found in one of the three family members, respectively. Other columns

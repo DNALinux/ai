@@ -1,0 +1,13 @@
+s be assumed to have direct access to.
+
+Let’s continue our example by adding a method that computes the GC content of the self.sequence instance variable. This method needs to be included in the block defining the class; notice that a method belonging to an object can call another method belonging to itself, so we can compute GC content as a pair of methods, much like we did with simple functions:
+
+Resulting in the output:
+
+It can also be useful to write methods that let us get and set the instance variables of an object. We might add to our class definition methods to get and set the sequence, for example, by having the methods refer to the self.seq instance variable.
+
+We could make use of this added functionality later in our code with a line like print("gene A's sequence is " + geneA.get_seq()) or geneA.set_seq("ACTAGGGG").
+
+Although methods can return values (as with .base_composition() and .gc_content()) and perform some action that modifies the object (as with .set_seq()), the principle of command-query separation states that they shouldn’t do both unless it is absolutely necessary.
+
+Is it possible for us to modify the instance variables of an object directly? It makes sense that we can; because the gene object’s name for itself is self and sets its sequence via self.sequence, we should be able to set the gene object’s sequence using our name for it, geneA. In fact, geneA.sequence = "ACTAGGGG" would have the same result as calling geneA.set_seq("ACTAGGGG"), as defined a

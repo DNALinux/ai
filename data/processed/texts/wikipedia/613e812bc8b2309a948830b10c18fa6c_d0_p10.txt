@@ -1,0 +1,12 @@
+of millions of protein references, DIAMOND[25] runs at up to 20,000 times as fast as BLASTX, while maintaining a high level of sensitivity.
+
+The open-source software MMseqs is an alternative to BLAST/PSI-BLAST, which improves on current search tools over the full range of speed-sensitivity trade-off, achieving sensitivities better than PSI-BLAST at more than 400 times its speed.[26]
+
+Optical computing approaches have been suggested as promising alternatives to the current electrical implementations. OptCAM is an example of such approaches and is shown to be faster than BLAST.[27]
+
+Comparing BLAST and the Smith-Waterman Process[edit]
+While both Smith-Waterman and BLAST are used to find homologous sequences by searching and comparing a query sequence with those in the databases, they do have their differences.
+
+Due to the fact that BLAST is based on a heuristic algorithm, the results received through BLAST will not include all the possible hits within the database. BLAST misses hard to find matches.
+
+An alternative in order to find all the possible hits would be to use the Smith-Waterman algorithm. This method varies from the BLAST method in two areas, accuracy and speed. The Smith-Waterman option provides better accuracy, in that it finds matches that BLAST cannot, because it does not exclude any information. Therefore, it is necessary for remote homology. However, when compared to BLAST, it is more time consuming and requires large amounts of computing power and memory. Howe

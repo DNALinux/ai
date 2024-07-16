@@ -1,0 +1,10 @@
+returns a single-row data frame, but it could return multiple rows that would be stitched together in the combine step. As an example, here’s a function that, given a data frame, computes the mean() of the weight column, and subtracts that mean from all of the entries, returning the modified data frame (so-called “mean normalization” of the data).
+
+And then we can easily mean-normalize the data on a per group basis!
+
+In the above output, -1.15 and 1.15 are the deviations from the mean of the trout group, and the others are deviations from the mean for the bass group.
+
+More Sugar, Optional Parameters, Summarize
+Something to note about the call to do() is that it differs syntactically from the call to lapply(). In do(), we specify not only the function to apply to each group, but also how that function will be called, using . to denote the input group data frame. This is somewhat clearer when we want to specify optional arguments to the applied function. In this case, we may want to specify that NA values should be removed by setting remove_nas = TRUE in each call to mean_sd_weight().
+
+Speaking of syntactic sugar, the magrittr package (which is installed and loaded along with dplyr, though written by a different author) provides an interesting infix function, %>%. Consider the common pattern above; after the creation of a data frame (fish), we run it through a function to create an intermediary result (fish_by_species from group_by()), run that through another function to get

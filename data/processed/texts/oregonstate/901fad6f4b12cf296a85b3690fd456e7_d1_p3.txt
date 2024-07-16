@@ -1,0 +1,11 @@
+ing While-Loops
+While-loops are less often used (depending on the nature of the programming being done), but they can be invaluable in certain situations and are a basic part of most programming languages. A while-loop executes a block of code so long as a condition remains True. Note that if the condition never becomes False, the block will execute over and over in an “infinite loop.” If the condition is False to begin with, however, the block is skipped entirely.
+
+The above will print Counter is now: 0, followed by Counter is now: 1, Counter is now: 2, Counter is now: 3, and finally Done. Counter ends with: 4. As with using a for-loop over a range of integers, we can also use a while-loop to access specific indices within a string or list.
+
+The above code will print base is: A, then base is: C, and so on, ending with base is: T before finally printing Done. While-loops can thus be used as a type of fine-grained for-loop, to iterate over elements of a string (or list), in turn using simple integer indexes and [] syntax. While the above example adds 1 to base_index on each iteration, it could just as easily add some other number. Adding 3 would cause it to print every third base, for example.
+
+Boolean Operators and Connectives
+We’ve already seen one type of Boolean comparison, <, which returns whether the value of its left-hand side is less than the value of its right-hand side. There are a number of others:
+
+These comparisons work for floats, integers, and even strings and l

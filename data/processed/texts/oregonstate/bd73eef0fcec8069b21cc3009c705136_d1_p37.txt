@@ -1,0 +1,9 @@
+stion is: how much time does it take to insert a new item into a tree that already contains items? The answer depends on the shape of the tree. Suppose that the tree is nice and “bushy,” meaning that all nodes except those at the bottom have nodes to their left and right.
+
+The time taken to insert an item is the number of times the buck needs to be passed to reach the bottom of the tree. In this case, at each node, the total number of nodes in consideration is reduced by half; first, then , then , and so on, until there is only a single place the new item could go. How many times can a number be divided in half until reaching a value of 1 (or smaller)? The formula is . It takes the same amount of time to find the smallest item for a bushy tree, because the length down the left-hand side is the same as any other path to a “leaf” in the tree.
+
+In general, the logarithm of is much smaller than itself, so a binary tree trades off some speed in finding the smallest element for speed in insertion.
+
+Note, however, that the shape of a tree depends on the order in which the items are inserted; for example if 10 is inserted into an empty tree, followed by 9, the 9 will go to the left. Further inserting 8 will put it all the way to the left of 9. Thus, it is possible that a tree isn’t in fact bushy, but rather very unbalanced. For an extreme example, if the numbers from  were inserted in that order, the tree would look like so:
+
+In this case, the tree has degenerated into a reverse-sort

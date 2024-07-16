@@ -1,0 +1,9 @@
+p_by()), run that through another function to get another result (stats_by_species from mean_sd_weight()), and so on. While this process is clear, we could avoid the creation of multiple lines of code if we were willing to nest some of the function calls.
+
+This line of code certainly suffers from some readability problems. The infix %>% function supplies its left-hand side to its right-hand side (located by . in the right-hand side), returning the result of the call to the right-hand function. Thus we can rewrite the above as follows.
+
+Notice the similarity between this and method chaining in Python and stdin/stdout pipes on the command line. (It’s also possible to omit the . if it would be the first parameter, as in fish %>% group_by(species) %>% do(mean_sd_weight(.)).)
+
+We demonstrated that functions applied by do() can return multiple-row data frames (in the mean-normalization example), but our mean_sd_weight() function only returns a single-row data frame with columns made of simple summary statistics. For this sort of simplified need, the dplyr package provides a specialized function called summarize(), taking a grouped data frame and other parameters indicating how such group-wise summary statistics should be computed. This example produces the same output as above, without the need for the intermediary mean_sd_weight() function.
+
+The dplyr package provides quite a few other features and functions to explore, but even the simple combination of group_by() and do() repres

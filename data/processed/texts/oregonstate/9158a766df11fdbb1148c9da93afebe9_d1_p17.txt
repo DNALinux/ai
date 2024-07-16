@@ -1,0 +1,10 @@
+for the bins.
+
+The cut() can take a labels = parameter as well, for cases when the default labels aren’t sufficient.
+
+Scales
+Each aesthetic used in a plot is associated with a scale, whether it be the x and y or even color or size. For faceted plots, usually any scale adjustments are shared across facets, and for each layer in a plot, all scale properties must be shared as well. The different types of scales—continuous for x and y, color values for color, sizes for size—can all be modified to change the scale name, range, locations of breaks (or tick-marks) and labels of the breaks. There’s more to say about scales than can be covered in this book, but we’ll try to hit the high points.
+
+Rather than continue plotting the diamonds data set, let’s load up a data frame more biologically relevant. This table, stored in a file called contig_stats.txt, summarizes sequence statistics from a de novo genome assembly. Each row represents a “contig” from the assembly (a single sequence meant to represent a contiguous piece of the genome sequence produced from many overlapping sequenced pieces).
+
+Each contig has an Average_coverage value, representing the average number of sequence reads covering each base in the assembled contig. These values can vary widely, potentially because of duplicated regions of the genome that were erroneously assembled into a single contig. The Consensus_length column indicates the length of the contig (in base pairs), and the gccontent column shows the percen

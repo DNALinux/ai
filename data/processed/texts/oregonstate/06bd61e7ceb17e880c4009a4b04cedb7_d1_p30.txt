@@ -1,0 +1,11 @@
+efore or after the input or output specifiers. So, we’ll run muscle on our p450s.fasta file, and produce a file whose file name indicates its pedigree in some way:
+
+Once the command has finished executing, we can view the alignment file with less -S p450s.fasta.aln.
+
+With further inspection, we’d see that the sequences have been made the same length by the insertion of gap characters. The next step is to run hmmbuild to produce the HMM profile. Again, we’ll run hmmbuild without any options to get information on what parameters it needs.
+
+The help output for hmmbuild is shorter, though the command also notes that we could run hmmbuild -h for more detailed information. The usage line, hmmbuild [-options] <hmmfile_out> <msafile>, indicates that the last two parameters are required, and are the name of the output file (for the profile HMM) and the multiple sequence alignment input file. The brackets indicate that, before these last two parameters, a number of optional parameters may be given, described later in the help output. In this case, <hmmfile_out> and <msafile> are positional: the second-to-last argument must specify the output, and the last must specify the input.
+
+After this operation finishes, it may be interesting to take a look at the resulting HMM file with less -S p450s.fasta.aln.hmm. Here’s a snippet:
+
+With some documentation reading, we may even be able to decode how the probabilistic profile is represented in this matrix of letters and numbers. As a reminder, ou

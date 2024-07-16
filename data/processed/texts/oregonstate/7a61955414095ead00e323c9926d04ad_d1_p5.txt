@@ -1,0 +1,12 @@
+le-brackets rather than $ notation, these are equivalent to lengths <- athal[["ChrInfo"]][["Lengths"]] and athal[["ChrInfo"]][["GeneCounts"]][1] <- 7079.
+Attributes, Removing Elements, List Structure
+Lists are an excellent way to organize heterogeneous data, especially when data are stored in a Name → Value association,[1] making it easy to access data by character name. But what if we want to look up some information associated with a piece of data but not represented in the data itself? This would be a type of “metadata,” and R allows us to associate metadata to any piece of data using what are called attributes. Suppose we have a simple vector of normally distributed data:
+
+Later, we might want know what type of data this is: is it normally distributed, or something else? We can solve this problem by assigning the term "normal" as an attribute of the data. The attribute also needs a name, which we’ll call "disttype". Attributes are assigned in a fashion similar to names.
+
+When printed, the output shows the attributes that have been assigned as well.
+
+We can separately extract a given attribute from a data item, using syntax like sample_dist <- attr(sample, "disttype"). Attributes are used widely in R, though they are rarely modified in day-to-day usage of the language.[2]
+To expand our A. thaliana example, let’s assign a “kingdom” attribute to the species vector.
+
+At this point, we’ve built a fairly sophisticated structure: a list containing vectors (one of which has an at

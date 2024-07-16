@@ -1,0 +1,9 @@
+packages needed for your work, and the software installations are kept up to date as developers make improvements. If this isn’t the case, you might consider bribing your local system administrator with sweets and caffeine. Failing that, you’re likely to have to install the software you need yourself.
+
+Installing more sophisticated software than the simple scripts described in chapter 5, “Permissions and Executables,” will follow the same basic pattern: (1) obtain executable files, (2) get them into $HOME/local/bin, and (3) ensure that $HOME/local/bin is present in the $PATH environment variable. Chapter 5 covered step 3, which needs to be done only once for our account. Steps 2 and 3, however, are often quite different depending on how the software is distributed.
+
+In this chapter, we’re going to run through an example of installing and running a bioinformatics suite known as HMMER. This software searches for protein sequence matches (from a set of sequences) based on a probabilistic hidden Markov model (HMM) of a set of similar protein sequences, as in orthologous proteins from different species. The motivation for choosing this example is not so we can learn about HMM modeling or this software suite specifically, but rather that it is a representative task requiring users to download files, install software in different ways, and obtain data from public repositories.
+
+The first step to installing HMMER is to find it online. A simple web search takes us to the homepage:
+
+C

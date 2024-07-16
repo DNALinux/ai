@@ -1,0 +1,10 @@
+unction can be used to search and replace a pattern within a string. It takes at least four important arguments (and some optional ones we won’t discuss here): (1) the pattern to search for, (2) the replacement string to replace matches with, (3) the string to look in, and (4) the maximum number of replacements to make (0 to replace all matches). This function returns a list[1] containing two elements: at index 0, the modified copy of the string, and at index 1, the number of replacements made.
+
+
+Split a String into a List of Strings Based on a Pattern
+
+We’ve already seen that we can split a string based on simple strings with .split(). Being able to split on complex regular expressions is often useful as well, and the re.split() function provides this functionality.
+
+We’ll leave it as an exercise for the reader to determine what would be output for a sequence where the matches are back to back, or where the matches overlap, as in re.split(r"ATA", "GCATATAGG").
+The Language of Regular Expressions, in Python
+In chapter 11, “Patterns (Regular Expressions),” we covered regular expressions in some detail when discussing the command line regular expression engine sed. Regular expressions in Python work similarly: simple strings like r"ATG" match their expressions, dots match any single character (r"CC." matches any P codon), and brackets can be used for matching one of a set of characters (r"[ACTG]" matches one of a DNA sequence, and r"[A-Za-z0-9_]" is shorthand for “any alphanume

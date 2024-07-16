@@ -1,0 +1,9 @@
+the data frame for the columns specified.
+
+Is this data frame different from the original? Yes, but mostly in the attributes/metadata. When printed, we get some information on the “source” (where the data are stored—dplyr can access data from remote databases) and the groups:
+
+Handily, unlike regular data frames, “grouped” data frames print only the first few rows and columns, even if they are many thousands of rows long. Sometimes this is an undesirable feature—fortunately, running data.frame() on a grouped data frame returns an ungrouped version. The class() of a grouped data frame returns "data.frame" as well as "tbl", "tbl_df", and "grouped_df". Because a grouped data frame is also a regular data frame (and is also a list!), we can still do all of the fancy indexing operations on them covered in previous chapters.
+
+The do() function applies a function to each group of rows of a grouped data frame using a split-apply-combine strategy. The function applied must take as its first parameter a data frame, and it must return a data frame. Let’s write a function that, given a data frame or sub-data frame (group) of the fish data, returns a single-row data frame with columns for mean_weight and sd_weight. Both the mean() and sd() functions can take an na.rm argument to strip out any potential NA values in their inputs, so perhaps our function should take a similar optional parameter.
+
+This function takes as input a data frame with a column for weight and returns a data frame with

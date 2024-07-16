@@ -1,0 +1,9 @@
+cript where the first line is #!/usr/bin/env bash. The env program uses the $PATH variable to locate the bash executable, and passes off interpretation of the script to the located bash interpreter. This poses the same problem: what if env is not located in /usr/bin? Fortunately, this has been an agreed-upon location for the env program for decades, so scripts written in this manner are portable across more machines.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

@@ -1,0 +1,8 @@
+. We haven’t covered them in detail here, as making good use of them requires a fair amount of practice. Besides, the simple idea of encapsulating data and functions into objects provides quite a lot of benefit in itself!
+
+Exercises
+Create a program called pop_sim.py. In this program write a Bug class; a “bug” object will represent an individual organism with a genome, from which a fitness can be calculated. For example, if a = Bug(), perhaps a will have a self.genome as a list of 100 random DNA bases (e.g. ["G", "T", "A", "G", ...; these should be created in the constructor). You should implement a .get_fitness() method which returns a float computed in some way from self.genome, for example the number of G or C bases, plus 5 if the genome contains three "A" characters in a row. Bug objects should also have a .mutate_random_base() method, which causes a random element of self.genome to be set to a random element from ["A", "C", "G", "T"]. Finally, implement a .set_base() method, which sets a specific index in the genome to a specific base: a.set_base(3, "T") should set self.genome[3] to "T".
+
+Test your program by creating a list of 10 Bug objects, and in a for-loop, have each run its .mutate_random_base() method and print its new fitness.
+
+This Population class should have a .create_offspring() method, which will: 1) create a new_pop list, 2) for each element oldbug of self.bug_list: a) create a new Bug object newbug, b) and set the genome of newbug (one base at a time) to b

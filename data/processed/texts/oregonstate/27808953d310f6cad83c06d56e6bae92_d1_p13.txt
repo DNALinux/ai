@@ -1,0 +1,11 @@
+tically confirm those variants).
+
+The restriction enzymes cut on the basis of patterns; for example, the ApeK1 enzyme cuts DNA molecules at the pattern "GC[AT]GC". Based on the recognized patterns, some enzymes are “frequent cutters” and some are not; more frequent cutters sample more locations in a genome but sacrifice depth of sequencing. For this reason, researchers often want to know, given an enzyme pattern and genome sequence, the distribution of fragment lengths that will result.
+
+Write a function gbs_cut() that takes a DNA sequence, a regular expression pattern, and a “bin size.” It should return a dictionary mapping sequence lengths, rounded down to the nearest bin size, to the number of fragments produced by the cutter in that bin. As an example, "AAAAGCAGCAAAAAAGCTGCAAGCAGCAAAAA" when processed with "GC[AT]GC" produces fragment sizes of 4, 6, 2, and 5. If grouped in a bin size of 3, the dictionary would have keys 0, 3, and 6, and values 1, 1, and 2.
+
+
+Actually, it returns a tuple, which works much like a list but is immutable. Tuples are briefly covered in chapter 15. ↵
+
+Searching for a Pattern in a String
+Searching for a pattern is accomplished with the re.search() function. Most functions in the re module return a special SRE_Match data type, or a list of them (with their own set of methods), or None if no match was found. The if- statement (and while-loops) in Python treats None as false, so we can easily use re.search() in an if-statement. The result of a succe

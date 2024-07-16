@@ -1,0 +1,10 @@
+ut this program without too much difficulty at the highest level of abstraction but also delve down to understand each piece individually. As a benefit, we can easily reuse or adapt this code in a powerful way by adding or modifying methods.
+
+An Extension: Searching for SNP-Dense Regions
+Counting transitions and transversions on a per-chromosome basis for this VCF file could have been accomplished without defining classes and objects. But one of the advantages of spending some time organizing the code up front is that we can more easily answer related questions about the same data.
+
+Suppose that, having determined the number of transitions and transversions per chromosome, we’re now interested in determining the most SNP-dense region of each chromosome. There are a number of ways we could define SNP density, but we’ll choose an easy one: given a region from positions l to m, the density is the number of SNPs occurring within l and m divided by the size of the region, m – l + 1, times 1,000 (for SNPs per 1,000 base pairs).
+
+For a Chromosome object to be able to tell us the highest-density region, it will need to be able to compute the density for any given region by counting the SNPs in that region. We can start by adding to the chromosome class a method that computes the SNP density between two positions l and m.
+
+After debugging this method and ensuring it works, we can write a method that finds the highest-density region. But how should we define our regions? Let’s say we w

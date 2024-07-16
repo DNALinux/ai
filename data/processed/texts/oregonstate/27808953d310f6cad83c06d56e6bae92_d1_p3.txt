@@ -1,0 +1,13 @@
+list’s .reverse() method which asks the list to reverse itself in place (but returns None).
+
+As with the .sort() and .append() methods from chapter 15, “Collections and Looping, Part 1: Lists and for,” .reverse() returns None, so a line like base_list = base_list.reverse() would almost surely be a bug.
+
+Reverse a String
+There are two ways to reverse a string in Python: (1) first, convert it into a list of single-character strings, then reverse the list, then join it back into a string, or (2) use “extended slice syntax.” The former solution uses the methods described above, whereas the second method extends the [] slice syntax so that the brackets can contain values for [start:end:step], where start and end can be empty (to indicate the first and last indices of the string), and step can be -1 (to indicate stepping backward in the string).
+
+Although the extended slice syntax is quite a bit faster and requires less typing, it is a bit more difficult to read. A search online for “python string reverse” would likely reveal this solution first.
+
+Simple Find and Replace in a String
+We’ve already seen how to split a string into a list of strings with the .split() method. A similar method, .replace(), allows us to replace all matching substrings of a string with another string. Because strings are immutable, this method returns a modified copy of the original string.
+
+Also because strings are immutable, the original data are left unchanged. Because a variable is simply a name we use

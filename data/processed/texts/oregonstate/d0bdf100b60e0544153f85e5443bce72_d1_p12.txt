@@ -1,0 +1,12 @@
+ove, mean = 20, sd = 10 is collated into ... in the call to sample_trunc(), as is rate = 1.5 in the second example and lambda = 2 in the third example.
+
+Exercises
+We should then be able to run the test like so:The four values pval1, pval2, pval3, and pval4 should contain simple p values.
+
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

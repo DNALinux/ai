@@ -1,0 +1,13 @@
+as part of other algorithms that require approximate sequence matching.
+
+BLAST is available on the web on the NCBI website. Different types of BLASTs are available according to the query sequences and the target databases. Alternative implementations include AB-BLAST (formerly known as WU-BLAST), FSA-BLAST (last updated in 2006), and ScalaBLAST.[8][9]
+
+The original paper by Altschul, et al.[7] was the most highly cited paper published in the 1990s.[10]
+
+Input[edit]
+Input sequences (in FASTA or Genbank format), database to search and other optional parameters such as scoring matrix.[clarification needed]
+
+Output[edit]
+BLAST output can be delivered in a variety of formats. These formats include HTML, plain text, and XML formatting. For NCBI's webpage, the default format for output is HTML. When performing a BLAST on NCBI, the results are given in a graphical format showing the hits found, a table showing sequence identifiers for the hits with scoring related data, as well as alignments for the sequence of interest and the hits received with corresponding BLAST scores for these. The easiest to read and most informative of these is probably the table.
+
+If one is attempting to search for a proprietary sequence or simply one that is unavailable in databases available to the general public through sources such as NCBI, there is a BLAST program available for download to any computer, at no cost. This can be found at BLAST+ executables. There are also commercial programs available for

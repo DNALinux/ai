@@ -1,0 +1,11 @@
+erson’s username, the finger command may come to the rescue. You can supply finger with either a first name or last name to search for (or even the username, if known), and it will return information—if entered by the system administrator—about that user.
+
+Each file and directory is associated with one user (the owner) and one group; unfortunately, in normal Unix-like permissions, one and only one group may be associated with a file or directory. Each file and directory also has associated with it permissions describing:
+
+This information is displayed when running ls -l, and is represented by a combination of r (read), w (write), and x (execute). Where one of these three is absent, it is replaced by a -. Here’s an example, showing two entries owned by oneils and in the iplant-everyone group; one has permissions rwxrwxrwx (an insecure permission set, allowing anyone to do anything with the file), and the other has rwxr-xr-x (a much more reasonable permission set).
+
+There is an extra entry in the first column; the first character describes the type of the entry, - for a regular file and d for directory. Let’s break down these first few columns for one of the entries:
+
+Each file or directory may have some combination of r, w, and x permissions, applied to either the user, the group, or others on the system. For files, the meanings of these permissions are fairly straightforward.
+
+We’ll cover what it means for a file to be executable in a bit. For directories, these permissions t

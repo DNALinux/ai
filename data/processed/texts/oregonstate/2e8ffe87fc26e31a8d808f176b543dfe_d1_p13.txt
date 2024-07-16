@@ -1,0 +1,9 @@
+t could be called whenever we make changes to the code, we would have what is known as a unit test, or a collection of code (often one or more functions), with the specific purpose of testing functionality of other code for correctness.[7] These can be especially useful as code changes over time.
+
+Let’s continue on with the Chromosome class. Note that the .add_snp() method contains assertions that the SNP location is not a duplicate and that the chromosome name for the new SNP matches the chromosome’s self.chrname.
+
+Now we can write the methods for .count_transitions() and .count_transversions(). Because we’ve ensured that each SNP object is either a transition or a transversion, and no locations are duplicated within a chromosome, the .count_transversions() method can make direct use of the .count_transitions() method and the total number of SNPs stored via len(self.locations_to_snps). (Alternatively, we could make a count_transversions() that operates similarly to count_transitions() by looping over all the SNP objects.)
+
+The corresponding test code is below. Here we are using assert statements, but we could also use lines like print(chr1.count_transitions()) and ensure the output is as expected.
+
+With the class definitions created and debugged, we can write the “executable” part of the program, concerned with parsing the input file (from a filename given in sys.argv[1]) and printing the results. First, the portion of code that checks whether the user has given a file name

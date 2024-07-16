@@ -1,0 +1,8 @@
+rame and returns a single-row data frame of p values. (It should now be clear why we went through the trouble of ensuring our function takes a data frame as a parameter and returns one as well.)
+
+Now, we can use group_by() on the expr data frame to group by the id column, and do() to apply the sub_df_to_pvals_df() function to each group. Rather than work on the entire data set, though, let’s create a expr10 to hold a data frame representing measurements for 10 IDs; if we are satisfied with the results, we can always instead analyze the full expr table (though the full data set takes only a couple of minutes to analyze).
+
+The result is a nicely organized table of p values for each gene in the data set:
+
+There is one more important issue to consider for an analysis like this: multiple test correction. Suppose for a moment that none of the ~11,000 genes are differentially expressed in any way. Because p values are distributed evenly between zero and one under the null hypothesis (no difference), for the genotype column alone we could expect ~11,000 * 0.05 = 550 apparently (but erroneously) significant differences. Altering the scenario, suppose there were about 50 genes that truly were differentially expressed in the experiment: these would likely have small p values, but it is difficult to separate them from the other 550 apparently significant values.
+There are a variety of solutions to this problem. First, we could consider a much smaller threshold for significance. What thre

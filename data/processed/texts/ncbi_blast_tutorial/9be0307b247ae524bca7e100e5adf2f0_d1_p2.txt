@@ -1,0 +1,39 @@
+to create the database, we use the makeblastdb tool:
+
+This will create a list of files in the databases folder. These are all part
+of the blast database.
+
+Blast
+We can now blast our sequences against the database. In this case, both our
+query sequences and database sequences are DNA sequences, so we use the
+blastn tool:
+
+You can use different output formats with the outmft option:
+
+Blast with parallel
+If you need to run your blasts faster (and who doesn't?), you can maximise
+CPU usage with gnu parallel. You will find it at this
+link.
+
+Download the archive, extract it (with tar xvfB parallel-latest.tar.bz2) and
+install it with the following commands:
+
+We can now use parallel to speed up blast:
+
+More options and getting help
+If you need help to know the options and parameters you can pass blastn and
+the other blast+ utilities, use the --help option and pipe the output into
+less, for example:
+
+NCBI blast tools cover more cases than DNA against DNA searches. For example,
+you can search a protein database with either DNA or protein sequences. Here is
+an exhaustive list of the programs that come with the blast+ distribution:
+
+References
+O. Tange (2011): GNU Parallel - The Command-Line Power Tool, ;login: The USENIX Magazine, February 2011:42-47.
+
+Licence
+NCBI blast tutorial by Eric Normandeau is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.Based on a work at https://github.com/enormandeau/ncbi_blast_tutorial.
+
+About
+Short introduction to comma

@@ -1,0 +1,10 @@
+er notation? Does this depend on whether the tree is bushy or not? If so, what would be the run time for a bushy versus un-bushy tree?
+Add .count_leaves() methods that return the total number of “leaves” (nodes with None in left_n and right_n).
+Binary search trees are so called because they can easily and efficiently determine whether a query item is present. Add .is_item_present() methods that return True if a query item exists in the tree and False otherwise (similar to the LinkedList .is_item_present()). How long does it take, in order notation? Does this depend on whether the tree is bushy or not? If so, what would be the run time for a bushy versus un-bushy tree?
+Modify the binary tree code so that duplicate items can’t be stored in separate nodes.
+
+
+Back to Sorting
+We previously left the topic of sorting having developed bubblesort, an  method for sorting a simple list of items. We can certainly do better.
+One of the interesting features of the insert_item() method used by nodes in both the tree and linked list is that this method, for any given node, calls itself, but in another node. In reality, there aren’t multiple copies of the method stored in RAM; rather, a single method is shared between them, and only the self parameter is really changing. So, this method (which is just a function associated with a class) is actually calling itself.
+In a related way, it turns out that any function (not associated with an object) can call itself. Suppose we wanted to compute the

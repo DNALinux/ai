@@ -1,0 +1,10 @@
+esent more than one time in the first column with this solution, so it may make better sense to first filter the desired lines by using the awk and sort -k1,1d -u solution from above, and then use another awk for the average computation.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

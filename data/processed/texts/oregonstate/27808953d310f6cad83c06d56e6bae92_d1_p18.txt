@@ -1,0 +1,11 @@
+ny short DNA sequence matching the pattern "[AT]GATA[GA]". We wish to analyze the V. vinifera upstream regions above, and count for each the number of occurrences of the GATA motif. Our output should look like so:
+
+After importing the io and re modules, we’ll first write a function count_motifs() that takes two parameters: first a sequence in which to count motif matches, and second a motif for which to search. There are a variety of ways we could code this function, but a simple solution will be to use re.split() to split the sequence on the motif regular expression—the number of motifs will then be the length of the result minus one (because if no motifs are found, no split will be done; if one is found, one split will be done, and so on).
+
+With this function written and tested, we can open the file using io.open() and loop over each line, calling the count_motifs() function on each sequence with the motif r"[AT]GATA[GA]". Because the columns are separated with a variable number of spaces instead of single tab or space characters, we’ll use re.split() to split each line into pieces.
+
+First, we’ll write and test the function that counts motifs and offers an example usage, where the number of matches should be two.
+
+Next we can finish the program, using re.split() to process each line.
+
+When run, this simple program (grape_count_gata.py) produces the output desired above. Because the output is sent to standard output, we can further filter the results through the sort and hea

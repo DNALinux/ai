@@ -1,0 +1,9 @@
+Frequently, $ syntax is combined with vector syntax if the element of the list being referred to is a vector. For example, we can directly extract the third ecotype, or set the third ecotype.
+
+Continuing with this example, let’s suppose we have another list that describes information about each chromosome. We can start with an empty list, and assign elements to it by name.
+
+This list of two elements relates to A. thaliana, so it makes sense to include it somehow in the athal list. Fortunately, lists can contain other lists, so we’ll assign this chrs list as element of the athal list.
+
+Lists are an excellent container for general collections of heterogeneous data in a single organized “object.” (These differ from Python objects in that they don’t have methods stored in them as well, but we’ll see how R works with methods in later chapters.) If we ran print(athal) at this point, all this information would be printed, but unfortunately in a fairly unfriendly manner:
+
+This output does illustrate something of interest, however. We can chain the $ syntax to access elements of lists and contained lists by name. For example, lengths <- athal$ChrInfo$Lengths extracts the vector of lengths contained in the internal ChrInfo list, and we can even modify elements of these vectors with syntax like athal$ChrInfo$GeneCounts[1] <- 7079 (perhaps a new gene was recently discovered on the first chromosome). Expanding the syntax a bit to use double-brackets rather than $ notation, these are equi

@@ -1,0 +1,12 @@
+then (2) bubbles it backward to its correct location; only one such bubbling would be needed for each insertion, but each is an  operation (unless we could somehow guarantee that only large elements are added).
+
+Finding the smallest item is easy, as we know it is always present at index 0.
+
+Instead, let’s do something much more creative, and build our own data structure from scratch. While this data structure is a lot of trouble to create for only a little benefit, it does have its uses and serves as a building block for many other sophisticated structures.
+
+Sorted Linked Lists
+Our data structure, called a “sorted linked list,” will keep a collection of items in sorted order, and will do the work of inserting new items in the correct location in that order. These items could be integers, floats, or strings, anything that can be compared with the < operator (which, recall, compares strings in lexicographic order; as discussed in previous chapters, we can even define our own object types that are comparable with > by implementing .__lt__(), .__eq__() and similar methods).
+
+To accomplish this task, we’re going to make heavy use of classes and objects, and the fact that a variable (even an instance variable) is a name that refers to an object.
+
+The strategy will be to have two types of objects: the first, which we’ll call a LinkedList, will be the main type of object with which our programs will interact (much like we interacted with Chromosome objects in previous chapters, whil

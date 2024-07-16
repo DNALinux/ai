@@ -1,0 +1,16 @@
+ary for programming.
+
+Don’t forget that it is often useful to have multiple terminal windows open simultaneously. You can use one for editing, one for running your program and testing, and perhaps a third running top, displaying how much CPU and RAM your program is using.
+
+Although not as powerful as more sophisticated text editors such as emacs or vim, nano is easy to use and includes a number of features such as editing multiple files, cutting and pasting within and between files, regular-expression-based search and search/replace, spell check, and more. While editing, nano can also take you directly to a line number (Control–-), which will come in handy when you need to go directly to a line that caused an error.
+
+Whatever editor you choose to use, reading some documentation will help you be much more productive. For the rest of our code samples, we’ll be showing screenshots from within vim, primarily because it provides prettier syntax highlighting.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

@@ -1,0 +1,11 @@
+irst one.
+
+The last Node object’s self.next_n refers to None, a placeholder that we can use to allow a variable to reference “nothing here.” Actually, None will be the initial value for self.next_n when a new node is created, and we’ll have to add methods for get_next_n() and set_next_n() that allow us to get or change a Node’s next_n variable at will. The LinkedLists’s first_n variable will similarly be initialized as None in the constructor.
+
+Suppose that we have this data structure in place, and we want to add the number 2; this would be the new “smallest” item. To do this we’d need to run itemlist.insert_item(2), and this method would consider the following questions to handle all of the possible cases for inserting an item (by using if-statements):
+
+This case (b) is really the heart of the linked list strategy: each Node object will also have an .insert_item() method. Further, each node’s insert_item() will follow the same logic as above: if self.next_n is None, the new node goes after that node. If not, the node needs to determine if the new node should go between itself and the next node, or if it should “pass the buck” to the node next in line.
+
+Now we can turn to the code. First, here’s the code for the LinkedList class.
+
+The highlighted lines above are those illustrated in step 2a and are crucial; in particular, the order in which the various variables are set makes all the difference. What would happen if self.first_n = newnode was called before newnode.set_next(se

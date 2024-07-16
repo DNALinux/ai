@@ -1,0 +1,7 @@
+n character vectors are stored internally using a sophisticated strategy, and modern computers generally have larger stores of RAM besides. Still, there is another motivation for factors: the fact that the levels may have a meaningful order. Some statistical tests might like to compare certain subsets of a data frame as defined by a factor; for example, numeric values associated with factor levels "low" might be compared to those labeled "medium", and those in turn should be compared to values labeled "high". But, given these labels, it makes no sense to compare the "low" readings directly to the "high" readings. Factors provide a way to specify that the data are categorical, but also that "low" < "medium" < "high".
+
+Thus we might like to specify or change the order of the levels within a factor, to say, for example, that the "Water" treatment is somehow less than the "Chemical" treatment. But we can’t do this by just renaming the levels.
+
+The most straightforward way to specify the order of a character vector or factor is to convert it to a factor with factor() (even if it already is a factor) and specify the order of the levels with the optional levels = parameter. Usually, if a specific order is being supplied, we’ll want to specify ordered = TRUE as well. The levels specified by the levels = parameter must match the existing entries. To simultaneously rename the levels, the labels = parameter can be used as well.
+
+Now, "Water" is used in place of "control", and the factor

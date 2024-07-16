@@ -1,0 +1,19 @@
+large amounts of computing power and memory. However, advances have been made to speed up the Smith-Waterman search process dramatically. These advances include FPGA chips and SIMD technology.
+
+For more complete results from BLAST, the settings can be changed from their default settings. The optimal settings for a given sequence, however, may vary. The settings one can change are E-Value, gap costs, filters, word size, and substitution matrix.
+
+Note, the algorithm used for BLAST was developed from the algorithm used for Smith-Waterman. BLAST employs an alignment which finds "local alignments between sequences by finding short matches and from these initial matches (local) alignments are created".[28]
+
+BLAST output visualization[edit]
+To help users interpreting BLAST results, different software is available. According to installation and use, analysis features and technology, here are some available tools:[29]
+
+Example visualizations of BLAST results are shown in Figure 4 and 5.
+
+Uses of BLAST[edit]
+BLAST can be used for several purposes. These include identifying species, locating domains, establishing phylogeny, DNA mapping, and comparison.
+
+See also[edit]
+
+References[edit]
+
+External links[edit]

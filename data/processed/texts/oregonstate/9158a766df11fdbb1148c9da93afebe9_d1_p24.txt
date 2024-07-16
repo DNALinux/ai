@@ -1,0 +1,9 @@
+colors, and font sizes. These are part of the “theme” of the plot, and many aspects of the theme are adjusted by the theme() function. The exception is the addition of a title to a plot, which is accomplished with the ggtitle() function.
+
+The text-based parts of a plot are organized hierarchically (see the documentation for theme() for the full list). For example, modifying the text = parameter will modify all text elements, while modifying axis.text = adjusts the tick labels along both axes, and axis.text.x = specifies properties of only the x-axis tick labels. Other text-theme elements include legend.text, axis.title (for axis names), plot.title, and strip.text (for facet labels).
+
+To adjust properties of these elements, we use a call to element_text() within the call to theme(). We can produce a quick plot counting diamonds by their cut and clarity, for example, setting a plot title and changing the overall text size to 16, and just the title size to 20. Shrinking text can be especially helpful for cases when facet labels or theme labels are too large to fit their respective boxes.
+
+The labels used for breaks are sometimes longer than will comfortably fit on the axes. Aside from changing their size, it sometimes helps to angle them by 30 or 45 degrees. When doing so, it also looks best to set hjust = 1 to right-justify the labels.
+
+As this example might suggest, theming is itself a complex topic within ggplot2, and there are many options and special internal functions mod

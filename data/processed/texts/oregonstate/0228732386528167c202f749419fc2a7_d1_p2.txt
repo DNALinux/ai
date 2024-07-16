@@ -1,0 +1,13 @@
+nerally speaking, an object is a collection of data along with functions (called “methods” in this context) designed specifically to work on that data. Classes comprise the definitions of those methods and data.
+
+As it turns out, while functions are the major focus in R, objects are also an important part of the language. (By no means are any of these concepts mutually exclusive.) While class definitions are nicely encapsulated in Python, in R, the pieces are more distributed, at least for the oldest and most commonly used “S3” system we’ll discuss here.[1] With this in mind, it is best to examine some existing objects and methods before attempting to design our own. Let’s consider the creation of a small, linear model for some sample data.
+
+In chapter 30, “Lists and Attributes,” we learned that functions like lm() and anova() generally return a list (or a data frame, which is a type of list), and we can inspect the structure with str().
+
+Here’s a sampling of the output lines for each call (there are quite a few pieces of data contained in the lm_result list):
+
+If these two results are so similar—both types of lists—then why are the outputs so different when we call print(lm_result)
+
+and print(anova_result)?
+
+How these printouts are produced is dictated by the "class" attribute of these lists, "lm" for lm_result and "anova" for anova_result. If we were to remove this attribute, we would get a default printed output similar to the result of str(). There are several ways to mod

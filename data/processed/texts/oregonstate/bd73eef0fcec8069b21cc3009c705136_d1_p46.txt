@@ -1,0 +1,7 @@
+l, with self.item being the location of the SNP, so SNPs are stored in order of their locations. ↵If we ignore all the nodes’ self.left_n references (i.e., the entire left side of the tree), then the self.right_n path from top to the lower right is a sorted linked list! Similarly, the path from the top to the lower left is a reverse-sorted linked list. ↵Factorials can be easily (and slightly more efficiently) computed with a loop, but we’re more interested in illustrating the concept of a self-calling function. ↵Additionally, the operations of defining a function and executing it are disjoint, so there’s nothing to stop a function being defined in terms of itself. ↵This proof is a visually oriented one, and not terribly rigorous. A more formalized proof would develop what is known as a recurrence relation for the behavior of the algorithm, in the form of , to be solved for , representing the time taken to sort items. ↵
+
+One of the most interesting features of the factorial function is that it can be defined in terms of itself:
+
+If we wanted to compute factorial(7), a logical way to think would be: “first, I’ll compute the factorial of 6, then multiply it by 7.” This reduces the problem to computing factorial(6), which we can logically solve in the same way. Eventually we’ll want to compute factorial(1), and realize that is just 1. The code follows this logic impeccably:
+
+As surprising as it might be, this bit of code really works.[4] The reason is that the parameter n is a lo

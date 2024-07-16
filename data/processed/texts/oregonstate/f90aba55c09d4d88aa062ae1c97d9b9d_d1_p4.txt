@@ -1,0 +1,12 @@
+rmation if not. It’s also common to include, in comments near the top of the program, authoring information such as date of last update and contact information. You may also need or want to include some copyright and licensing text, either of your own choice or your institution’s.
+
+Note that we haven’t called .close() on the standard input file handle. Although Python won’t complain if you do, it is not required, as standard input is a special type of file handle that the operating system handles automatically.
+
+Standard Output as a File Handle
+Anything printed by a Python program is printed to the standard output stream, and so this output can also be sent to other programs for processing.
+
+However, the sys module also provides access to the standard output file handle, sys.stdout. Just like other output-oriented file handles, we can call .write() on this file handle to print. The main difference between this method and calling print() is that while print() by default adds a "\n" newline character sys.stdout.write() does not.[2] This feature can be particularly useful when we wish to print a table in an element-by-element fashion because the data are not stored in strings representing individual rows.
+
+Output from the above:
+
+While print() is a simple way to print a line of text, sys.stdout.write() gives you more control over the formatting of printed output. As with sys.stdin, there is no need to call .close() on the file handle. Unlike other output-oriented file handles, d

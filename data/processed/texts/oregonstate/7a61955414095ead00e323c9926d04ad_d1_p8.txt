@@ -1,0 +1,8 @@
+if l <- list("val-entries" = c(20, 30)), then quotations are required as in print(l$"val-entries"). By experimentation, determine at least five different characters that require the use of quotation marks when using $ notation.
+Experiment with the is.list() and as.list() functions, trying each of them on both vectors and lists.
+
+
+R lists are often used like dictionaries in Python and hash tables in other languages, because of this easy and effective Name → Value lookup operation. It should be noted that (at least as of R 3.3), name lookups in lists are not as efficient as name lookups in Python dictionaries or other true hash tables. For an efficient and more idiomatic hash table/dictionary operation, there is also the package hash available for install with install.packages("hash"). ↵For example, the names of a vector are stored as an attribute called “names”—the lines names(scores) <- c("Student A", "Student B", "Student C") and attr(scores, "names") <- c("Student A", "Student B", "Student C") are (almost) equivalent. Still, it is recommended to use specialized functions like names() rather than set them with attr() because the names() function includes additional checks on the sanity of the names vector. ↵
+
+Named Lists, Lists within Lists
+Like vectors, lists can be named—associated with a character vector of equal length—using the names() function. We can use an index vector of names to extract a sublist, and we can use [[]] syntax to extract individual elements by name.

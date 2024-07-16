@@ -1,0 +1,8 @@
+ore often than others. Let’s write the modified states data frame to a file called states_modified.txt as a tab-separated file.
+
+The first two parameters here are the data frame to write and the file name to write to. The quote = FALSE parameter specifies that quotation marks shouldn’t be written around character types in the output (so the name column will have entries like Alabama and Alaska rather than "Alabama" and "Alaska"). The sep = "\t" indicates that tabs should separate the columns, while row.names = FALSE indicates that row names should not be written (because they don’t contain any meaningful information for this data frame), and col.names = TRUE indicates that we do want the column names output to the first line of the file as a “header” line.
+
+R and the Unix/Linux Command Line
+In chapter 26, “An Introduction,” we mentioned that R scripts can be run from the command line by using the #!/usr/bin/env Rscript executable environment. (Older versions of R required the user to run a command like R CMD BATCH scriptname.R, but today using Rscript is preferred.) We devoted more discussion to interfacing Python with the command line environment than we will R, partially because R isn’t as frequently used that way, but also because it’s quite easy.
+
+When using read.table(), for example, data can be read from standard input by using the file name "stdin". Anything that is printed from an R script goes to standard output by default. Because R does a fair amount of formatting

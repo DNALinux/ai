@@ -1,0 +1,9 @@
+y are getting closer to the base case, and we can call quicksort() on them!
+
+Let’s attempt to analyze the running time of quicksort()—will it be better than, equal to, or worse than bubblesort? As with the binary trees covered previously, it turns out the answer is “it depends.”
+
+First, we’ll consider how long the function takes to run—not counting the subcalls to quicksort()—on a list of size. The first step is to pick a pivot, which is quick. Next, we split the input list into three sublists. Because appending to a list is quick, but all elements need to be appended to one of the three, the time spent in this section is . After the subcalls, the sorted versions of the lists need to be appended to the answer list, and because there are things to append, the time there is also . Thus, not counting the recursive subcalls, the run time is  plus  which is .
+
+But that’s not the end of the story—we can’t just ignore the time taken to sort the sublists, even though they are smaller. For the sake of argument, let’s suppose we always get “lucky,” and the pivot happens to be the median element of the input list, so len(lt) and len(gt) are both approximately . We can visualize the execution of the function calls as a sort of “call tree,” where the size of the nodes represents how big the input list is.
+
+Here, the top “node” represents the work done by the first call; before it can finish, it must call to sort the lt list on the second layer, which must again call to sort its own lt lis

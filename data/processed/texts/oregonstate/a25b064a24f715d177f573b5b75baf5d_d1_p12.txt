@@ -1,0 +1,17 @@
+whole vector, depending on whether the each = parameter is used or not.
+
+Last (but not least) for this discussion is the is.na() function: given a vector with elements that are possibly NA values, it returns a logical vector whole elements are TRUE in indices where the original was NA, allowing us to easily indicate which elements of vectors are NA and remove them.
+
+Notice the use of the exclamation point in the above to negate the logical vector returned by is.na().
+
+Generating Random Data
+
+R excels at working with probability distributions, including generating random samples from them. Many distributions are supported, including the Normal (Gaussian), Log-Normal, Exponential, Gamma, Student’s t, and so on. Here we’ll just look at generating samples from a few for use in future examples.
+First, the rnorm() function generates a numeric vector of a given length sampled from the Normal distribution with specified mean (with mean =) and standard deviation (with sd =).
+
+Similarly, the runif() function samples from a uniform distribution limited by a minimum and maximum value.
+
+The rexp() generates data from an Exponential distribution with a given “rate” parameter, controlling the rate of decay of the density function (the mean of large samples will approach 1.0/rate).
+
+
+R includes a large number of statistical tests, though we won’t be covering much in the way of statistics other than a few driving examples. The t.test() function runs a two-sided student’s t-test comparing the

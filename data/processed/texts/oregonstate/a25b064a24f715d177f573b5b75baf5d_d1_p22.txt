@@ -1,0 +1,12 @@
+standard logical value for a given integer. Similarly, if a numeric is added, everything is converted to numeric.
+
+And if a character string is added, everything is converted into a character string (with 3.5 becoming "3.5", TRUE becoming "TRUE", and so on).
+
+In summary, vectors are the most basic unit of data in R, and they cannot mix types—R will autoconvert any mixed types in a single vector to a “lowest common denominator,” in the order of logical (most specific), integer, numeric, character (most general). This can sometimes result in difficult-to-find bugs, particularly when reading data from a file. If a file has a column of what appears to be numbers, but a single element cannot be interpreted as a number, the entire vector may be converted to a character type with no warning as the file is read in. We’ll discuss reading data in from text files after examining vectors and their properties.
+
+Subsetting Vectors, Selective Replacement
+Consider the fact that we can use [] syntax to extract single elements from vectors:
+
+Based on the above, we know that the 20 extracted is a vector of length one. The 2 used in the brackets is also a vector of length one; thus the line above is equivalent to second_el <- nums[c(2)]. Does this mean that we can use longer vectors for extracting elements? Yes!
+
+In fact, the extracted elements were even placed in the resulting two-element vector in the order in which they were extracted (the third element followed by the second element). We can

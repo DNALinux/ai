@@ -1,0 +1,10 @@
+ult-to-predict ways. If we decide to compute (1/3)*(1/3)/(1/3) as 0.3333*0.3333/0.3333, working left to right we’d start with 0.3333*0.3333 rounded to four digits as 0.1110. This is then divided by 0.3333 and rounded again to produce an answer of 0.3330. So, even though we know that (1/3)*(1/3)/(1/3) == 1/3, our calculation process would call them unequal because it ultimately tests 0.3330 against 0.3333!
+
+Modern computers have many more digits of precision (about 15 decimal digits at a minimum, in most cases), but the problem remains the same. Worse, numbers that don’t need rounding in our Base-10 arithmetic system do require rounding in the computer’s Base-2 system. Consider 0.2, which in binary is 0.001100110011, and so on. Indeed, 0.2 * 0.2 / 0.2 == 0.2 results in False!
+
+While comparing floats with <, >, <=, and >= is usually safe (within extremely small margins of error), comparison of floats with == and != usually indicates a misunderstanding of how floating-point numbers work.[3] In practice, we’d determine if two floating-point values are sufficiently similar, within some defined margin of error.
+
+Counting Stop Codons
+As an example of using conditional control flow, we’ll consider the file seq.txt, which contains a single DNA string on the first line. We wish to count the number of potential stop codons "TAG", "TAA", or "TGA" that occur in the sequence (on the forward strand only, for this example).
+
+Our strategy will be as follows: First, we’ll need to open the file

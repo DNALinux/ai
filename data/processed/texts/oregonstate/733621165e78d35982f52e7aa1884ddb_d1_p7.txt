@@ -1,0 +1,10 @@
+ells. But beware: the output of a given cell often depends on what other cells have been executed and in which order (see the “Cell output depends on the order of execution” cell in the figure below).
+
+For this reason, I highly recommend making the assumption that all code cells will be executed in top-to-bottom order, which can be accomplished by selecting “Run All” from the “Cell” menu whenever you want to execute any code. Doing so causes all the cells to be re-executed each time it is run, it but has the advantage of ensuring the correctness of the overall notebook as changes are made to cells over time.
+
+Specified Interpreter
+As convenient as iPython notebook is, because the previous part of this book focused on the command line, and Python interfaces quite nicely with it, the examples here will be from the command line environment. Because Python programs are interpreted scripts, we can manually specify the interpreter on the command line each time we run such a script.
+
+For this method, we first have to edit a code file that we’ll call helloworld.py (.py is the traditional extension for Python programs). On the command line, we’ll edit code files with our text editor nano, passing in a few extra parameters:
+
+The -w tells nano not to automatically wrap long lines (we’re writing code after all, not an essay), -i says to automatically indent newlines to the current indentation level, -T 4 says that tab-stops should be four spaces wide, and -E says that tabs should be conv

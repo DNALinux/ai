@@ -1,0 +1,11 @@
+. Even if you succeed this way (which rarely happens), you’re likely to produce code with insidious bugs, and it may well be unreadable even to yourself in a few days’ time.
+
+Exercises
+
+Write a Python program to compute the sample standard deviation of the E values in the file pz_blastx_yeast_top1.txt. As a reminder, the sample standard deviation is defined as the square root of the sum of squared differences from the mean, divided by the number of values minus 1:
+      
+ To accomplish this, you’ll need to make two passes over the data: one as in the example to compute the mean, and another to compute the sum of squared differences. This means you’ll need to access the E values twice. Rather than close and reopen the data file, you should create an initially empty list to which you can append each E value (in your first pass over the data) for later use.
+
+To compute the square root of a float, you will need to import the math module by calling import math near the top of your program. Then the math.sqrt() function will return the square root of a float; for example, math.sqrt(3.0) will return the float 1.7320508.
+If a_list is a list, then b_list = reversed(a_list) creates a “listreverseiterator” allowing one to loop over the elements with a for-loop in reverse order. Using this information, write a program called reverse_blast.py that reads the contents of pz_blastx_yeast_top1.txt and writes the lines in reverse order to a file called pz_blastx_yeast_top1_reversed.txt.
+A quin

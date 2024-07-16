@@ -1,0 +1,10 @@
+ficant alignment. BLAST searches for high scoring sequence alignments between the query sequence and the existing sequences in the database using a heuristic approach that approximates the Smith-Waterman algorithm. However, the exhaustive Smith-Waterman approach is too slow for searching large genomic databases such as GenBank. Therefore, the BLAST algorithm uses a heuristic approach that is less accurate than the Smith-Waterman algorithm but over 50 times faster. [8] The speed and relatively good accuracy of BLAST are among the key technical innovations of the BLAST programs.
+
+An overview of the BLAST algorithm (a protein to protein search) is as follows:[12]
+
+Types of BLAST[edit]
+BLASTn compares one or more nucleotide sequence to a database or another sequence. This is useful when trying to identify evolutionary relationships between organisms. [14]
+
+tBLASTn used to search for proteins in sequences that haven't been translated into proteins yet. It takes a protein sequence and compares it to all possible translations of a DNA sequence. This is useful when looking for similar protein-coding regions in DNA sequences that haven't been fully annotated, like ESTs (short, single-read cDNA sequences) and HTGs (draft genome sequences). Since these sequences don't have known protein translations, we can only search for them using tBLASTn.[15]
+
+BLASTx compares a nucleotide query sequence, which can be translated into six different protein sequences, against a database of known protei

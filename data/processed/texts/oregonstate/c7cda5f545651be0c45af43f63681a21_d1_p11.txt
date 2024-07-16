@@ -1,0 +1,12 @@
+xecuted whenever bash starts (e.g., on login and when bash is executed via a #! script).
+
+If you want to see a friendly greeting every time you log in, for example, you might add the line echo "Hello $USER, nice to see you again!" to your .bash_login file. Because we want our $PATH to be modified even if bash somehow starts without our logging in, we’ll add the export command to the .bashrc file.
+
+The .bashrc file may have information in it already, representing a default shell configuration placed there when the administrator created the account. While we can add our own commands to this file, we should do so at the end, and we should be careful to not disturb the other configuration commands that are likely there for a good reason. Also, the commands in this file should be free of errors and typos—some errors are bad enough to prevent you from logging in! Using the -w when editing the file with nano will help ensure that the editor does not attempt to autowrap long commands that shouldn’t be broken over multiple lines.
+
+At the bottom of this file, we’ll add the export line:
+
+Because lines starting with # are “comments” (unexecuted, aside from the #! line, of course), we can use this feature to remind our future selves how that line got in the file. Because commands in these files are only executed when the shell starts, in order to activate the changes, it suffices to log out and log back in.
+
+Exercises
+Try creating a bash script where the first line is #!/usr/bin/env bash.

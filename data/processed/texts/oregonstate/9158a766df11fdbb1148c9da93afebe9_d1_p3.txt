@@ -1,0 +1,13 @@
+record of how the plot was produced for future reference. Further, plotting is often the end result of a complex analysis, so it makes sense to think of graphical output much like any other program output that needs to be reproducible.
+
+When working with a graphical interface like RStudio, plots are by default shown in a pop-up window or in a special plotting panel for review. Alternatively, or if we are producing plots via a remote command line login, each plot will be saved to a PDF file called Rplots.pdf. The name of this file can be changed by calling the pdf() function, giving a file name to write to. To finish writing the PDF file, a call to dev.off() is required (it takes no parameters).
+
+The most basic plotting function (other than hist(), which we’ve already seen) is plot(). Like hist(), plot() is a generic function that determines what the plot should look like on the basis of class attributes of the data given to it. For example, given two numeric vectors of equal length, it produces a dotplot.
+
+The contents of dotplot.pdf:
+
+For the rest of this chapter, the pdf() and dev.off() calls are not specified in code examples.
+
+We can give the plot() function a hint about the type of plot we want by using the type = parameter, setting it to "p" for points, "l" for lines, "b" for both, and so on. For basic vector plotting like the above, plot() respects the order in which the data appear. Here’s the output of plot(vecx, vecy, type = "l"):
+
+We would have had to sort one or b

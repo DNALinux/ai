@@ -1,0 +1,20 @@
+run time of the algorithm, we can note that the amount of work done at each layer is , so the total amount of work is this value times the number of layers. In the case where the pivots split the lists roughly in half, the result is the same as the number of layers in the bushy binary tree: . Thus, in this idealized scenario, the total run time is , which is much better than the  of bubblesort.[6]
+
+This equation assumes that the pivots split the input lists more or less in half, which is likely to be the case (on average), if we choose the pivots at random. But we didn’t choose at random; we used nums[0]. What would happen if the input to the list happened to be already sorted? In this case, the pivot would always be the first element, lt would always be empty, and gt would have one fewer element. The “work tree” would also be different.
+
+In this “unlucky” case, the work on each level is approximately , and so on, so the total work is  which is . Does this mean that in the worst case quicksort() is as slow as bubblesort? Unfortunately, yes. But some very smart people have analyzed quicksort() (assuming the pivot element is chosen at random, rather than using the first element) and proved that in the average case the run time is , and the chances of significantly worse performance are astronomically small. Further, a similar method known as “mergesort” operates by guaranteeing an even 50/50 split (of a different kind).
+
+
+
+
+Algorithm
+Average Case
+Worst Case
+
+
+Bubblesort
+
+
+
+
+Qui

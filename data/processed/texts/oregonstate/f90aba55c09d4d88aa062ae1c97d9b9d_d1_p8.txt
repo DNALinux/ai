@@ -1,0 +1,8 @@
+unctions in the subprocess module allow for running commands in the background—so the script doesn’t wait for them to complete before continuing in its own execution—and to work with multiple such processes while communicating with them. Other Python modules even allow for advanced work with parallel execution and threading, though these topics are beyond the scope of this chapter.
+
+Don’t forget that you are responsible for the execution of your programs! If you write a program that executes many other programs, you can quickly utilize more computational resources than you realize. If you are working on a system that you don’t mind taking some risks with, you could try to run the following program, which executes a copy of itself (which in turn executes a copy of itself, which in turn executes a copy of itself, and on and on):
+
+Exercises
+Next, try running the program with cat pz_blastx_yeast_top1.txt | ./stdin_eval_mean.py. Also, try prefiltering the lines before the computation with something like cat pz_blastx_yeast_top1.txt | grep '_L' | ./stdin_eval_mean.py.
+
+Now copy this program to one called stdin_eval_sd.py that reads in pz_blastx_yeast_top1.txt on sys.stdin and computes and prints the standard deviation of the E values. Again, try running the program with and without prefiltering with grep. (At this point you should be comfortable with writing mean() and sd() functions that take lists of floats and return answers. Your sd() function might well call the mean() functio

@@ -1,0 +1,10 @@
+ially useful for stripping off header lines of output or files before further processing, as in ./fasta_stats pz_cDNAs.fasta | tail -n +9, rather than using grep -v '#' above.
+
+Exercises
+Previous/next navigation
+
+License
+A Primer for Computational Biology Copyright © 2019 by Shawn T. O'Neil is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.
+
+Share This Book
+Powered by Pressbooks

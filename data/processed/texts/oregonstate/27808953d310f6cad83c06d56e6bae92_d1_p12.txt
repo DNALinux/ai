@@ -1,0 +1,7 @@
+here are any.
+
+In the DNA sequence seq = "AGCTACTAGGAAGATAGACGATTAGAC", for example, the six translations are SY*EDRRLD (Frame 1), ATRKIDD* (Frame 2), LLGR*TIR (Frame 3), V*SSIFLVA (Frame 4), SNRLSS** (Frame 5), and LIVYLPSS (Frame 6). In order of lengths, the possibilities are thus "V", "SY", "LLGR", "SNRLSS", "ATRKIDD", and "LIVYLPSS". As a result, longest_non_stop(seq) should return "LIVYLPSS".
+Modify the grape_count_gata.py program, calling it motifs_count.py so that it can read the file name and motifs to process (the latter as a comma-separated list) on sys.argv. When run as ./motifs_count.py grape_promoters.txt [AT]GATA[GA],[CGT]ACGTG[GT][AC],TTGAC, the output should look like:
+Genotyping by sequencing (GBS) is a method for identifying genetic variants in a DNA sample by first splitting chromosomes in pseudorandom locations through the application of restriction enzymes and then sequencing short reads from the ends of the resulting fragments: In the above, black lines represent input DNA sequence, red lines are cut sites, and green lines represent output from the sequencing machine. (Some simplifications have been made to the figure above for the sake of clarity.) The result is much higher depth of sequencing at fewer locations, which can be useful in a variety of contexts, including looking for genetic variants between different versions of the same chromosome (which requires many reads from the same location to statistically confirm those variants).
+
+The restriction
