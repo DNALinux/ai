@@ -48,7 +48,7 @@ def is_relevant_link(link, base_url):
     if base_url in link:
         return True
     
-    keywords = ['chapter', 'article', 'content', 'tutorial', 'guide']
+    keywords = ['chapter', 'article', 'content', 'tutorial', 'guide','section','blast']
     return any(keyword in link for keyword in keywords)
 
 def extract_content(url, visited):

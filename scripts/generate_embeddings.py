@@ -92,6 +92,9 @@ def translate_and_add_embeddings(documents_dir, collection_name, model="mxbai-em
     total_documents = len([filename for filename in os.listdir(documents_dir) if filename.endswith(".txt")])
     processed_documents = 0
 
+    # Get existing document IDs in the collection
+    existing_ids = set(collection.get()['ids'])
+
     # Iterate through text files in the directory
     for filename in os.listdir(documents_dir):
         if filename.endswith(".txt"):
@@ -104,6 +107,11 @@ def translate_and_add_embeddings(documents_dir, collection_name, model="mxbai-em
             except Exception as e:
                 print(f"Error reading file {filename}: {e}")
                 continue  # Skip this file and move to the next
+
+            # Skip if the document ID (filename) already exists in the collection
+            if filename in existing_ids:
+                print(f"Skipping duplicate document {filename}.")
+                continue
 
             try:
                 # Embedding the document using Ollama
@@ -134,6 +142,43 @@ def translate_and_add_embeddings(documents_dir, collection_name, model="mxbai-em
 
     return collection
 
+def delete_embeddings(directory, database_path='./chroma_db', collection_name='default'):
+    '''
+    Deletes all vectors in the chroma database that generated from the files in the directory.
+
+    Args:
+    - directory (str): Path to the directory to search for files.
+    - database_path (str): Path to the local Chroma database file (default: './chroma_db').
+    - collection_name (str): Name of the Chroma database collection to delete from (default: 'default').
+
+    Returns:
+    - None
+    '''
+    file_names = get_file_names(directory)
+    client = chromadb.PersistentClient(path=database_path)
+    collection = client.get_collection(name=collection_name)
+    collection.delete(
+        ids = file_names
+        )
+
+
+def get_file_names(directory):
+    """
+    Returns a list of all file names in the specified directory.
+
+    Args:
+    - directory (str): Path to the directory to search for files.
+
+    Returns:
+    - list: A list of file names (strings) in the directory.
+    """
+    try:
+        # List all files in the directory
+        file_names = [filename for filename in os.listdir(directory) if os.path.isfile(os.path.join(directory, filename))]
+        return file_names
+    except Exception as e:
+        print(f"Error accessing directory '{directory}': {e}")
+        return []
 
 # Function to get embeddings
 def get_embeddings(texts, model, tokenizer, max_length=384, batch_size=64):
