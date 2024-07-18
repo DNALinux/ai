@@ -25,7 +25,13 @@ blast_dna_questions = (
     "How to get the results of BLASTP in XML format?",
     "How to perform a BLAST on a specific taxonomic group?",
     "What blast program do I use to perform BLAST with epitopes smaller than 10 amino acids?",
-    "Which kind of databases can be searched with BLASTX?"
+    "What blast program and task I should use to perform BLAST with epitopes smaller than 10 amino acids?",
+    "Which kind of databases can be searched with BLASTX?",
+    "What is blast_formater program for?",
+    "What is a database free search?",
+    "What is Windowmasker and when should I use it?",
+    "What is the parameter '-subject' for in a BLAST search?",
+    "How can I multi-thread my search?"
     )
 
 prompts = blast_dna_questions
