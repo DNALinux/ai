@@ -1,0 +1,29 @@
+archive. For example:
+
+Add the bin folder from the extracted archive to your path. For example, add
+the following line to your ~/.bashrc file:
+
+And change the /PATH/TO part to the path where you have put the extracted
+archive.
+
+Example sequences to use with the tutorial
+In order to test blast, you need a test fasta file. Use the following files
+that come with the tutorial:
+
+Create blast database
+The different blast tools require a formatted database to search against. In
+order to create the database, we use the makeblastdb tool:
+
+This will create a list of files in the databases folder. These are all part
+of the blast database.
+
+Blast
+We can now blast our sequences against the database. In this case, both our
+query sequences and database sequences are DNA sequences, so we use the
+blastn tool:
+
+You can use different output formats with the outmft option:
+
+Blast with parallel
+If you need to run your blasts faster (and who doesn't?), you can maximise
+CPU usage with gnu parallel. You will
