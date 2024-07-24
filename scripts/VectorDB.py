@@ -32,6 +32,12 @@ class VectorDB:
 
         return collection
     
+    def load_data(self):
+        """Load and process data from URLs, PDFs, and HTML files."""
+        self.load_url()
+        self.load_pdf()
+        self.load_html()
+        
     def _get_embeddings(self, texts):
         """Get embeddings for a list of texts from Ollama."""
         try:
