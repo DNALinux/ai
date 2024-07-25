@@ -147,7 +147,7 @@ class TextExtractor:
 
         return result
     
-    def save_a_html_text(self, html_path: str, chars_per_file: int = 1500, overlap: int = 100) -> None:
+    def save_a_html_text(self, html_path: str, chars_per_file: int = 500, overlap: int = 100) -> None:
         """
         Extracts text from a HTML file and saves it to multiple files with specified character limits and overlap.
 
@@ -196,7 +196,7 @@ class TextExtractor:
         for html_path in html_paths:
             self.save_a_html_text(html_path)
 
-    def extract_html_text(self, html_path: str, chars_per_file: int = 1500, overlap: int = 100) -> list:
+    def extract_html_text(self, html_path: str, chars_per_file: int = 500, overlap: int = 100) -> list:
         """
         Extracts text from a HTML file and returns it as a string.
 
@@ -303,7 +303,7 @@ class TextExtractor:
         domain = url.split('/')[0]
         return domain
     
-    def crawl_and_save(self, url, chunk_size=1000, overlap_size=50, max_depth=1, depth=0, visited=None):
+    def crawl_and_save(self, url, chunk_size=500, overlap_size=50, max_depth=1, depth=0, visited=None):
         """
         Crawl the website and save content recursively.
         """
@@ -337,7 +337,7 @@ class TextExtractor:
             if link not in visited:
                 self.crawl_and_save(link, chunk_size, overlap_size, max_depth, depth + 1, visited)
 
-    def crawl_and_extract(self, url, chunk_size=1000, overlap_size=50, max_depth=1, depth=0, visited=None):
+    def crawl_and_extract(self, url, chunk_size=500, overlap_size=50, max_depth=1, depth=0, visited=None):
         """
         Crawl the website and extract content recursively.
 

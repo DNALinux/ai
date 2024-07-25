@@ -37,7 +37,7 @@ class RAG:
         Do not say according to the text. just give the answer, no comment."""
         return template.format(question=question, context=context)
 
-    def generate_answer(self, query_text, k=6):
+    def generate_answer(self, query_text, k=4):
         """Generate an answer using the vector database and Ollama model."""
         try:
             output = ollama.generate(

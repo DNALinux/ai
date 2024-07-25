@@ -37,7 +37,7 @@ class VectorDB:
         self.load_url()
         self.load_pdf()
         self.load_html()
-        
+
     def _get_embeddings(self, texts):
         """Get embeddings for a list of texts from Ollama."""
         try:
@@ -160,3 +160,12 @@ class VectorDB:
             logging.error(f"Error querying the vector database: {e}")
             return []
         
+    def clear_database(self):
+        """Clear the vector database."""
+        try:
+            sources = self.show_sources()
+            for source in sources:
+                self.delete_source(source)
+            logging.info("Cleared the vector database.")
+        except Exception as e:
+            logging.error(f"Error clearing the vector database: {e}")
