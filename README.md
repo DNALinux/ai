@@ -234,6 +234,19 @@ The `RAG` (Retrieval-Augmented Generation) class provides a comprehensive soluti
   - `generate_answer`: Generates an answer using the vector database and the LLaMA3 model.
   - `stream_answer`: Generates an answer with streaming output, providing real-time response chunks.
 
+### `preprocess_text`
+
+The `preprocess_text` function performs a series of text preprocessing steps to clean and standardize raw text. It includes:
+
+- **Lowercasing**: Converts all text to lowercase to ensure uniformity.
+- **Removing Non-Alphanumeric Characters**: Strips out any characters that are not letters, numbers, or whitespace.
+- **Tokenization**: Splits the text into individual words or tokens.
+- **Stopwords Removal**: Filters out common words that may not contribute meaningful information to the analysis.
+- **Lemmatization**: Reduces words to their base or root form.
+
+This function outputs a preprocessed text string that is ready for further analysis or processing.
+
+
 ## License
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE. See the [LICENSE](LICENSE) file for details.
