@@ -4,6 +4,7 @@ import ollama  # Ensure the Ollama library is imported
 import TextExtractor as te
 import VectorDB as vdb
 import yaml
+import sys
 
 class RAG:
     def __init__(self, input_dir: str, output_dir: str, chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
@@ -49,8 +50,22 @@ class RAG:
         except Exception as e:
             logging.error(f"Error generating answer: {e}")
             return "Error generating answer."
-        
-    def load_config():
-        with open('config.yaml', 'r') as file:
-            return yaml.safe_load(file)
-
+    
+    def stream_answer(self, query_text, k=4):
+        """Generate an answer using the vector database and Ollama model with streaming output."""
+        try:
+            prompt = self.generate_prompt(query_text, self.vector_db.query(query_text, k))
+            
+            # Generate text with streaming enabled
+            output_stream = ollama.generate(model="llama3", prompt=prompt, stream=True)
+            
+            # Print each chunk of the response as it arrives
+            for chunk in output_stream:
+                if isinstance(chunk['response'], str):  # Ensure chunk is a string
+                    sys.stdout.write(chunk['response'])
+                    sys.stdout.flush()
+                else:
+                    logging.warning("Received non-string chunk: %s", chunk)
+            
+        except Exception as e:
+            logging.error(f"Error generating answer: {e}")

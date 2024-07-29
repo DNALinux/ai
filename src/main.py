@@ -25,8 +25,8 @@ def main():
         sys.exit(1)
 
     query_text = sys.argv[1]
-    answer = ragtest.generate_answer(query_text)
-    print("Answer:", answer)
+    ragtest.stream_answer(query_text)
+    print("\n")
 
 if __name__ == "__main__":
     main()
