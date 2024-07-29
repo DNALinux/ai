@@ -215,6 +215,25 @@ The `VectorDB` class manages a Chroma vector database, allowing for the extracti
 - **query**: Queries the vector database with a text prompt.
 - **clear_database**: Clears the vector database.
 
+
+### `RAG` Class Introduction
+
+The `RAG` (Retrieval-Augmented Generation) class provides a comprehensive solution for integrating a vector database with the LLaMA3 model to generate and stream answers based on user queries. It includes functionalities for setting up the vector database, generating prompts, and creating answers with both regular and streaming outputs.
+
+#### Key Functionalities
+
+- **Initialization**:
+  - `__init__`: Initializes the `RAG` class, setting up the vector database with specified directories and a default embedding model.
+  - `_setup_vector_db`: Checks if the vector database exists and populates it with data if needed.
+  - `_is_database_populated`: Verifies if the vector database contains data.
+
+- **Prompt Generation**:
+  - `generate_prompt`: Creates a prompt for querying the model, incorporating the user's question and the retrieved context.
+
+- **Answer Generation**:
+  - `generate_answer`: Generates an answer using the vector database and the LLaMA3 model.
+  - `stream_answer`: Generates an answer with streaming output, providing real-time response chunks.
+
 ## License
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE. See the [LICENSE](LICENSE) file for details.
