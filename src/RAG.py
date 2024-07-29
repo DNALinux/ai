@@ -3,6 +3,7 @@ import logging
 import ollama  # Ensure the Ollama library is imported
 import TextExtractor as te
 import VectorDB as vdb
+import yaml
 
 class RAG:
     def __init__(self, input_dir: str, output_dir: str, chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
@@ -48,4 +49,8 @@ class RAG:
         except Exception as e:
             logging.error(f"Error generating answer: {e}")
             return "Error generating answer."
+        
+    def load_config():
+        with open('config.yaml', 'r') as file:
+            return yaml.safe_load(file)
 

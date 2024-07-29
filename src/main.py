@@ -1,11 +1,22 @@
 import sys
 import RAG as rag
+import yaml
+
+def load_config(file_path='config.yaml'):
+    with open(file_path, 'r') as stream:
+        return yaml.safe_load(stream)
 
 def main():
-    input_dir = '/home/tagore/repos/ai/data/example_data/'
-    output_dir = '/home/tagore/repos/ai/data/exampe_debug_folder'
-    chroma_db_dir = '/home/tagore/repos/ai/data/example_db/'
-    chroma_db_name = 'test'
+    # Load configuration
+    config = load_config()
+
+    # Extract configuration values
+    vector_db_config = config.get('vector_db')
+    input_dir = vector_db_config.get('input_dir')
+    output_dir = vector_db_config.get('output_dir')
+    chroma_db_dir = vector_db_config.get('chroma_db_dir')
+    chroma_db_name = vector_db_config.get('chroma_db_name')
+    model = vector_db_config.get('model')
 
     ragtest = rag.RAG(input_dir, output_dir, chroma_db_dir, chroma_db_name)
 
