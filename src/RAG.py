@@ -1,8 +1,8 @@
 import argparse
 import logging
 import ollama  # Ensure the Ollama library is imported
-import TextExtractor as te
-import VectorDB as vdb
+from src import TextExtractor as te
+from src import VectorDB as vdb
 import yaml
 import sys
 
@@ -69,3 +69,8 @@ class RAG:
             
         except Exception as e:
             logging.error(f"Error generating answer: {e}")
+
+
+def load_config(file_path='config_template.yaml'):
+    with open(file_path, 'r') as stream:
+        return yaml.safe_load(stream)

@@ -7,7 +7,7 @@ from chromadb.config import Settings
 import hashlib
 import sys
 import logging
-import TextExtractor as te
+from src import TextExtractor as te
 
 class VectorDB:
     def __init__(self, input_dir: str, output_dir: str , chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
