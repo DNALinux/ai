@@ -81,7 +81,7 @@ Edit the `config.yaml` file to set your project-specific parameters and paths.
 4. **RAG Pipeline**: Set up and run the RAG pipeline.
 
 ## How to Use
-There is a Instruction.ipynb you can use to test the code.
+There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruction.ipynb) you can use to test the code.
 
 1. **Configuration**:
    - Open `config.yaml` to set up the directory paths for storing your data and Chroma database. You do not need to create them manually; just specify where they should be, and they will be automatically created:
