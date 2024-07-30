@@ -7,7 +7,6 @@ from chromadb.config import Settings
 import hashlib
 import sys
 import logging
-sys.path.append("/home/tagore/repos/ai/scripts")
 import TextExtractor as te
 
 class VectorDB:

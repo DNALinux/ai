@@ -2,7 +2,7 @@ import sys
 import RAG as rag
 import yaml
 
-def load_config(file_path='config.yaml'):
+def load_config(file_path='config_template.yaml'):
     with open(file_path, 'r') as stream:
         return yaml.safe_load(stream)
 
