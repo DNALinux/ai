@@ -71,7 +71,7 @@ class VectorDB:
         for url in urls:
             print(f"Processing URL: {url}")
             logging.info(f"Processing URL: {url}")
-            text = self.raw_data.crawl_and_extract(url, chunk_size=500, overlap_size=50, max_depth=1)
+            text = self.raw_data.crawl_and_extract(url, chunk_size=800, overlap_size=50, max_depth=0)
             if url in sources:
                 self.delete_source(url)
             self._process_and_add(text, [str(url)] * len(text))
