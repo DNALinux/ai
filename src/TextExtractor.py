@@ -8,10 +8,10 @@ import certifi
 from langchain_community.document_loaders import PyPDFLoader
 
 class TextExtractor:
-    def __init__(self,input_dir: str, output_dir: str):
+    def __init__(self,input_dir: str, output_dir: str, urls_file: str = 'urls.txt'):
         self.output_dir = Path(output_dir)
         self.input_dir = Path(input_dir)
-        self.urls_file = self.input_dir / 'urls.txt'
+        self.urls_file = Path(urls_file)
         if not self.urls_file.exists():
             with open(self.urls_file, 'w', encoding='utf-8') as file:
                 pass  # Just create an empty file

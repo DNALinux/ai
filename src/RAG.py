@@ -7,17 +7,18 @@ import yaml
 import sys
 
 class RAG:
-    def __init__(self, input_dir: str, output_dir: str, chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
-        self.vector_db = self._setup_vector_db(input_dir, output_dir, chroma_db_dir, chroma_db_name, model)
+    def __init__(self, input_dir: str, output_dir: str, urls_file:str, chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
+        self.vector_db = self._setup_vector_db(input_dir, output_dir, urls_file, chroma_db_dir, chroma_db_name, model)
         logging.basicConfig(level=logging.INFO)
     
-    def _setup_vector_db(self, input_dir, output_dir, chroma_db_dir, chroma_db_name, model):
+    def _setup_vector_db(self, input_dir, output_dir, urls_file, chroma_db_dir, chroma_db_name, model):
         """Check if the database exists and set up if not."""
         try:
             # Attempt to load existing vector database
-            vector_db = vdb.VectorDB(input_dir, output_dir, chroma_db_dir, chroma_db_name, model)
+            vector_db = vdb.VectorDB(input_dir, output_dir, urls_file, chroma_db_dir, chroma_db_name, model)
             # Check if the database is empty or needs updating
             if not self._is_database_populated(vector_db):
+                print("Database is not populated. Loading data...")
                 logging.info("Database is not populated. Loading data...")
                 vector_db.load_data()
             return vector_db

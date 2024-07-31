@@ -10,8 +10,8 @@ import logging
 from src import TextExtractor as te
 
 class VectorDB:
-    def __init__(self, input_dir: str, output_dir: str , chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
-        self.raw_data = te.TextExtractor(input_dir, output_dir)
+    def __init__(self, input_dir: str, output_dir: str, urls_file:str, chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
+        self.raw_data = te.TextExtractor(input_dir, output_dir, urls_file)
         self.chroma_db_dir = Path(chroma_db_dir)
         self.collection_name = chroma_db_name
         self.model = model
@@ -64,43 +64,52 @@ class VectorDB:
 
     def load_url(self):
         """Load and process data from URLs."""
+        print("Loading data from URLs...")
         logging.info("Loading data from URLs...")
         urls = self.raw_data.get_urls()
         sources = self.show_sources()
         for url in urls:
+            print(f"Processing URL: {url}")
             logging.info(f"Processing URL: {url}")
             text = self.raw_data.crawl_and_extract(url)
             if url in sources:
                 self.delete_source(url)
             self._process_and_add(text, [str(url)] * len(text))
+        print("Finished loading data from URLs.")
         logging.info("Finished loading data from URLs.")
     
     def load_pdf(self):
         """Load and process data from PDFs."""
+        print("Loading data from PDFs...")
         logging.info("Loading data from PDFs...")
         pdfs = self.raw_data.get_pdf()
         sources = self.show_sources()
         for pdf in pdfs:    
+            print(f"Processing PDF: {pdf}")
             logging.info(f"Processing PDF: {pdf}")
             text = self.raw_data.extract_pdf_texts(pdf)
             source_name = Path(pdf).name.replace('.pdf', '')  # Remove the '.pdf' extension
             if source_name in sources:
                 self.delete_source(source_name)
             self._process_and_add(text, [str(source_name)] * len(text))
+        print("Finished loading data from PDFs.")
         logging.info("Finished loading data from PDFs.")
 
     def load_html(self):
         """Load and process data from HTML files."""
+        print("Loading data from HTML files...")
         logging.info("Loading data from HTML files...")
         htmls = self.raw_data.get_html()
         sources = self.show_sources()
         for html in htmls:
+            print(f"Processing HTML: {html}")
             logging.info(f"Processing HTML: {html}")
             source_name = Path(html).name.replace('.html', '')  # Remove the '.pdf' extension
             text = self.raw_data.extract_html_text(html)
             if source_name in sources:
                 self.delete_source(source_name)
             self._process_and_add(text, [str(source_name)] * len(text))
+        print("Finished loading data from HTML files.")
         logging.info("Finished loading data from HTML files.")
 
     def peek(self):
