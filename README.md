@@ -71,7 +71,7 @@ ai/
 
 ### Configuration
 
-Edit the `config.yaml` file to set your project-specific parameters and paths.
+Edit the `config_template.yaml` file under src directory to set your project-specific parameters and paths. The `config.yaml` under the root directory is an example for how your file should look like.
 
 ## Project Workflow
 
@@ -84,7 +84,7 @@ Edit the `config.yaml` file to set your project-specific parameters and paths.
 There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruction.ipynb) you can use to test the code.
 
 1. **Configuration**:
-   - Open `config.yaml` to set up the directory paths for storing your data and Chroma database. You do not need to create them manually; just specify where they should be, and they will be automatically created:
+   - Open `~/ai/src/config_template.yaml` to set up the directory paths for storing your data and Chroma database. You do not need to create them manually; just specify where they should be, and they will be automatically created:
      - `input_dir`: Directory for PDF, HTML files, and URLs.
      - `output_dir`: Directory where TextExtractor will store all `.txt` files (for debugging purposes).
      - `chroma_db_dir`: Directory where your Chroma database will be stored.
@@ -95,7 +95,7 @@ There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruct
    from src import TextExtractor as te
    from src import VectorDB as vdb
    # Load configuration
-   config = rag.load_config('config.yaml')
+   config = rag.load_config('Insert your Configuration file path here')
 
    # Extract configuration values
    vector_db_config = config.get('vector_db')

@@ -6,7 +6,6 @@ import yaml
 def main():
     # Load configuration
     config = rag.load_config()
-
     # Extract configuration values
     vector_db_config = config.get('vector_db')
     input_dir = vector_db_config.get('input_dir')
