@@ -71,7 +71,7 @@ ai/
 
 ### Configuration
 
-Edit the `config_template.yaml` file under src directory to set your project-specific parameters and paths. The `config.yaml` under the root directory is an example for how your file should look like.
+Edit the `config_template.yaml` file under src directory to set your project-specific parameters and paths. 
 
 ## Project Workflow
 
