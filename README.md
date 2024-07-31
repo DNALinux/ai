@@ -86,6 +86,7 @@ There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruct
 1. **Configuration**:
    - Open `~/ai/src/config_template.yaml` to set up the directory paths for storing your data and Chroma database. You do not need to create them manually; just specify where they should be, and they will be automatically created:
      - `input_dir`: Directory for PDF, HTML files, and URLs.
+     - `urls_path`: Path to a file named urls.txt where you put all the urls.
      - `output_dir`: Directory where TextExtractor will store all `.txt` files (for debugging purposes).
      - `chroma_db_dir`: Directory where your Chroma database will be stored.
      - `chroma_db_name`: Collection name for your Chroma database.
@@ -94,13 +95,14 @@ There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruct
    from src import RAG as rag
    from src import TextExtractor as te
    from src import VectorDB as vdb
-   # Load configuration
-   config = rag.load_config('Insert your Configuration file path here')
+   # Load configuration, please insert the path to your configuration file.
+   config = rag.load_config('/home/tagore/repos/ai/src/config_template.yaml')
 
    # Extract configuration values
    vector_db_config = config.get('vector_db')
    input_dir = vector_db_config.get('input_dir')
    output_dir = vector_db_config.get('output_dir')
+   urls_path = vector_db_config.get('urls_path')
    chroma_db_dir = vector_db_config.get('chroma_db_dir')
    chroma_db_name = vector_db_config.get('chroma_db_name')
    model = vector_db_config.get('model')
@@ -109,7 +111,7 @@ There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruct
 2. **Directory Setup**:
    - Open a Jupyter notebook and run the following code to ensure that your directory is created:
      ```python
-     test_vector_db = vdb.VectorDB(input_dir, output_dir, chroma_db_dir, chroma_db_name)
+     test_vector_db = vdb.VectorDB(input_dir, output_dir, urls_path, chroma_db_dir, chroma_db_name)
      ```
    - This will create an object that you can use to manipulate your Chroma vector database. It will automatically create all the directories and an empty Chroma database. If everything is already created, it will not overwrite existing files.
 
