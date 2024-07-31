@@ -116,7 +116,7 @@ There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruct
    - This will create an object that you can use to manipulate your Chroma vector database. It will automatically create all the directories and an empty Chroma database. If everything is already created, it will not overwrite existing files.
 
 3. **Add Files**:
-   - Place all PDF and HTML files in the input directory. There will be a `urls.txt` file inside the input directory where you can list all URLs, each on a new line.
+   - Place all PDF and HTML files in the input directory. List all URLs in the `urls.txt` file, each on a new line.
 
 4. **Load Data**:
    - Use the `test_vector_db` object to load files into the vector database:

@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 import requests
 import math
+import numpy as np
 import hashlib
 from bs4 import BeautifulSoup
 import certifi
@@ -282,14 +283,11 @@ class TextExtractor:
 
     def split_text_into_chunks(self, text, chunk_size, overlap_size):
         """Split the text into chunks with overlap."""
-        chunks = []
         num_chunks = math.ceil(len(text) / (chunk_size - overlap_size))
+        start_indices = np.arange(num_chunks) * (chunk_size - overlap_size)
+        end_indices = start_indices + chunk_size
 
-        for i in range(num_chunks):
-            start_index = i * (chunk_size - overlap_size)
-            end_index = start_index + chunk_size
-            chunk = text[start_index:end_index].strip()
-            chunks.append(chunk)
+        chunks = [text[start:end].strip() for start, end in zip(start_indices, end_indices)]
         
         return chunks
 
