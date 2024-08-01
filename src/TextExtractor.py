@@ -117,9 +117,9 @@ class TextExtractor:
                         os.remove(file_path)
                         print(f"Deleted {file_path}")
 
-    def extract_pdf_texts(self, pdf_path: str) -> list:
+    def extract_pdf_texts(sef, pdf_path: str) -> list:
         """
-        Extracts text from a PDF file and add them all to a list,
+        Extracts text from a PDF file and add them  all to a list,
         ensuring a limited overlap between pages and avoiding pages with only one line of text.
 
         Args:
@@ -127,30 +127,25 @@ class TextExtractor:
         """
         loader = PyPDFLoader(pdf_path)
         pages = loader.load_and_split()
-        
-        # Extract page contents
-        page_texts = [page.page_content for page in pages]
-        
-        # Filter out pages with only one line of text
-        valid_texts = [text for text in page_texts if len(text.splitlines()) > 1]
-
-        # Initialize the result list
         result = []
-        
-        # Convert the list to a NumPy array for vectorized operations
-        valid_texts = np.array(valid_texts)
-        
-        if len(valid_texts) > 0:
-            # Handle the first page
-            result.append(valid_texts[0])
-        
-            # Create overlaps for subsequent pages
-            overlaps = np.char.str_slice(valid_texts[:-1], -100, None)  # Get the last 100 characters of each page
-            combined_texts = np.char.add(overlaps, valid_texts[1:])
-            
-            # Append combined texts to the result list
-            result.extend(combined_texts.tolist())
-        
+        previous_page_text = ""  # Initialize previous page text
+
+        for page_num, page_text in enumerate(pages, start=1):
+            current_page_text = page_text.page_content
+
+            # Check if the current page has more than one line of text
+            if len(current_page_text.splitlines()) > 1:
+                # Add a limited overlap from the previous page if it's not the first page
+                if page_num > 1:
+                    overlap = previous_page_text[-100:]  # Adjust the number of characters to overlap
+                    combined_text = overlap + current_page_text
+                else:
+                    combined_text = current_page_text
+
+                result.append(combined_text)
+
+            previous_page_text = current_page_text  # Update previous page text for the next iteration
+
         return result
     
     def save_a_html_text(self, html_path: str, chars_per_file: int = 500, overlap: int = 100) -> None:
