@@ -190,10 +190,10 @@ The `TextExtractor` class is designed to handle text extraction from various sou
 - **crawl_and_extract**: Crawls a website recursively, extracts text, and returns it as a list of text chunks.
 
 ```python
-from text_extractor import TextExtractor
+from src import TextExtractor as te
 
 # Initialize TextExtractor with input and output directories
-text_extractor = TextExtractor(input_dir='path/to/input', output_dir='path/to/output')
+text_extractor = te.TextExtractor(input_dir='path/to/input', output_dir='path/to/output', urls_file = 'path/to/urls.txt')
 
 # Get PDF File Paths
 pdf_files = text_extractor.get_pdf()
