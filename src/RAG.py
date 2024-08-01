@@ -1,8 +1,8 @@
 import argparse
 import logging
 import ollama  # Ensure the Ollama library is imported
-from src import TextExtractor as te
-from src import VectorDB as vdb
+import TextExtractor as te
+import VectorDB as vdb
 import yaml
 import sys
 

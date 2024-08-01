@@ -4,17 +4,19 @@ import yaml
 
 
 def main():
-    # Load configuration
-    config = rag.load_config()
+    # Load configuration, please insert the path to your configuration file.
+    config = rag.load_config('/home/tagore/repos/ai/src/config_template.yaml')
+
     # Extract configuration values
     vector_db_config = config.get('vector_db')
     input_dir = vector_db_config.get('input_dir')
     output_dir = vector_db_config.get('output_dir')
+    urls_path = vector_db_config.get('urls_path')
     chroma_db_dir = vector_db_config.get('chroma_db_dir')
     chroma_db_name = vector_db_config.get('chroma_db_name')
     model = vector_db_config.get('model')
 
-    ragtest = rag.RAG(input_dir, output_dir, chroma_db_dir, chroma_db_name)
+    ragtest = rag.RAG(input_dir, output_dir, urls_path, chroma_db_dir, chroma_db_name, model)
 
     if len(sys.argv) < 2:
         print("Usage: python main.py 'your query'")
