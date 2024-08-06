@@ -31,6 +31,7 @@ ai/
 │ ├── init.py
 │ ├── main.py
 │ ├── VectorDB.py
+| ├── config_template.yaml
 │ ├── TextExtractor.py
 │ └── RAG.py
 ├── tests/

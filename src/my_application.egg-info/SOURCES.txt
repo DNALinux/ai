@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+src/my_application.egg-info/PKG-INFO
+src/my_application.egg-info/SOURCES.txt
+src/my_application.egg-info/dependency_links.txt
+src/my_application.egg-info/entry_points.txt
+src/my_application.egg-info/not-zip-safe
+src/my_application.egg-info/top_level.txt
