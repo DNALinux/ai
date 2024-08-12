@@ -1,5 +1,0 @@
-# Include all Python files in the src directory
-recursive-include src *.py
-
-include src/config_template.yaml
-include src/example_db
