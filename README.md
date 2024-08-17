@@ -58,16 +58,8 @@ ai/
 - LLaMA3
 
 ### Installation
-
-1. Clone the repository:
    ```
-   git clone git@github.com:DNALinux/ai.git
-   cd ai
-   ```
-
-2. Create the Environment from 'environment.yml':
-   ```
-   conda env create -f environment.yml
+   pip install rag-llama3
    ```
 
 ### Configuration
@@ -85,7 +77,7 @@ Edit the `config_template.yaml` file under src directory to set your project-spe
 There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruction.ipynb) you can use to test the code.
 
 1. **Configuration**:
-   - Open `~/ai/src/config_template.yaml` to set up the directory paths for storing your data and Chroma database. You do not need to create them manually; just specify where they should be, and they will be automatically created:
+   - set up the directory paths for storing your data and Chroma database. It is better to create them manually; but you can also just specify where they should be, and they should be automatically created:
      - `input_dir`: Directory for PDF, HTML files, and URLs.
      - `urls_path`: Path to a file named urls.txt where you put all the urls.
      - `output_dir`: Directory where TextExtractor will store all `.txt` files (for debugging purposes).
@@ -93,11 +85,11 @@ There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruct
      - `chroma_db_name`: Collection name for your Chroma database.
    - Note: The embedding model defaults to `'mxbai-embed-large'`. Feel free to choose your preferred Ollama embedding model.
    ```python
-   from src import RAG as rag
-   from src import TextExtractor as te
-   from src import VectorDB as vdb
+   from rag_llama3 import RAG as rag
+   from rag_llama3 import TextExtractor as te
+   from rag_llama3 import VectorDB as vdb
    # Load configuration, please insert the path to your configuration file.
-   config = rag.load_config('/home/tagore/repos/ai/src/config_template.yaml')
+   config = rag.load_config('/home/tagore/repos/ai/rag_llama3/config_template.yaml')
 
    # Extract configuration values
    vector_db_config = config.get('vector_db')
@@ -112,7 +104,7 @@ There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruct
 2. **Directory Setup**:
    - Open a Jupyter notebook and run the following code to ensure that your directory is created:
      ```python
-     test_vector_db = vdb.VectorDB(input_dir, output_dir, urls_path, chroma_db_dir, chroma_db_name)
+     test_vector_db = vdb(input_dir, output_dir, urls_path, chroma_db_dir, chroma_db_name)
      ```
    - This will create an object that you can use to manipulate your Chroma vector database. It will automatically create all the directories and an empty Chroma database. If everything is already created, it will not overwrite existing files.
 
@@ -149,14 +141,14 @@ There is a [Instruction.ipynb](https://github.com/DNALinux/ai/blob/main/Instruct
      ```
 
 5. **Generate Answers**:
-   - To get your RAG version answer from the command line, navigate to the `src` path and type:
-     ```bash
-     python3 main.py "your question goes here"
-     ```
-   - Or in a Jupyter notebook, use:
+   - In a Jupyter notebook, use:
      ```python
-     testRAG = rag.RAG(input, output, chroma_db, collection_name)
+     testRAG = rag(input, output, chroma_db, collection_name)
      print(testRAG.generate_answer("Your question goes here"))
+     ```
+   - You can also try out our pre-installed DNALinux AI agent by typing in the command line:
+     ```bash
+     rag-llama3 "your question goes here"
      ```
 
 
@@ -191,10 +183,10 @@ The `TextExtractor` class is designed to handle text extraction from various sou
 - **crawl_and_extract**: Crawls a website recursively, extracts text, and returns it as a list of text chunks.
 
 ```python
-from src import TextExtractor as te
+from rag_llama3 import TextExtractor as te
 
 # Initialize TextExtractor with input and output directories
-text_extractor = te.TextExtractor(input_dir='path/to/input', output_dir='path/to/output', urls_file = 'path/to/urls.txt')
+text_extractor = te(input_dir='path/to/input', output_dir='path/to/output', urls_file = 'path/to/urls.txt')
 
 # Get PDF File Paths
 pdf_files = text_extractor.get_pdf()

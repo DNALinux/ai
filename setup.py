@@ -8,7 +8,7 @@ def read_readme():
 # Define the setup function
 setup(
     name='rag_llama3',  # Replace with your application's name
-    version='0.1.3',
+    version='0.1.4',
     author='Songlin Zhao',
     author_email='tagorezhao@berkeley.edu',  # Replace with your email address
     description='This repository contains a project that implements a Retrieval-Augmented Generation (RAG) system using the LLaMA3 model. The project focuses on creating embeddings for instructions of a professional bioinformatic software to help users conduct biology research.',

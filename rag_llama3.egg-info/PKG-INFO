@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: rag_llama3
-Version: 0.1.3
+Version: 0.1.4
 Summary: This repository contains a project that implements a Retrieval-Augmented Generation (RAG) system using the LLaMA3 model. The project focuses on creating embeddings for instructions of a professional bioinformatic software to help users conduct biology research.
 Home-page: https://github.com/DNALinux/ai
 Author: Songlin Zhao
@@ -57,15 +57,15 @@ Make sure that you have already installed the package. There is a [Instruction.i
      - `chroma_db_name`: Collection name for your Chroma database.
    - Note: The embedding model defaults to `'mxbai-embed-large'`. Feel free to choose your preferred Ollama embedding model.
    ```python
-   import RAG as rag
-   import TextExtractor as te
-   import VectorDB as vdb
+   from rag_llama3 import RAG as rag
+   from rag_llama3 import TextExtractor as te
+   from rag_llama3 import VectorDB as vdb
    ```
 
 2. **Directory Setup**:
    - Open a Jupyter notebook and run the following code to ensure that your directory is created:
      ```python
-     test_vector_db = vdb.VectorDB(input_dir, output_dir, urls_path, chroma_db_dir, chroma_db_name)
+     test_vector_db = vdb(input_dir, output_dir, urls_path, chroma_db_dir, chroma_db_name)
      ```
    - This will create an object that you can use to manipulate your Chroma vector database. It will automatically create all the directories and an empty Chroma database. If everything is already created, it will not overwrite existing files.
 
@@ -104,6 +104,6 @@ Make sure that you have already installed the package. There is a [Instruction.i
 5. **Generate Answers**:
    - In a Jupyter notebook, use:
      ```python
-     testRAG = rag.RAG(input, output, chroma_db, collection_name)
+     testRAG = rag(input, output, chroma_db, collection_name)
      print(testRAG.generate_answer("Your question goes here"))
      ```
