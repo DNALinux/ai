@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+src/rag_llama3.egg-info/PKG-INFO
+src/rag_llama3.egg-info/SOURCES.txt
+src/rag_llama3.egg-info/dependency_links.txt
+src/rag_llama3.egg-info/entry_points.txt
+src/rag_llama3.egg-info/not-zip-safe
+src/rag_llama3.egg-info/requires.txt
+src/rag_llama3.egg-info/top_level.txt

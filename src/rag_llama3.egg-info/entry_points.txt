@@ -1,0 +1,2 @@
+[console_scripts]
+rag-llama3 = src.main:main

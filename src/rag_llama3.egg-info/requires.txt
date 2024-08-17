@@ -1,0 +1,7 @@
+ollama==0.2.1
+numpy
+chromadb==0.5.3
+pypdf==4.2.0
+beautifulsoup4==4.12.2
+nltk==3.6.2
+langchain-community==0.2.6

@@ -1,9 +1,0 @@
-LICENSE
-README.md
-setup.py
-src/Toyoko.egg-info/PKG-INFO
-src/Toyoko.egg-info/SOURCES.txt
-src/Toyoko.egg-info/dependency_links.txt
-src/Toyoko.egg-info/entry_points.txt
-src/Toyoko.egg-info/not-zip-safe
-src/Toyoko.egg-info/top_level.txt
