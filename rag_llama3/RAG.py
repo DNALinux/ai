@@ -1,8 +1,8 @@
 import argparse
 import logging
 import ollama  # Ensure the Ollama library is imported
-import TextExtractor as te
-import VectorDB as vdb
+from rag_llama3.TextExtractor import TextExtractor as te
+from rag_llama3.VectorDB import VectorDB as vdb
 import yaml
 import sys
 
@@ -15,7 +15,7 @@ class RAG:
         """Check if the database exists and set up if not."""
         try:
             # Attempt to load existing vector database
-            vector_db = vdb.VectorDB(input_dir, output_dir, urls_file, chroma_db_dir, chroma_db_name, model)
+            vector_db = vdb(input_dir, output_dir, urls_file, chroma_db_dir, chroma_db_name, model)
             # Check if the database is empty or needs updating
             if not self._is_database_populated(vector_db):
                 print("Database is not populated. Loading data...")
@@ -71,7 +71,6 @@ class RAG:
         except Exception as e:
             logging.error(f"Error generating answer: {e}")
 
-
-def load_config(file_path='config_template.yaml'):
-    with open(file_path, 'r') as stream:
-        return yaml.safe_load(stream)
+    def load_config(file_path='config_template.yaml'):
+        with open(file_path, 'r') as stream:
+            return yaml.safe_load(stream)

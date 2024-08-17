@@ -7,11 +7,11 @@ from chromadb.config import Settings
 import hashlib
 import sys
 import logging
-import TextExtractor as te
+from rag_llama3.TextExtractor import TextExtractor as te
 
 class VectorDB:
     def __init__(self, input_dir: str, output_dir: str, urls_file:str, chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
-        self.raw_data = te.TextExtractor(input_dir, output_dir, urls_file)
+        self.raw_data = te(input_dir, output_dir, urls_file)
         self.chroma_db_dir = Path(chroma_db_dir)
         self.collection_name = chroma_db_name
         self.model = model

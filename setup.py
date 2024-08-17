@@ -8,15 +8,15 @@ def read_readme():
 # Define the setup function
 setup(
     name='rag_llama3',  # Replace with your application's name
-    version='0.1.2',
+    version='0.1.3',
     author='Songlin Zhao',
     author_email='tagorezhao@berkeley.edu',  # Replace with your email address
     description='This repository contains a project that implements a Retrieval-Augmented Generation (RAG) system using the LLaMA3 model. The project focuses on creating embeddings for instructions of a professional bioinformatic software to help users conduct biology research.',
     long_description=read_readme(),
     long_description_content_type='text/markdown',
     url='https://github.com/DNALinux/ai',  # Replace with your repository URL
-    packages=find_packages(where='/home/tagore/repos/ai/src'),
-    package_dir={'': 'src'},
+    packages=find_packages(where='.'),
+    package_dir={'': '.'},
     install_requires=[
         'ollama==0.2.1',
         'numpy',
@@ -38,7 +38,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'rag-llama3 = src.main:main',
+            'rag-llama3 = rag_llama3.main:main',
         ],
     },
     include_package_data=True,

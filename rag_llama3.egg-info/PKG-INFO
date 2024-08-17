@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: rag_llama3
-Version: 0.1.2
+Version: 0.1.3
 Summary: This repository contains a project that implements a Retrieval-Augmented Generation (RAG) system using the LLaMA3 model. The project focuses on creating embeddings for instructions of a professional bioinformatic software to help users conduct biology research.
 Home-page: https://github.com/DNALinux/ai
 Author: Songlin Zhao

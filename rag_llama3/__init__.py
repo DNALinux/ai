@@ -5,4 +5,4 @@ from .RAG import RAG
 from .TextExtractor import TextExtractor
 from .VectorDB import VectorDB
 
-__all__ = ['RAG', 'TextExtractor', 'VectorDB', 'main']
+__all__ = ['RAG', 'TextExtractor', 'VectorDB']

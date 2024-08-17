@@ -27,7 +27,7 @@ ai/
 │   ├── generate_embeddings.py
 │   ├── create_rag_pipeline.py
 │   └── ...
-├── src/
+├── rag_llama3/
 │ ├── init.py
 │ ├── main.py
 │ ├── VectorDB.py

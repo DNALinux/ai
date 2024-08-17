@@ -1,7 +1,7 @@
 import curses
-from src import RAG as rag
-from src import TextExtractor as te
-from src import VectorDB as vdb
+from rag_llama3.RAG import RAG as rag
+from rag_llama3.TextExtractor import TextExtractor as te
+from rag_llama3.VectorDB import VectorDB as vdb
 import sys
 import threading
 import time

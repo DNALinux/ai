@@ -1,11 +1,11 @@
 import sys
-import RAG as rag
+from rag_llama3.RAG import RAG as rag
 import yaml
 
 
 def main():
     # Load configuration, please insert the path to your configuration file.
-    config = rag.load_config('/home/tagore/repos/ai/src/config.yaml')
+    config = rag.load_config('/home/tagore/repos/ai/rag_llama3/config.yaml')
 
     # Extract configuration values
     vector_db_config = config.get('vector_db')
@@ -16,7 +16,7 @@ def main():
     chroma_db_name = vector_db_config.get('chroma_db_name')
     model = vector_db_config.get('model')
 
-    ragtest = rag.RAG(input_dir, output_dir, urls_path, chroma_db_dir, chroma_db_name, model)
+    ragtest = rag(input_dir, output_dir, urls_path, chroma_db_dir, chroma_db_name, model)
 
     if len(sys.argv) < 2:
         print("Usage: python main.py 'your query'")

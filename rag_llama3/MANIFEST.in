@@ -1,0 +1,2 @@
+include rag_llama3/*
+include pkg.md

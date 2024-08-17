@@ -1,0 +1,2 @@
+[console_scripts]
+rag-llama3 = rag_llama3.main:main

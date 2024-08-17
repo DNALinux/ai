@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+./rag_llama3/ChatWindow.py
+./rag_llama3/RAG.py
+./rag_llama3/TextExtractor.py
+./rag_llama3/VectorDB.py
+./rag_llama3/__init__.py
+./rag_llama3/main.py
+./rag_llama3/preprocess_text.py
+rag_llama3.egg-info/PKG-INFO
+rag_llama3.egg-info/SOURCES.txt
+rag_llama3.egg-info/dependency_links.txt
+rag_llama3.egg-info/entry_points.txt
+rag_llama3.egg-info/not-zip-safe
+rag_llama3.egg-info/requires.txt
+rag_llama3.egg-info/top_level.txt
