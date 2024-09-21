@@ -1,26 +1,24 @@
 import argparse
 import logging
 import ollama  # Ensure the Ollama library is imported
-from rag_llama3.TextExtractor import TextExtractor as te
-from rag_llama3.VectorDB import VectorDB as vdb
+#import VectorDB as vdb
+from rag_llama3 import VectorDB as vdb
 import yaml
 import sys
 
 class RAG:
-    def __init__(self, input_dir: str, output_dir: str, urls_file:str, chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
-        self.vector_db = self._setup_vector_db(input_dir, output_dir, urls_file, chroma_db_dir, chroma_db_name, model)
+    def __init__(self, chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
+        self.vector_db = self._setup_vector_db(chroma_db_dir, chroma_db_name, model)
         logging.basicConfig(level=logging.INFO)
     
-    def _setup_vector_db(self, input_dir, output_dir, urls_file, chroma_db_dir, chroma_db_name, model):
+    def _setup_vector_db(self, chroma_db_dir, chroma_db_name, model):
         """Check if the database exists and set up if not."""
         try:
             # Attempt to load existing vector database
-            vector_db = vdb(input_dir, output_dir, urls_file, chroma_db_dir, chroma_db_name, model)
+            vector_db = vdb.VectorDB(chroma_db_dir, chroma_db_name, model)
             # Check if the database is empty or needs updating
             if not self._is_database_populated(vector_db):
-                print("Database is not populated. Loading data...")
-                logging.info("Database is not populated. Loading data...")
-                vector_db.load_data()
+                print("Database is not populated. Be sure to load data before querying.")
             return vector_db
         except Exception as e:
             logging.error(f"Error setting up VectorDB: {e}")
