@@ -1,8 +1,7 @@
 *.pyc
 # Ignore specific file
-/data/raw/pdfs/Bookshelf_NBK279690.pdf
-/home/tagore/repos/ai/data/temp
-/home/tagore/repos/ai/conda-packages.txt
-/home/tagore/repos/ai/setuphelper.ipynb
-/home/tagore/repos/ai/src/config.yaml
+data/temp
+conda-packages.txt
+setuphelper.ipynb
+src/config.yaml
 .ml
