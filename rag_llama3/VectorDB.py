@@ -46,8 +46,7 @@ class VectorDB:
 
         if urls_path:
             # Load data from URLs only
-            self.raw_data = te.TextExtractor(input_dir='', output_dir=output_dir, urls_file=urls_path)
-            self.load_url()
+            self.load_url(urls_path, output_dir)
             
         elif input_dir:
             # Load data from PDFs and HTML files only
@@ -83,9 +82,10 @@ class VectorDB:
         except Exception as e:
             logging.error(f"Error adding data to vector database: {e}")
 
-    def load_url(self):
+    def load_url(self, urls_path, output_dir):
         """Load and process data from URLs."""
         logging.info("Loading data from URLs...")
+        self.raw_data = te.TextExtractor(input_dir='', output_dir=output_dir, urls_file=urls_path)
         urls = self.raw_data.get_urls()
         sources = self.show_sources()
         for url in urls:
