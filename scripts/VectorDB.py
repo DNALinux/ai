@@ -7,12 +7,11 @@ from chromadb.config import Settings
 import hashlib
 import sys
 import logging
-sys.path.append("/home/tagore/repos/ai/scripts")
 import TextExtractor as te
+import tempfile
 
 class VectorDB:
-    def __init__(self, input_dir: str, output_dir: str , chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
-        self.raw_data = te.TextExtractor(input_dir, output_dir)
+    def __init__(self, chroma_db_dir: str, chroma_db_name: str, model="mxbai-embed-large"):
         self.chroma_db_dir = Path(chroma_db_dir)
         self.collection_name = chroma_db_name
         self.model = model
@@ -32,11 +31,33 @@ class VectorDB:
 
         return collection
     
-    def load_data(self):
-        """Load and process data from URLs, PDFs, and HTML files."""
-        self.load_url()
-        self.load_pdf()
-        self.load_html()
+    def load_data(self, input_dir: str = None, output_dir: str = None, urls_path: str = None):
+        """
+        Load and process data based on provided directories or URLs.
+
+        - If `urls_path` is provided, loads URLs.
+        - If `input_dir` is provided, loads PDFs and HTMLs.
+        - `output_dir` is optional; if not provided, a temporary directory is used.
+        """
+        # Set default output_dir if not provided
+        if output_dir is None:
+            # Use a temporary directory as the default output directory
+            output_dir = tempfile.mkdtemp()
+            logging.info(f"No `output_dir` specified. Using temporary directory: {output_dir}")
+
+        if urls_path:
+            # Load data from URLs only
+            self.raw_data = te.TextExtractor(input_dir='', output_dir=output_dir, urls_file=urls_path)
+            self.load_url()
+            
+        elif input_dir:
+            # Load data from PDFs and HTML files only
+            self.raw_data = te.TextExtractor(input_dir=input_dir, output_dir=output_dir)
+            self.load_pdf()
+            self.load_html()
+            
+        else:
+            logging.error("Invalid input: Provide `urls_path` or `input_dir`.")
 
     def _get_embeddings(self, texts):
         """Get embeddings for a list of texts from Ollama."""
