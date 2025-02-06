@@ -193,3 +193,9 @@ class VectorDB:
             logging.info("Cleared the vector database.")
         except Exception as e:
             logging.error(f"Error clearing the vector database: {e}")
+
+
+    def count_docs(self):
+        """Count documents.
+        return an int"""
+        return self.vector_db.count()
