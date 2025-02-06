@@ -14,9 +14,11 @@ class VectorDB:
         self.chroma_db_dir = Path(chroma_db_dir)
         self.collection_name = chroma_db_name
         self.model = model
-        self.vector_db = self._load_or_create_vector_db()  # Load or create the Chroma vector database
+        # Load or create the Chroma vector database
+        self.vector_db = self._load_or_create_vector_db()
         logging.basicConfig(level=logging.INFO)
-        
+
+
     def _load_or_create_vector_db(self):
         """Load an existing Chroma vector database or create a new one."""
         # Ensure the directory exists
@@ -29,7 +31,8 @@ class VectorDB:
         logging.info(f"Database '{self.collection_name}' loaded or created at '{self.chroma_db_dir}'.")
 
         return collection
-    
+
+
     def load_data(self, input_dir: str = None, output_dir: str = None, urls_path: str = None):
         """
         Load and process data based on provided directories or URLs.
@@ -179,7 +182,8 @@ class VectorDB:
         except Exception as e:
             logging.error(f"Error querying the vector database: {e}")
             return []
-        
+
+
     def clear_database(self):
         """Clear the vector database."""
         try:
@@ -189,3 +193,9 @@ class VectorDB:
             logging.info("Cleared the vector database.")
         except Exception as e:
             logging.error(f"Error clearing the vector database: {e}")
+
+
+    def count_docs(self):
+        """Count documents.
+        return an int"""
+        return self.vector_db.count()

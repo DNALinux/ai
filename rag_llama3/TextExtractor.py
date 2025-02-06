@@ -147,11 +147,11 @@ class TextExtractor:
         if len(valid_texts) > 0:
             # Handle the first page
             result.append(valid_texts[0])
-        
             # Create overlaps for subsequent pages
-            overlaps = np.char.str_slice(valid_texts[:-1], -100, None)  # Get the last 100 characters of each page
+            # Get the last 100 characters of each page
+            overlaps = [text[-100:] for text in valid_texts[:-1]] # Get the last 100 characters.  No need for numpy for this.
+            overlaps = np.array(overlaps)
             combined_texts = np.char.add(overlaps, valid_texts[1:])
-            
             # Append combined texts to the result list
             result.extend(combined_texts.tolist())
         
