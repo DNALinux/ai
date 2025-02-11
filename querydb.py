@@ -4,7 +4,7 @@
 from rag_llama3 import RAG as rag
 from rag_llama3 import VectorDB as vdb
 # Load configuration, please insert the path to your configuration file.
-config = rag.load_config('/home/ran/projects/dnalinux/aiSet20/ai/rag_llama3/config.yaml')
+config = rag.load_config('config.yaml')
 
 # Extract configuration values
 vector_db_config = config.get('vector_db')
