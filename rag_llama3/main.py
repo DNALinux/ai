@@ -5,7 +5,8 @@ import yaml
 
 def main():
     # Load configuration, please insert the path to your configuration file.
-    config = rag.load_config('/home/tagore/repos/ai/rag_llama3/config.yaml')
+    #config = rag.load_config('/home/tagore/repos/ai/rag_llama3/config.yaml')
+    config = rag.load_config('../config.yaml')
 
     # Extract configuration values
     vector_db_config = config.get('vector_db')

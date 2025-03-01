@@ -7,6 +7,7 @@ import hashlib
 from bs4 import BeautifulSoup
 import certifi
 from langchain_community.document_loaders import PyPDFLoader
+import logging
 
 class TextExtractor:
     def __init__(self,input_dir: str, output_dir: str, urls_file: str = 'urls.txt'):
@@ -39,8 +40,11 @@ class TextExtractor:
     
     def get_urls(self) -> list:
         urls = []
-        with open(self.input_dir / 'urls.txt', 'r') as f:
-            urls = [line.strip() for line in f]
+        try:
+            with open(self.urls_file, 'r') as f:  # Use self.urls_file directly
+                urls = [line.strip() for line in f]
+        except FileNotFoundError:
+            logging.error(f"File not found: {self.urls_file}. Make sure the file exists.")
         return urls
     
     def save_text_to_file(self, text: str, filename: str) -> None:
