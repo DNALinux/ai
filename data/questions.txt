@@ -1,3 +1,6 @@
+EVALS
+
+
 1- What is the word size parameter in BLAST? 
   Word size for sequence alignment algorithms is the minimum number of characters required to seed a match between two sequences.
 
