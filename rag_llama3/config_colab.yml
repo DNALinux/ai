@@ -7,6 +7,6 @@ vector_db:
   chroma_db_name: 'testchroma'
   model: "nomic-embed-text"
 
-  # Ollama Model Configuration
-  ollama_model:
-    model_name: "phi4"
+# Ollama Model Configuration
+LLM:
+  model: "phi4"
