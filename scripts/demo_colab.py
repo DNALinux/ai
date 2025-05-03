@@ -1,7 +1,7 @@
 from rag_llama3 import RAG as rag
 from rag_llama3 import VectorDB as vdb
 # Load configuration, insert path to your configuration file.
-config = rag.load_config('ai/rag_llama3/config_colab.yaml')
+config = rag.load_config('/content/ai/rag_llama3/config_colab.yml')
 
 # Extract configuration values
 cfg = config.get('vector_db')
