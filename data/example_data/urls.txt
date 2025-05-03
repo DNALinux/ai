@@ -20,13 +20,10 @@ https://vicfero.github.io/trimal/index.html
 https://github.com/tangerzhang/ALLHiC/wiki
 https://docs.antismash.secondarymetabolites.org/command_line/
 https://merenlab.org/2016/06/22/anvio-tutorial-v2/
-https://github.com/tangerzhang/ALLHiC/wiki
 https://docs.antismash.secondarymetabolites.org/install/
-https://merenlab.org/2016/06/22/anvio-tutorial-v2/
 https://github.com/sanger-pathogens/assembly-stats/blob/master/README.md
 https://jgi.doe.gov/data-and-tools/software-tools/bbtools/bb-tools-user-guide/ 1
 https://samtools.github.io/bcftools/bcftools.html
-http://quinlanlab.org/tutorials/bedtools.html
 https://github.com/ncbi/docker/blob/master/blast-static/README.md
 https://blobtoolkit.genomehubs.org/blobtools2/blobtools2-tutorials/ 1
 https://bowtie-bio.sourceforge.net/manual.shtml
@@ -54,7 +51,6 @@ https://stevenwingett.github.io/HiCUP/
 https://github.com/sheinasim/HiFiAdapterFilt/blob/master/README.md
 https://hifiasm.readthedocs.io/en/latest/index.html
 https://docs.higlass.io/tutorial.html
-https://daehwankimlab.github.io/hisat2/manual/
 https://github.com/koszullab/instaGRAAL/blob/master/README.md
 https://interproscan-docs.readthedocs.io/en/latest/ 1
 https://github.com/gmarcais/Jellyfish/blob/master/README.md 1
@@ -82,7 +78,6 @@ https://github.com/PacificBiosciences/pb-assembly/blob/master/README.md
 https://github.com/broadinstitute/picard/blob/master/README.md
 https://github.com/broadinstitute/pilon/wiki
 https://primer3.org/manual.html
-https://github.com/tseemann/prokka/blob/master/README.md
 https://bitbucket.org/mroachawri/purge_haplotigs/src/master/
 https://github.com/dfguan/purge_dups/blob/master/README.md
 https://quast.sourceforge.net/docs/manual.html
@@ -90,19 +85,14 @@ https://github.com/isovic/racon/blob/master/README.md
 https://github.com/lbcb-sci/raven/blob/master/README.md
 https://github.com/Gabaldonlab/redundans/blob/master/README.md
 https://www.repeatmasker.org/RepeatMasker/
-https://www.repeatmasker.org/RepeatModeler/
 https://www.htslib.org/doc/samtools.html
-https://bioinf.shenwei.me/seqkit/tutorial/
-https://manpages.ubuntu.com/manpages/oracular/en/man1/seqtk.1.html#commands
 https://github.com/BGI-flexlab/SOAPnuke/blob/master/Readme.md
 https://ablab.github.io/spades/getting-started.html        2
 https://github.com/Runsheng/sspace_longread/blob/master/README.md
-https://ccb.jhu.edu/software/stringtie/index.shtml?t=manual
 https://github.com/Benson-Genomics-Lab/TRF/blob/master/README.md
 https://github.com/zhangrengang/TEsorter/blob/master/README.md
 https://github.com/Dfam-consortium/TETools/blob/master/README.md
 https://github.com/BGI-Qingdao/TGS-GapCloser/blob/master/README.md
-https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3875132/
 https://github.com/ruanjue/wtdbg2/blob/master/README-ori.md
 https://github.com/sanger-tol/yahs/blob/main/README.md
