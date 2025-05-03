@@ -3,9 +3,9 @@ vector_db:
   input_dir: "/content/testdata1/input_dir/"
   output_dir: "/content/testdata1/output_dir/"
   urls_path: "/content/testdata1/urls.txt"
-  chroma_db_dir: "/content/testdata1/db/"
+  chroma_db_dir: "/content/ai/data/example_db/"
   chroma_db_name: 'testchroma'
-  model: "mxbai-embed-large"
+  model: "nomic-embed-text"
 
   # Ollama Model Configuration
   ollama_model:
