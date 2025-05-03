@@ -10,7 +10,9 @@ chroma_db_name = cfg.get('chroma_db_name')
 v_model = cfg.get('model')
 #v_model = "nomic-embed-text"
 print(f"Vector model: {v_model}")
-model = "phi4"
+cfg = config.get('ollama_model')
+model = cfg.get('model_name')
+#model = "phi4"
 print(f"LLM: {model}")
 
 colabRAG = rag(chroma_db_dir, chroma_db_name, v_model=v_model)
