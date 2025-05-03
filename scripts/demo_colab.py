@@ -1,5 +1,10 @@
+"""
+For colab
+"""
+
 from rag_llama3 import RAG as rag
 from rag_llama3 import VectorDB as vdb
+
 # Load configuration, insert path to your configuration file.
 config = rag.load_config('/content/ai/rag_llama3/config_colab.yml')
 
@@ -10,9 +15,8 @@ chroma_db_name = cfg.get('chroma_db_name')
 v_model = cfg.get('model')
 #v_model = "nomic-embed-text"
 print(f"Vector model: {v_model}")
-cfg = config.get('ollama_model')
-model = cfg.get('model_name')
-#model = "phi4"
+cfg = config.get('LLM')
+model = cfg.get('model')
 print(f"LLM: {model}")
 
 colabRAG = rag(chroma_db_dir, chroma_db_name, v_model=v_model)
@@ -39,9 +43,7 @@ model = "phi4"
 #model = "deepseek-r1:8b"
 #model = "deepseek-r1:14b"
 #model = "gemma3:1b"
-
 #test_vector_db = vdb(input_dir, output_dir, urls_path, chroma_db_dir, chroma_db_name)
 #test_vector_db.load_url()
 #test_vector_db.peek()
-
 """
