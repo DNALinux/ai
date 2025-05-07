@@ -1,5 +1,6 @@
 """
-create a new DB
+This will create a DB if it does not exists. If exists, 
+it will use it to load it with data from a list of URLs
 
 sample run in Colab:
 
@@ -22,7 +23,6 @@ target_dir = os.path.join(current_dir, '..')
 sys.path.append(target_dir)
 from rag_llama3 import VectorDB as vdb
 
-
 parser = argparse.ArgumentParser(description='Create a database.')
 parser.add_argument('--db_dir', type=str, required=True, 
     help='Path to the input file')
@@ -33,11 +33,7 @@ parser.add_argument('--v_llm', type=str, default='nomic-embed-text',
 parser.add_argument('--url_input_file', type=str, required=True, 
     help='Path to the input file')
 
-# input_dir: "/content/ai/data/example_data
-
 args = parser.parse_args()
-
-
 db_dir = args.db_dir
 db_name = args.db_name
 v_model = args.v_llm
