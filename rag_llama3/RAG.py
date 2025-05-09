@@ -29,10 +29,9 @@ class RAG:
         return len(vector_db.peek()) > 0
 
     def generate_prompt(self, question, context):
-        template = """You need to answer questions about specific software or procedure.
-        Use the following pieces of retrieved context to answer the question. 
+        template = """Use the following pieces of retrieved context to answer the question. 
         If you don't know the answer, just say that you don't know. 
-        keep the answer concise.
+        In the answer copy much of the context you find relevant.
         user
         Question: {question} 
         Context: {context} 
