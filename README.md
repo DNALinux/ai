@@ -1,6 +1,6 @@
-# RAG-LLaMA3 AI Project
+# Takollama AI Project
 
-This repository contains a project that implements a Retrieval-Augmented Generation (RAG) system using the LLaMA3 model. The project focuses on creating embeddings for instructions of a professional bioinformatic software to help users conduct biology research.
+This repository contains a project that implements a Retrieval-Augmented Generation (RAG) system using any model supported by Ollama. The project focuses on creating embeddings for instructions of a professional bioinformatic software to help users conduct biology research.
 
 ## Directory Structure
 
