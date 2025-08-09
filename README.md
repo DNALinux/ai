@@ -52,14 +52,36 @@ ai/
 
 ### Prerequisites
 
-- Python 3.10.12
-- PyTorch
-- CUDA (if using GPU)
-- LLaMA3
+To install this program using uv you need:
+
+- uv
+- ollama
 
 ### Installation
+
+If you don' t uv, install it:
+
    ```
-   pip install rag-llama3
+   curl -fsSL https://astral.sh/uv/install.sh | sh
+   ```
+
+Download takollama package:
+
+   ```
+   wget https://github.com/DNALinux/ai/releases/download/demo/takollama.tar.bz2
+   ```
+
+Uncompress:
+
+   ```
+   tar -xjf takollama.tar.bz2
+   ```
+
+Install:
+
+   ```
+   cd ai
+   uv sync --locked
    ```
 
 ### Configuration
