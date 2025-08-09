@@ -276,6 +276,11 @@ The `preprocess_text` function performs a series of text preprocessing steps to 
 This function outputs a preprocessed text string that is ready for further analysis or processing.
 
 
+### Docker
+
+docker run -it --network host takollama /bin/bash
+
+
 ## License
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE. See the [LICENSE](LICENSE) file for details.
